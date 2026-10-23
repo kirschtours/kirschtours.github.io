@@ -188,6 +188,39 @@ a:hover .arrow { transform: translateX(-6px); }
 .tag.new { background: var(--gold-grad); color: var(--night); border-color: transparent; }
 .tag.drop { background: var(--red); color: #fff; border-color: transparent; }
 .card .body { padding: 22px 2px 0; }
+
+/* גלריה בתוך הכרטיס */
+.card .ph .slides { position: absolute; inset: 0; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.card .ph .slides::-webkit-scrollbar { display: none; }
+.card .ph .slides img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start; transform: none; transition: transform 1.4s var(--ease); }
+.card:hover .ph .slides img { transform: scale(1.06); }
+.card .ph .over, .card .ph .tags, .card .ph::after { pointer-events: none; }
+.card .nav { position: absolute; top: 42%; z-index: 3; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(5, 15, 36, .5); backdrop-filter: blur(6px); color: #fff; font-size: 22px; line-height: 1; opacity: 0; transition: opacity .3s, background .3s; cursor: pointer; }
+.card .nav.prev { inset-inline-start: 14px; }
+.card .nav.next { inset-inline-end: 14px; }
+.card:hover .nav { opacity: 1; }
+.card .nav:hover { background: var(--gold); color: var(--night); }
+.card .dots { position: absolute; z-index: 3; top: 62px; inset-inline-start: 24px; display: flex; gap: 5px; pointer-events: none; }
+.card .dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, .5); transition: background .3s, width .3s; }
+.card .dots i.on { background: #fff; width: 16px; border-radius: 3px; }
+@media (hover: none) { .card .nav { display: none; } }
+
+/* שורת טיסה, מחיר לזוג, ציון במילים, אייקונים */
+.card .ph .over .couple { font-size: 13px; color: rgba(255, 255, 255, .85); margin-top: 4px; }
+.meta .word { font-weight: 600; color: var(--night); }
+.flight { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px; color: #3c4252; }
+.flight b { color: var(--night); }
+.flight svg { width: 16px; height: 16px; fill: var(--gold-lo); flex: none; transform: rotate(-90deg); }
+.ams { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; }
+.am { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #3c4252; }
+.am svg { width: 17px; height: 17px; fill: none; stroke: var(--gold-lo); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* מסננים נוספים */
+.more-filters { display: flex; flex-wrap: wrap; align-items: end; gap: 14px 26px; margin: -26px 0 46px; }
+.more-filters label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; letter-spacing: .15em; color: var(--muted); }
+.more-filters label[hidden] { display: none; }
+.more-filters select { appearance: none; min-width: 150px; background: transparent; border: 0; border-bottom: 1px solid var(--night); padding: 8px 4px 8px 24px; font: 500 15px var(--sans); color: var(--night); cursor: pointer; background-image: linear-gradient(45deg, transparent 50%, var(--night) 50%), linear-gradient(-45deg, transparent 50%, var(--night) 50%); background-position: 8px 55%, 3px 55%; background-size: 5px 5px; background-repeat: no-repeat; }
+.more-filters .clear { background: none; border: 0; border-bottom: 1px solid var(--red); color: var(--red); font: 500 14px var(--sans); padding: 8px 2px; cursor: pointer; }
 .dest { display: flex; justify-content: space-between; font-size: 12px; letter-spacing: .28em; color: var(--gold-lo); }
 .card h3 { font: 400 28px/1.2 var(--display); margin: 10px 0 8px; color: var(--night); }
 .meta { font-size: 14px; color: var(--muted); display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: center; }

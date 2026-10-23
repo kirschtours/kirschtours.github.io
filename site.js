@@ -111,11 +111,38 @@
       b.querySelector('.cnt').textContent = n;
       b.hidden = n === 0;
     });
+    // מסננים נוספים: משך, כוכבים, אירוח ומחיר. אפשרות שאין לה אף דיל מוסתרת, ומסנן עם פחות משתי אפשרויות - כולו
+    var more = {};
+    var test = {
+      nights: function (c, v) { return c.dataset.nights.split(',').some(function (n) { n = +n; return v === 'short' ? n <= 3 : v === 'mid' ? n >= 4 && n <= 5 : n >= 6; }); },
+      stars: function (c, v) { return c.dataset.stars === v; },
+      board: function (c, v) { return c.dataset.board === v; },
+      price: function (c, v) { return +c.dataset.price <= +v; },
+    };
+    document.querySelectorAll('#more select').forEach(function (sel) {
+      var k = sel.dataset.k, live = 0;
+      [].slice.call(sel.options).forEach(function (o) {
+        if (!o.value) return;
+        var n = cards.filter(function (c) { return test[k](c, o.value); }).length;
+        o.hidden = o.disabled = n === 0 || n === cards.length; // אפשרות שמחזירה הכל או כלום לא מסננת
+        if (!o.hidden) { live++; o.textContent += ' (' + n + ')'; }
+      });
+      sel.parentElement.hidden = live === 0;
+      sel.addEventListener('change', function () { more[k] = sel.value; apply(); });
+    });
+    var clear = document.getElementById('clear');
+    clear.addEventListener('click', function () {
+      more = {};
+      document.querySelectorAll('#more select').forEach(function (sel) { sel.value = ''; });
+      apply();
+    });
     var apply = function () {
       var shown = 0;
+      clear.hidden = !Object.keys(more).some(function (k) { return more[k]; });
       cards.forEach(function (c) {
         var ok = (filter === 'all' || (filter === 'kosher' ? c.dataset.kosher === '1' : c.dataset.dest === filter))
-          && (when === 'all' || c.dataset[when] === '1');
+          && (when === 'all' || c.dataset[when] === '1')
+          && Object.keys(more).every(function (k) { return !more[k] || test[k](c, more[k]); });
         c.hidden = !ok;
         if (ok) { shown++; c.classList.add('in'); }
       });
@@ -146,6 +173,17 @@
     });
     apply();
   }
+
+  // גלריה בתוך הכרטיס: החלקה בנייד, חיצים במחשב. החיצים לא עוברים לדף הדיל.
+  document.querySelectorAll('.card .slides').forEach(function (track) {
+    var card = track.closest('.card'), dots = card.querySelectorAll('.dots i');
+    if (dots.length < 2) return;
+    var at = function () { return Math.round(Math.abs(track.scrollLeft) / track.clientWidth); };
+    var go = function (dir) { track.scrollBy({ left: dir * track.clientWidth * (getComputedStyle(track).direction === 'rtl' ? -1 : 1), behavior: still ? 'auto' : 'smooth' }); };
+    card.querySelector('.next').addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); go(at() >= dots.length - 1 ? -dots.length : 1); });
+    card.querySelector('.prev').addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); go(at() <= 0 ? dots.length : -1); });
+    track.addEventListener('scroll', function () { var i = at(); dots.forEach(function (d, n) { d.classList.toggle('on', n === i); }); }, { passive: true });
+  });
 
   // גלריה במסך מלא - גם מהמקלדת (Enter / רווח לפתיחה, Esc לסגירה, הפוקוס חוזר לתמונה)
   var lb = document.getElementById('lb'), opener = null;
