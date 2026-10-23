@@ -100,76 +100,132 @@
     if (hs.length) { lmHero.innerHTML = '<i></i>דקה 90 · יוצאים ' + inDays(Math.min.apply(null, hs)); lmHero.hidden = false; }
   }
 
-  // סינון (יעד × מועד) ומיון
+  // פאנל הסינון: בתוך קבוצה - "או", בין קבוצות - "וגם", במתקנים - "וגם" (מלון שיש בו את כל מה שסומן). מחיר בסליידר.
   var grid = document.getElementById('grid');
   if (grid) {
-    var empty = document.getElementById('empty'), filter = 'all', when = 'all';
     var cards = [].slice.call(grid.querySelectorAll('.card'));
-    document.querySelectorAll('#when [data-w]').forEach(function (b) {
-      if (b.dataset.w === 'all') return;
-      var n = cards.filter(function (c) { return c.dataset[b.dataset.w] === '1'; }).length;
-      b.querySelector('.cnt').textContent = n;
-      b.hidden = n === 0;
-    });
-    // מסננים נוספים: משך, כוכבים, אירוח ומחיר. אפשרות שאין לה אף דיל מוסתרת, ומסנן עם פחות משתי אפשרויות - כולו
-    var more = {};
+    var panel = document.getElementById('fpanel'), empty = document.getElementById('empty');
+    var boxes = [].slice.call(panel.querySelectorAll('input[type=checkbox][data-g]'));
+    var rmin = document.getElementById('rmin'), rmax = document.getElementById('rmax');
+    var has = function (c, key, v) { return (' ' + (c.dataset[key] || '') + ' ').indexOf(' ' + v + ' ') > -1; };
     var test = {
-      nights: function (c, v) { return c.dataset.nights.split(',').some(function (n) { n = +n; return v === 'short' ? n <= 3 : v === 'mid' ? n >= 4 && n <= 5 : n >= 6; }); },
+      when: function (c, v) { return c.dataset[v] === '1'; },
+      dest: function (c, v) { return c.dataset.dest === v; },
       stars: function (c, v) { return c.dataset.stars === v; },
       board: function (c, v) { return c.dataset.board === v; },
-      price: function (c, v) { return +c.dataset.price <= +v; },
+      nights: function (c, v) { return c.dataset.nights.split(',').some(function (n) { n = +n; return v === 'short' ? n <= 3 : v === 'mid' ? n >= 4 && n <= 5 : n >= 6; }); },
+      am: function (c, v) { return has(c, 'am', v); },
+      kosher: function (c) { return c.dataset.kosher === '1'; },
     };
-    document.querySelectorAll('#more select').forEach(function (sel) {
-      var k = sel.dataset.k, live = 0;
-      [].slice.call(sel.options).forEach(function (o) {
-        if (!o.value) return;
-        var n = cards.filter(function (c) { return test[k](c, o.value); }).length;
-        o.hidden = o.disabled = n === 0 || n === cards.length; // אפשרות שמחזירה הכל או כלום לא מסננת
-        if (!o.hidden) { live++; o.textContent += ' (' + n + ')'; }
+    // ספירה ליד כל אפשרות, ואפשרות בלי אף דיל מוסתרת. קבוצה שנשארה ריקה - מוסתרת כולה.
+    boxes.forEach(function (b) {
+      var n = cards.filter(function (c) { return test[b.dataset.g](c, b.value); }).length;
+      b.parentElement.querySelector('.cnt').textContent = n;
+      b.parentElement.hidden = n === 0;
+    });
+    panel.querySelectorAll('.fgroup').forEach(function (g) {
+      if (g.dataset.group !== 'price') g.hidden = !g.querySelector('.opt:not([hidden])');
+    });
+    var more = panel.querySelector('.showmore');
+    if (more) {
+      if (!panel.querySelector('.opt.more:not([hidden])')) more.hidden = true;
+      more.addEventListener('click', function () {
+        var open = panel.classList.toggle('am-all');
+        more.textContent = open ? 'הצג פחות' : 'הצג עוד';
+        more.setAttribute('aria-expanded', open);
       });
-      sel.parentElement.hidden = live === 0;
-      sel.addEventListener('change', function () { more[k] = sel.value; apply(); });
-    });
-    var clear = document.getElementById('clear');
-    clear.addEventListener('click', function () {
-      more = {};
-      document.querySelectorAll('#more select').forEach(function (sel) { sel.value = ''; });
-      apply();
-    });
+    }
+
+    var announce = false;
+    var selected = function () {
+      var s = {};
+      boxes.forEach(function (b) { if (b.checked) (s[b.dataset.g] = s[b.dataset.g] || []).push(b.value); });
+      return s;
+    };
+    var priceOn = function () { return rmin && (+rmin.value > +rmin.min || +rmax.value < +rmax.max); };
     var apply = function () {
-      var shown = 0;
-      clear.hidden = !Object.keys(more).some(function (k) { return more[k]; });
+      var s = selected(), shown = 0;
       cards.forEach(function (c) {
-        var ok = (filter === 'all' || (filter === 'kosher' ? c.dataset.kosher === '1' : c.dataset.dest === filter))
-          && (when === 'all' || c.dataset[when] === '1')
-          && Object.keys(more).every(function (k) { return !more[k] || test[k](c, more[k]); });
+        var ok = Object.keys(s).every(function (g) {
+          return g === 'am'
+            ? s[g].every(function (v) { return test.am(c, v); })
+            : s[g].some(function (v) { return test[g](c, v); });
+        }) && (!rmin || (+c.dataset.price >= +rmin.value && +c.dataset.price <= +rmax.value));
         c.hidden = !ok;
         if (ok) { shown++; c.classList.add('in'); }
       });
       empty.hidden = shown > 0;
-      if (announce) document.getElementById('count').textContent = shown === 1 ? 'מוצג דיל אחד' : shown ? 'מוצגים ' + shown + ' דילים' : 'אין דילים שמתאימים לסינון';
+      var words = shown === 1 ? 'דיל אחד' : shown + ' דילים';
+      document.getElementById('rcount').textContent = shown === cards.length ? words : words + ' מתוך ' + cards.length;
+      document.getElementById('fapplyn').textContent = shown;
+      if (announce) document.getElementById('count').textContent = shown ? 'מוצגים ' + words : 'אין דילים שמתאימים לסינון';
       announce = true;
+      // תגיות של מה שמסומן, עם × לכל אחת
+      var active = document.getElementById('active'), tags = [];
+      boxes.forEach(function (b) {
+        if (!b.checked) return;
+        var label = b.parentElement.querySelector('.lbl').textContent.replace(/★/g, '').trim(); // בכוכבים נשאר רק "4 כוכבים"
+        tags.push('<button class="atag" data-g="' + b.dataset.g + '" data-v="' + b.value + '" aria-label="הסרת ' + label + '">' + label + ' ×</button>');
+      });
+      if (priceOn()) tags.push('<button class="atag" data-g="price">' + (+rmin.value).toLocaleString('en-US') + '-' + (+rmax.value).toLocaleString('en-US') + ' ₪ ×</button>');
+      if (tags.length) tags.push('<button class="linkbtn" data-clear>ניקוי הכל</button>');
+      active.innerHTML = tags.join('');
+      active.hidden = !tags.length;
+      var n = tags.length ? tags.length - 1 : 0, fc = document.getElementById('fcount');
+      fc.textContent = n; fc.hidden = !n;
     };
-    var announce = false;
-    var press = function (sel, b) { document.querySelectorAll(sel).forEach(function (x) { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); }); };
-    document.querySelectorAll('#when [data-w]').forEach(function (x) { x.setAttribute('aria-pressed', x.classList.contains('on')); });
-    document.getElementById('filters').addEventListener('click', function (e) {
-      var b = e.target.closest('.chip'); if (!b) return;
-      press('.chip', b);
-      filter = b.dataset.f; apply();
+    var clearAll = function () {
+      boxes.forEach(function (b) { b.checked = false; });
+      if (rmin) { rmin.value = rmin.min; rmax.value = rmax.max; paintRange(); }
+      apply();
+    };
+    panel.addEventListener('change', function (e) { if (e.target.matches('input[type=checkbox]')) apply(); });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-clear]')) { clearAll(); return; }
+      var t = e.target.closest('.atag'); if (!t) return;
+      if (t.dataset.g === 'price') { rmin.value = rmin.min; rmax.value = rmax.max; paintRange(); }
+      else boxes.forEach(function (b) { if (b.dataset.g === t.dataset.g && b.value === t.dataset.v) b.checked = false; });
+      apply();
     });
-    document.getElementById('when').addEventListener('click', function (e) {
-      var b = e.target.closest('[data-w]'); if (!b) return;
-      if (b.dataset.w === when && when !== 'all') b = document.querySelector('#when [data-w="all"]'); // לחיצה שנייה מבטלת
-      press('#when [data-w]', b);
-      when = b.dataset.w; apply();
-    });
+
+    // סליידר מחיר עם שתי ידיות
+    function paintRange() {
+      if (!rmin) return;
+      var lo = +rmin.min, span = (+rmin.max - lo) || 1;
+      var a = (+rmin.value - lo) / span * 100, b = (+rmax.value - lo) / span * 100;
+      var fill = document.getElementById('pfill');
+      fill.style.insetInlineStart = a + '%'; fill.style.insetInlineEnd = (100 - b) + '%';
+      document.getElementById('pmin').textContent = (+rmin.value).toLocaleString('en-US');
+      document.getElementById('pmax').textContent = (+rmax.value).toLocaleString('en-US');
+    }
+    if (rmin) {
+      var onRange = function (e) {
+        if (+rmin.value > +rmax.value) { if (e.target === rmin) rmin.value = rmax.value; else rmax.value = rmin.value; }
+        paintRange(); apply();
+      };
+      rmin.addEventListener('input', onRange); rmax.addEventListener('input', onRange);
+      paintRange();
+    }
+
+    // בנייד הפאנל נפתח כמגירה
+    var fopen = document.getElementById('fopen');
+    var setOpen = function (open) {
+      root.classList.toggle('drawer-open', open);
+      fopen.setAttribute('aria-expanded', open);
+      if (lenis) { if (open) lenis.stop(); else lenis.start(); }
+      if (open) panel.querySelector('summary').focus(); else fopen.focus();
+    };
+    fopen.addEventListener('click', function () { setOpen(true); });
+    document.getElementById('fclose').addEventListener('click', function () { setOpen(false); });
+    document.getElementById('fapply').addEventListener('click', function () { setOpen(false); grid.scrollIntoView({ block: 'start' }); });
+    addEventListener('keydown', function (e) { if (e.key === 'Escape' && root.classList.contains('drawer-open')) setOpen(false); });
+
     document.getElementById('sort').addEventListener('change', function (e) {
-      var cards = [].slice.call(grid.children);
-      cards.sort(e.target.value === 'price'
+      var list = [].slice.call(grid.children);
+      list.sort(e.target.value === 'price'
         ? function (a, b) { return a.dataset.price - b.dataset.price; }
         : function (a, b) { return b.dataset.round.localeCompare(a.dataset.round); });
-      cards.forEach(function (c) { grid.appendChild(c); });
+      list.forEach(function (c) { grid.appendChild(c); });
     });
     apply();
   }

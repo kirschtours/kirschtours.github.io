@@ -24,6 +24,12 @@
     "4.jpg"
    ],
    "country": "קפריסין",
+   "board": "BB",
+   "amenities": [
+    "pool",
+    "spa",
+    "beach"
+   ],
    "dates": [
     {
      "o": "2026-11-20",
@@ -72,6 +78,8 @@
     "4.jpg"
    ],
    "country": "קפריסין",
+   "board": "BB",
+   "amenities": [],
    "dates": [
     {
      "o": "2026-11-22",
@@ -122,6 +130,8 @@
     "4.jpg"
    ],
    "country": "הונגריה",
+   "board": "BB",
+   "amenities": [],
    "dates": [
     {
      "o": "2026-11-05",
@@ -170,6 +180,8 @@
     "4.jpg"
    ],
    "country": "רומניה",
+   "board": "BB",
+   "amenities": [],
    "dates": [
     {
      "o": "2026-10-30",
@@ -220,6 +232,8 @@
     "4.jpg"
    ],
    "country": "פולין",
+   "board": "BB",
+   "amenities": [],
    "dates": [
     {
      "o": "2026-11-06",
@@ -272,6 +286,11 @@
     "4.jpg"
    ],
    "country": "קפריסין",
+   "board": "BB",
+   "amenities": [
+    "pool",
+    "spa"
+   ],
    "dates": [
     {
      "o": "2026-10-30",
@@ -320,6 +339,8 @@
     "4.jpg"
    ],
    "country": "גאורגיה",
+   "board": "BB",
+   "amenities": [],
    "dates": [
     {
      "o": "2026-11-06",
@@ -370,6 +391,10 @@
     "4.jpg"
    ],
    "country": "יוון",
+   "board": "BB",
+   "amenities": [
+    "rooftop"
+   ],
    "dates": [
     {
      "o": "2026-11-01",
@@ -418,6 +443,10 @@
     "4.jpg"
    ],
    "country": "גאורגיה",
+   "board": "BB",
+   "amenities": [
+    "rooftop"
+   ],
    "dates": [
     {
      "o": "2026-11-02",
@@ -465,6 +494,8 @@
     "4.jpg"
    ],
    "country": "הונגריה",
+   "board": "BB",
+   "amenities": [],
    "dates": [
     {
      "o": "2026-10-26",
@@ -512,6 +543,8 @@
     "4.jpg"
    ],
    "country": "צ׳כיה",
+   "board": "BB",
+   "amenities": [],
    "dates": [
     {
      "o": "2026-10-25",
@@ -560,6 +593,8 @@
     "4.jpg"
    ],
    "country": "פולין",
+   "board": "BB",
+   "amenities": [],
    "dates": [
     {
      "o": "2026-10-26",

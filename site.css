@@ -136,30 +136,9 @@ a:hover .arrow { transform: translateX(-6px); }
 .section-head { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 54px; }
 .section-head p { margin: 14px 0 0; color: var(--muted); font-weight: 300; }
 
-/* סינון - טאבים דקים, לא כפתורי גלולה */
-.filters { display: flex; flex-wrap: wrap; gap: 6px 30px; border-bottom: 1px solid var(--line-soft); margin-bottom: 50px; }
-.chip { position: relative; background: none; border: 0; padding: 14px 0; font: 400 16px var(--sans); color: var(--muted); cursor: pointer; transition: color .3s; }
-.chip::after { content: ''; position: absolute; bottom: -1px; inset-inline: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform .45s var(--ease); }
-.chip:hover { color: var(--night); }
-.chip.on { color: var(--night); font-weight: 600; }
-.chip.on::after { transform: scaleX(1); }
-.chip.kosher { color: var(--gold-lo); }
 .sort { appearance: none; background: transparent; border: 0; border-bottom: 1px solid var(--night); padding: 8px 4px 8px 24px; font: 500 15px var(--sans); color: var(--night); cursor: pointer; background-image: linear-gradient(45deg, transparent 50%, var(--night) 50%), linear-gradient(-45deg, transparent 50%, var(--night) 50%); background-position: 8px 55%, 3px 55%; background-size: 5px 5px; background-repeat: no-repeat; }
 
 /* סינון לפי מועד - דקה 90 באדום ובולט */
-.when-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 22px; }
-.lm-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: #fff; border: 1px solid var(--red); padding: 13px 24px; font: 600 15px var(--sans); letter-spacing: .06em; cursor: pointer; transition: background .3s, color .3s, box-shadow .3s; box-shadow: 0 10px 26px rgba(184, 52, 63, .28); }
-.lm-btn small { font-weight: 400; opacity: .85; font-size: 13px; }
-.lm-btn:hover { background: #9e2833; }
-.lm-btn.on { background: var(--paper); color: var(--red); box-shadow: inset 0 0 0 2px var(--red); }
-.lm-btn .cnt, .wchip .cnt { font: 400 13px var(--sans); background: rgba(255, 255, 255, .22); border-radius: 999px; padding: 0 8px; margin-inline-start: 4px; }
-.lm-btn.on .cnt { background: rgba(184, 52, 63, .12); }
-.wchip { background: transparent; border: 1px solid var(--line-soft); padding: 12px 20px; font: 400 15px var(--sans); color: var(--ink); cursor: pointer; transition: all .3s; }
-.wchip:hover { border-color: var(--gold); }
-.wchip.on { background: var(--night); border-color: var(--night); color: #fff; }
-.wchip .cnt { background: rgba(5, 15, 36, .08); }
-.wchip.on .cnt { background: rgba(255, 255, 255, .18); }
-.lm-btn i, .tag.lm i, .lm-hero i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; display: inline-block; animation: pulse 1.6s ease-out infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .7); } 100% { box-shadow: 0 0 0 9px rgba(255, 255, 255, 0); } }
 .tag.lm { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: #fff; border-color: var(--red); }
 .lm-hero { display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: #fff; font-size: 14px; font-weight: 600; letter-spacing: .1em; padding: 8px 16px; margin-bottom: 18px; }
@@ -215,12 +194,6 @@ a:hover .arrow { transform: translateX(-6px); }
 .am { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #3c4252; }
 .am svg { width: 17px; height: 17px; fill: none; stroke: var(--gold-lo); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
-/* מסננים נוספים */
-.more-filters { display: flex; flex-wrap: wrap; align-items: end; gap: 14px 26px; margin: -26px 0 46px; }
-.more-filters label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; letter-spacing: .15em; color: var(--muted); }
-.more-filters label[hidden] { display: none; }
-.more-filters select { appearance: none; min-width: 150px; background: transparent; border: 0; border-bottom: 1px solid var(--night); padding: 8px 4px 8px 24px; font: 500 15px var(--sans); color: var(--night); cursor: pointer; background-image: linear-gradient(45deg, transparent 50%, var(--night) 50%), linear-gradient(-45deg, transparent 50%, var(--night) 50%); background-position: 8px 55%, 3px 55%; background-size: 5px 5px; background-repeat: no-repeat; }
-.more-filters .clear { background: none; border: 0; border-bottom: 1px solid var(--red); color: var(--red); font: 500 14px var(--sans); padding: 8px 2px; cursor: pointer; }
 .dest { display: flex; justify-content: space-between; font-size: 12px; letter-spacing: .28em; color: var(--gold-lo); }
 .card h3 { font: 400 28px/1.2 var(--display); margin: 10px 0 8px; color: var(--night); }
 .meta { font-size: 14px; color: var(--muted); display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: center; }
@@ -402,3 +375,84 @@ footer .en { direction: ltr; text-align: left; font-size: 12px; opacity: .85; }
 .section:not(.dark) .gold-text { background-image: linear-gradient(100deg, #6e5426 0%, #9a7634 50%, #6e5426 100%); }
 .kicker b, .about li b, .meta .stars { color: var(--gold-lo); }
 .dark .kicker b, .deal-hero .meta .stars { color: var(--gold); }
+
+/* פאנל סינון בצד (כמו באתרי ההזמנות) + רשת הדילים לידו */
+.shop { display: grid; grid-template-columns: 290px 1fr; gap: 44px; align-items: start; }
+.results .grid { grid-template-columns: repeat(2, 1fr); }
+.fpanel { position: sticky; top: 86px; max-height: calc(100vh - 106px); overflow-y: auto; overscroll-behavior: contain; background: var(--paper); border: 1px solid var(--line-soft); padding: 6px 22px 18px; scrollbar-width: thin; }
+.fhead { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 12px; border-bottom: 1px solid var(--night); }
+.fhead b { font: 400 26px var(--display); color: var(--night); }
+.fclose, .ffoot { display: none; }
+.linkbtn { background: none; border: 0; padding: 0; font: 500 14px var(--sans); color: var(--night); border-bottom: 1px solid var(--gold); cursor: pointer; }
+.fgroup { border-bottom: 1px solid var(--line-soft); padding: 4px 0; }
+.fgroup summary { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 14px 0; font-weight: 600; font-size: 16px; color: var(--night); cursor: pointer; }
+.fgroup summary::-webkit-details-marker { display: none; }
+.fgroup summary::after { content: '+'; font: 300 22px/1 var(--sans); color: var(--gold-lo); }
+.fgroup[open] summary::after { content: '−'; }
+.opts { display: grid; gap: 2px; padding-bottom: 12px; }
+.opt { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 15px; cursor: pointer; color: var(--ink); }
+.opt[hidden], .fgroup[hidden] { display: none; }
+.opt input { appearance: none; flex: none; width: 18px; height: 18px; border: 1.5px solid #8b8f9a; background: #fff; display: grid; place-content: center; cursor: pointer; transition: background .2s, border-color .2s; }
+.opt input::after { content: ''; width: 9px; height: 5px; border-inline-start: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg) translateY(-1px); opacity: 0; }
+.opt input:checked { background: var(--night); border-color: var(--night); }
+.opt input:checked::after { opacity: 1; }
+.opt input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.opt .lbl { flex: 1; display: inline-flex; align-items: center; gap: 8px; }
+.opt .lbl small { color: var(--muted); font-size: 13px; }
+.opt .lbl svg { width: 17px; height: 17px; fill: none; stroke: var(--gold-lo); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.opt .lbl .stars { color: var(--gold-lo); letter-spacing: .12em; font-size: 15px; }
+.opt .cnt { font-size: 13px; color: var(--muted); }
+.opt.more { display: none; }
+.am-all .opt.more:not([hidden]) { display: flex; }
+.showmore { justify-self: start; margin-top: 6px; }
+/* דקה 90 - בולט ואדום גם בפאנל */
+.opt.lm { background: #fbecee; margin: 0 -10px 6px; padding: 10px; border-inline-start: 3px solid var(--red); }
+.opt.lm .lbl { color: var(--red); font-weight: 600; }
+.opt.lm .lbl small { color: var(--red); opacity: .8; font-weight: 400; }
+.opt.lm .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); display: inline-block; }
+.opt.lm input { border-color: var(--red); }
+.opt.lm input:checked { background: var(--red); border-color: var(--red); }
+/* סליידר מחיר עם שתי ידיות */
+.range { padding: 4px 4px 16px; }
+.rvals { display: flex; justify-content: space-between; font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+.rvals b { color: var(--night); font-weight: 600; }
+.rtrack { position: relative; height: 4px; background: var(--line-soft); margin: 10px 8px; }
+.rtrack i { position: absolute; top: 0; bottom: 0; background: var(--gold); }
+.rtrack input { position: absolute; inset: -8px -8px; width: calc(100% + 16px); height: 20px; margin: 0; appearance: none; background: none; pointer-events: none; }
+.rtrack input::-webkit-slider-thumb { appearance: none; pointer-events: auto; width: 20px; height: 20px; border-radius: 50%; background: var(--paper); border: 2px solid var(--gold-lo); box-shadow: 0 2px 6px rgba(5, 15, 36, .2); cursor: grab; }
+.rtrack input::-moz-range-thumb { pointer-events: auto; width: 18px; height: 18px; border-radius: 50%; background: var(--paper); border: 2px solid var(--gold-lo); cursor: grab; }
+.rtrack input:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--gold); outline-offset: 2px; }
+/* שורת תוצאות ותגיות פעילות */
+.rbar { display: flex; align-items: center; gap: 16px; justify-content: space-between; margin-bottom: 18px; }
+.rcount { font-size: 15px; color: var(--muted); margin-inline-end: auto; }
+.fopen { display: none; }
+.active { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 26px; }
+.active[hidden] { display: none; }
+.atag { background: var(--night); color: #fff; border: 0; padding: 7px 14px; font: 500 13px var(--sans); cursor: pointer; }
+.atag:hover { background: var(--red); }
+/* מתקני המלון בדף הדיל */
+.amgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); border-top: 1px solid var(--line-soft); }
+.amgrid li { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); font-size: 16px; }
+.amgrid svg { width: 22px; height: 22px; fill: none; stroke: var(--gold-lo); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+@media (max-width: 1000px) {
+  .shop { grid-template-columns: 250px 1fr; gap: 28px; }
+  .results .grid { grid-template-columns: 1fr; }
+}
+/* בנייד: הפאנל הופך למגירה במסך מלא, ונפתח מכפתור "סינון" */
+@media (max-width: 760px) {
+  .shop { grid-template-columns: 1fr; }
+  .fpanel { position: fixed; inset: 0; z-index: 80; max-height: none; border: 0; padding: 0 18px 90px; transform: translateY(100%); visibility: hidden; transition: transform .45s var(--ease), visibility 0s .45s; }
+  .drawer-open .fpanel { transform: none; visibility: visible; transition: transform .45s var(--ease); }
+  .drawer-open body { overflow: hidden; }
+  .fhead { position: sticky; top: 0; background: var(--paper); z-index: 1; gap: 14px; }
+  .fhead .linkbtn { margin-inline-start: auto; }
+  .fclose { display: block; background: none; border: 0; font-size: 30px; line-height: 1; color: var(--night); cursor: pointer; padding: 0 4px; }
+  .ffoot { display: block; position: fixed; bottom: 0; inset-inline: 0; padding: 14px 18px; background: var(--paper); border-top: 1px solid var(--line-soft); }
+  .ffoot .btn { width: 100%; }
+  .fopen { display: inline-flex; align-items: center; gap: 8px; background: var(--night); color: #fff; border: 0; padding: 11px 20px; font: 600 15px var(--sans); cursor: pointer; }
+  .fopen b { background: var(--gold); color: var(--night); border-radius: 999px; padding: 0 8px; font-size: 13px; }
+  .fopen b[hidden] { display: none; }
+  .rbar { flex-wrap: wrap; }
+  .rcount { order: 3; width: 100%; }
+}
