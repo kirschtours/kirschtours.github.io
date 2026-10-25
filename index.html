@@ -45,10 +45,13 @@
 
 <section class="section" id="deals"><div class="wrap">
   <div class="section-head">
-    <div><div class="kicker" data-reveal><b>01</b> הדילים</div><h2 data-reveal style="--d:.1s">נבחרו השבוע</h2><p data-reveal style="--d:.2s">מחיר לאדם בחדר זוגי · טיסה + מלון</p></div>
+    <div><div class="kicker" data-reveal><b>01</b> הדילים</div><h2 data-reveal style="--d:.1s">נבחרו השבוע</h2><p data-reveal style="--d:.2s">מחיר לאדם בחדר זוגי</p></div>
   </div>
-  
-  <div class="shop">
+  <div class="tabs" role="tablist" aria-label="סוג החופשה" data-reveal>
+    <button role="tab" id="tab-deals" aria-controls="pane-deals" aria-selected="true">חבילות נופש <small>טיסה + מלון · 12</small></button>
+    <button role="tab" id="tab-tours" aria-controls="pane-tours" aria-selected="false" tabindex="-1">טיולים מאורגנים <small>מובטחים, עם סיורים · 1</small></button>
+  </div>
+  <div class="shop" role="tabpanel" id="pane-deals" aria-labelledby="tab-deals">
     <aside class="fpanel" id="fpanel" aria-label="סינון הדילים">
   <div class="fhead"><b>סינון</b><button class="linkbtn" data-clear>ניקוי הכל</button><button class="fclose" id="fclose" aria-label="סגירת הסינון">×</button></div>
   <details class="fgroup" data-group="when" open><summary>מועד יציאה</summary><div class="opts"><label class="opt lm"><input type="checkbox" data-g="when" value="lm"><span class="lbl"><i class="dot"></i>דקה 90 <small>יוצאים השבוע</small></span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="when" value="month"><span class="lbl">החודש הקרוב</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="when" value="later"><span class="lbl">בעוד יותר מחודש</span><span class="cnt"></span></label></div></details>
@@ -256,7 +259,46 @@
       <div class="empty" id="empty" hidden>אין דילים שמתאימים לסינון. <button class="linkbtn" data-clear>ניקוי הסינון</button> · דילים חדשים עולים כל בוקר - <a href="https://chat.whatsapp.com/BhxtKixf9zcGB2TshPeeST">הצטרפו לקבוצה</a> ותקבלו אותם ראשונים.</div>
     </div>
   </div>
-  
+  <div class="shop" role="tabpanel" id="pane-tours" aria-labelledby="tab-tours" hidden>
+    <aside class="fpanel" id="fpanel-t" aria-label="סינון הטיולים">
+  <div class="fhead"><b>סינון</b><button class="linkbtn" data-clear>ניקוי הכל</button><button class="fclose" id="fclose-t" aria-label="סגירת הסינון">×</button></div>
+  <details class="fgroup" data-group="when" open><summary>מועד יציאה</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="when" value="lm"><span class="lbl"><i class="dot"></i>דקה 90 <small>יוצאים השבוע</small></span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="when" value="month"><span class="lbl">החודש הקרוב</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="when" value="later"><span class="lbl">בעוד יותר מחודש</span><span class="cnt"></span></label></div></details>
+  <details class="fgroup" data-group="dest" open><summary>יעד</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="dest" value="דובאי"><span class="lbl">דובאי <small>איחוד האמירויות</small></span><span class="cnt"></span></label></div></details>
+  <details class="fgroup" data-group="price" open><summary>מחיר לאדם</summary><div class="opts"><div class="range" data-lo="4700" data-hi="4800">
+      <div class="rvals"><span>מ- <b id="pmin-t">4,700</b> ₪</span><span>עד <b id="pmax-t">4,800</b> ₪</span></div>
+      <div class="rtrack"><i id="pfill-t"></i><input type="range" id="rmin-t" min="4700" max="4800" step="100" value="4700" aria-label="מחיר מינימלי לאדם"><input type="range" id="rmax-t" min="4700" max="4800" step="100" value="4800" aria-label="מחיר מקסימלי לאדם"></div>
+    </div></div></details>
+  <details class="fgroup" data-group="dur" open><summary>משך הטיול</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="dur" value="short"><span class="lbl">עד 5 ימים</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="dur" value="mid"><span class="lbl">6-9 ימים</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="dur" value="long"><span class="lbl">10 ימים ומעלה</span><span class="cnt"></span></label></div></details>
+  <details class="fgroup" data-group="op" open><summary>מפעיל הטיול</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="op" value="קשרי תעופה"><span class="lbl">קשרי תעופה</span><span class="cnt"></span></label></div></details>
+  <details class="fgroup" data-group="style" open><summary>סגנון</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="style" value="jew"><span class="lbl">מורשת יהודית</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="style" value="trad"><span class="lbl">לשומרי מסורת</span><span class="cnt"></span></label></div></details>
+  <div class="ffoot"><button class="btn btn-gold" id="fapply-t">הצג <span id="fapplyn-t"></span> טיולים</button></div>
+</aside>
+    <div class="results">
+      <div class="rbar">
+        <button class="fopen" id="fopen-t" aria-controls="fpanel-t" aria-expanded="false">סינון <b id="fcount-t" hidden></b></button>
+        <span class="rcount" id="rcount-t"></span>
+        <select class="sort" id="sort-t" aria-label="מיון"><option value="new">החדשים קודם</option><option value="price">המחיר הנמוך קודם</option></select>
+      </div>
+      <div class="active" id="active-t" hidden></div>
+      <p class="sr-only" id="count-t" aria-live="polite"></p>
+      <div class="grid" id="grid-t" data-one="טיול אחד" data-many="טיולים"><a class="card tour" href="tour/2026-10-26-tour-dubai/index.html" data-reveal style="--d:0s" data-exp="2026-11-02" data-dest="דובאי" data-price="4727" data-round="2026-10-26" data-dates="2026-12-13" data-dur="short" data-op="קשרי תעופה" data-trad="0" data-jew="0">
+  <div class="ph"><div class="slides"><img src="img/2026-10-26-tour-dubai/1.jpg" alt="טיול מאורגן לדובאי ואבו דאבי" loading="lazy"><img src="img/2026-10-26-tour-dubai/2.jpg" alt="" loading="lazy"><img src="img/2026-10-26-tour-dubai/3.jpg" alt="" loading="lazy"><img src="img/2026-10-26-tour-dubai/4.jpg" alt="" loading="lazy"><img src="img/2026-10-26-tour-dubai/5.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"><span class="tag new">חדש היום</span><span class="tag sure">טיול מובטח</span></div>
+    <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    <div class="over"><div><div class="from">טיול מאורגן</div><div class="price">4,727 ₪ <small>לאדם</small></div><div class="couple">9,454 ₪ לזוג</div></div>
+    <div class="n">5 ימים / 4 לילות<br>13-17/12</div></div>
+  </div>
+  <div class="body">
+    <div class="dest"><span>דובאי · איחוד האמירויות</span><span class="pub">פורסם 26.10</span></div>
+    <h3>טיול מאורגן לדובאי ואבו דאבי</h3>
+    <div class="meta"><span>מפעיל: קשרי תעופה</span></div>
+    <div class="flight"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5 13.5 11V5.5a1.5 1.5 0 0 0-3 0V11L3 15.5v2l7.5-2.3V19L8.5 20.5V22l3.5-1 3.5 1v-1.5L13.5 19v-3.8l7.5 2.3z"/></svg><span><b>פליי דובאי ישירה</b> · 13-17/12</span></div>
+    <div class="ams"><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v13H5zM5 11h14M8 17v3M16 17v3M8 14h0M16 14h0"/></svg>סיורים מודרכים</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>חצי פנסיון</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M5 7h14v14H5zM9 7v14M15 7v14"/></svg>מזוודה כלולה</span></div>
+    <span class="go">למסלול הטיול <span class="arrow" aria-hidden="true">←</span></span>
+  </div>
+</a></div>
+      <div class="empty" id="empty-t" hidden>אין טיולים שמתאימים לסינון. <button class="linkbtn" data-clear>ניקוי הסינון</button> · <a href="https://chat.whatsapp.com/BhxtKixf9zcGB2TshPeeST">הצטרפו לקבוצה</a> ותקבלו את הטיולים הבאים ראשונים.</div>
+    </div>
+  </div>
 </div></section>
 
 <section class="quote">
