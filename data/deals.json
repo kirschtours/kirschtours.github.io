@@ -2,6 +2,52 @@
  "updated": "2026-10-25",
  "deals": [
   {
+   "id": "2026-10-25-prague",
+   "dest": "פראג",
+   "hotel": "Grandium Hotel Prague",
+   "stars": 5,
+   "score": "9.0",
+   "rev": "10,799",
+   "trolley": true,
+   "feats": [
+    "📍 בלב פראג, במרחק הליכה מכיכר ואצלב ומכיכר העיר העתיקה",
+    "🕍 כ-20 דקות הליכה מהרובע היהודי ובתי הכנסת",
+    "🌙 חזרה בלילה = עוד יום חמישי שלם בפראג"
+   ],
+   "min": 2336,
+   "nightsLabel": "4 לילות",
+   "round": "2026-10-25",
+   "expires": "2026-11-01",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg"
+   ],
+   "country": "צ׳כיה",
+   "board": "BB",
+   "amenities": [],
+   "dates": [
+    {
+     "o": "2026-11-15",
+     "r": "2026-11-19",
+     "label": "15-19/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "סמארטווינגס",
+     "out": "05:35",
+     "back": "23:45",
+     "land": "08:45",
+     "bag": "טרולי 8 ק\"ג כלול",
+     "price": 2336
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-10-25-prague/"
+  },
+  {
    "id": "2026-10-25-budapest",
    "dest": "בודפשט",
    "hotel": "Exe Budapest Center",
