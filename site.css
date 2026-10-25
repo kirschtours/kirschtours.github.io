@@ -278,6 +278,11 @@ a:hover .arrow { transform: translateX(-6px); }
 .date .p small { display: block; font: 300 13px var(--sans); color: var(--muted); margin-top: 6px; }
 .date .p .was { color: var(--red); text-decoration: line-through; }
 .best-tag { display: inline-block; font: 600 10px var(--sans); letter-spacing: .2em; background: var(--gold-grad); color: var(--night); padding: 3px 10px; margin-inline-start: 10px; vertical-align: middle; }
+.opts-h { font: 600 13px var(--sans); letter-spacing: .14em; color: var(--gold-lo); margin: 28px 0 6px; }
+.opts { margin: 0; padding: 0; list-style: none; }
+.opts li { padding: 16px 0; border-bottom: 1px solid var(--line-soft); font-size: 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.opts li b { margin-inline-start: auto; font-weight: 600; }
+.opts li em { font-style: normal; font-size: 12px; letter-spacing: .08em; background: var(--gold); color: var(--night); padding: 3px 10px; border-radius: 2px; }
 .feats { margin: 0; padding: 0; list-style: none; }
 .feats li { padding: 18px 0; border-bottom: 1px solid var(--line-soft); font-size: 17px; }
 .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -455,4 +460,23 @@ footer .en { direction: ltr; text-align: left; font-size: 12px; opacity: .85; }
   .fopen b[hidden] { display: none; }
   .rbar { flex-wrap: wrap; }
   .rcount { order: 3; width: 100%; }
+}
+
+/* לשוניות חבילות נופש / טיולים מאורגנים (25.10.2026) */
+.tabs { display: flex; gap: 0; border-bottom: 1px solid var(--line-soft); margin: -24px 0 40px; }
+.tabs [role=tab] { background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 14px 26px 16px; font: 400 clamp(22px, 2.4vw, 30px)/1.1 var(--display); color: var(--muted); cursor: pointer; text-align: start; transition: color .3s, border-color .3s; }
+.tabs [role=tab] small { display: block; font: 400 12px var(--sans); letter-spacing: .18em; margin-top: 6px; color: var(--muted); }
+.tabs [role=tab][aria-selected=true] { color: var(--night); border-bottom-color: var(--gold); }
+.tabs [role=tab]:hover { color: var(--night); }
+.shop[hidden] { display: none; }
+.tag.sure { background: #14806a; color: #fff; border-color: #14806a; }
+/* המסלול היומי בדף הטיול */
+.itin { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--night); }
+.itin li { display: grid; grid-template-columns: 92px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line-soft); font-size: 17px; line-height: 1.55; }
+.itin b { font: 400 22px/1.2 var(--display); color: var(--gold-lo); }
+@media (max-width: 760px) {
+  .tabs { margin-top: -10px; }
+  .tabs [role=tab] { flex: 1; padding: 12px 10px 14px; font-size: 20px; }
+  .tabs [role=tab] small { letter-spacing: .08em; }
+  .itin li { grid-template-columns: 64px 1fr; gap: 12px; font-size: 16px; }
 }

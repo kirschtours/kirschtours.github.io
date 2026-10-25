@@ -23,7 +23,7 @@
 <div class="intro" aria-hidden="true"><div class="mark">KIRSH TOURS</div><div class="rule"></div></div>
 <header class="top"><div class="wrap">
   <a class="brand" href="index.html" aria-label="Kirsh Tours - לדף הבית"><b>KIRSH TOURS</b><small>סוכנות נסיעות אישית</small></a>
-  <nav aria-label="תפריט ראשי"><a href="index.html#deals">הדילים</a><a href="index.html#how">איך זה עובד</a><a href="index.html#about">מי אני</a><a href="index.html#join">הצטרפות</a></nav>
+  <nav aria-label="תפריט ראשי"><a href="index.html#deals">הדילים</a><a href="index.html#tours">טיולים מאורגנים</a><a href="index.html#how">איך זה עובד</a><a href="index.html#about">מי אני</a><a href="index.html#join">הצטרפות</a></nav>
   <a class="btn btn-line" href="https://wa.me/972553093983">דברו איתי</a>
 </div></header>
 <main id="main" tabindex="-1">
@@ -36,7 +36,7 @@
     <div class="actions" data-reveal style="--d:.65s"><a class="btn btn-gold" href="#deals">לדילים של השבוע</a><a class="btn btn-line" href="https://chat.whatsapp.com/BhxtKixf9zcGB2TshPeeST">לקבל דילים לנייד</a></div>
   </div>
   <div class="hero-foot"><div class="wrap">
-    <div class="stats"><div><b data-count="14">14</b>דילים פעילים</div><div><b data-count="9">9</b>יעדים</div><div><b><span data-count="1095">1,095</span> ₪</b>החל מ־, לאדם</div></div>
+    <div class="stats"><div><b data-count="12">12</b>דילים פעילים</div><div><b data-count="9">9</b>יעדים</div><div><b><span data-count="1095">1,095</span> ₪</b>החל מ־, לאדם</div></div>
     <a class="scroll-cue" href="#deals">גללו <i></i></a>
   </div></div>
 </section>
@@ -45,9 +45,13 @@
 
 <section class="section" id="deals"><div class="wrap">
   <div class="section-head">
-    <div><div class="kicker" data-reveal><b>01</b> הדילים</div><h2 data-reveal style="--d:.1s">נבחרו השבוע</h2><p data-reveal style="--d:.2s">מחיר לאדם בחדר זוגי · טיסה + מלון</p></div>
+    <div><div class="kicker" data-reveal><b>01</b> הדילים</div><h2 data-reveal style="--d:.1s">נבחרו השבוע</h2><p data-reveal style="--d:.2s">מחיר לאדם בחדר זוגי</p></div>
   </div>
-  <div class="shop">
+  <div class="tabs" role="tablist" aria-label="סוג החופשה" data-reveal>
+    <button role="tab" id="tab-deals" aria-controls="pane-deals" aria-selected="true">חבילות נופש <small>טיסה + מלון · 12</small></button>
+    <button role="tab" id="tab-tours" aria-controls="pane-tours" aria-selected="false" tabindex="-1">טיולים מאורגנים <small>מובטחים, עם סיורים · 1</small></button>
+  </div>
+  <div class="shop" role="tabpanel" id="pane-deals" aria-labelledby="tab-deals">
     <aside class="fpanel" id="fpanel" aria-label="סינון הדילים">
   <div class="fhead"><b>סינון</b><button class="linkbtn" data-clear>ניקוי הכל</button><button class="fclose" id="fclose" aria-label="סגירת הסינון">×</button></div>
   <details class="fgroup" data-group="when" open><summary>מועד יציאה</summary><div class="opts"><label class="opt lm"><input type="checkbox" data-g="when" value="lm"><span class="lbl"><i class="dot"></i>דקה 90 <small>יוצאים השבוע</small></span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="when" value="month"><span class="lbl">החודש הקרוב</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="when" value="later"><span class="lbl">בעוד יותר מחודש</span><span class="cnt"></span></label></div></details>
@@ -61,6 +65,7 @@
   <details class="fgroup" data-group="nights" open><summary>משך החופשה</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="nights" value="short"><span class="lbl">סופ"ש קצר <small>עד 3 לילות</small></span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="nights" value="mid"><span class="lbl">4-5 לילות</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="nights" value="long"><span class="lbl">6 לילות ומעלה</span><span class="cnt"></span></label></div></details>
   <details class="fgroup" data-group="am" open><summary>מתקני המלון</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="am" value="pool"><span class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17c2-1.3 4-1.3 6 0s4 1.3 6 0 4-1.3 6 0M3 21c2-1.3 4-1.3 6 0s4 1.3 6 0 4-1.3 6 0M8 14V5a2 2 0 0 1 4 0M16 14V5a2 2 0 0 0-4 0M8 9h8"/></svg>בריכה</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="am" value="spa"><span class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-5 0-8-4-8-9 4 0 8 3 8 9zm0 0c5 0 8-4 8-9-4 0-8 3-8 9zm0-8c-2-3-2-6 0-9 2 3 2 6 0 9z"/></svg>ספא</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="am" value="rooftop"><span class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M9 20v-6h6v6"/></svg>גג / מרפסת גג</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="am" value="beach"><span class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20c2-1 4-1 6 0s4 1 6 0 4-1 6 0M12 4v12M5 10a7 7 0 0 1 14 0z"/></svg>ליד החוף</span><span class="cnt"></span></label></div></details>
   
+  
   <div class="ffoot"><button class="btn btn-gold" id="fapply">הצג <span id="fapplyn"></span> דילים</button></div>
 </aside>
     <div class="results">
@@ -71,8 +76,8 @@
       </div>
       <div class="active" id="active" hidden></div>
       <p class="sr-only" id="count" aria-live="polite"></p>
-      <div class="grid" id="grid"><a class="card" href="deal/2026-10-25-prague/index.html" data-reveal style="--d:0s" data-exp="2026-11-01" data-dest="פראג" data-kosher="0" data-price="2336" data-round="2026-10-25" data-dates="2026-11-15" data-nights="4" data-stars="5" data-board="BB" data-am="">
-  <div class="ph"><div class="slides"><img src="img/2026-10-25-prague/1.jpg" alt="Grandium Hotel Prague" loading="lazy"><img src="img/2026-10-25-prague/2.jpg" alt="" loading="lazy"><img src="img/2026-10-25-prague/3.jpg" alt="" loading="lazy"><img src="img/2026-10-25-prague/4.jpg" alt="" loading="lazy"><img src="img/2026-10-25-prague/5.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"><span class="tag new">חדש היום</span></div>
+      <div class="grid" id="grid"><a class="card" href="deal/2026-10-25-prague/index.html" data-reveal style="--d:0s" data-exp="2026-11-01" data-dest="פראג" data-kosher="0" data-vip="0" data-price="2336" data-round="2026-10-25" data-dates="2026-11-15" data-nights="4" data-stars="5" data-board="BB" data-am="">
+  <div class="ph"><div class="slides"><img src="img/2026-10-25-prague/1.jpg" alt="Grandium Hotel Prague" loading="lazy"><img src="img/2026-10-25-prague/2.jpg" alt="" loading="lazy"><img src="img/2026-10-25-prague/3.jpg" alt="" loading="lazy"><img src="img/2026-10-25-prague/4.jpg" alt="" loading="lazy"><img src="img/2026-10-25-prague/5.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">2,336 ₪ <small>לאדם</small></div><div class="couple">4,672 ₪ לזוג</div></div>
     <div class="n">4 לילות<br>15-19/11</div></div>
@@ -86,8 +91,8 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-25-budapest/index.html" data-reveal style="--d:0.12s" data-exp="2026-11-01" data-dest="בודפשט" data-kosher="0" data-price="2039" data-round="2026-10-25" data-dates="2026-11-15" data-nights="3" data-stars="4" data-board="RO" data-am="">
-  <div class="ph"><div class="slides"><img src="img/2026-10-25-budapest/1.jpg" alt="Exe Budapest Center" loading="lazy"><img src="img/2026-10-25-budapest/2.jpg" alt="" loading="lazy"><img src="img/2026-10-25-budapest/3.jpg" alt="" loading="lazy"><img src="img/2026-10-25-budapest/4.jpg" alt="" loading="lazy"><img src="img/2026-10-25-budapest/5.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"><span class="tag new">חדש היום</span></div>
+<a class="card" href="deal/2026-10-25-budapest/index.html" data-reveal style="--d:0.12s" data-exp="2026-11-01" data-dest="בודפשט" data-kosher="0" data-vip="0" data-price="2039" data-round="2026-10-25" data-dates="2026-11-15" data-nights="3" data-stars="4" data-board="RO" data-am="">
+  <div class="ph"><div class="slides"><img src="img/2026-10-25-budapest/1.jpg" alt="Exe Budapest Center" loading="lazy"><img src="img/2026-10-25-budapest/2.jpg" alt="" loading="lazy"><img src="img/2026-10-25-budapest/3.jpg" alt="" loading="lazy"><img src="img/2026-10-25-budapest/4.jpg" alt="" loading="lazy"><img src="img/2026-10-25-budapest/5.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">2,039 ₪ <small>לאדם</small></div><div class="couple">4,078 ₪ לזוג</div></div>
     <div class="n">3 לילות<br>15-18/11</div></div>
@@ -101,7 +106,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-22-paphos/index.html" data-reveal style="--d:0.24s" data-exp="2026-10-29" data-dest="פאפוס" data-kosher="0" data-price="1395" data-round="2026-10-22" data-dates="2026-11-20,2026-11-23" data-nights="4" data-stars="5" data-board="BB" data-am="pool spa beach">
+<a class="card" href="deal/2026-10-22-paphos/index.html" data-reveal style="--d:0.24s" data-exp="2026-10-29" data-dest="פאפוס" data-kosher="0" data-vip="0" data-price="1395" data-round="2026-10-22" data-dates="2026-11-20,2026-11-23" data-nights="4" data-stars="5" data-board="BB" data-am="pool spa beach">
   <div class="ph"><div class="slides"><img src="img/2026-10-22-paphos/1.jpg" alt="Coral Beach Hotel &amp; Resort" loading="lazy"><img src="img/2026-10-22-paphos/2.jpg" alt="" loading="lazy"><img src="img/2026-10-22-paphos/3.jpg" alt="" loading="lazy"><img src="img/2026-10-22-paphos/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,395 ₪ <small>לאדם</small></div><div class="couple">2,790 ₪ לזוג</div></div>
@@ -116,7 +121,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-22-larnaca/index.html" data-reveal style="--d:0s" data-exp="2026-10-29" data-dest="לרנקה" data-kosher="0" data-price="1095" data-round="2026-10-22" data-dates="2026-11-22,2026-11-29" data-nights="4,3" data-stars="4" data-board="BB" data-am="">
+<a class="card" href="deal/2026-10-22-larnaca/index.html" data-reveal style="--d:0s" data-exp="2026-10-29" data-dest="לרנקה" data-kosher="0" data-vip="0" data-price="1095" data-round="2026-10-22" data-dates="2026-11-22,2026-11-29" data-nights="4,3" data-stars="4" data-board="BB" data-am="">
   <div class="ph"><div class="slides"><img src="img/2026-10-22-larnaca/1.jpg" alt="Best Western Plus Larco" loading="lazy"><img src="img/2026-10-22-larnaca/2.jpg" alt="" loading="lazy"><img src="img/2026-10-22-larnaca/3.jpg" alt="" loading="lazy"><img src="img/2026-10-22-larnaca/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,095 ₪ <small>לאדם</small></div><div class="couple">2,190 ₪ לזוג</div></div>
@@ -131,7 +136,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-22-budapest/index.html" data-reveal style="--d:0.12s" data-exp="2026-10-29" data-dest="בודפשט" data-kosher="0" data-price="1432" data-round="2026-10-22" data-dates="2026-11-05,2026-11-08" data-nights="3" data-stars="4" data-board="BB" data-am="">
+<a class="card" href="deal/2026-10-22-budapest/index.html" data-reveal style="--d:0.12s" data-exp="2026-10-29" data-dest="בודפשט" data-kosher="0" data-vip="0" data-price="1432" data-round="2026-10-22" data-dates="2026-11-05,2026-11-08" data-nights="3" data-stars="4" data-board="BB" data-am="">
   <div class="ph"><div class="slides"><img src="img/2026-10-22-budapest/1.jpg" alt="Charm Hotel Budapest" loading="lazy"><img src="img/2026-10-22-budapest/2.jpg" alt="" loading="lazy"><img src="img/2026-10-22-budapest/3.jpg" alt="" loading="lazy"><img src="img/2026-10-22-budapest/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,432 ₪ <small>לאדם</small></div><div class="couple">2,864 ₪ לזוג</div></div>
@@ -146,7 +151,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-22-bucharest/index.html" data-reveal style="--d:0.24s" data-exp="2026-10-29" data-dest="בוקרשט" data-kosher="0" data-price="1541" data-round="2026-10-22" data-dates="2026-10-30,2026-11-09" data-nights="5,3" data-stars="4" data-board="BB" data-am="">
+<a class="card" href="deal/2026-10-22-bucharest/index.html" data-reveal style="--d:0.24s" data-exp="2026-10-29" data-dest="בוקרשט" data-kosher="0" data-vip="0" data-price="1541" data-round="2026-10-22" data-dates="2026-10-30,2026-11-09" data-nights="5,3" data-stars="4" data-board="BB" data-am="">
   <div class="ph"><div class="slides"><img src="img/2026-10-22-bucharest/1.jpg" alt="Hotel CH Bucharest" loading="lazy"><img src="img/2026-10-22-bucharest/2.jpg" alt="" loading="lazy"><img src="img/2026-10-22-bucharest/3.jpg" alt="" loading="lazy"><img src="img/2026-10-22-bucharest/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,541 ₪ <small>לאדם</small></div><div class="couple">3,082 ₪ לזוג</div></div>
@@ -161,7 +166,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-22-warsaw/index.html" data-reveal style="--d:0s" data-exp="2026-10-29" data-dest="ורשה" data-kosher="0" data-price="1760" data-round="2026-10-22" data-dates="2026-11-06,2026-11-09" data-nights="4,3" data-stars="4" data-board="BB" data-am="">
+<a class="card" href="deal/2026-10-22-warsaw/index.html" data-reveal style="--d:0s" data-exp="2026-10-29" data-dest="ורשה" data-kosher="0" data-vip="0" data-price="1760" data-round="2026-10-22" data-dates="2026-11-06,2026-11-09" data-nights="4,3" data-stars="4" data-board="BB" data-am="">
   <div class="ph"><div class="slides"><img src="img/2026-10-22-warsaw/1.jpg" alt="Polonia Palace Hotel" loading="lazy"><img src="img/2026-10-22-warsaw/2.jpg" alt="" loading="lazy"><img src="img/2026-10-22-warsaw/3.jpg" alt="" loading="lazy"><img src="img/2026-10-22-warsaw/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,760 ₪ <small>לאדם</small></div><div class="couple">3,520 ₪ לזוג</div></div>
@@ -176,7 +181,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-21-paphos/index.html" data-reveal style="--d:0.12s" data-exp="2026-10-28" data-dest="פאפוס" data-kosher="0" data-price="1117" data-round="2026-10-21" data-dates="2026-10-30,2026-11-03" data-nights="4,3" data-stars="4" data-board="BB" data-am="pool spa">
+<a class="card" href="deal/2026-10-21-paphos/index.html" data-reveal style="--d:0.12s" data-exp="2026-10-28" data-dest="פאפוס" data-kosher="0" data-vip="0" data-price="1117" data-round="2026-10-21" data-dates="2026-10-30,2026-11-03" data-nights="4,3" data-stars="4" data-board="BB" data-am="pool spa">
   <div class="ph"><div class="slides"><img src="img/2026-10-21-paphos/1.jpg" alt="Avlida Hotel" loading="lazy"><img src="img/2026-10-21-paphos/2.jpg" alt="" loading="lazy"><img src="img/2026-10-21-paphos/3.jpg" alt="" loading="lazy"><img src="img/2026-10-21-paphos/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,117 ₪ <small>לאדם</small></div><div class="couple">2,234 ₪ לזוג</div></div>
@@ -191,7 +196,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-21-tbilisi/index.html" data-reveal style="--d:0.24s" data-exp="2026-10-28" data-dest="טביליסי" data-kosher="0" data-price="1470" data-round="2026-10-21" data-dates="2026-11-06,2026-11-20" data-nights="5,4" data-stars="4" data-board="BB" data-am="">
+<a class="card" href="deal/2026-10-21-tbilisi/index.html" data-reveal style="--d:0.24s" data-exp="2026-10-28" data-dest="טביליסי" data-kosher="0" data-vip="0" data-price="1470" data-round="2026-10-21" data-dates="2026-11-06,2026-11-20" data-nights="5,4" data-stars="4" data-board="BB" data-am="">
   <div class="ph"><div class="slides"><img src="img/2026-10-21-tbilisi/1.jpg" alt="Holiday Inn Express Tbilisi Avlabari" loading="lazy"><img src="img/2026-10-21-tbilisi/2.jpg" alt="" loading="lazy"><img src="img/2026-10-21-tbilisi/3.jpg" alt="" loading="lazy"><img src="img/2026-10-21-tbilisi/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,470 ₪ <small>לאדם</small></div><div class="couple">2,940 ₪ לזוג</div></div>
@@ -206,7 +211,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-21-athens/index.html" data-reveal style="--d:0s" data-exp="2026-10-28" data-dest="אתונה" data-kosher="0" data-price="1392" data-round="2026-10-21" data-dates="2026-11-01,2026-11-06" data-nights="4" data-stars="4" data-board="BB" data-am="rooftop">
+<a class="card" href="deal/2026-10-21-athens/index.html" data-reveal style="--d:0s" data-exp="2026-10-28" data-dest="אתונה" data-kosher="0" data-vip="0" data-price="1392" data-round="2026-10-21" data-dates="2026-11-01,2026-11-06" data-nights="4" data-stars="4" data-board="BB" data-am="rooftop">
   <div class="ph"><div class="slides"><img src="img/2026-10-21-athens/1.jpg" alt="Titania Hotel" loading="lazy"><img src="img/2026-10-21-athens/2.jpg" alt="" loading="lazy"><img src="img/2026-10-21-athens/3.jpg" alt="" loading="lazy"><img src="img/2026-10-21-athens/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,392 ₪ <small>לאדם</small></div><div class="couple">2,784 ₪ לזוג</div></div>
@@ -221,7 +226,7 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-21-batumi/index.html" data-reveal style="--d:0.12s" data-exp="2026-10-28" data-dest="בטומי" data-kosher="0" data-price="1424" data-round="2026-10-21" data-dates="2026-11-02,2026-11-06" data-nights="3,4" data-stars="4" data-board="BB" data-am="rooftop">
+<a class="card" href="deal/2026-10-21-batumi/index.html" data-reveal style="--d:0.12s" data-exp="2026-10-28" data-dest="בטומי" data-kosher="0" data-vip="0" data-price="1424" data-round="2026-10-21" data-dates="2026-11-02,2026-11-06" data-nights="3,4" data-stars="4" data-board="BB" data-am="rooftop">
   <div class="ph"><div class="slides"><img src="img/2026-10-21-batumi/1.jpg" alt="Hotel Monarch" loading="lazy"><img src="img/2026-10-21-batumi/2.jpg" alt="" loading="lazy"><img src="img/2026-10-21-batumi/3.jpg" alt="" loading="lazy"><img src="img/2026-10-21-batumi/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <div class="over"><div><div class="from">החל מ־</div><div class="price">1,424 ₪ <small>לאדם</small></div><div class="couple">2,848 ₪ לזוג</div></div>
@@ -236,52 +241,62 @@
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a>
-<a class="card" href="deal/2026-10-20-budapest/index.html" data-reveal style="--d:0.24s" data-exp="2026-10-27" data-dest="בודפשט" data-kosher="0" data-price="1327" data-round="2026-10-20" data-dates="2026-10-26,2026-10-29" data-nights="3,4" data-stars="4" data-board="BB" data-am="">
+<a class="card" href="deal/2026-10-20-budapest/index.html" data-reveal style="--d:0.24s" data-exp="2026-10-27" data-dest="בודפשט" data-kosher="0" data-vip="0" data-price="1721" data-round="2026-10-20" data-dates="2026-10-29" data-nights="4" data-stars="4" data-board="BB" data-am="">
   <div class="ph"><div class="slides"><img src="img/2026-10-20-budapest/1.jpg" alt="Kvihotel Budapest" loading="lazy"><img src="img/2026-10-20-budapest/2.jpg" alt="" loading="lazy"><img src="img/2026-10-20-budapest/3.jpg" alt="" loading="lazy"><img src="img/2026-10-20-budapest/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
     <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
-    <div class="over"><div><div class="from">החל מ־</div><div class="price">1,327 ₪ <small>לאדם</small></div><div class="couple">2,654 ₪ לזוג</div></div>
-    <div class="n">3-4 לילות<br>2 תאריכים</div></div>
+    <div class="over"><div><div class="from">החל מ־</div><div class="price">1,721 ₪ <small>לאדם</small></div><div class="couple">3,442 ₪ לזוג</div></div>
+    <div class="n">4 לילות<br>29/10-2/11</div></div>
   </div>
   <div class="body">
     <div class="dest"><span>בודפשט · הונגריה</span><span class="pub">פורסם 20.10</span></div>
     <h3>Kvihotel Budapest</h3>
     <div class="meta"><span class="stars" role="img" aria-label="4 כוכבים">★★★★</span><span><span class="word">מצוין</span> <span class="score">8.8</span> · 1,761 ביקורות</span></div>
-    <div class="flight"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5 13.5 11V5.5a1.5 1.5 0 0 0-3 0V11L3 15.5v2l7.5-2.3V19L8.5 20.5V22l3.5-1 3.5 1v-1.5L13.5 19v-3.8l7.5 2.3z"/></svg><span><b>ישראייר</b> · 26-29/10 · הלוך 07:20 · חזור 10:50</span></div>
+    <div class="flight"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5 13.5 11V5.5a1.5 1.5 0 0 0-3 0V11L3 15.5v2l7.5-2.3V19L8.5 20.5V22l3.5-1 3.5 1v-1.5L13.5 19v-3.8l7.5 2.3z"/></svg><span><b>בלו בירד</b> · 29/10-2/11 · הלוך 10:30 · חזור 14:35</span></div>
     <div class="ams"><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>ארוחת בוקר</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>מיקום מרכזי</span></div>
-    <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
-  </div>
-</a>
-<a class="card" href="deal/2026-10-20-prague/index.html" data-reveal style="--d:0s" data-exp="2026-10-26" data-dest="פראג" data-kosher="0" data-price="1584" data-round="2026-10-20" data-dates="2026-10-26" data-nights="3" data-stars="5" data-board="BB" data-am="">
-  <div class="ph"><div class="slides"><img src="img/2026-10-20-prague/1.jpg" alt="Grandior Hotel Prague" loading="lazy"><img src="img/2026-10-20-prague/2.jpg" alt="" loading="lazy"><img src="img/2026-10-20-prague/3.jpg" alt="" loading="lazy"><img src="img/2026-10-20-prague/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
-    <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
-    <div class="over"><div><div class="from">החל מ־</div><div class="price">1,584 ₪ <small>לאדם</small></div><div class="couple">3,168 ₪ לזוג</div></div>
-    <div class="n">3 לילות<br>26-29/10</div></div>
-  </div>
-  <div class="body">
-    <div class="dest"><span>פראג · צ׳כיה</span><span class="pub">פורסם 20.10</span></div>
-    <h3>Grandior Hotel Prague</h3>
-    <div class="meta"><span class="stars" role="img" aria-label="5 כוכבים">★★★★★</span><span><span class="word">מעולה</span> <span class="score">9.2</span> · 8,826 ביקורות</span></div>
-    <div class="flight"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5 13.5 11V5.5a1.5 1.5 0 0 0-3 0V11L3 15.5v2l7.5-2.3V19L8.5 20.5V22l3.5-1 3.5 1v-1.5L13.5 19v-3.8l7.5 2.3z"/></svg><span><b>ישראייר</b> · 26-29/10 · הלוך 06:55 · חזור 13:20</span></div>
-    <div class="ams"><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>ארוחת בוקר</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>מיקום מרכזי</span></div>
-    <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
-  </div>
-</a>
-<a class="card" href="deal/2026-10-20-warsaw/index.html" data-reveal style="--d:0.12s" data-exp="2026-10-26" data-dest="ורשה" data-kosher="0" data-price="1721" data-round="2026-10-20" data-dates="2026-10-26" data-nights="3" data-stars="4" data-board="BB" data-am="">
-  <div class="ph"><div class="slides"><img src="img/2026-10-20-warsaw/1.jpg" alt="Leonardo Royal Hotel Warsaw" loading="lazy"><img src="img/2026-10-20-warsaw/2.jpg" alt="" loading="lazy"><img src="img/2026-10-20-warsaw/3.jpg" alt="" loading="lazy"><img src="img/2026-10-20-warsaw/4.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"></div>
-    <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
-    <div class="over"><div><div class="from">החל מ־</div><div class="price">1,721 ₪ <small>לאדם</small></div><div class="couple">3,442 ₪ לזוג</div></div>
-    <div class="n">3 לילות<br>26-29/10</div></div>
-  </div>
-  <div class="body">
-    <div class="dest"><span>ורשה · פולין</span><span class="pub">פורסם 20.10</span></div>
-    <h3>Leonardo Royal Hotel Warsaw</h3>
-    <div class="meta"><span class="stars" role="img" aria-label="4 כוכבים">★★★★</span><span><span class="word">מצוין</span> <span class="score">8.9</span> · 16,603 ביקורות</span></div>
-    <div class="flight"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5 13.5 11V5.5a1.5 1.5 0 0 0-3 0V11L3 15.5v2l7.5-2.3V19L8.5 20.5V22l3.5-1 3.5 1v-1.5L13.5 19v-3.8l7.5 2.3z"/></svg><span><b>אל על</b> · 26-29/10 · הלוך 06:00 · חזור 21:40</span></div>
-    <div class="ams"><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>ארוחת בוקר</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>מיקום מרכזי</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M5 7h14v14H5zM9 7v14M15 7v14"/></svg>טרולי כלול</span></div>
     <span class="go">לפרטי החבילה <span class="arrow" aria-hidden="true">←</span></span>
   </div>
 </a></div>
       <div class="empty" id="empty" hidden>אין דילים שמתאימים לסינון. <button class="linkbtn" data-clear>ניקוי הסינון</button> · דילים חדשים עולים כל בוקר - <a href="https://chat.whatsapp.com/BhxtKixf9zcGB2TshPeeST">הצטרפו לקבוצה</a> ותקבלו אותם ראשונים.</div>
+    </div>
+  </div>
+  <div class="shop" role="tabpanel" id="pane-tours" aria-labelledby="tab-tours" hidden>
+    <aside class="fpanel" id="fpanel-t" aria-label="סינון הטיולים">
+  <div class="fhead"><b>סינון</b><button class="linkbtn" data-clear>ניקוי הכל</button><button class="fclose" id="fclose-t" aria-label="סגירת הסינון">×</button></div>
+  <details class="fgroup" data-group="when" open><summary>מועד יציאה</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="when" value="lm"><span class="lbl"><i class="dot"></i>דקה 90 <small>יוצאים השבוע</small></span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="when" value="month"><span class="lbl">החודש הקרוב</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="when" value="later"><span class="lbl">בעוד יותר מחודש</span><span class="cnt"></span></label></div></details>
+  <details class="fgroup" data-group="dest" open><summary>יעד</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="dest" value="באקו"><span class="lbl">באקו <small>אזרבייג׳ן</small></span><span class="cnt"></span></label></div></details>
+  <details class="fgroup" data-group="price" open><summary>מחיר לאדם</summary><div class="opts"><div class="range" data-lo="3600" data-hi="3700">
+      <div class="rvals"><span>מ- <b id="pmin-t">3,600</b> ₪</span><span>עד <b id="pmax-t">3,700</b> ₪</span></div>
+      <div class="rtrack"><i id="pfill-t"></i><input type="range" id="rmin-t" min="3600" max="3700" step="100" value="3600" aria-label="מחיר מינימלי לאדם"><input type="range" id="rmax-t" min="3600" max="3700" step="100" value="3700" aria-label="מחיר מקסימלי לאדם"></div>
+    </div></div></details>
+  <details class="fgroup" data-group="dur" open><summary>משך הטיול</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="dur" value="short"><span class="lbl">עד 5 ימים</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="dur" value="mid"><span class="lbl">6-9 ימים</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="dur" value="long"><span class="lbl">10 ימים ומעלה</span><span class="cnt"></span></label></div></details>
+  <details class="fgroup" data-group="op" open><summary>מפעיל הטיול</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="op" value="השטיח המעופף"><span class="lbl">השטיח המעופף</span><span class="cnt"></span></label></div></details>
+  <details class="fgroup" data-group="style" open><summary>סגנון</summary><div class="opts"><label class="opt"><input type="checkbox" data-g="style" value="jew"><span class="lbl">מורשת יהודית</span><span class="cnt"></span></label><label class="opt"><input type="checkbox" data-g="style" value="trad"><span class="lbl">לשומרי מסורת</span><span class="cnt"></span></label></div></details>
+  <div class="ffoot"><button class="btn btn-gold" id="fapply-t">הצג <span id="fapplyn-t"></span> טיולים</button></div>
+</aside>
+    <div class="results">
+      <div class="rbar">
+        <button class="fopen" id="fopen-t" aria-controls="fpanel-t" aria-expanded="false">סינון <b id="fcount-t" hidden></b></button>
+        <span class="rcount" id="rcount-t"></span>
+        <select class="sort" id="sort-t" aria-label="מיון"><option value="new">החדשים קודם</option><option value="price">המחיר הנמוך קודם</option></select>
+      </div>
+      <div class="active" id="active-t" hidden></div>
+      <p class="sr-only" id="count-t" aria-live="polite"></p>
+      <div class="grid" id="grid-t" data-one="טיול אחד" data-many="טיולים"><a class="card tour" href="tour/2026-10-25-tour-baku/index.html" data-reveal style="--d:0s" data-exp="2026-11-01" data-dest="באקו" data-price="3695" data-round="2026-10-25" data-dates="2026-11-22,2026-11-29" data-dur="short" data-op="השטיח המעופף" data-trad="0" data-jew="1">
+  <div class="ph"><div class="slides"><img src="img/2026-10-25-tour-baku/1.jpg" alt="טיול מאורגן לבאקו" loading="lazy"><img src="img/2026-10-25-tour-baku/2.jpg" alt="" loading="lazy"><img src="img/2026-10-25-tour-baku/3.jpg" alt="" loading="lazy"><img src="img/2026-10-25-tour-baku/4.jpg" alt="" loading="lazy"><img src="img/2026-10-25-tour-baku/5.jpg" alt="" loading="lazy"></div><span class="frame"></span><div class="tags"><span class="tag sure">טיול מובטח</span><span class="tag drop">מחיר מיוחד</span></div>
+    <span class="nav prev" aria-hidden="true">›</span><span class="nav next" aria-hidden="true">‹</span><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    <div class="over"><div><div class="from">טיול מאורגן</div><div class="price">3,695 ₪ <small>לאדם</small></div><div class="couple">7,390 ₪ לזוג</div></div>
+    <div class="n">5 ימים / 4 לילות<br>2 יציאות</div></div>
+  </div>
+  <div class="body">
+    <div class="dest"><span>באקו · אזרבייג&#39;ן</span><span class="pub">פורסם 25.10</span></div>
+    <h3>טיול מאורגן לבאקו</h3>
+    <div class="meta"><span>מפעיל: השטיח המעופף</span></div>
+    <div class="flight"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5 13.5 11V5.5a1.5 1.5 0 0 0-3 0V11L3 15.5v2l7.5-2.3V19L8.5 20.5V22l3.5-1 3.5 1v-1.5L13.5 19v-3.8l7.5 2.3z"/></svg><span><b>אזרבייג&#39;ן איירליינס ישירה</b> · 22-26/11 / 29/11-3/12</span></div>
+    <div class="ams"><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v13H5zM5 11h14M8 17v3M16 17v3M8 14h0M16 14h0"/></svg>סיורים מודרכים</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>ארוחת בוקר</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M5 7h14v14H5zM9 7v14M15 7v14"/></svg>מזוודה כלולה</span><span class="am"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V10l8-6 8 6v11M9 21v-5a3 3 0 0 1 6 0v5M3 21h18"/></svg>מורשת יהודית</span></div>
+    <span class="go">למסלול הטיול <span class="arrow" aria-hidden="true">←</span></span>
+  </div>
+</a></div>
+      <div class="empty" id="empty-t" hidden>אין טיולים שמתאימים לסינון. <button class="linkbtn" data-clear>ניקוי הסינון</button> · <a href="https://chat.whatsapp.com/BhxtKixf9zcGB2TshPeeST">הצטרפו לקבוצה</a> ותקבלו את הטיולים הבאים ראשונים.</div>
     </div>
   </div>
 </div></section>

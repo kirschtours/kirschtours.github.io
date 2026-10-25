@@ -101,21 +101,28 @@
   }
 
   // פאנל הסינון: בתוך קבוצה - "או", בין קבוצות - "וגם", במתקנים - "וגם" (מלון שיש בו את כל מה שסומן). מחיר בסליידר.
-  var grid = document.getElementById('grid');
-  if (grid) {
+  // כל לשונית (חבילות / טיולים) היא shop עם מזהים משלה: בלי סיומת לדילים, "-t" לטיולים
+  function initShop(sfx) {
+    var $ = function (id) { return document.getElementById(id + sfx); };
+    var grid = $('grid');
+    if (!grid) return;
     var cards = [].slice.call(grid.querySelectorAll('.card'));
-    var panel = document.getElementById('fpanel'), empty = document.getElementById('empty');
+    var panel = $('fpanel'), empty = $('empty');
     var boxes = [].slice.call(panel.querySelectorAll('input[type=checkbox][data-g]'));
-    var rmin = document.getElementById('rmin'), rmax = document.getElementById('rmax');
+    var rmin = $('rmin'), rmax = $('rmax');
     var has = function (c, key, v) { return (' ' + (c.dataset[key] || '') + ' ').indexOf(' ' + v + ' ') > -1; };
     var test = {
       when: function (c, v) { return c.dataset[v] === '1'; },
       dest: function (c, v) { return c.dataset.dest === v; },
       stars: function (c, v) { return c.dataset.stars === v; },
-      board: function (c, v) { return c.dataset.board === v; },
+      board: function (c, v) { return has(c, 'board', v); },
       nights: function (c, v) { return c.dataset.nights.split(',').some(function (n) { n = +n; return v === 'short' ? n <= 3 : v === 'mid' ? n >= 4 && n <= 5 : n >= 6; }); },
       am: function (c, v) { return has(c, 'am', v); },
       kosher: function (c) { return c.dataset.kosher === '1'; },
+      vip: function (c) { return c.dataset.vip === '1'; },
+      dur: function (c, v) { return c.dataset.dur === v; },
+      op: function (c, v) { return c.dataset.op === v; },
+      style: function (c, v) { return c.dataset[v] === '1'; },
     };
     // ספירה ליד כל אפשרות, ואפשרות בלי אף דיל מוסתרת. קבוצה שנשארה ריקה - מוסתרת כולה.
     boxes.forEach(function (b) {
@@ -155,13 +162,13 @@
         if (ok) { shown++; c.classList.add('in'); }
       });
       empty.hidden = shown > 0;
-      var words = shown === 1 ? 'דיל אחד' : shown + ' דילים';
-      document.getElementById('rcount').textContent = shown === cards.length ? words : words + ' מתוך ' + cards.length;
-      document.getElementById('fapplyn').textContent = shown;
-      if (announce) document.getElementById('count').textContent = shown ? 'מוצגים ' + words : 'אין דילים שמתאימים לסינון';
+      var words = shown === 1 ? (grid.dataset.one || 'דיל אחד') : shown + ' ' + (grid.dataset.many || 'דילים');
+      $('rcount').textContent = shown === cards.length ? words : words + ' מתוך ' + cards.length;
+      $('fapplyn').textContent = shown;
+      if (announce) $('count').textContent = shown ? 'מוצגים ' + words : 'אין ' + (grid.dataset.many || 'דילים') + ' שמתאימים לסינון';
       announce = true;
       // תגיות של מה שמסומן, עם × לכל אחת
-      var active = document.getElementById('active'), tags = [];
+      var active = $('active'), tags = [];
       boxes.forEach(function (b) {
         if (!b.checked) return;
         var label = b.parentElement.querySelector('.lbl').textContent.replace(/★/g, '').trim(); // בכוכבים נשאר רק "4 כוכבים"
@@ -171,7 +178,7 @@
       if (tags.length) tags.push('<button class="linkbtn" data-clear>ניקוי הכל</button>');
       active.innerHTML = tags.join('');
       active.hidden = !tags.length;
-      var n = tags.length ? tags.length - 1 : 0, fc = document.getElementById('fcount');
+      var n = tags.length ? tags.length - 1 : 0, fc = $('fcount');
       fc.textContent = n; fc.hidden = !n;
     };
     var clearAll = function () {
@@ -180,7 +187,9 @@
       apply();
     };
     panel.addEventListener('change', function (e) { if (e.target.matches('input[type=checkbox]')) apply(); });
+    var shop = grid.closest('.shop');
     document.addEventListener('click', function (e) {
+      if (!shop.contains(e.target)) return;
       if (e.target.closest('[data-clear]')) { clearAll(); return; }
       var t = e.target.closest('.atag'); if (!t) return;
       if (t.dataset.g === 'price') { rmin.value = rmin.min; rmax.value = rmax.max; paintRange(); }
@@ -193,10 +202,10 @@
       if (!rmin) return;
       var lo = +rmin.min, span = (+rmin.max - lo) || 1;
       var a = (+rmin.value - lo) / span * 100, b = (+rmax.value - lo) / span * 100;
-      var fill = document.getElementById('pfill');
+      var fill = $('pfill');
       fill.style.insetInlineStart = a + '%'; fill.style.insetInlineEnd = (100 - b) + '%';
-      document.getElementById('pmin').textContent = (+rmin.value).toLocaleString('en-US');
-      document.getElementById('pmax').textContent = (+rmax.value).toLocaleString('en-US');
+      $('pmin').textContent = (+rmin.value).toLocaleString('en-US');
+      $('pmax').textContent = (+rmax.value).toLocaleString('en-US');
     }
     if (rmin) {
       var onRange = function (e) {
@@ -208,7 +217,7 @@
     }
 
     // בנייד הפאנל נפתח כמגירה
-    var fopen = document.getElementById('fopen');
+    var fopen = $('fopen');
     var setOpen = function (open) {
       root.classList.toggle('drawer-open', open);
       fopen.setAttribute('aria-expanded', open);
@@ -216,11 +225,11 @@
       if (open) panel.querySelector('summary').focus(); else fopen.focus();
     };
     fopen.addEventListener('click', function () { setOpen(true); });
-    document.getElementById('fclose').addEventListener('click', function () { setOpen(false); });
-    document.getElementById('fapply').addEventListener('click', function () { setOpen(false); grid.scrollIntoView({ block: 'start' }); });
-    addEventListener('keydown', function (e) { if (e.key === 'Escape' && root.classList.contains('drawer-open')) setOpen(false); });
+    $('fclose').addEventListener('click', function () { setOpen(false); });
+    $('fapply').addEventListener('click', function () { setOpen(false); grid.scrollIntoView({ block: 'start' }); });
+    addEventListener('keydown', function (e) { if (e.key === 'Escape' && root.classList.contains('drawer-open') && !shop.hidden) setOpen(false); });
 
-    document.getElementById('sort').addEventListener('change', function (e) {
+    $('sort').addEventListener('change', function (e) {
       var list = [].slice.call(grid.children);
       list.sort(e.target.value === 'price'
         ? function (a, b) { return a.dataset.price - b.dataset.price; }
@@ -229,6 +238,35 @@
     });
     apply();
   }
+  initShop('');
+  initShop('-t');
+
+  // לשוניות חבילות נופש / טיולים מאורגנים. #tours בכתובת פותח ישר את הטיולים.
+  var tabs = [].slice.call(document.querySelectorAll('.tabs [role=tab]'));
+  var showTab = function (tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) tab.focus();
+    document.getElementById(tab.getAttribute('aria-controls')).querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('in'); });
+  };
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { showTab(t); history.replaceState(null, '', i ? '#tours' : '#deals'); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0; // RTL: שמאלה = הלשונית הבאה
+      if (d) { e.preventDefault(); showTab(tabs[(i + d + tabs.length) % tabs.length], true); }
+    });
+  });
+  var goTours = function () {
+    if (location.hash !== '#tours') return;
+    var deals = document.getElementById('deals');
+    if (tabs[1]) showTab(tabs[1]);
+    if (deals) { if (lenis) lenis.scrollTo(deals, { offset: -60, immediate: true }); else deals.scrollIntoView(); }
+  };
+  goTours();
+  addEventListener('hashchange', goTours);
 
   // גלריה בתוך הכרטיס: החלקה בנייד, חיצים במחשב. החיצים לא עוברים לדף הדיל.
   document.querySelectorAll('.card .slides').forEach(function (track) {

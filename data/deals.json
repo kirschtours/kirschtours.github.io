@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25",
+ "updated": "2026-10-26",
  "deals": [
   {
    "id": "2026-10-25-prague",
@@ -29,6 +29,8 @@
    ],
    "country": "צ׳כיה",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [],
    "dates": [
     {
@@ -76,6 +78,8 @@
    ],
    "country": "הונגריה",
    "board": "RO",
+   "vip": false,
+   "options": [],
    "amenities": [],
    "dates": [
     {
@@ -118,6 +122,8 @@
    ],
    "country": "קפריסין",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [
     "pool",
     "spa",
@@ -172,6 +178,8 @@
    ],
    "country": "קפריסין",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [],
    "dates": [
     {
@@ -224,6 +232,8 @@
    ],
    "country": "הונגריה",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [],
    "dates": [
     {
@@ -274,6 +284,8 @@
    ],
    "country": "רומניה",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [],
    "dates": [
     {
@@ -326,6 +338,8 @@
    ],
    "country": "פולין",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [],
    "dates": [
     {
@@ -380,6 +394,8 @@
    ],
    "country": "קפריסין",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [
     "pool",
     "spa"
@@ -433,6 +449,8 @@
    ],
    "country": "גאורגיה",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [],
    "dates": [
     {
@@ -485,6 +503,8 @@
    ],
    "country": "יוון",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [
     "rooftop"
    ],
@@ -537,6 +557,8 @@
    ],
    "country": "גאורגיה",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [
     "rooftop"
    ],
@@ -576,8 +598,8 @@
    "feats": [
     "📍 רובע 7, מרכז בודפשט"
    ],
-   "min": 1327,
-   "nightsLabel": "3-4 לילות",
+   "min": 1721,
+   "nightsLabel": "4 לילות",
    "round": "2026-10-20",
    "expires": "2026-10-27",
    "images": [
@@ -588,19 +610,10 @@
    ],
    "country": "הונגריה",
    "board": "BB",
+   "vip": false,
+   "options": [],
    "amenities": [],
    "dates": [
-    {
-     "o": "2026-10-26",
-     "r": "2026-10-29",
-     "label": "26-29/10",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "ישראייר",
-     "out": "07:20",
-     "back": "10:50",
-     "price": 1327
-    },
     {
      "o": "2026-10-29",
      "r": "2026-11-02",
@@ -614,84 +627,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-10-20-budapest/"
-  },
-  {
-   "id": "2026-10-20-prague",
-   "dest": "פראג",
-   "hotel": "Grandior Hotel Prague",
-   "stars": 5,
-   "score": "9.2",
-   "rev": "8,826",
-   "feats": [
-    "📍 פראג 1 (נובה מסטו), במרחק הליכה מהעיר העתיקה"
-   ],
-   "min": 1584,
-   "nightsLabel": "3 לילות",
-   "round": "2026-10-20",
-   "expires": "2026-10-26",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg"
-   ],
-   "country": "צ׳כיה",
-   "board": "BB",
-   "amenities": [],
-   "dates": [
-    {
-     "o": "2026-10-26",
-     "r": "2026-10-29",
-     "label": "26-29/10",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "ישראייר",
-     "out": "06:55",
-     "back": "13:20",
-     "price": 1584
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-20-prague/"
-  },
-  {
-   "id": "2026-10-20-warsaw",
-   "dest": "ורשה",
-   "hotel": "Leonardo Royal Hotel Warsaw",
-   "stars": 4,
-   "score": "8.9",
-   "rev": "16,603",
-   "trolley": true,
-   "feats": [
-    "📍 1.6 ק\"מ ממרכז ורשה"
-   ],
-   "min": 1721,
-   "nightsLabel": "3 לילות",
-   "round": "2026-10-20",
-   "expires": "2026-10-26",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg"
-   ],
-   "country": "פולין",
-   "board": "BB",
-   "amenities": [],
-   "dates": [
-    {
-     "o": "2026-10-26",
-     "r": "2026-10-29",
-     "label": "26-29/10",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "06:00",
-     "back": "21:40",
-     "land": "02:25",
-     "price": 1721
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-20-warsaw/"
   }
  ]
 }
