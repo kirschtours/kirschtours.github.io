@@ -438,7 +438,7 @@
       var opt = dateSel.selectedOptions[0];
       var payload = {
         action: 'booking', website: val('website'),
-        id: item.id, item: item.title || item.dest + ' - ' + item.hotel, kind: item.title ? 'tour' : 'deal',
+        id: item.id, item: item.title || item.dest + ' - ' + item.hotel, kind: item.title ? 'tour' : 'deal', dest: item.dest, kosher: !!item.kosher,
         date: opt.value, ret: opt.dataset.r || '', dateLabel: opt.dataset.label, price: +opt.dataset.price,
         url: location.href.split('?')[0].replace(/book\/(index\.html)?$/, '') + (item.title ? 'tour/' : 'deal/') + item.id + '/',
         name: val('name'), phone: val('phone'), email: val('email'), notes: val('notes'),
