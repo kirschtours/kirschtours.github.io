@@ -480,3 +480,111 @@ footer .en { direction: ltr; text-align: left; font-size: 12px; opacity: .85; }
   .tabs [role=tab] small { letter-spacing: .08em; }
   .itin li { grid-template-columns: 64px 1fr; gap: 12px; font-size: 16px; }
 }
+
+/* תפריט נגישות (25.10.2026) - כפתור צף בצד הנגדי לוואטסאפ. כל מתג הוא class על <html>. */
+.a11y-btn { position: fixed; bottom: 22px; inset-inline-end: 22px; z-index: 40; width: 52px; height: 52px; border-radius: 50%; border: 2px solid #fff; background: #1a56db; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 0, 0, .3); }
+.a11y-btn svg { width: 28px; height: 28px; fill: currentColor; }
+.a11y-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.a11y-panel { position: fixed; bottom: 86px; inset-inline-end: 22px; z-index: 95; width: min(330px, calc(100vw - 32px)); max-height: calc(100vh - 110px); overflow-y: auto; background: #fff; color: var(--ink); border: 1px solid #c9ccd3; box-shadow: 0 20px 60px rgba(5, 15, 36, .35); padding: 16px 18px 18px; font: 400 16px/1.5 var(--sans); }
+.a11y-panel[hidden] { display: none; }
+.a11y-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line-soft); padding-bottom: 10px; margin-bottom: 14px; }
+.a11y-head b { font-size: 19px; color: var(--night); }
+.a11y-x { background: none; border: 0; font-size: 28px; line-height: 1; cursor: pointer; color: var(--night); padding: 0 6px; }
+.a11y-size { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.a11y-size span { flex: 1; font-weight: 600; }
+.a11y-size button { width: 44px; height: 40px; border: 1px solid #8b8f9a; background: #fff; font: 600 16px var(--sans); cursor: pointer; color: var(--night); }
+.a11y-size output { min-width: 52px; text-align: center; font-weight: 600; }
+.a11y-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.a11y-opt { min-height: 48px; padding: 8px; border: 1px solid #8b8f9a; background: #fff; font: 500 15px var(--sans); color: var(--night); cursor: pointer; }
+.a11y-opt[aria-pressed=true] { background: var(--night); color: #fff; border-color: var(--night); }
+.a11y-panel button:focus-visible, .a11y-panel a:focus-visible { outline: 3px solid #1a56db; outline-offset: 2px; }
+.a11y-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 15px; }
+.a11y-foot a { color: var(--night); }
+@media (max-width: 760px) {
+  .a11y-btn { inset-inline-end: auto; inset-inline-start: 16px; bottom: 16px; width: 48px; height: 48px; }
+  .a11y-panel { inset-inline-end: auto; inset-inline-start: 16px; bottom: 76px; }
+  .deal-page .a11y-btn { bottom: 86px; }
+  .deal-page .a11y-panel { bottom: 146px; }
+}
+/* גודל טקסט - zoom על התוכן, כי הגדלים באתר בפיקסלים */
+.a11y-size-1 main, .a11y-size-1 footer { zoom: 1.15; }
+.a11y-size-2 main, .a11y-size-2 footer { zoom: 1.3; }
+.a11y-size-3 main, .a11y-size-3 footer { zoom: 1.5; }
+/* ניגודיות גבוהה: רקעים בהירים לבנים, טקסט שחור, בלי גרדיאנטים */
+.a11y-contrast body { background: #fff; color: #000; }
+.a11y-contrast .fine, .a11y-contrast .meta, .a11y-contrast .date .fl, .a11y-contrast .rcount, .a11y-contrast .opt .cnt, .a11y-contrast .field small, .a11y-contrast .book-wrap .crumbs { color: #000 !important; }
+.a11y-contrast .book .fine, .a11y-contrast .book .per, .a11y-contrast .perks, .a11y-contrast footer, .a11y-contrast .deal-hero .crumbs, .a11y-contrast .deal-hero .meta, .a11y-contrast .wa-alt { color: #fff !important; }
+.a11y-contrast .gold-text { background: none !important; color: #ffd84d; -webkit-text-fill-color: currentColor; }
+.a11y-contrast .section:not(.dark) .gold-text { color: #000; }
+.a11y-contrast .btn-gold { background: #ffd84d; color: #000; border: 2px solid #000; }
+.a11y-contrast .deal-hero::after, .a11y-contrast .hero::after { background: rgba(0, 0, 0, .8); }
+.a11y-contrast .kicker, .a11y-contrast .dest, .a11y-contrast .kicker b, .a11y-contrast .bform legend { color: #000 !important; }
+.a11y-contrast .dark .kicker, .a11y-contrast .dark .kicker b { color: #ffd84d !important; }
+.a11y-gray body > :not(.a11y-panel):not(.a11y-btn) { filter: grayscale(1); }
+.a11y-links a { text-decoration: underline !important; text-underline-offset: 3px; text-decoration-thickness: 2px !important; }
+.a11y-links a:not(.btn):not(.card) { background-color: #fff5a8; color: #000 !important; -webkit-text-fill-color: #000; }
+.a11y-font body, .a11y-font body * { font-family: Arial, 'Assistant', sans-serif !important; letter-spacing: normal !important; }
+.a11y-still *, .a11y-still *::before, .a11y-still *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+.a11y-still [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+.a11y-still .intro { display: none; }
+.a11y-cursor, .a11y-cursor * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cpath d='M4 2l16 10-7 1.5L9 21z' fill='%23000' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E") 4 2, auto !important; }
+
+/* כפתור וואטסאפ משני מתחת ל"להזמנה" */
+.wa-alt { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; font-size: 14px; color: rgba(255, 255, 255, .85); text-decoration: none; border-bottom: 1px solid rgba(37, 211, 102, .6); padding-bottom: 3px; }
+.wa-alt svg { width: 18px; height: 18px; fill: var(--wa); }
+.wa-alt:hover { color: #fff; }
+
+/* דף ההזמנה */
+.book-page .top { background: rgba(5, 15, 36, .96); border-color: var(--line); }
+.book-wrap { max-width: 900px; padding: 140px 0 110px; }
+.book-wrap .crumbs { color: var(--muted); }
+.book-wrap h1 { font: 400 clamp(42px, 6vw, 68px)/1.05 var(--display); color: var(--night); margin: 0 0 14px; }
+.book-wrap .lead { font-size: 18px; color: #3c4252; max-width: 640px; margin: 0 0 34px; }
+.bsum { display: grid; grid-template-columns: 150px 1fr auto; gap: 22px; align-items: center; background: var(--paper); border: 1px solid var(--line-soft); padding: 16px; margin-bottom: 44px; }
+.bsum[hidden] { display: none; }
+.bsum img { width: 150px; height: 110px; object-fit: cover; }
+.bsum h2 { font: 400 28px/1.15 var(--display); color: var(--night); margin: 4px 0 8px; }
+.bsum .go { font-size: 13px; letter-spacing: .14em; color: var(--night); border-bottom: 1px solid var(--gold); text-decoration: none; display: inline-block; margin-top: 8px; }
+.bprice { text-align: end; padding-inline-end: 8px; }
+.bprice small { display: block; font-size: 12px; color: var(--muted); letter-spacing: .1em; }
+.bprice span { font: 400 40px/1.1 var(--display); color: var(--night); }
+.bform fieldset { border: 0; border-top: 1px solid var(--night); margin: 0 0 40px; padding: 22px 0 0; min-width: 0; }
+.bform legend { display: flex; align-items: center; gap: 14px; font-size: 14px; letter-spacing: .2em; color: var(--gold-lo); padding: 0; float: right; width: 100%; margin-bottom: 18px; }
+.bform legend b { font: 400 22px var(--display); }
+.bform legend + * { clear: both; }
+.bform .row { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px 22px; }
+.bform .fine { margin: 0 0 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-weight: 600; font-size: 15px; color: var(--night); }
+.field small { font-size: 13px; color: var(--muted); }
+.field input, .field select, .field textarea { font: 400 17px var(--sans); color: var(--ink); background: #fff; border: 1px solid #8b8f9a; border-radius: 2px; padding: 12px 14px; min-height: 50px; width: 100%; }
+.field input[dir=ltr] { text-align: left; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--gold-lo); outline-offset: 1px; border-color: var(--gold-lo); }
+.field [aria-invalid=true] { border-color: var(--red); background: #fff7f7; }
+.trav { border: 1px solid var(--line-soft); background: var(--paper); padding: 18px 20px 20px; margin-bottom: 16px; }
+.trav h3 { font: 400 22px var(--display); color: var(--night); margin: 0 0 14px; }
+.warn { margin: 14px 0 0; padding: 10px 14px; background: #fff6e0; border-inline-start: 3px solid #b7791f; font-size: 15px; color: #5a3d00; }
+.warn[hidden], .err[hidden], .bform[hidden], .bdone[hidden] { display: none; }
+.field.check { flex-direction: row; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.field.check input { width: 22px; height: 22px; min-height: 0; flex: none; margin-top: 3px; accent-color: var(--night); }
+.field.check label { font-weight: 400; }
+.field.check a { color: var(--night); }
+.hp { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.err { background: #fbecee; border-inline-start: 3px solid var(--red); color: #7d1d26; padding: 12px 16px; font-weight: 600; }
+.err a { color: inherit; }
+.bsend { width: 100%; max-width: 380px; padding: 18px; font-size: 16px; }
+.bsend:disabled { opacity: .7; cursor: wait; }
+.bdone { text-align: center; padding: 60px 20px; background: var(--paper); border: 1px solid var(--line-soft); }
+.bdone h2 { font: 400 46px/1.1 var(--display); color: var(--night); margin: 0 0 12px; }
+.bdone p { font-size: 18px; color: #3c4252; margin: 0 0 28px; }
+.bdone .btn svg { width: 20px; height: 20px; fill: #fff; }
+.bdone:focus { outline: none; }
+@media (max-width: 760px) {
+  .book-wrap { padding: 110px 0 90px; }
+  .bsum { grid-template-columns: 90px 1fr; gap: 14px; }
+  .bsum img { width: 90px; height: 80px; }
+  .bsum h2 { font-size: 22px; }
+  .bprice { grid-column: 1 / -1; text-align: start; border-top: 1px solid var(--line-soft); padding-top: 10px; }
+  .bsend { max-width: none; }
+  .book-page .float-wa { display: none; } /* מכסה את שדות הטופס; בדף יש כפתורי וואטסאפ משלו */
+}

@@ -2,7 +2,10 @@
 // והורדת דילים שפג תוקפם גם אם האתר לא נבנה מחדש באותו יום.
 (function () {
   var root = document.documentElement;
-  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // הגדרות תפריט הנגישות. ה-classes כבר הוחלו בסקריפט שב-<head>, כאן רק קוראים אותן.
+  var a11y = {};
+  try { a11y = JSON.parse(localStorage.getItem('kt-a11y') || '{}') || {}; } catch (e) {}
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches || !!a11y.still;
   var today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Jerusalem' });
   document.querySelectorAll('[data-exp]').forEach(function (el) { if (el.dataset.exp < today) el.remove(); });
   document.querySelectorAll('[data-o]').forEach(function (el) { if (el.dataset.o <= today) el.remove(); });
@@ -296,4 +299,175 @@
   // "דלגו לתוכן" גם כשהגלילה החלקה פעילה
   var skip = document.querySelector('.skip');
   if (skip) skip.addEventListener('click', function (e) { e.preventDefault(); var m = document.getElementById('main'); if (lenis) lenis.scrollTo(m, { immediate: true }); m.focus({ preventScroll: !!lenis }); });
+
+  // תפריט נגישות: גודל טקסט 0-3, ומתגים. עצירת אנימציות נכנסת לתוקף מלא (Lenis, פרלקסה) אחרי רענון - ולכן מרעננים.
+  var abtn = document.getElementById('a11y-btn'), apanel = document.getElementById('a11y-panel');
+  if (abtn && apanel) {
+    var SIZES = ['100%', '115%', '130%', '150%'];
+    var save = function () { try { localStorage.setItem('kt-a11y', JSON.stringify(a11y)); } catch (e) {} };
+    var paint = function () {
+      root.className = root.className.replace(/\ba11y-\S+/g, '').trim();
+      Object.keys(a11y).forEach(function (k) { if (a11y[k]) root.classList.add(k === 'size' ? 'a11y-size-' + a11y[k] : 'a11y-' + k); });
+      apanel.querySelectorAll('[data-a11y]').forEach(function (b) { b.setAttribute('aria-pressed', !!a11y[b.dataset.a11y]); });
+      document.getElementById('a11y-size-v').textContent = SIZES[a11y.size || 0];
+    };
+    var setPanel = function (open) {
+      apanel.hidden = !open;
+      abtn.setAttribute('aria-expanded', open);
+      if (open) apanel.querySelector('button').focus(); else abtn.focus();
+    };
+    abtn.addEventListener('click', function () { setPanel(apanel.hidden); });
+    apanel.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      if (b.hasAttribute('data-a11y-close')) { setPanel(false); return; }
+      var wasStill = !!a11y.still;
+      if (b.hasAttribute('data-a11y-reset')) a11y = {};
+      else if (b.dataset.a11ySize) a11y.size = Math.max(0, Math.min(SIZES.length - 1, (a11y.size || 0) + +b.dataset.a11ySize));
+      else if (b.dataset.a11y) a11y[b.dataset.a11y] = !a11y[b.dataset.a11y];
+      save(); paint();
+      if (wasStill !== !!a11y.still) location.reload();
+    });
+    // Esc סוגר, ו-Tab נשאר בתוך הפאנל
+    apanel.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { setPanel(false); return; }
+      if (e.key !== 'Tab') return;
+      var items = apanel.querySelectorAll('button, a'), first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+    document.addEventListener('click', function (e) { if (!apanel.hidden && !apanel.contains(e.target) && !abtn.contains(e.target)) setPanel(false); });
+    paint();
+  }
+
+  // דף ההזמנה: הדיל נטען לפי ?id= מ-data/deals.json או data/tours.json, והטופס נשלח ל-Apps Script של גיליון הלקוחות.
+  var form = document.getElementById('bform');
+  if (form) {
+    var q = new URLSearchParams(location.search), id = q.get('id') || '', base = form.dataset.base;
+    var sum = document.getElementById('bsum'), dateSel = document.getElementById('date'), paxSel = document.getElementById('pax');
+    var trav = document.getElementById('travelers'), err = document.getElementById('berr');
+    var fmtN = function (n) { return Number(n).toLocaleString('en-US'); };
+    var val = function (fid) { return document.getElementById(fid).value.trim(); }; // לא form.name - זה שם הטופס עצמו
+    var escH = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+    var item = null;
+    var waMsg = function () {
+      var t = item ? (item.title || item.dest + ' - ' + item.hotel) : '';
+      return 'https://wa.me/' + form.dataset.phone + '?text=' + encodeURIComponent('היי חיים, אני רוצה להזמין' + (t ? ' את ' + t : '') + (dateSel.value ? ' (' + dateSel.selectedOptions[0].dataset.label + ')' : '') + '.');
+    };
+    var getJson = function (f) { return fetch(base + 'data/' + f, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }); };
+    Promise.all([getJson('deals.json'), getJson('tours.json')]).then(function (res) {
+      var deals = res[0].deals || [], tours = res[1].tours || [];
+      item = deals.filter(function (d) { return d.id === id; })[0] || tours.filter(function (t) { return t.id === id; })[0];
+      var dates = item ? item.dates.filter(function (x) { return x.o > today; }) : [];
+      if (!item || !dates.length) { sum.hidden = true; document.getElementById('bnone').hidden = false; return; }
+      var isTour = !!item.title;
+      var when = isTour ? item.days + ' ימים / ' + item.nights + ' לילות' : item.nightsLabel;
+      sum.innerHTML = '<img src="' + base + 'img/' + escH(item.id) + '/1.jpg" alt="">' +
+        '<div><div class="dest">' + escH(item.dest) + (item.country ? ', ' + escH(item.country) : '') + '</div>' +
+        '<h2>' + escH(isTour ? item.title : item.hotel) + '</h2>' +
+        '<div class="meta"><span>' + escH(when) + '</span>' + (isTour ? '<span>טיול מאורגן · ' + escH(item.operator) + '</span>' : '<span>טיסה + מלון ' + escH(item.stars) + '★</span>') + '</div>' +
+        '<a class="go" href="' + base + (isTour ? 'tour/' : 'deal/') + escH(item.id) + '/index.html">חזרה לדיל</a></div>' +
+        '<div class="bprice"><small>לאדם בחדר זוגי</small><span id="bprice"></span></div>';
+      dateSel.innerHTML = dates.map(function (x) {
+        return '<option value="' + escH(x.o) + '" data-r="' + escH(x.r || '') + '" data-label="' + escH(x.label) + '" data-price="' + escH(x.price) + '">' + escH(x.label) + ' · ' + fmtN(x.price) + ' ₪ לאדם</option>';
+      }).join('');
+      var cheapest = dates.reduce(function (a, b) { return b.price < a.price ? b : a; });
+      dateSel.value = dates.some(function (x) { return x.o === q.get('o'); }) ? q.get('o') : cheapest.o;
+      var showPrice = function () { document.getElementById('bprice').textContent = fmtN(dateSel.selectedOptions[0].dataset.price) + ' ₪'; checkPassports(); };
+      dateSel.addEventListener('change', showPrice);
+      form.hidden = false;
+      drawTravelers();
+      showPrice();
+    });
+
+    // בלוק לכל נוסע. מה שכבר הוקלד נשמר כשמשנים את מספר הנוסעים.
+    var tField = function (i, k, label, attrs) {
+      var fid = 't' + i + '-' + k;
+      return '<div class="field"><label for="' + fid + '">' + label + '</label><input id="' + fid + '" data-k="' + k + '" required ' + attrs + '></div>';
+    };
+    function drawTravelers() {
+      var n = +paxSel.value, have = trav.children.length;
+      for (var i = have; i < n; i++) {
+        trav.insertAdjacentHTML('beforeend', '<div class="trav" data-i="' + i + '"><h3>נוסע/ת ' + (i + 1) + '</h3><div class="row">' +
+          tField(i, 'first', 'שם פרטי באנגלית', 'autocomplete="off" dir="ltr" maxlength="40" pattern="[A-Za-z\\- \']+"') +
+          tField(i, 'last', 'שם משפחה באנגלית', 'autocomplete="off" dir="ltr" maxlength="40" pattern="[A-Za-z\\- \']+"') +
+          tField(i, 'passport', 'מספר דרכון', 'autocomplete="off" dir="ltr" maxlength="15" pattern="[A-Za-z0-9]{5,15}"') +
+          tField(i, 'expiry', 'תוקף הדרכון', 'type="date" min="' + today + '"') +
+          tField(i, 'birth', 'תאריך לידה', 'type="date" max="' + today + '" min="1920-01-01"') +
+          '</div><p class="warn" id="t' + i + '-warn" hidden></p></div>');
+      }
+      while (trav.children.length > n) trav.lastElementChild.remove();
+    }
+    paxSel.addEventListener('change', function () { drawTravelers(); checkPassports(); });
+
+    // דרכון שפג פחות מ-6 חודשים אחרי החזרה - אזהרה בלבד, לא חוסם
+    function checkPassports() {
+      var opt = dateSel.selectedOptions[0];
+      if (!opt) return;
+      var back = new Date((opt.dataset.r || opt.value) + 'T12:00:00Z');
+      back.setUTCMonth(back.getUTCMonth() + 6);
+      trav.querySelectorAll('.trav').forEach(function (t) {
+        var v = t.querySelector('[data-k=expiry]').value, w = t.querySelector('.warn');
+        var short = v && new Date(v + 'T12:00:00Z') < back;
+        w.hidden = !short;
+        w.textContent = short ? 'שימו לב: הדרכון בתוקף פחות מ-6 חודשים אחרי החזרה. יש יעדים שלא מכניסים כך - נבדוק את זה יחד.' : '';
+      });
+    }
+    trav.addEventListener('change', function (e) { if (e.target.dataset.k === 'expiry') checkPassports(); });
+    // שם באנגלית באותיות גדולות, כמו בדרכון
+    trav.addEventListener('input', function (e) { var k = e.target.dataset.k; if (k === 'first' || k === 'last' || k === 'passport') e.target.value = e.target.value.toUpperCase(); });
+
+    var MSG = { first: 'שם פרטי באנגלית', last: 'שם משפחה באנגלית', passport: 'מספר דרכון (אותיות ומספרים בלבד)', expiry: 'תוקף הדרכון', birth: 'תאריך לידה', name: 'שם מלא', phone: 'טלפון נייד תקין', email: 'כתובת מייל תקינה', consent: 'אישור מדיניות הפרטיות' };
+    var phoneOk = function (p) { var d = p.replace(/\D/g, ''); return d.length >= 9 && d.length <= 15; };
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var bad = [];
+      form.querySelectorAll('input[required], select[required]').forEach(function (el) {
+        var ok = el.type === 'checkbox' ? el.checked : el.value.trim() !== '' && el.checkValidity() && (el.id !== 'phone' || phoneOk(el.value));
+        el.setAttribute('aria-invalid', !ok);
+        if (!ok) bad.push(el);
+      });
+      if (bad.length) {
+        var names = bad.map(function (el) { return MSG[el.dataset.k || el.id] || el.labels[0].textContent; });
+        err.textContent = 'חסר או לא תקין: ' + names.filter(function (v, i) { return names.indexOf(v) === i; }).join(', ') + '.';
+        err.hidden = false;
+        bad[0].focus();
+        return;
+      }
+      err.hidden = true;
+      var opt = dateSel.selectedOptions[0];
+      var payload = {
+        action: 'booking', website: val('website'),
+        id: item.id, item: item.title || item.dest + ' - ' + item.hotel, kind: item.title ? 'tour' : 'deal',
+        date: opt.value, ret: opt.dataset.r || '', dateLabel: opt.dataset.label, price: +opt.dataset.price,
+        url: location.href.split('?')[0].replace(/book\/(index\.html)?$/, '') + (item.title ? 'tour/' : 'deal/') + item.id + '/',
+        name: val('name'), phone: val('phone'), email: val('email'), notes: val('notes'),
+        travelers: [].map.call(trav.querySelectorAll('.trav'), function (t) {
+          var o = {};
+          t.querySelectorAll('[data-k]').forEach(function (el) { o[el.dataset.k] = el.value.trim(); });
+          return o;
+        }),
+      };
+      var send = form.querySelector('.bsend');
+      var fail = function () {
+        send.disabled = false; send.textContent = 'שליחת ההזמנה';
+        err.innerHTML = 'השליחה לא הצליחה. אפשר לנסות שוב, או <a href="' + waMsg() + '">לכתוב לי ישר בוואטסאפ</a>.';
+        err.hidden = false;
+      };
+      if (!form.dataset.url) { location.href = waMsg(); return; }
+      send.disabled = true; send.textContent = 'שולח…';
+      // text/plain = בקשה פשוטה, בלי preflight, ש-Apps Script מקבל
+      fetch(form.dataset.url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (!res.ok) { fail(); if (res.error) err.insertAdjacentText('afterbegin', res.error + ' '); return; }
+          form.hidden = true; sum.hidden = true;
+          document.getElementById('bdone-wa').href = waMsg();
+          var done = document.getElementById('bdone');
+          done.hidden = false; done.focus();
+          scrollTo(0, 0);
+        })
+        .catch(fail);
+    });
+  }
 })();

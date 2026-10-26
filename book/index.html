@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="he" dir="rtl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הזמנה | Kirsh Tours</title>
+<meta name="description" content="טופס הזמנה - ממלאים פרטים, וחיים חוזר אליכם לסגירה.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="Kirsh Tours">
+<meta property="og:title" content="הזמנה | Kirsh Tours">
+<meta property="og:description" content="טופס הזמנה - ממלאים פרטים, וחיים חוזר אליכם לסגירה.">
+<meta property="og:url" content="https://kirshtours.co.il/book/">
+
+<meta name="theme-color" content="#050f24">
+<link rel="icon" href="../logo.jpg">
+<link rel="stylesheet" href="../vendor/fonts.css">
+<link rel="stylesheet" href="../site.css">
+<script>(function (r) { r.classList.remove('no-js'); try { var a = JSON.parse(localStorage.getItem('kt-a11y') || '{}'); for (var k in a) if (a[k]) r.classList.add(k === 'size' ? 'a11y-size-' + a[k] : 'a11y-' + k); } catch (e) {} })(document.documentElement);</script>
+</head>
+<body class="book-page">
+<a class="skip" href="#main">דלגו לתוכן</a>
+<div class="intro" aria-hidden="true"><div class="mark">KIRSH TOURS</div><div class="rule"></div></div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../index.html" aria-label="Kirsh Tours - לדף הבית"><b>KIRSH TOURS</b><small>סוכנות נסיעות אישית</small></a>
+  <nav aria-label="תפריט ראשי"><a href="../index.html#deals">הדילים</a><a href="../index.html#tours">טיולים מאורגנים</a><a href="../index.html#how">איך זה עובד</a><a href="../index.html#about">מי אני</a><a href="../index.html#join">הצטרפות</a></nav>
+  <a class="btn btn-line" href="https://wa.me/972553093983">דברו איתי</a>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap book-wrap">
+  <div class="crumbs"><a href="../index.html#deals">כל הדילים</a> &nbsp;/&nbsp; הזמנה</div>
+  <h1>הזמנה</h1>
+  <p class="lead">ממלאים את הפרטים ושולחים. אני בודק זמינות מול הספק וחוזר אליכם בוואטסאפ לסגירה. <b>שום תשלום לא נגבה כאן.</b></p>
+  <div class="bsum" id="bsum" aria-live="polite"><p class="fine">טוען את פרטי הדיל…</p></div>
+  <form id="bform" class="bform" novalidate data-url="https://script.google.com/macros/s/AKfycbwcqP9aYCL_wyPVbFXKWlq2e2gpvm-X1Y9e5b3kMRnZ1xePgA2ZHPORpm8LK6DvJJW9Ag/exec" data-phone="972553093983" data-base="../" hidden>
+    <fieldset><legend><b>01</b> מועד ונוסעים</legend>
+      <div class="row">
+        <div class="field"><label for="date">תאריך</label><select id="date" name="date" required></select></div>
+        <div class="field"><label for="pax">מספר נוסעים</label><select id="pax" name="pax"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+      </div>
+    </fieldset>
+    <fieldset><legend><b>02</b> איש קשר</legend>
+      <div class="row">
+        <div class="field"><label for="name">שם מלא</label><input id="name" name="name" required autocomplete="name" maxlength="80"></div>
+        <div class="field"><label for="phone">טלפון נייד</label><input id="phone" name="phone" required type="tel" inputmode="tel" autocomplete="tel" maxlength="20" dir="ltr" aria-describedby="phone-h"><small id="phone-h">אחזור אליכם לכאן בוואטסאפ</small></div>
+        <div class="field"><label for="email">מייל</label><input id="email" name="email" required type="email" autocomplete="email" maxlength="100" dir="ltr"></div>
+      </div>
+    </fieldset>
+    <fieldset><legend><b>03</b> פרטי הנוסעים, כמו בדרכון</legend>
+      <p class="fine">שם באנגלית בדיוק כמו בדרכון. הדרכון צריך להיות בתוקף לפחות 6 חודשים אחרי החזרה.</p>
+      <div id="travelers"></div>
+    </fieldset>
+    <fieldset><legend><b>04</b> משהו נוסף?</legend>
+      <div class="field"><label for="notes">הערות (רשות)</label><textarea id="notes" name="notes" rows="3" maxlength="500" placeholder="למשל: חדר שקט, אפשרות שראיתם בדיל, ילדים"></textarea></div>
+    </fieldset>
+    <div class="hp" aria-hidden="true"><label for="website">אל תמלאו שדה זה</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+    <div class="field check"><input type="checkbox" id="consent" name="consent" required><label for="consent">קראתי את <a href="../privacy-he.html" target="_blank">מדיניות הפרטיות</a>, ואני מסכים/ה שהפרטים ישמשו להזמנה מול הספקים.</label></div>
+    <p class="err" id="berr" role="alert" hidden></p>
+    <button class="btn btn-gold bsend" type="submit">שליחת ההזמנה</button>
+    <p class="fine">השליחה אינה מחייבת. ההזמנה נסגרת רק אחרי שנדבר ותאשרו את הצעת המחיר.</p>
+  </form>
+  <div class="bdone" id="bdone" tabindex="-1" hidden>
+    <h2>קיבלתי!</h2>
+    <p>ההזמנה הגיעה אליי. אני בודק זמינות וחוזר אליכם בוואטסאפ בהקדם.</p>
+    <a class="btn btn-wa" id="bdone-wa" href="https://wa.me/972553093983"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>לכתוב לי בוואטסאפ</a>
+  </div>
+  <div class="bdone" id="bnone" hidden>
+    <h2>הדיל כבר לא באתר</h2>
+    <p>ייתכן שהוא הסתיים. כתבו לי ואמצא לכם משהו דומה.</p>
+    <a class="btn btn-wa" href="https://wa.me/972553093983"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>לכתוב לי בוואטסאפ</a>
+  </div>
+</div>
+</main>
+<footer><div class="wrap">
+  <div class="big" data-reveal aria-hidden="true">KIRSH TOURS</div>
+  <div class="cols">
+    <div><b>Kirsh Tours</b> · סוכנות נסיעות אישית<br>עוסק מס' 315172551 · מגדלי BSR, פתח תקווה<br>חיים קירש · <a href="https://wa.me/972553093983">055-309-3983</a> · <a href="mailto:kirschtours@gmail.com">kirschtours@gmail.com</a></div>
+    <div><a href="https://instagram.com/kirshtours">אינסטגרם</a><a href="https://www.facebook.com/share/g/1BrNvqWfMV/">נופשים חכם</a><a href="https://chat.whatsapp.com/BhxtKixf9zcGB2TshPeeST">הקבוצה השקטה</a><br>
+      <a href="../terms-he.html">תקנון</a><a href="../privacy-he.html">מדיניות פרטיות</a><a href="../accessibility.html">הצהרת נגישות</a></div>
+    <div class="en">Kirsh Tours · Travel agency, Petah Tikva, Israel<br><a href="../terms.html">Terms of Service</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+</div></footer>
+<a class="float-wa" href="https://wa.me/972553093983" aria-label="שליחת הודעה בוואטסאפ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<button type="button" class="a11y-btn" id="a11y-btn" aria-label="תפריט נגישות" aria-expanded="false" aria-controls="a11y-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M4 7.5c2.6.7 5.3 1 8 1s5.4-.3 8-1l.5 1.9c-2 .6-4.1.9-6.2 1.1V14l1.8 7.4-1.9.5L12.6 15h-1.2l-1.6 6.9-1.9-.5L9.7 14v-3.5c-2.1-.2-4.2-.5-6.2-1.1z"/></svg></button>
+<div class="a11y-panel" id="a11y-panel" role="dialog" aria-labelledby="a11y-h" hidden>
+  <div class="a11y-head"><b id="a11y-h">נגישות</b><button type="button" class="a11y-x" data-a11y-close aria-label="סגירת תפריט הנגישות">×</button></div>
+  <div class="a11y-size" role="group" aria-label="גודל טקסט"><span>גודל טקסט</span><button type="button" data-a11y-size="-1" aria-label="הקטנת טקסט">א-</button><output id="a11y-size-v" aria-live="polite">100%</output><button type="button" data-a11y-size="1" aria-label="הגדלת טקסט">א+</button></div>
+  <div class="a11y-grid"><button type="button" class="a11y-opt" data-a11y="contrast" aria-pressed="false">ניגודיות גבוהה</button><button type="button" class="a11y-opt" data-a11y="gray" aria-pressed="false">גווני אפור</button><button type="button" class="a11y-opt" data-a11y="links" aria-pressed="false">הדגשת קישורים</button><button type="button" class="a11y-opt" data-a11y="font" aria-pressed="false">גופן קריא</button><button type="button" class="a11y-opt" data-a11y="still" aria-pressed="false">עצירת אנימציות</button><button type="button" class="a11y-opt" data-a11y="cursor" aria-pressed="false">סמן גדול</button></div>
+  <div class="a11y-foot"><button type="button" class="linkbtn" data-a11y-reset>איפוס הגדרות</button><a href="../accessibility.html">הצהרת נגישות</a></div>
+</div>
+<script src="../vendor/lenis.min.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>
