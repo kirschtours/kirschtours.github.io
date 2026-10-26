@@ -362,7 +362,7 @@
    "url": "https://kirshtours.co.il/tour/2026-10-26-tour-dubai-2/"
   },
   {
-   "id": "2026-10-26-tour-dest",
+   "id": "2026-10-26-tour-india",
    "title": "טיול מאורגן להודו - משולש הזהב ורישיקש",
    "dest": "הודו",
    "country": "דלהי, אגרה, ג'איפור ורישיקש",
@@ -427,10 +427,10 @@
      "land": "08:30"
     }
    ],
-   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-dest/"
+   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-india/"
   },
   {
-   "id": "2026-10-26-tour-dest-2",
+   "id": "2026-10-26-tour-vietnam",
    "title": "טיול מאורגן לווייטנאם בטיסות ישירות",
    "dest": "וייטנאם",
    "country": "האנוי, האלונג וסאפה",
@@ -505,10 +505,10 @@
      "land": "03:00"
     }
    ],
-   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-dest-2/"
+   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-vietnam/"
   },
   {
-   "id": "2026-10-26-tour-dest-3",
+   "id": "2026-10-26-tour-venice",
    "title": "קרנבל המסכות בוונציה",
    "dest": "ונציה",
    "country": "איטליה",
@@ -557,10 +557,10 @@
      "land": "23:30"
     }
    ],
-   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-dest-3/"
+   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-venice/"
   },
   {
-   "id": "2026-10-26-tour-dest-4",
+   "id": "2026-10-26-tour-madagascar",
    "title": "טיול מאורגן למדגסקר - האי נוסי בה",
    "dest": "מדגסקר",
    "country": "האי נוסי בה",
@@ -634,10 +634,10 @@
      "land": "02:25"
     }
    ],
-   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-dest-4/"
+   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-madagascar/"
   },
   {
-   "id": "2026-10-26-tour-dest-5",
+   "id": "2026-10-26-tour-philippines",
    "title": "טיול מאורגן לפיליפינים בטיסות ישירות",
    "dest": "פיליפינים",
    "country": "מנילה ובורקאי",
@@ -692,7 +692,7 @@
      "land": "17:50"
     }
    ],
-   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-dest-5/"
+   "url": "https://kirshtours.co.il/tour/2026-10-26-tour-philippines/"
   }
  ]
 }
