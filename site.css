@@ -495,6 +495,9 @@ footer .en { direction: ltr; text-align: left; font-size: 12px; opacity: .85; }
   .tabs { margin-top: -10px; }
   .tabs [role=tab] { flex: 1; padding: 12px 10px 14px; font-size: 20px; }
   .tabs [role=tab] small { letter-spacing: .08em; }
+  /* שלוש לשוניות (חבילות / כשרות / טיולים) - צפוף יותר, כדי שכל שם יישאר בשורה אחת */
+  .tabs:has([role=tab]:nth-child(3)) [role=tab] { padding: 12px 4px 14px; font-size: 16px; }
+  .tabs:has([role=tab]:nth-child(3)) [role=tab] small { font-size: 10.5px; letter-spacing: .02em; }
   .itin li { grid-template-columns: 64px 1fr; gap: 12px; font-size: 16px; }
 }
 

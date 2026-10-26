@@ -242,9 +242,10 @@
     apply();
   }
   initShop('');
+  initShop('-k');
   initShop('-t');
 
-  // לשוניות חבילות נופש / טיולים מאורגנים. #tours בכתובת פותח ישר את הטיולים.
+  // לשוניות חבילות נופש / חבילות כשרות / טיולים מאורגנים. #kosher או #tours בכתובת פותחים ישר את הלשונית.
   var tabs = [].slice.call(document.querySelectorAll('.tabs [role=tab]'));
   var showTab = function (tab, focus) {
     tabs.forEach(function (t) {
@@ -256,20 +257,21 @@
     document.getElementById(tab.getAttribute('aria-controls')).querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('in'); });
   };
   tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { showTab(t); history.replaceState(null, '', i ? '#tours' : '#deals'); });
+    t.addEventListener('click', function () { showTab(t); history.replaceState(null, '', '#' + t.dataset.hash); });
     t.addEventListener('keydown', function (e) {
       var d = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0; // RTL: שמאלה = הלשונית הבאה
       if (d) { e.preventDefault(); showTab(tabs[(i + d + tabs.length) % tabs.length], true); }
     });
   });
-  var goTours = function () {
-    if (location.hash !== '#tours') return;
+  var goHash = function () {
+    var tab = tabs.filter(function (t) { return t.dataset.hash !== 'deals' && '#' + t.dataset.hash === location.hash; })[0];
+    if (!tab) return;
     var deals = document.getElementById('deals');
-    if (tabs[1]) showTab(tabs[1]);
+    showTab(tab);
     if (deals) { if (lenis) lenis.scrollTo(deals, { offset: -60, immediate: true }); else deals.scrollIntoView(); }
   };
-  goTours();
-  addEventListener('hashchange', goTours);
+  goHash();
+  addEventListener('hashchange', goHash);
 
   // גלריה בתוך הכרטיס: החלקה בנייד, חיצים במחשב. החיצים לא עוברים לדף הדיל.
   document.querySelectorAll('.card .slides').forEach(function (track) {

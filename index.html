@@ -48,8 +48,9 @@
     <div><div class="kicker" data-reveal><b>01</b> הדילים</div><h2 data-reveal style="--d:.1s">נבחרו השבוע</h2><p data-reveal style="--d:.2s">מחיר לאדם בחדר זוגי</p></div>
   </div>
   <div class="tabs" role="tablist" aria-label="סוג החופשה" data-reveal>
-    <button role="tab" id="tab-deals" aria-controls="pane-deals" aria-selected="true">חבילות נופש <small>טיסה + מלון · 19</small></button>
-    <button role="tab" id="tab-tours" aria-controls="pane-tours" aria-selected="false" tabindex="-1">טיולים מאורגנים <small>מובטחים, עם סיורים · 9</small></button>
+    <button role="tab" id="tab-deals" aria-controls="pane-deals" data-hash="deals" aria-selected="true">חבילות נופש <small>טיסה + מלון · 19</small></button>
+    
+    <button role="tab" id="tab-tours" aria-controls="pane-tours" data-hash="tours" aria-selected="false" tabindex="-1">טיולים מאורגנים <small>מובטחים, עם סיורים · 9</small></button>
   </div>
   <div class="shop" role="tabpanel" id="pane-deals" aria-labelledby="tab-deals">
     <aside class="fpanel" id="fpanel" aria-label="סינון הדילים">
@@ -364,6 +365,7 @@
       <div class="empty" id="empty" hidden>אין דילים שמתאימים לסינון. <button class="linkbtn" data-clear>ניקוי הסינון</button> · דילים חדשים עולים כל בוקר - <a href="https://chat.whatsapp.com/BhxtKixf9zcGB2TshPeeST">הצטרפו לקבוצה</a> ותקבלו אותם ראשונים.</div>
     </div>
   </div>
+  
   <div class="shop" role="tabpanel" id="pane-tours" aria-labelledby="tab-tours" hidden>
     <aside class="fpanel" id="fpanel-t" aria-label="סינון הטיולים">
   <div class="fhead"><b>סינון</b><button class="linkbtn" data-clear>ניקוי הכל</button><button class="fclose" id="fclose-t" aria-label="סגירת הסינון">×</button></div>
