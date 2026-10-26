@@ -282,11 +282,24 @@
     track.addEventListener('scroll', function () { var i = at(); dots.forEach(function (d, n) { d.classList.toggle('on', n === i); }); }, { passive: true });
   });
 
+  // רצועת ההמלצות: חיצים מזיזים כרטיס אחד, ובמקלדת חיצים כשהרצועה בפוקוס (גלילה רגילה של הדפדפן)
+  var rvTrack = document.querySelector('.rv-track');
+  if (rvTrack) {
+    var rvGo = function (dir) {
+      var item = rvTrack.querySelector('.rv');
+      var step = item ? item.getBoundingClientRect().width + parseFloat(getComputedStyle(rvTrack).columnGap || 0) : rvTrack.clientWidth;
+      rvTrack.scrollBy({ left: dir * step * (getComputedStyle(rvTrack).direction === 'rtl' ? -1 : 1), behavior: still ? 'auto' : 'smooth' });
+    };
+    var rvNext = document.querySelector('.rv-next'), rvPrev = document.querySelector('.rv-prev');
+    if (rvNext) rvNext.addEventListener('click', function () { rvGo(1); });
+    if (rvPrev) rvPrev.addEventListener('click', function () { rvGo(-1); });
+  }
+
   // גלריה במסך מלא - גם מהמקלדת (Enter / רווח לפתיחה, Esc לסגירה, הפוקוס חוזר לתמונה)
   var lb = document.getElementById('lb'), opener = null;
   if (lb) {
     var close = function () { lb.classList.remove('on'); if (opener) opener.focus(); };
-    document.querySelectorAll('.gallery img, .deal-hero .bg img').forEach(function (img) {
+    document.querySelectorAll('.gallery img, .deal-hero .bg img, .rv-shot img').forEach(function (img) {
       var box = img.parentElement;
       var open = function () { opener = box; lb.firstChild.src = img.src; lb.firstChild.alt = img.alt; lb.classList.add('on'); lb.focus(); };
       box.addEventListener('click', open);
@@ -468,6 +481,52 @@
           scrollTo(0, 0);
         })
         .catch(fail);
+    });
+  }
+
+  // טופס "ספרו איך היה": נכנס לגיליון כ"ממתין" (action: 'review'). אם השליחה נכשלת - אותה המלצה בוואטסאפ.
+  var rform = document.getElementById('rform');
+  if (rform) {
+    var rv = function (id) { return document.getElementById(id); };
+    var rerr = rv('rerr'), rdest = rv('rdest'), rother = rv('rother-f');
+    rdest.addEventListener('change', function () { rother.hidden = rdest.value !== 'אחר'; });
+    var rDest = function () { return rdest.value === 'אחר' ? rv('rother').value.trim() : rdest.value; };
+    var rWa = function () { return 'https://wa.me/' + rform.dataset.phone + '?text=' + encodeURIComponent('היי חיים, רציתי לספר איך היה ב' + (rDest() || 'חופשה') + ': ' + rv('rtext').value.trim()); };
+    rform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      rerr.hidden = true;
+      var phone = rv('rphone').value.replace(/\D/g, '');
+      var bad = !rv('rname').value.trim() ? 'rname' : !rDest() ? (rdest.value === 'אחר' ? 'rother' : 'rdest') : !rv('rmonth').value ? 'rmonth'
+        : rv('rtext').value.trim().length < 10 ? 'rtext' : phone.length < 9 ? 'rphone' : !rv('rconsent').checked ? 'rconsent' : '';
+      if (bad) {
+        rerr.textContent = { rname: 'חסר שם פרטי.', rdest: 'בחרו יעד.', rother: 'כתבו לאיזה יעד נסעתם.', rmonth: 'בחרו את חודש הנסיעה.', rtext: 'ההמלצה קצרה מדי.', rphone: 'חסר מספר טלפון תקין.', rconsent: 'כדי לפרסם צריך לסמן את תיבת ההסכמה.' }[bad];
+        rerr.hidden = false;
+        rv(bad).focus();
+        return;
+      }
+      if (!rform.dataset.url) { location.href = rWa(); return; }
+      var send = rform.querySelector('.rsend');
+      var fail = function (msg) {
+        send.disabled = false; send.textContent = 'שליחה';
+        rerr.innerHTML = '';
+        if (msg) rerr.appendChild(document.createTextNode(msg + ' '));
+        rerr.insertAdjacentHTML('beforeend', 'אפשר לנסות שוב, או <a href="' + rWa() + '">לשלוח לי את ההמלצה בוואטסאפ</a>.');
+        rerr.hidden = false;
+      };
+      send.disabled = true; send.textContent = 'שולח…';
+      fetch(rform.dataset.url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({
+        action: 'review', website: rv('rwebsite').value, name: rv('rname').value.trim(), dest: rDest(),
+        month: rv('ryear').value + '-' + rv('rmonth').value, text: rv('rtext').value.trim(), phone: rv('rphone').value.trim(), consent: rv('rconsent').checked,
+      }) })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (!res.ok) { fail(res.error); return; }
+          rform.hidden = true;
+          var done = rv('rdone');
+          done.hidden = false; done.focus();
+          scrollTo(0, 0);
+        })
+        .catch(function () { fail('השליחה לא הצליחה.'); });
     });
   }
 })();
