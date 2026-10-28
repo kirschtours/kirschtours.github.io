@@ -626,3 +626,18 @@ footer .en { direction: ltr; text-align: left; font-size: 12px; opacity: .85; }
 .draft-bar { position: sticky; top: 0; z-index: 90; background: #b3261e; color: #fff; text-align: center; padding: 8px 16px; font-size: 14px; }
 @media (max-width: 900px) { .dest-page .dest-grid { grid-template-columns: 1fr; } }
 .dest-page .book .btn svg, .dest-page .mobile-book .btn svg { width: 20px; height: 20px; fill: currentColor; margin-inline-end: 10px; vertical-align: -4px; }
+
+/* היעדים שלנו בדף הבית (28.10.2026) */
+.dgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.dcard { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--night); color: #fff; text-decoration: none; }
+.dcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.dcard::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(5, 15, 36, .85), rgba(5, 15, 36, 0) 60%); }
+.dcard:hover img { transform: scale(1.05); }
+.dc-body { position: absolute; inset-inline: 22px; bottom: 20px; z-index: 1; display: flex; flex-direction: column; gap: 4px; }
+.dc-body b { font: 400 clamp(28px, 3vw, 38px)/1.1 var(--display); }
+.dc-body small { font-size: 14px; color: rgba(255, 255, 255, .8); }
+.dc-price { font-size: 15px; color: var(--gold); margin-top: 4px; }
+footer .dest-links { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; max-width: 360px; }
+footer .dest-links b { width: 100%; }
+@media (max-width: 900px) { .dgrid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+@media (max-width: 560px) { .dgrid { grid-template-columns: 1fr; } }
