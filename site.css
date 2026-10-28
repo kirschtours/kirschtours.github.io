@@ -609,3 +609,20 @@ footer .en { direction: ltr; text-align: left; font-size: 12px; opacity: .85; }
   .bsend { max-width: none; }
   .book-page .float-wa { display: none; } /* מכסה את שדות הטופס; בדף יש כפתורי וואטסאפ משלו */
 }
+
+/* דף יעד קבוע (28.10.2026) */
+.dest-intro { font-size: 19px; line-height: 1.75; margin: 0 0 70px; color: var(--night); }
+.dest-lead { font-size: 17px; line-height: 1.7; margin: 0 0 20px; }
+.dest-page .dest-grid { grid-template-columns: repeat(2, 1fr); gap: 44px 28px; }
+.faq details { border-bottom: 1px solid var(--line-soft); }
+.faq summary { padding: 20px 0; font-size: 17px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--gold); font-size: 22px; line-height: 1; transition: transform .3s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0 0 22px; font-size: 16px; line-height: 1.7; color: var(--muted); }
+.dest-rv { margin: 0 0 24px; padding: 24px 28px; background: var(--paper); border-inline-start: 3px solid var(--gold); }
+.dest-rv p { margin: 0 0 12px; font-size: 17px; line-height: 1.7; white-space: pre-line; }
+.dest-rv cite { font-style: normal; font-size: 14px; color: var(--muted); }
+.draft-bar { position: sticky; top: 0; z-index: 90; background: #b3261e; color: #fff; text-align: center; padding: 8px 16px; font-size: 14px; }
+@media (max-width: 900px) { .dest-page .dest-grid { grid-template-columns: 1fr; } }
+.dest-page .book .btn svg, .dest-page .mobile-book .btn svg { width: 20px; height: 20px; fill: currentColor; margin-inline-end: 10px; vertical-align: -4px; }
