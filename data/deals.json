@@ -2,68 +2,6 @@
  "updated": "2026-10-28",
  "deals": [
   {
-   "id": "2026-10-28-hanukkah-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "Gallery Palace",
-   "stars": 4,
-   "score": "8.0",
-   "rev": "719",
-   "trolley": true,
-   "kosher": true,
-   "feats": [
-    "🍽️ כשר למהדרין",
-    "🛏️ חדר דלקס עם מיטה זוגית"
-   ],
-   "min": 2270,
-   "nightsLabel": "4 לילות",
-   "round": "2026-10-28",
-   "expires": "2026-11-04",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "spa",
-    "jacuzzi",
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-06",
-     "r": "2026-12-10",
-     "label": "6-10/12",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "11:00",
-     "price": 2270
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-tbilisi/"
-  },
-  {
    "id": "2026-10-28-hanukkah-larnaca",
    "dest": "לרנקה",
    "hotel": "Best Western Plus Larco Hotel",
@@ -310,7 +248,7 @@
    "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-batumi/"
   },
   {
-   "id": "2026-10-28-hanukkah-tbilisi-2",
+   "id": "2026-10-28-hanukkah-tbilisi",
    "dest": "טביליסי",
    "hotel": "ibis Styles Tbilisi Center",
    "stars": 4,
@@ -374,7 +312,7 @@
      "price": 2376
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-tbilisi-2/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-tbilisi/"
   },
   {
    "id": "2026-10-28-hanukkah-bucharest",
