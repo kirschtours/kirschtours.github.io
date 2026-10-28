@@ -7,6 +7,15 @@
   try { a11y = JSON.parse(localStorage.getItem('kt-a11y') || '{}') || {}; } catch (e) {}
   var still = matchMedia('(prefers-reduced-motion: reduce)').matches || !!a11y.still;
   var today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Jerusalem' });
+  // סטטיסטיקה (GoatCounter, 28.10.2026): כניסות נספרות לבד. כאן נספרות פעולות - לחיצה על וואטסאפ לפי הדף שבו היא קרתה, וטפסים שנשלחו.
+  function track(path, title) { try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: path, title: title, event: true }); } catch (e) {} }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="chat.whatsapp.com"]');
+    if (!a) return;
+    var group = a.href.indexOf('chat.whatsapp.com') > -1;
+    var page = decodeURIComponent(location.pathname).replace(/\/index\.html$/, '/');
+    track((group ? 'קבוצה' : 'וואטסאפ') + page, (group ? 'הצטרפות לקבוצה מ-' : 'לחיצה על וואטסאפ מ-') + (document.querySelector('h1') || document).textContent.trim().slice(0, 60));
+  });
   document.querySelectorAll('[data-exp]').forEach(function (el) { if (el.dataset.exp < today) el.remove(); });
   document.querySelectorAll('[data-o]').forEach(function (el) { if (el.dataset.o <= today) el.remove(); });
 
@@ -477,6 +486,7 @@
         .then(function (r) { return r.json(); })
         .then(function (res) {
           if (!res.ok) { fail(); if (res.error) err.insertAdjacentText('afterbegin', res.error + ' '); return; }
+          track('הזמנה-נשלחה' + location.search, 'טופס הזמנה נשלח');
           form.hidden = true; sum.hidden = true;
           document.getElementById('bdone-wa').href = waMsg();
           var done = document.getElementById('bdone');
@@ -524,6 +534,7 @@
         .then(function (r) { return r.json(); })
         .then(function (res) {
           if (!res.ok) { fail(res.error); return; }
+          track('המלצה-נשלחה', 'טופס המלצה נשלח');
           rform.hidden = true;
           var done = rv('rdone');
           done.hidden = false; done.focus();
