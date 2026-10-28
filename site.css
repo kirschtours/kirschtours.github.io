@@ -166,6 +166,7 @@ a:hover .arrow { transform: translateX(-6px); }
 .tag { font-size: 11px; font-weight: 600; letter-spacing: .2em; padding: 6px 12px; background: rgba(5, 15, 36, .55); backdrop-filter: blur(6px); color: var(--gold-hi); border: 1px solid rgba(236, 217, 168, .4); }
 .tag.new { background: var(--gold-grad); color: var(--night); border-color: transparent; }
 .tag.drop { background: var(--red); color: #fff; border-color: transparent; }
+.tag.holiday { background: #1d4ed8; color: #fff; border-color: transparent; letter-spacing: .05em; }
 .card .body { padding: 22px 2px 0; }
 
 /* גלריה בתוך הכרטיס */

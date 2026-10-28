@@ -123,6 +123,7 @@
       am: function (c, v) { return has(c, 'am', v); },
       kosher: function (c) { return c.dataset.kosher === '1'; },
       vip: function (c) { return c.dataset.vip === '1'; },
+      holiday: function (c, v) { return c.dataset.holiday === v; },
       dur: function (c, v) { return c.dataset.dur === v; },
       op: function (c, v) { return c.dataset.op === v; },
       style: function (c, v) { return c.dataset[v] === '1'; },
