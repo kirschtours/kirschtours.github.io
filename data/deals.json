@@ -1,6 +1,421 @@
 {
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "deals": [
+  {
+   "id": "2026-10-28-prague",
+   "dest": "פראג",
+   "hotel": "Kosher Hotel King David Prague",
+   "stars": 5,
+   "score": "9.1",
+   "rev": "1,425",
+   "kosher": true,
+   "feats": [
+    "🍽️ כשר למהדרין",
+    "📍 רחוב היברנסקה, 15 דק' הליכה מכיכר העיר העתיקה"
+   ],
+   "min": 2762,
+   "nightsLabel": "3-4 לילות",
+   "round": "2026-10-28",
+   "expires": "2026-11-04",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg"
+   ],
+   "country": "צ׳כיה",
+   "board": "BB",
+   "vip": true,
+   "options": [
+    {
+     "kind": "board",
+     "label": "עם חצי פנסיון",
+     "board": "HB",
+     "addPp": 594
+    },
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לבוטיק סוויטה עם כניסה לספא",
+     "addPp": 428,
+     "date": "2026-11-05",
+     "vip": true
+    }
+   ],
+   "amenities": [
+    "indoor_pool",
+    "spa",
+    "jacuzzi",
+    "sauna",
+    "gym",
+    "restaurant",
+    "bar",
+    "wifi",
+    "airport_shuttle",
+    "accessible",
+    "business",
+    "laundry",
+    "24h_reception",
+    "elevator",
+    "non_smoking"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-04",
+     "r": "2026-11-08",
+     "label": "4-8/11",
+     "days": "רביעי–ראשון",
+     "nights": 4,
+     "fl": "ישראייר",
+     "out": "06:55",
+     "back": "13:20",
+     "price": 3087
+    },
+    {
+     "o": "2026-11-05",
+     "r": "2026-11-08",
+     "label": "5-8/11",
+     "days": "חמישי–ראשון",
+     "nights": 3,
+     "fl": "סמארטווינגס",
+     "out": "05:35",
+     "back": "12:45",
+     "price": 2762
+    },
+    {
+     "o": "2026-11-08",
+     "r": "2026-11-12",
+     "label": "8-12/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "טוס",
+     "out": "10:20",
+     "back": "14:50",
+     "price": 3105
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-10-28-prague/"
+  },
+  {
+   "id": "2026-10-28-tbilisi",
+   "dest": "טביליסי",
+   "hotel": "ibis Styles Tbilisi Center",
+   "stars": 4,
+   "score": "9.3",
+   "rev": "2,545",
+   "feats": [
+    "📍 100 מ' מכיכר החירות",
+    "🌇 מרפסת על הגג"
+   ],
+   "min": 1407,
+   "nightsLabel": "4 לילות",
+   "round": "2026-10-28",
+   "expires": "2026-11-04",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "RO",
+   "kosher": false,
+   "vip": false,
+   "options": [
+    {
+     "kind": "board",
+     "label": "עם ארוחת בוקר",
+     "board": "BB",
+     "addPp": 102,
+     "best": true
+    }
+   ],
+   "amenities": [
+    "bar",
+    "wifi",
+    "airport_shuttle",
+    "accessible",
+    "rooftop",
+    "laundry",
+    "24h_reception",
+    "elevator"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-16",
+     "r": "2026-11-20",
+     "label": "16-20/11",
+     "days": "שני–שישי",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "18:15",
+     "back": "10:55",
+     "land": "11:35",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 1632
+    },
+    {
+     "o": "2026-11-29",
+     "r": "2026-12-03",
+     "label": "29/11-3/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "07:00",
+     "back": "15:20",
+     "bag": "תיק יד בלבד",
+     "price": 1407
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-10-28-tbilisi/"
+  },
+  {
+   "id": "2026-10-28-batumi",
+   "dest": "בטומי",
+   "hotel": "Hotel Monarch",
+   "stars": 4,
+   "score": "9.5",
+   "rev": "1,667",
+   "feats": [
+    "📍 200 מ' מכיכר אירופה, בטומי העתיקה",
+    "🌇 מרפסת גג עם נוף לעיר"
+   ],
+   "min": 1531,
+   "nightsLabel": "4 לילות",
+   "round": "2026-10-28",
+   "expires": "2026-11-04",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": false,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לחדר סופיריור עם נוף לעיר",
+     "addPp": 166
+    }
+   ],
+   "amenities": [
+    "wifi",
+    "parking",
+    "ac",
+    "rooftop",
+    "business",
+    "24h_reception"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-15",
+     "r": "2026-11-19",
+     "label": "15-19/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "21:20",
+     "bag": "תיק יד בלבד",
+     "price": 1656
+    },
+    {
+     "o": "2026-11-29",
+     "r": "2026-12-03",
+     "label": "29/11-3/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "14:15",
+     "bag": "תיק יד בלבד",
+     "price": 1656
+    },
+    {
+     "o": "2026-11-30",
+     "r": "2026-12-04",
+     "label": "30/11-4/12",
+     "days": "שני–שישי",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "10:40",
+     "land": "11:05",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 1531
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-10-28-batumi/"
+  },
+  {
+   "id": "2026-10-28-larnaca",
+   "dest": "לרנקה",
+   "hotel": "Best Western Plus Larco Hotel",
+   "stars": 4,
+   "score": "8.9",
+   "rev": "2,762",
+   "trolley": true,
+   "feats": [
+    "📍 סקאלה, 2.3 ק\"מ ממרכז לרנקה",
+    "🛏️ חדר עם מיטת קווין"
+   ],
+   "min": 1432,
+   "nightsLabel": "4 לילות",
+   "round": "2026-10-28",
+   "expires": "2026-11-04",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg"
+   ],
+   "country": "קפריסין",
+   "board": "BB",
+   "kosher": false,
+   "vip": true,
+   "options": [
+    {
+     "kind": "board",
+     "label": "עם חצי פנסיון",
+     "board": "HB",
+     "addPp": 246
+    },
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לסוויטה עם מיטת קינג",
+     "addPp": 242,
+     "vip": true
+    }
+   ],
+   "amenities": [
+    "pool",
+    "spa",
+    "sauna",
+    "gym",
+    "restaurant",
+    "bar",
+    "room_service",
+    "wifi",
+    "parking",
+    "business"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-18",
+     "r": "2026-11-22",
+     "label": "18-22/11",
+     "days": "רביעי–ראשון",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "05:55",
+     "back": "09:10",
+     "price": 1432
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-10-28-larnaca/"
+  },
+  {
+   "id": "2026-10-28-athens",
+   "dest": "אתונה",
+   "hotel": "Athens Tiare by Mage Hotels",
+   "stars": 4,
+   "score": "8.8",
+   "rev": "1,614",
+   "feats": [
+    "📍 ליד רחוב ארמו, מרכז אתונה",
+    "🛏️ חדר עם מיטת קווין"
+   ],
+   "min": 1450,
+   "nightsLabel": "4 לילות",
+   "round": "2026-10-28",
+   "expires": "2026-11-04",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg"
+   ],
+   "country": "יוון",
+   "board": "RO",
+   "kosher": false,
+   "vip": false,
+   "options": [
+    {
+     "kind": "board",
+     "label": "עם ארוחת בוקר",
+     "board": "BB",
+     "addPp": 114,
+     "best": true
+    }
+   ],
+   "amenities": [
+    "gym",
+    "wifi"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-29",
+     "r": "2026-12-03",
+     "label": "29/11-3/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "בלו בירד",
+     "out": "16:50",
+     "back": "11:30",
+     "price": 1450
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-10-28-athens/"
+  },
   {
    "id": "2026-10-27-tbilisi",
    "dest": "טביליסי",
@@ -93,95 +508,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-10-27-tbilisi/"
-  },
-  {
-   "id": "2026-10-27-larnaca",
-   "dest": "לרנקה",
-   "hotel": "Best Western Plus Larco Hotel",
-   "stars": 4,
-   "score": "8.9",
-   "rev": "2,762",
-   "feats": [
-    "📍 סקאלה, 2.3 ק\"מ ממרכז לרנקה",
-    "🛏️ חדר עם מיטת קווין"
-   ],
-   "min": 1065,
-   "nightsLabel": "3-4 לילות",
-   "round": "2026-10-27",
-   "expires": "2026-11-03",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "קפריסין",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [
-    {
-     "kind": "board",
-     "label": "עם חצי פנסיון",
-     "board": "HB",
-     "addPp": 260
-    },
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לסוויטה",
-     "addPp": 316,
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "pool",
-    "spa",
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi",
-    "parking",
-    "business"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-26",
-     "r": "2026-11-30",
-     "label": "26-30/11",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:30",
-     "back": "19:00",
-     "bag": "תיק יד בלבד",
-     "price": 1228
-    },
-    {
-     "o": "2026-11-29",
-     "r": "2026-12-02",
-     "label": "29/11-2/12",
-     "days": "ראשון–רביעי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "07:00",
-     "back": "15:40",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 1065
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-27-larnaca/"
   },
   {
    "id": "2026-10-27-paphos",
@@ -686,83 +1012,6 @@
    "url": "https://kirshtours.co.il/deal/2026-10-26-baku/"
   },
   {
-   "id": "2026-10-26-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "ibis Styles Tbilisi Center",
-   "stars": 4,
-   "score": "9.3",
-   "rev": "2,549",
-   "feats": [
-    "📍 100 מ' מכיכר החירות",
-    "🌇 מרפסת על הגג"
-   ],
-   "min": 1577,
-   "nightsLabel": "4-5 לילות",
-   "round": "2026-10-26",
-   "expires": "2026-11-02",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "RO",
-   "kosher": false,
-   "vip": false,
-   "options": [
-    {
-     "kind": "board",
-     "label": "עם ארוחת בוקר",
-     "board": "BB",
-     "addPp": 78,
-     "best": true
-    }
-   ],
-   "amenities": [
-    "bar",
-    "wifi",
-    "airport_shuttle",
-    "accessible",
-    "rooftop",
-    "laundry",
-    "24h_reception",
-    "elevator"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-05",
-     "r": "2026-11-10",
-     "label": "5-10/11",
-     "days": "חמישי–שלישי",
-     "nights": 5,
-     "fl": "ארקיע",
-     "out": "11:00",
-     "back": "15:05",
-     "price": 1860
-    },
-    {
-     "o": "2026-11-06",
-     "r": "2026-11-10",
-     "label": "6-10/11",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "ארקיע",
-     "out": "05:30",
-     "back": "15:05",
-     "price": 1577
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-26-tbilisi/"
-  },
-  {
    "id": "2026-10-26-budapest",
    "dest": "בודפשט",
    "hotel": "Eurostars Palazzo Zichy",
@@ -1260,228 +1509,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-10-22-warsaw/"
-  },
-  {
-   "id": "2026-10-21-paphos",
-   "dest": "פאפוס",
-   "hotel": "Avlida Hotel",
-   "stars": 4,
-   "score": "8.7",
-   "rev": "3,253",
-   "trolley": true,
-   "feats": [
-    "📍 5 דקות הליכה מקברי המלכים",
-    "🏊 3 בריכות חיצוניות וספא"
-   ],
-   "min": 1117,
-   "nightsLabel": "3-4 לילות",
-   "round": "2026-10-21",
-   "expires": "2026-10-28",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg"
-   ],
-   "country": "קפריסין",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "pool",
-    "spa"
-   ],
-   "dates": [
-    {
-     "o": "2026-10-30",
-     "r": "2026-11-03",
-     "label": "30/10-3/11",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:30",
-     "back": "09:20",
-     "price": 1279
-    },
-    {
-     "o": "2026-11-03",
-     "r": "2026-11-06",
-     "label": "3-6/11",
-     "days": "שלישי–שישי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "07:00",
-     "back": "07:50",
-     "land": "09:00",
-     "price": 1117
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-21-paphos/"
-  },
-  {
-   "id": "2026-10-21-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "Holiday Inn Express Tbilisi Avlabari",
-   "stars": 4,
-   "score": "9.4",
-   "rev": "1,583",
-   "feats": [
-    "📍 אבלבארי, העיר העתיקה של טביליסי"
-   ],
-   "min": 1470,
-   "nightsLabel": "4-5 לילות",
-   "round": "2026-10-21",
-   "expires": "2026-10-28",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [],
-   "dates": [
-    {
-     "o": "2026-11-06",
-     "r": "2026-11-11",
-     "label": "6-11/11",
-     "days": "שישי–רביעי",
-     "nights": 5,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "10:55",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 1605
-    },
-    {
-     "o": "2026-11-20",
-     "r": "2026-11-24",
-     "label": "20-24/11",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "ארקיע",
-     "out": "06:30",
-     "back": "15:05",
-     "bag": "תיק יד בלבד",
-     "price": 1470
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-21-tbilisi/"
-  },
-  {
-   "id": "2026-10-21-athens",
-   "dest": "אתונה",
-   "hotel": "Titania Hotel",
-   "stars": 4,
-   "score": "8.7",
-   "rev": "6,739",
-   "feats": [
-    "📍 שדרות פנפיסטימיו, מרכז אתונה",
-    "🏛️ גג עם נוף לאקרופוליס"
-   ],
-   "min": 1392,
-   "nightsLabel": "4 לילות",
-   "round": "2026-10-21",
-   "expires": "2026-10-28",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg"
-   ],
-   "country": "יוון",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "rooftop"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-01",
-     "r": "2026-11-05",
-     "label": "1-5/11",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "בלו בירד",
-     "out": "09:20",
-     "back": "19:00",
-     "price": 1392
-    },
-    {
-     "o": "2026-11-06",
-     "r": "2026-11-10",
-     "label": "6-10/11",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "בלו בירד",
-     "out": "08:20",
-     "back": "19:00",
-     "price": 1500
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-21-athens/"
-  },
-  {
-   "id": "2026-10-21-batumi",
-   "dest": "בטומי",
-   "hotel": "Hotel Monarch",
-   "stars": 4,
-   "score": "9.5",
-   "rev": "1,671",
-   "feats": [
-    "📍 רחוב מלשווילי, בטומי העתיקה",
-    "🌇 מרפסת גג"
-   ],
-   "min": 1424,
-   "nightsLabel": "3-4 לילות",
-   "round": "2026-10-21",
-   "expires": "2026-10-28",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "rooftop"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-02",
-     "r": "2026-11-05",
-     "label": "2-5/11",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "ישראייר + ארקיע",
-     "out": "09:55",
-     "back": "14:15",
-     "price": 1424
-    },
-    {
-     "o": "2026-11-06",
-     "r": "2026-11-10",
-     "label": "6-10/11",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "ארקיע + אל על",
-     "out": "09:00",
-     "back": "18:10",
-     "price": 1591
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-21-batumi/"
   }
  ]
 }
