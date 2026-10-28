@@ -2,7 +2,7 @@
  "updated": "2026-10-28",
  "deals": [
   {
-   "id": "2026-10-28-tbilisi",
+   "id": "2026-10-28-hanukkah-tbilisi",
    "dest": "טביליסי",
    "hotel": "Gallery Palace",
    "stars": 4,
@@ -61,10 +61,10 @@
      "price": 2270
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-tbilisi/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-tbilisi/"
   },
   {
-   "id": "2026-10-28-larnaca",
+   "id": "2026-10-28-hanukkah-larnaca",
    "dest": "לרנקה",
    "hotel": "Best Western Plus Larco Hotel",
    "stars": 4,
@@ -124,10 +124,10 @@
      "price": 1527
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-larnaca/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-larnaca/"
   },
   {
-   "id": "2026-10-28-paphos",
+   "id": "2026-10-28-hanukkah-paphos",
    "dest": "פאפוס",
    "hotel": "Eleni Holiday Resort",
    "stars": 4,
@@ -184,10 +184,10 @@
      "price": 1751
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-paphos/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-paphos/"
   },
   {
-   "id": "2026-10-28-athens",
+   "id": "2026-10-28-hanukkah-athens",
    "dest": "אתונה",
    "hotel": "Casual Kubic Athens Hotel",
    "stars": 4,
@@ -243,10 +243,10 @@
      "price": 1752
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-athens/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-athens/"
   },
   {
-   "id": "2026-10-28-batumi",
+   "id": "2026-10-28-hanukkah-batumi",
    "dest": "בטומי",
    "hotel": "JRW Welmond Hotel & Casino",
    "stars": 5,
@@ -307,10 +307,10 @@
      "price": 2325
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-batumi/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-batumi/"
   },
   {
-   "id": "2026-10-28-tbilisi-2",
+   "id": "2026-10-28-hanukkah-tbilisi-2",
    "dest": "טביליסי",
    "hotel": "ibis Styles Tbilisi Center",
    "stars": 4,
@@ -374,10 +374,10 @@
      "price": 2376
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-tbilisi-2/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-tbilisi-2/"
   },
   {
-   "id": "2026-10-28-bucharest",
+   "id": "2026-10-28-hanukkah-bucharest",
    "dest": "בוקרשט",
    "hotel": "Union Plaza Hotel",
    "stars": 4,
@@ -447,10 +447,10 @@
      "price": 2414
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-bucharest/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-bucharest/"
   },
   {
-   "id": "2026-10-28-budapest",
+   "id": "2026-10-28-hanukkah-budapest",
    "dest": "בודפשט",
    "hotel": "IntercityHotel Budapest",
    "stars": 4,
@@ -511,10 +511,10 @@
      "price": 3749
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-budapest/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-budapest/"
   },
   {
-   "id": "2026-10-28-prague",
+   "id": "2026-10-28-hanukkah-prague",
    "dest": "פראג",
    "hotel": "Eurostars Thalia",
    "stars": 5,
@@ -578,10 +578,10 @@
      "price": 4898
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-prague/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-prague/"
   },
   {
-   "id": "2026-10-28-prague-2",
+   "id": "2026-10-28-prague",
    "dest": "פראג",
    "hotel": "Kosher Hotel King David Prague",
    "stars": 5,
@@ -682,10 +682,10 @@
      "price": 3105
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-prague-2/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-prague/"
   },
   {
-   "id": "2026-10-28-tbilisi-3",
+   "id": "2026-10-28-tbilisi",
    "dest": "טביליסי",
    "hotel": "ibis Styles Tbilisi Center",
    "stars": 4,
@@ -762,10 +762,10 @@
      "price": 1407
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-tbilisi-3/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-tbilisi/"
   },
   {
-   "id": "2026-10-28-batumi-2",
+   "id": "2026-10-28-batumi",
    "dest": "בטומי",
    "hotel": "Hotel Monarch",
    "stars": 4,
@@ -853,10 +853,10 @@
      "price": 1531
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-batumi-2/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-batumi/"
   },
   {
-   "id": "2026-10-28-larnaca-2",
+   "id": "2026-10-28-larnaca",
    "dest": "לרנקה",
    "hotel": "Best Western Plus Larco Hotel",
    "stars": 4,
@@ -930,10 +930,10 @@
      "price": 1432
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-larnaca-2/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-larnaca/"
   },
   {
-   "id": "2026-10-28-athens-2",
+   "id": "2026-10-28-athens",
    "dest": "אתונה",
    "hotel": "Athens Tiare by Mage Hotels",
    "stars": 4,
@@ -993,7 +993,7 @@
      "price": 1450
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-athens-2/"
+   "url": "https://kirshtours.co.il/deal/2026-10-28-athens/"
   },
   {
    "id": "2026-10-27-tbilisi",
