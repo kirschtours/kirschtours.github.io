@@ -321,6 +321,20 @@
     addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('on')) close(); });
   }
 
+  // תפריט בנייד: הכפתור פותח וסוגר, לחיצה על קישור, Esc או לחיצה מחוץ לתפריט סוגרים
+  var menuBtn = document.querySelector('.menu-btn'); // top - הכותרת, מוגדר למעלה
+  if (top && menuBtn) {
+    var setMenu = function (open) {
+      top.classList.toggle('menu-open', open);
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.setAttribute('aria-label', open ? 'סגירת התפריט' : 'פתיחת התפריט');
+    };
+    menuBtn.addEventListener('click', function () { setMenu(!top.classList.contains('menu-open')); });
+    top.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && top.classList.contains('menu-open')) { setMenu(false); menuBtn.focus(); } });
+    document.addEventListener('click', function (e) { if (top.classList.contains('menu-open') && !top.contains(e.target)) setMenu(false); });
+  }
+
   // "דלגו לתוכן" גם כשהגלילה החלקה פעילה
   var skip = document.querySelector('.skip');
   if (skip) skip.addEventListener('click', function (e) { e.preventDefault(); var m = document.getElementById('main'); if (lenis) lenis.scrollTo(m, { immediate: true }); m.focus({ preventScroll: !!lenis }); });
