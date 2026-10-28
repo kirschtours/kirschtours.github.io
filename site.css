@@ -641,3 +641,7 @@ footer .dest-links { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items:
 footer .dest-links b { width: 100%; }
 @media (max-width: 900px) { .dgrid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
 @media (max-width: 560px) { .dgrid { grid-template-columns: 1fr; } }
+.must { margin: -30px 0 70px; padding: 22px 26px; background: #fff8e6; border: 1px solid var(--gold); border-inline-start-width: 4px; }
+.must > b { display: block; font-size: 17px; color: var(--night); margin-bottom: 8px; }
+.must ul { margin: 0; padding-inline-start: 20px; }
+.must li { font-size: 16px; line-height: 1.7; }
