@@ -668,3 +668,28 @@ footer .dest-links b { width: 100%; }
 .must > b { display: block; font-size: 17px; color: var(--night); margin-bottom: 8px; }
 .must ul { margin: 0; padding-inline-start: 20px; }
 .must li { font-size: 16px; line-height: 1.7; }
+
+/* בטלפון: כרטיסי הדילים והטיולים שניים בשורה, כמו משבצות היעדים (29.10.2026) */
+@media (max-width: 560px) {
+  .grid, .results .grid { grid-template-columns: repeat(2, 1fr); gap: 26px 10px; }
+  .card .ph .over { bottom: 10px; inset-inline: 10px; flex-direction: column; align-items: stretch; gap: 4px; }
+  .card .ph .over .from { font-size: 9px; letter-spacing: .15em; }
+  .card .ph .over .price { font-size: 24px; }
+  .card .ph .over .price small { font-size: 11px; }
+  .card .ph .over .couple, .card .ph .over .was { font-size: 11px; margin-top: 2px; }
+  .card .ph .over .n { font-size: 11px; line-height: 1.4; }
+  .tags { top: 8px; inset-inline-start: 8px; gap: 4px; }
+  .tag { font-size: 9px; letter-spacing: .05em; padding: 3px 6px; }
+  .card .dots { top: 36px; inset-inline-start: 8px; }
+  .card .ph .frame { display: none; }
+  .card .ph::after { background: linear-gradient(180deg, transparent 30%, rgba(5, 15, 36, .92) 100%); }
+  .card .body { padding-top: 10px; }
+  .dest { font-size: 10px; letter-spacing: .08em; }
+  .dest .pub { display: none; }
+  .card h3 { font-size: 17px; margin: 4px 0 4px; }
+  .meta { font-size: 11px; gap: 2px 8px; }
+  .meta .score { font-size: 13px; }
+  .card .flight { display: none; }
+  .ams { display: none; }
+  .card .go { margin-top: 8px; font-size: 11px; letter-spacing: .08em; gap: 6px; }
+}
