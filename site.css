@@ -693,3 +693,11 @@ footer .dest-links b { width: 100%; }
   .ams { display: none; }
   .card .go { margin-top: 8px; font-size: 11px; letter-spacing: .08em; gap: 6px; }
 }
+
+/* סקירת האתר 29.10.2026: ניגודיות בפתיחה, וכפתורים צפים שלא מסתירים את שורת המספרים בנייד */
+.hero .eyebrow { text-shadow: 0 1px 10px rgba(5, 15, 36, .9), 0 0 2px rgba(5, 15, 36, .8); color: var(--gold-hi); }
+@media (max-width: 760px) {
+  .hero-foot .wrap { padding-bottom: 80px; }
+  .a11y-btn { width: 44px; height: 44px; }
+  .a11y-btn svg { width: 24px; height: 24px; }
+}

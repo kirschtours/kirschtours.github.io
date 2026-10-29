@@ -71,7 +71,7 @@
   function onScroll() {
     var y = scrollY, h = innerHeight;
     top.classList.toggle('solid', y > 40);
-    if (mob && side) { var r = side.getBoundingClientRect(); mob.classList.toggle('on', y > h * 0.6 && (r.top > h || r.bottom < 0)); }
+    if (mob && side) { var r = side.getBoundingClientRect(); mob.classList.toggle('on', r.top > h || r.bottom < 0); } // בנייד המחיר וכפתור ההזמנה מוצגים כבר במסך הראשון
     if (still) return;
     par.forEach(function (el) {
       var r = el.parentElement.getBoundingClientRect();
