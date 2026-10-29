@@ -244,9 +244,14 @@
 
     $('sort').addEventListener('change', function (e) {
       var list = [].slice.call(grid.children);
+      // "יוצאים בקרוב": לפי תאריך היציאה הקרוב ביותר שעוד לא עבר
+      var today = new Date().toISOString().slice(0, 10);
+      var soon = function (c) { return (c.dataset.dates || '').split(',').filter(function (o) { return o >= today; }).sort()[0] || '9999'; };
       list.sort(e.target.value === 'price'
         ? function (a, b) { return a.dataset.price - b.dataset.price; }
-        : function (a, b) { return b.dataset.round.localeCompare(a.dataset.round); });
+        : e.target.value === 'soon'
+          ? function (a, b) { return soon(a).localeCompare(soon(b)); }
+          : function (a, b) { return b.dataset.round.localeCompare(a.dataset.round); });
       list.forEach(function (c) { grid.appendChild(c); });
     });
     apply();

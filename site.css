@@ -701,3 +701,21 @@ footer .dest-links b { width: 100%; }
   .a11y-btn { width: 44px; height: 44px; }
   .a11y-btn svg { width: 24px; height: 24px; }
 }
+
+/* דף דיל: קישור למדריך היעד, המלצות ועוד דילים ליעד. דף הבית: שאלות נפוצות (29.10.2026) */
+.guide-link { position: relative; display: block; margin: 50px 0 0; padding: 26px 30px 26px 70px; background: var(--night); color: #fff; text-decoration: none; transition: background .3s; }
+.guide-link:hover { background: var(--night-3); }
+.guide-link small { display: block; font-size: 12px; letter-spacing: .25em; color: var(--gold); }
+.guide-link b { display: block; font: 400 clamp(24px, 2.6vw, 32px)/1.2 var(--display); margin: 6px 0 6px; }
+.guide-link span { font-size: 14px; color: rgba(255, 255, 255, .75); }
+.guide-link em { position: absolute; inset-inline-end: 28px; top: 50%; transform: translateY(-50%); font-style: normal; font-size: 26px; color: var(--gold); }
+.deal-rv { margin-top: 50px; }
+.go-link { font-size: 14px; color: var(--night); border-bottom: 1px solid var(--gold); text-decoration: none; padding-bottom: 3px; }
+.more-deals { padding: 0 0 100px; }
+.more-deals h2 { font: 400 clamp(30px, 3.4vw, 44px)/1.15 var(--display); color: var(--night); margin: 10px 0 34px; }
+.home-faq { max-width: 860px; }
+@media (max-width: 760px) {
+  .guide-link { padding: 22px 20px 22px 56px; }
+  .guide-link em { inset-inline-end: 20px; }
+  .more-deals { padding-bottom: 60px; }
+}
