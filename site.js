@@ -34,7 +34,7 @@
     document.querySelectorAll('a[href*="#"]').forEach(function (a) {
       var id = a.getAttribute('href').split('#')[1];
       var target = id && document.getElementById(id);
-      if (target && a.pathname === location.pathname) a.addEventListener('click', function (e) { e.preventDefault(); lenis.scrollTo(target, { offset: -60 }); });
+      if (target && a.pathname === location.pathname) a.addEventListener('click', function (e) { e.preventDefault(); lenis.scrollTo(target, { offset: a.closest('.toc') ? -90 : -60 }); }); // מתוכן העניינים: מרווח גדול יותר, שהכותרת לא תיחבא מתחת לסרגל העליון
     });
   }
 
