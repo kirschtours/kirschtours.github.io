@@ -290,9 +290,18 @@
   addEventListener('hashchange', goHash);
 
   // גלריה בתוך הכרטיס: החלקה בנייד, חיצים במחשב. החיצים לא עוברים לדף הדיל.
+  // תמונה עם data-src נטענת רק כשצריך אותה (חוסך הורדה של כל הגלריות מראש)
+  var wake = function (img) {
+    if (img.dataset.srcset) { img.srcset = img.dataset.srcset; img.removeAttribute('data-srcset'); }
+    if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
+  };
+  addEventListener('load', function () { document.querySelectorAll('.hero .slides img[data-src]').forEach(wake); });
   document.querySelectorAll('.card .slides').forEach(function (track) {
     var card = track.closest('.card'), dots = card.querySelectorAll('.dots i');
     if (dots.length < 2) return;
+    var loadAll = function () { track.querySelectorAll('img[data-src]').forEach(wake); };
+    ['pointerenter', 'touchstart', 'focusin'].forEach(function (ev) { card.addEventListener(ev, loadAll, { once: true, passive: true }); });
+    track.addEventListener('scroll', loadAll, { once: true, passive: true });
     var at = function () { return Math.round(Math.abs(track.scrollLeft) / track.clientWidth); };
     var go = function (dir) { track.scrollBy({ left: dir * track.clientWidth * (getComputedStyle(track).direction === 'rtl' ? -1 : 1), behavior: still ? 'auto' : 'smooth' }); };
     card.querySelector('.next').addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); go(at() >= dots.length - 1 ? -dots.length : 1); });
