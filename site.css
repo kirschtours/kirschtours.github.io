@@ -685,7 +685,8 @@ footer .dest-links b { width: 100%; }
   .card .ph::after { background: linear-gradient(180deg, transparent 30%, rgba(5, 15, 36, .92) 100%); }
   .card .body { padding-top: 10px; }
   .dest { font-size: 10px; letter-spacing: .08em; }
-  .dest .pub { display: none; }
+  .dest { flex-wrap: wrap; gap: 0 6px; }
+  .dest .pub { letter-spacing: .04em; }
   .card h3 { font-size: 17px; margin: 4px 0 4px; }
   .meta { font-size: 11px; gap: 2px 8px; }
   .meta .score { font-size: 13px; }
@@ -725,3 +726,19 @@ footer .dest-links b { width: 100%; }
 .card .ph .over.v-hol { display: none; }
 .hol-on .card .ph .over.v-hol { display: flex; }
 .hol-on .card .ph .over.v-all { display: none; }
+
+/* דף דיל: "למה זה דיל", שיתוף ושורות אמון ליד ההזמנה. דפי נחיתה: חנוכה, כשר, דקה 90 (29.10.2026) */
+.why { margin: 22px 0 0; padding: 12px 14px; border: 1px solid rgba(200, 169, 106, .45); background: rgba(200, 169, 106, .1); font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, .9); text-align: start; }
+.why b { color: var(--gold-hi); font-weight: 600; }
+.share { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 22px; padding: 11px 14px; border: 1px solid rgba(255, 255, 255, .35); color: #fff; font-size: 14px; text-decoration: none; transition: border-color .3s, background .3s; }
+.share:hover { border-color: var(--wa); background: rgba(37, 211, 102, .1); }
+.share svg { width: 18px; height: 18px; fill: var(--wa); }
+.landing { padding: 70px 0 100px; }
+.landing .grid { margin-top: 40px; }
+.landing .block { margin-top: 70px; }
+.guide-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.guide-chips a { padding: 9px 16px; border: 1px solid var(--line); color: var(--night); text-decoration: none; font-size: 15px; transition: background .3s; }
+.guide-chips a:hover { background: var(--paper); border-color: var(--gold); }
+.landing-cta { margin-top: 60px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px; }
+.wa-alt.wa-ink { color: var(--night); margin-top: 0; }
+@media (max-width: 760px) { .landing { padding: 44px 0 70px; } }

@@ -290,6 +290,23 @@
   addEventListener('hashchange', goHash);
 
   // גלריה בתוך הכרטיס: החלקה בנייד, חיצים במחשב. החיצים לא עוברים לדף הדיל.
+  // זמן פרסום יחסי בכרטיס ("עלה היום"). מחושב בדפדפן, כי האתר לא נבנה מחדש בסופ"ש
+  var day0 = function (s) { var p = s.split('-'); return Date.UTC(+p[0], p[1] - 1, +p[2]); };
+  var nowIl = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Jerusalem' });
+  document.querySelectorAll('.pub[data-round]').forEach(function (el) {
+    var n = Math.round((day0(nowIl) - day0(el.dataset.round)) / 864e5);
+    if (n >= 0) el.textContent = n === 0 ? 'עלה היום' : n === 1 ? 'עלה אתמול' : 'עלה לפני ' + n + ' ימים';
+  });
+  // שיתוף דיל: בטלפון - תפריט השיתוף של המכשיר, ואם אין - וואטסאפ
+  document.querySelectorAll('.share[data-share]').forEach(function (a) {
+    if (!navigator.share) return;
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      track('שיתוף' + location.pathname, document.title);
+      navigator.share({ text: a.dataset.share }).catch(function () {});
+    });
+  });
+
   // תמונה עם data-src נטענת רק כשצריך אותה (חוסך הורדה של כל הגלריות מראש)
   var wake = function (img) {
     if (img.dataset.srcset) { img.srcset = img.dataset.srcset; img.removeAttribute('data-srcset'); }
