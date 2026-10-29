@@ -174,6 +174,7 @@
         c.hidden = !ok;
         if (ok) { shown++; c.classList.add('in'); }
       });
+      grid.classList.toggle('hol-on', !!s.holiday); // דיל שאוחד עם דיל חג מציג את מחיר החג כשמסננים לפי החג
       empty.hidden = shown > 0;
       var words = shown === 1 ? (grid.dataset.one || 'דיל אחד') : shown + ' ' + (grid.dataset.many || 'דילים');
       $('rcount').textContent = shown === cards.length ? words : words + ' מתוך ' + cards.length;

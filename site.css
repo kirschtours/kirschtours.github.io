@@ -719,3 +719,9 @@ footer .dest-links b { width: 100%; }
   .guide-link em { inset-inline-end: 20px; }
   .more-deals { padding-bottom: 60px; }
 }
+
+/* דיל שאוחד עם דיל חג (29.10.2026): תווית החג על התאריכים, ומחיר החג בכרטיס כשמסננים לפי החג */
+.best-tag.hol-tag { background: #1d4ed8; color: #fff; letter-spacing: .05em; }
+.card .ph .over.v-hol { display: none; }
+.hol-on .card .ph .over.v-hol { display: flex; }
+.hol-on .card .ph .over.v-all { display: none; }

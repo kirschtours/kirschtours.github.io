@@ -621,74 +621,6 @@
    "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-batumi/"
   },
   {
-   "id": "2026-10-28-hanukkah-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "ibis Styles Tbilisi Center",
-   "stars": 4,
-   "score": "9.3",
-   "rev": "2,545",
-   "trolley": true,
-   "holiday": "חנוכה",
-   "feats": [
-    "📍 100 מ' מכיכר החירות",
-    "🌇 מרפסת על הגג"
-   ],
-   "min": 2376,
-   "nightsLabel": "4 לילות",
-   "round": "2026-10-28",
-   "expires": "2026-11-04",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "RO",
-   "kosher": false,
-   "vip": false,
-   "options": [
-    {
-     "kind": "board",
-     "label": "עם ארוחת בוקר",
-     "board": "BB",
-     "addPp": 62,
-     "best": true
-    }
-   ],
-   "amenities": [
-    "bar",
-    "wifi",
-    "airport_shuttle",
-    "accessible",
-    "rooftop",
-    "laundry",
-    "24h_reception",
-    "elevator"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-06",
-     "r": "2026-12-10",
-     "label": "6-10/12",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "11:00",
-     "price": 2376
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-tbilisi/"
-  },
-  {
    "id": "2026-10-28-hanukkah-bucharest",
    "dest": "בוקרשט",
    "hotel": "Union Plaza Hotel",
@@ -1006,6 +938,7 @@
    "stars": 4,
    "score": "9.3",
    "rev": "2,545",
+   "holiday": "חנוכה",
    "feats": [
     "📍 100 מ' מכיכר החירות",
     "🌇 מרפסת על הגג"
@@ -1075,6 +1008,17 @@
      "back": "15:20",
      "bag": "תיק יד בלבד",
      "price": 1407
+    },
+    {
+     "o": "2026-12-06",
+     "r": "2026-12-10",
+     "label": "6-10/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "11:00",
+     "price": 2376
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-10-28-tbilisi/"
