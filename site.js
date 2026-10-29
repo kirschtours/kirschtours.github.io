@@ -133,6 +133,7 @@
       kosher: function (c) { return c.dataset.kosher === '1'; },
       vip: function (c) { return c.dataset.vip === '1'; },
       holiday: function (c, v) { return c.dataset.holiday === v; },
+      mon: function (c, v) { return (c.dataset.dates || '').split(',').some(function (o) { return o.slice(0, 7) === v; }); },
       dur: function (c, v) { return c.dataset.dur === v; },
       op: function (c, v) { return c.dataset.op === v; },
       style: function (c, v) { return c.dataset[v] === '1'; },
