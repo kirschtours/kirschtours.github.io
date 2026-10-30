@@ -793,7 +793,9 @@ footer .dest-links b { width: 100%; }
 .att-meta dt { flex: 0 0 64px; color: var(--gold-lo); }
 .att-meta dd { margin: 0; color: var(--night); }
 .att-note { margin: 0 0 12px; padding: 8px 12px; background: #fff8e6; font-size: 14px; line-height: 1.55; }
-.att-map { margin-top: auto; align-self: flex-start; font-size: 14px; color: var(--night); border-bottom: 1px solid var(--gold); text-decoration: none; padding-bottom: 2px; }
+.att-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: flex-start; }
+.att-map { align-self: flex-start; font-size: 14px; color: var(--night); border-bottom: 1px solid var(--gold); text-decoration: none; padding-bottom: 2px; }
+.att-tix { font-weight: 600; }
 .att-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
 .att-filter button { font: inherit; font-size: 15px; padding: 8px 18px; border: 1px solid var(--line-soft); background: #fff; color: var(--night); border-radius: 40px; cursor: pointer; }
 .att-filter button[aria-pressed="true"] { background: var(--night); border-color: var(--night); color: #fff; }
