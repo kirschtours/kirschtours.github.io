@@ -833,3 +833,36 @@ footer .dest-links b { width: 100%; }
 }
 .att-noimg { aspect-ratio: auto; min-height: 120px; display: flex; align-items: flex-end; padding: 18px 20px; background: linear-gradient(135deg, var(--night), var(--night-3)); }
 .att-noimg b { font: 400 30px/1.1 var(--display); color: var(--gold); }
+
+/* חורף באירופה, דפי מלון, לפני הטיסה (30.10.2026) */
+.landing-h2 { font: 400 clamp(30px, 3.4vw, 44px)/1.15 var(--display); color: var(--night); margin: 10px 0 30px; }
+.winter-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.winter-city { padding: 22px 24px; background: #fff; border: 1px solid var(--line-soft); border-top: 3px solid var(--gold); }
+.winter-city h3 { font: 400 26px/1.2 var(--display); color: var(--night); margin: 0 0 10px; }
+.winter-city h3 small { display: block; font-size: 13px; font-family: inherit; color: var(--muted); margin-top: 4px; }
+.winter-city ul { margin: 0 0 12px; padding-inline-start: 18px; }
+.winter-city li { font-size: 15px; line-height: 1.65; padding: 3px 0; }
+.hist { list-style: none; margin: 0 0 10px; padding: 0; border-top: 1px solid var(--line-soft); }
+.hist li { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line-soft); font-size: 15px; }
+.hist b { font: 400 18px var(--display); color: var(--night); min-width: 70px; }
+.hist span { color: var(--muted); flex: 1; }
+.hist em { font-style: normal; color: var(--night); font-weight: 600; }
+.hotel-chips a small { color: var(--gold-lo); font-size: 11px; letter-spacing: .1em; }
+.hotel-page h1 { unicode-bidi: plaintext; }
+.bags td small { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
+.bags td:nth-child(3), .bags td:nth-child(4) { white-space: normal; }
+@media (max-width: 760px) {
+  .winter-grid { grid-template-columns: 1fr; }
+  .bags table { font-size: 13px; }
+}
+.dest-page .dest-grid.one { grid-template-columns: minmax(0, 420px); }
+@media (max-width: 560px) {
+  .dest-page .dest-grid.one { grid-template-columns: minmax(0, 1fr); }
+  .bags { overflow: visible; }
+  .bags table, .bags tbody, .bags tr, .bags td, .bags tbody th { display: block; width: auto; }
+  .bags thead { display: none; }
+  .bags tr { padding: 14px 0; border-bottom: 1px solid var(--line-soft); }
+  .bags tbody th, .bags td { border: 0; padding: 3px 0; white-space: normal !important; }
+  .bags tbody th { font-size: 17px; }
+  .bags td::before { content: attr(data-l) ': '; color: var(--gold-lo); }
+}
