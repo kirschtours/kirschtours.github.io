@@ -871,3 +871,11 @@ footer .dest-links b { width: 100%; }
 .air-detail h3 { font: 400 26px/1.2 var(--display); color: var(--night); margin: 0 0 6px; }
 .air-detail .months { margin: 16px 0 6px; }
 @media (max-width: 560px) { .air-detail { padding: 18px 16px; } }
+.rules-h { font: 400 26px/1.2 var(--display); color: var(--night); margin: 40px 0 6px; }
+details.air-detail > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+details.air-detail > summary::-webkit-details-marker { display: none; }
+details.air-detail > summary b { font: 400 26px/1.2 var(--display); color: var(--night); }
+details.air-detail > summary span { font-size: 14px; color: var(--muted); }
+details.air-detail > summary::after { content: '+'; margin-inline-start: auto; color: var(--gold); font-size: 26px; line-height: 1; transition: transform .3s; }
+details.air-detail[open] > summary::after { transform: rotate(45deg); }
+details.air-detail[open] > summary { margin-bottom: 12px; }
