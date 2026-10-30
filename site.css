@@ -867,3 +867,7 @@ footer .dest-links b { width: 100%; }
   .bags tbody th { font-size: 17px; }
   .bags td::before { content: attr(data-l) ': '; color: var(--gold-lo); }
 }
+.air-detail { margin: 34px 0 0; padding: 22px 24px; background: #fff; border: 1px solid var(--line-soft); border-top: 3px solid var(--gold); }
+.air-detail h3 { font: 400 26px/1.2 var(--display); color: var(--night); margin: 0 0 6px; }
+.air-detail .months { margin: 16px 0 6px; }
+@media (max-width: 560px) { .air-detail { padding: 18px 16px; } }
