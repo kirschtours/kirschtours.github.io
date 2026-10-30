@@ -24,6 +24,7 @@
 html { scroll-behavior: smooth; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
+html { overflow-x: clip; }
 body { margin: 0; background: var(--ivory); color: var(--ink); font: 400 17px/1.75 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
