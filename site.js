@@ -368,6 +368,20 @@
     document.addEventListener('click', function (e) { if (top.classList.contains('menu-open') && !top.contains(e.target)) setMenu(false); });
   }
 
+  // סינון אטרקציות במדריך היעד: הכל / ילדים / חינם / בערב
+  document.querySelectorAll('.att-filter').forEach(function (f) {
+    var grid = document.querySelector(f.getAttribute('data-for'));
+    if (!grid) return;
+    f.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      var t = b.getAttribute('data-t');
+      f.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      grid.querySelectorAll('.att').forEach(function (a) { a.hidden = !!t && (' ' + a.getAttribute('data-tags') + ' ').indexOf(' ' + t + ' ') < 0; });
+      if (lenis) lenis.resize();
+    });
+  });
+
   // "דלגו לתוכן" גם כשהגלילה החלקה פעילה
   var skip = document.querySelector('.skip');
   if (skip) skip.addEventListener('click', function (e) { e.preventDefault(); var m = document.getElementById('main'); if (lenis) lenis.scrollTo(m, { immediate: true }); m.focus({ preventScroll: !!lenis }); });

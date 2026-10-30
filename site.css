@@ -764,3 +764,72 @@ footer .dest-links b { width: 100%; }
   .toc ol { columns: 1; }
   .dc-tag { top: 8px; inset-inline-start: 8px; font-size: 9px; padding: 3px 7px; letter-spacing: .05em; }
 }
+
+/* מדריך יעד מורחב: במבט אחד, אטרקציות, טיולי יום, ילדים (30.10.2026) */
+.glance { display: grid; grid-template-columns: repeat(4, 1fr); margin: -40px 0 60px; border-top: 1px solid var(--line-soft); }
+.glance div { padding: 16px 14px 16px 0; border-bottom: 1px solid var(--line-soft); }
+.glance dt { font-size: 12px; letter-spacing: .2em; color: var(--gold-lo); margin-bottom: 4px; }
+.glance dd { margin: 0; font-size: 15px; line-height: 1.5; color: var(--night); }
+.guide-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 50px; }
+.guide-nav a, .guide-nav span { padding: 9px 18px; border: 1px solid var(--gold); font-size: 15px; color: var(--night); text-decoration: none; border-radius: 40px; transition: background .3s; }
+.guide-nav a:hover { background: #fff8e6; }
+.guide-nav span { background: var(--night); border-color: var(--night); color: #fff; }
+.att-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px 26px; }
+.att { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-soft); }
+.att[hidden] { display: none; }
+.att-ph { position: relative; aspect-ratio: 3 / 2; background: var(--night); overflow: hidden; }
+.att-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.att-tags { position: absolute; top: 10px; inset-inline-start: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+.att-tags span { font-size: 12px; padding: 4px 9px; background: rgba(5, 15, 36, .82); color: #fff; }
+.att-tags .t-kids { background: #1d7a4f; }
+.att-tags .t-free { background: var(--gold-lo); }
+.att-b { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+.att h3 { font: 400 25px/1.2 var(--display); color: var(--night); margin: 0 0 8px; }
+.att h3 small { display: block; font-size: 13px; font-family: inherit; letter-spacing: .08em; color: var(--muted); margin-top: 3px; text-align: right; unicode-bidi: isolate; }
+.att-b > p { margin: 0 0 14px; font-size: 16px; line-height: 1.65; }
+.att-meta { margin: 0 0 12px; border-top: 1px solid var(--line-soft); }
+.att-meta div { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line-soft); font-size: 14px; }
+.att-meta dt { flex: 0 0 64px; color: var(--gold-lo); }
+.att-meta dd { margin: 0; color: var(--night); }
+.att-note { margin: 0 0 12px; padding: 8px 12px; background: #fff8e6; font-size: 14px; line-height: 1.55; }
+.att-map { margin-top: auto; align-self: flex-start; font-size: 14px; color: var(--night); border-bottom: 1px solid var(--gold); text-decoration: none; padding-bottom: 2px; }
+.att-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+.att-filter button { font: inherit; font-size: 15px; padding: 8px 18px; border: 1px solid var(--line-soft); background: #fff; color: var(--night); border-radius: 40px; cursor: pointer; }
+.att-filter button[aria-pressed="true"] { background: var(--night); border-color: var(--night); color: #fff; }
+.guide-more { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 30px 0 0; }
+.guide-more a { display: block; padding: 20px 24px; background: var(--night); color: #fff; text-decoration: none; transition: background .3s; }
+.guide-more a:hover { background: var(--night-3); }
+.guide-more b { display: block; font: 400 24px/1.2 var(--display); margin-bottom: 6px; }
+.guide-more b::after { content: ' ←'; color: var(--gold); }
+.guide-more span { font-size: 14px; color: rgba(255, 255, 255, .75); }
+.months { overflow-x: auto; margin: 30px 0 10px; }
+.months table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.months th, .months td { padding: 10px 8px; border-bottom: 1px solid var(--line-soft); text-align: right; }
+.months thead th { font-size: 12px; letter-spacing: .15em; color: var(--gold-lo); font-weight: 400; }
+.months tbody th { font-weight: 600; color: var(--night); }
+.months td:nth-child(2), .months td:nth-child(3) { white-space: nowrap; }
+.ages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.age { padding: 20px 22px; background: #fff; border: 1px solid var(--line-soft); border-top: 3px solid var(--gold); }
+.age b { display: block; font: 400 22px var(--display); color: var(--night); margin-bottom: 8px; }
+.age ul { margin: 0; padding-inline-start: 18px; }
+.age li { font-size: 15px; line-height: 1.6; padding: 3px 0; }
+.more-link { font-size: 15px; color: var(--night); border-bottom: 1px solid var(--gold); text-decoration: none; }
+.credits { margin: 40px 0 0; font-size: 12px; color: var(--muted); }
+.credits summary { cursor: pointer; }
+.credits ul { margin: 8px 0 0; padding-inline-start: 18px; line-height: 1.7; }
+.credits a { color: var(--muted); }
+.guide-page .block:first-of-type { margin-top: 0; }
+@media (max-width: 900px) {
+  .glance { grid-template-columns: repeat(2, 1fr); }
+  .ages { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .glance { margin: -30px 0 40px; }
+  .glance dd { font-size: 14px; }
+  .att-grid { grid-template-columns: 1fr; gap: 24px; }
+  .att h3 { font-size: 22px; }
+  .months th, .months td { padding: 9px 5px; font-size: 14px; }
+  .guide-nav { margin-bottom: 36px; }
+}
+.att-noimg { aspect-ratio: auto; min-height: 120px; display: flex; align-items: flex-end; padding: 18px 20px; background: linear-gradient(135deg, var(--night), var(--night-3)); }
+.att-noimg b { font: 400 30px/1.1 var(--display); color: var(--gold); }
