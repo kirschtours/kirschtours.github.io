@@ -368,6 +368,17 @@
     document.addEventListener('click', function (e) { if (top.classList.contains('menu-open') && !top.contains(e.target)) setMenu(false); });
   }
 
+  // טבלת הכבודה: "פירוט מלא" בשורה של חברה פותח את השורה שמתחתיה
+  document.querySelectorAll('.air-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var row = document.getElementById(b.getAttribute('aria-controls'));
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (row) row.hidden = !open;
+      if (lenis) lenis.resize();
+    });
+  });
+
   // סינון אטרקציות במדריך היעד: הכל / ילדים / חינם / בערב
   document.querySelectorAll('.att-filter').forEach(function (f) {
     var grid = document.querySelector(f.getAttribute('data-for'));

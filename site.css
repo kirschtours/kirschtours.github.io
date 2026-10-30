@@ -879,3 +879,15 @@ details.air-detail > summary span { font-size: 14px; color: var(--muted); }
 details.air-detail > summary::after { content: '+'; margin-inline-start: auto; color: var(--gold); font-size: 26px; line-height: 1; transition: transform .3s; }
 details.air-detail[open] > summary::after { transform: rotate(45deg); }
 details.air-detail[open] > summary { margin-bottom: 12px; }
+/* פירוט לכל חברת תעופה - נפתח מהשורה שלה בטבלת הכבודה */
+.air-btn { display: block; margin-top: 6px; font: inherit; font-size: 13px; font-weight: 400; padding: 4px 12px; border: 1px solid var(--gold); border-radius: 30px; background: #fff; color: var(--night); cursor: pointer; white-space: nowrap; }
+.air-btn::after { content: ' +'; color: var(--gold-lo); }
+.air-btn[aria-expanded="true"] { background: var(--night); border-color: var(--night); color: #fff; }
+.air-btn[aria-expanded="true"]::after { content: ' −'; color: var(--gold); }
+.bags .air-more > td { padding: 0 0 18px; white-space: normal; }
+.bags .air-more .air-detail { margin: 0; }
+.air-prices { width: 100%; border-collapse: collapse; margin: 12px 0 6px; }
+@media (max-width: 560px) {
+  .bags .air-more > td::before { content: none; }
+  .air-btn { display: inline-block; margin: 0 10px 0 0; vertical-align: middle; }
+}
