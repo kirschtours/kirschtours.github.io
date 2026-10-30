@@ -671,7 +671,7 @@ footer .dest-links b { width: 100%; }
 
 /* בטלפון: כרטיסי הדילים והטיולים שניים בשורה, כמו משבצות היעדים (29.10.2026) */
 @media (max-width: 560px) {
-  .grid, .results .grid { grid-template-columns: repeat(2, 1fr); gap: 26px 10px; }
+  .grid, .results .grid, .dest-page .dest-grid { grid-template-columns: repeat(2, 1fr); gap: 26px 10px; }
   .card .ph .over { bottom: 10px; inset-inline: 10px; flex-direction: column; align-items: stretch; gap: 4px; }
   .card .ph .over .from { font-size: 9px; letter-spacing: .15em; }
   .card .ph .over .price { font-size: 24px; }
