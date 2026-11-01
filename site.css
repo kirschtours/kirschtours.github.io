@@ -947,7 +947,7 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .f770 .freset { font: inherit; font-size: 14px; background: none; border: 0; color: var(--night); text-decoration: underline; cursor: pointer; padding: 0; }
 .e770[hidden], .e770 li[hidden], .fnone[hidden] { display: none; }
 .fnone { margin: 0 0 24px; }
-@media (max-width: 760px) { .f770 { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px; } .f770 .fg { flex-direction: column; align-items: flex-start; gap: 6px; } .f770 .chips { max-width: 100%; } .f770 .fsum { margin: 0; } }
+@media (max-width: 760px) { .f770 { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px; } .f770 .fg { flex-direction: column; align-items: flex-start; gap: 6px; } .f770 .fg { width: 100%; } .f770 .chips { flex-wrap: wrap; overflow: visible; } .f770 .fsum { margin: 0; } }
 .g770 { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 26px; }
 .e770 { display: flex; flex-direction: column; gap: 10px; padding: 30px 28px 26px; background: var(--paper); border: 1px solid var(--line-soft); color: var(--ink); text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s; }
 .e770:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(5, 15, 36, .12); }
