@@ -14,7 +14,7 @@
     if (!a) return;
     var group = a.href.indexOf('chat.whatsapp.com') > -1;
     var page = decodeURIComponent(location.pathname).replace(/\/index\.html$/, '/');
-    track((group ? 'קבוצה' : 'וואטסאפ') + page, (group ? 'הצטרפות לקבוצה מ-' : 'לחיצה על וואטסאפ מ-') + (document.querySelector('h1') || document).textContent.trim().slice(0, 60));
+    track((a.dataset.ev || (group ? 'קבוצה' : 'וואטסאפ')) + page, (group ? 'הצטרפות לקבוצה מ-' : 'לחיצה על וואטסאפ מ-') + (document.querySelector('h1') || document).textContent.trim().slice(0, 60));
   });
   document.querySelectorAll('[data-exp]').forEach(function (el) { if (el.dataset.exp < today) el.remove(); });
   document.querySelectorAll('[data-o]').forEach(function (el) { if (el.dataset.o <= today) el.remove(); });
@@ -88,6 +88,8 @@
     slides[cur].classList.remove('on');
     cur = (cur + 1) % slides.length;
     slides[cur].classList.add('on');
+    // השקופית הבאה נטענת רק עכשיו, 6 שניות לפני שהיא מוצגת (מהירות בנייד, 2.11.2026)
+    var nx = slides[(cur + 1) % slides.length]; if (nx && nx.dataset.src) wake(nx);
   }, 6000);
 
   // דקה 90 = יציאה בתוך LAST_MINUTE ימים. מחושב בדפדפן מול היום, כדי שיישאר נכון גם בלי בנייה מחדש.
@@ -298,6 +300,22 @@
     var n = Math.round((day0(nowIl) - day0(el.dataset.round)) / 864e5);
     if (n >= 0) el.textContent = n === 0 ? 'עלה היום' : n === 1 ? 'עלה אתמול' : 'עלה לפני ' + n + ' ימים';
   });
+  // אזור 770: עד איפה גוללים (חיים, 2.11.2026 - "איפה אנשים יוצאים"). כל חלק נספר פעם אחת בכל כניסה: גלילה/770/<מועד>/#<חלק>
+  if (window.IntersectionObserver && document.querySelector('.p770')) {
+    var gpage = decodeURIComponent(location.pathname).replace(/\/index\.html$/, '/');
+    var marks = [['.f770, .p770-event .dates', 'טיסות'], ['.p770-event aside.side', 'הזמנה'], ['.p770-event .after770 .alert-box', 'תעדכן'], ['#calendar', 'לוח'], ['#groups', 'קבוצות'], ['#faq', 'שאלות'], ['footer', 'סוף']];
+    var seen = new IntersectionObserver(function (es) { es.forEach(function (en) { if (!en.isIntersecting) return; seen.unobserve(en.target); track('גלילה' + gpage + '#' + en.target.dataset.mark, 'הגיע ל' + en.target.dataset.mark); }); }, { threshold: .25 });
+    marks.forEach(function (m) { var el = document.querySelector(m[0]); if (el) { el.dataset.mark = m[1]; seen.observe(el); } });
+  }
+
+  // "המחיר נבדק לפני..." באזור 770. מעל 3 ימים לא מוצג - המחיר עדיין בתוקף, אבל "לפני 9 ימים" לא בונה אמון
+  document.querySelectorAll('.fresh770[data-checked]').forEach(function (el) {
+    var m = Math.max(1, Math.round((Date.now() - Date.parse(el.dataset.checked)) / 6e4)), h = Math.round(m / 60), d = Math.floor(m / 1440);
+    if (!(m > 0) || d > 3) return;
+    el.textContent = 'המחיר נבדק ' + (m < 60 ? 'לפני ' + m + ' דקות' : h === 1 ? 'לפני שעה' : h === 2 ? 'לפני שעתיים' : h < 24 ? 'לפני ' + h + ' שעות' : d === 1 ? 'אתמול' : 'לפני ' + d + ' ימים');
+    el.hidden = false;
+  });
+
   // ספירה לאחור למועדים של 770, לפי התאריך בישראל. בזמן המועד עצמו - "עכשיו", ואחריו מוסתר
   document.querySelectorAll('.count770[data-start]').forEach(function (el) {
     var n = Math.round((day0(el.dataset.start) - day0(nowIl)) / 864e5), end = Math.round((day0(el.dataset.end) - day0(nowIl)) / 864e5);
@@ -368,7 +386,8 @@
     if (img.dataset.srcset) { img.srcset = img.dataset.srcset; img.removeAttribute('data-srcset'); }
     if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
   };
-  addEventListener('load', function () { document.querySelectorAll('.hero .slides img[data-src], .p770-hero .slides img[data-src]').forEach(wake); });
+  // בפתיח: אחרי הטעינה רק השקופית השנייה, ושאר השקופיות אחת-אחת לפני שהן מוצגות (במקום כל התמונות מיד - חוסך כחצי מגה בנייד)
+  addEventListener('load', function () { if (slides.length > 1 && !still && slides[1].dataset.src) wake(slides[1]); });
   document.querySelectorAll('.card .slides').forEach(function (track) {
     var card = track.closest('.card'), dots = card.querySelectorAll('.dots i');
     if (dots.length < 2) return;

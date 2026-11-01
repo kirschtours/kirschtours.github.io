@@ -999,6 +999,11 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .esta770 p { margin: 8px 0 0; max-width: 56ch; opacity: .9; }
 /* דף מועד 770 בנייד: קופסת ההזמנה אחרי התאריכים ולפני "עוד מועדים" (חיים, 1.11.2026) */
 @media (max-width: 760px) { .p770-event .deal-layout > div:first-child { display: contents; } .p770-event .deal-layout .side { order: 2; } .p770-event .after770 { order: 3; } }
+/* "המחיר נבדק לפני..." באזור 770 */
+.fresh770 { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); }
+.fresh770::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--wa); flex: none; }
+.fresh770[hidden] { display: none; }
+.book .fresh770 { justify-content: center; color: rgba(255, 255, 255, .7); margin: 10px 0 4px; }
 /* ספירה לאחור והקבוצות באזור 770 */
 .count770 { display: inline-block; font: 600 14px/1 var(--body, inherit); letter-spacing: .02em; color: var(--night); background: var(--gold-hi); padding: 7px 12px; align-self: flex-start; }
 .count770[hidden] { display: none; }
