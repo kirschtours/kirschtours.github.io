@@ -918,3 +918,53 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 }
 .dstrip + #deals { padding-top: clamp(48px, 6vw, 80px); }
 @media (min-width: 701px) { .ds-row { flex-wrap: wrap; overflow: visible; gap: 12px; } .ds-row a { width: 68px; } .ds-row img, .ds-row i { width: 56px; height: 56px; } }
+
+/* אזור טיסות ל-770 (חיים, 1.11.2026) - נפרד מהחופשות. כחול לילה וזהב, כמו העיצוב של דילי 770 */
+.brand .b770-num { color: #ffd400; }
+.p770-hero { position: relative; overflow: hidden; color: #fff; min-height: 620px; display: flex; align-items: end; background: radial-gradient(ellipse at 20% 80%, rgba(255, 212, 0, .14), transparent 55%), linear-gradient(165deg, #0d2f78 0%, #071a45 55%, var(--night) 100%); }
+.p770-hero.small { min-height: 440px; }
+.p770-hero .wrap { position: relative; z-index: 2; padding: 140px 0 64px; }
+.p770-hero h1 { font: 400 clamp(44px, 7vw, 96px)/1 var(--display); margin: 0 0 18px; }
+.p770-hero h1 small { display: block; font-size: .36em; line-height: 1.4; color: var(--gold-hi); margin-top: 16px; max-width: 30ch; }
+.p770-hero h1 i { font-style: normal; }
+.p770-hero .crumbs a { color: inherit; }
+.p770-hero .slogan { font-size: 18px; margin: 0 0 28px; opacity: .9; }
+.p770-hero .slogan b { color: #ffd400; }
+.p770-hero .cta { display: flex; flex-wrap: wrap; gap: 14px; }
+.p770-hero .b770 { position: absolute; z-index: 1; inset-inline-end: 4%; bottom: 0; width: clamp(220px, 30vw, 420px); height: auto; filter: drop-shadow(0 14px 30px rgba(0, 0, 0, .45)); }
+.p770-hero.small .b770 { width: clamp(180px, 22vw, 300px); }
+.g770 { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 26px; }
+.e770 { display: flex; flex-direction: column; gap: 10px; padding: 30px 28px 26px; background: var(--paper); border: 1px solid var(--line-soft); color: var(--ink); text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s; }
+.e770:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(5, 15, 36, .12); }
+.e770 .ev { font: 400 28px/1.15 var(--display); color: var(--night); display: flex; align-items: center; gap: 12px; }
+.e770 .ev i { font-style: normal; font-size: 30px; }
+.e770 .line { margin: 0; color: var(--muted); font-size: 15px; }
+.e770 .from { font-size: 15px; color: var(--muted); }
+.e770 .from b { font: 400 34px/1 var(--display); color: var(--night); margin-inline-end: 6px; }
+.e770 ul { list-style: none; margin: 6px 0 0; padding: 0; border-top: 1px solid var(--line-soft); }
+.e770 li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line-soft); font-size: 16px; }
+.e770 li small { display: block; color: var(--muted); font-size: 13px; }
+.e770 li b { font: 400 22px var(--display); color: var(--night); white-space: nowrap; }
+.e770 .go { margin-top: auto; padding-top: 8px; color: var(--gold-lo); font-size: 14px; letter-spacing: .08em; }
+.how770 { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 26px; }
+.how770 li { counter-increment: s; padding-top: 18px; border-top: 1px solid var(--night); color: var(--muted); font-size: 16px; }
+.how770 li::before { content: '0' counter(s); display: block; font: 400 15px var(--display); color: var(--gold); letter-spacing: .1em; margin-bottom: 8px; }
+.how770 li b { display: block; font: 400 24px/1.2 var(--display); color: var(--night); margin-bottom: 8px; }
+.join770 { text-align: center; }
+.join770 h2 { max-width: 22ch; margin-inline: auto; }
+.join770 .wa-alt { margin-inline-start: 16px; }
+.p770-event .date .p { grid-row: span 4; }
+.p770-event .date .fl b { color: var(--night); font-weight: 600; }
+.poster770 { margin: 40px 0; max-width: 460px; }
+.poster770 img { width: 100%; height: auto; display: block; box-shadow: 0 20px 50px rgba(5, 15, 36, .18); }
+.more770 { list-style: none; margin: 0; padding: 0; }
+.more770 a { display: flex; justify-content: space-between; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); color: var(--ink); text-decoration: none; font-size: 18px; }
+.more770 a span { color: var(--gold-lo); white-space: nowrap; }
+@media (max-width: 760px) {
+  .p770-hero { min-height: 560px; }
+  .p770-hero.small { min-height: 380px; }
+  .p770-hero .wrap { padding-top: 110px; }
+  .p770-hero .b770 { width: 150px; inset-inline-end: 16px; bottom: auto; top: 84px; opacity: .55; }
+  .p770-hero.small .b770 { width: 120px; }
+  .e770 { padding: 24px 20px 20px; }
+}
