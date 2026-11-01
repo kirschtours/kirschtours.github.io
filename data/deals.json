@@ -1,6 +1,100 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-11-01",
  "deals": [
+  {
+   "id": "2026-10-31-prague",
+   "dest": "פראג",
+   "hotel": "Kosher Hotel King David Prague",
+   "stars": 5,
+   "score": "9.1",
+   "rev": "1,425",
+   "kosher": true,
+   "feats": [
+    "🍽️ כשר למהדרין",
+    "📍 רחוב היברנסקה, 15 דק' הליכה מכיכר העיר העתיקה",
+    "🛏️ חדר עם מיטת קינג זוגית"
+   ],
+   "min": 3695,
+   "nightsLabel": "4 לילות",
+   "round": "2026-10-31",
+   "expires": "2026-11-07",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg"
+   ],
+   "country": "צ׳כיה",
+   "board": "BB",
+   "vip": true,
+   "options": [
+    {
+     "kind": "board",
+     "label": "עם חצי פנסיון",
+     "board": "HB",
+     "addPp": 660
+    },
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לבוטיק סוויטה עם כניסה לספא",
+     "addPp": 714,
+     "date": "2026-11-15",
+     "vip": true
+    }
+   ],
+   "amenities": [
+    "indoor_pool",
+    "spa",
+    "jacuzzi",
+    "sauna",
+    "gym",
+    "restaurant",
+    "bar",
+    "wifi",
+    "airport_shuttle",
+    "accessible",
+    "business",
+    "laundry",
+    "24h_reception",
+    "elevator",
+    "non_smoking"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-08",
+     "r": "2026-11-12",
+     "label": "8-12/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "טוס",
+     "out": "10:20",
+     "back": "14:50",
+     "price": 4638
+    },
+    {
+     "o": "2026-11-15",
+     "r": "2026-11-19",
+     "label": "15-19/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "טוס",
+     "out": "10:20",
+     "back": "14:50",
+     "price": 3695
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-10-31-prague/"
+  },
   {
    "id": "2026-10-30-budapest",
    "dest": "בודפשט",
@@ -910,110 +1004,6 @@
    "url": "https://kirshtours.co.il/deal/2026-10-28-hanukkah-prague/"
   },
   {
-   "id": "2026-10-28-prague",
-   "dest": "פראג",
-   "hotel": "Kosher Hotel King David Prague",
-   "stars": 5,
-   "score": "9.1",
-   "rev": "1,425",
-   "kosher": true,
-   "feats": [
-    "🍽️ כשר למהדרין",
-    "📍 רחוב היברנסקה, 15 דק' הליכה מכיכר העיר העתיקה"
-   ],
-   "min": 2762,
-   "nightsLabel": "3-4 לילות",
-   "round": "2026-10-28",
-   "expires": "2026-11-04",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "צ׳כיה",
-   "board": "BB",
-   "vip": true,
-   "options": [
-    {
-     "kind": "board",
-     "label": "עם חצי פנסיון",
-     "board": "HB",
-     "addPp": 594
-    },
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לבוטיק סוויטה עם כניסה לספא",
-     "addPp": 428,
-     "date": "2026-11-05",
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "indoor_pool",
-    "spa",
-    "jacuzzi",
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "wifi",
-    "airport_shuttle",
-    "accessible",
-    "business",
-    "laundry",
-    "24h_reception",
-    "elevator",
-    "non_smoking"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-04",
-     "r": "2026-11-08",
-     "label": "4-8/11",
-     "days": "רביעי–ראשון",
-     "nights": 4,
-     "fl": "ישראייר",
-     "out": "06:55",
-     "back": "13:20",
-     "price": 3087
-    },
-    {
-     "o": "2026-11-05",
-     "r": "2026-11-08",
-     "label": "5-8/11",
-     "days": "חמישי–ראשון",
-     "nights": 3,
-     "fl": "סמארטווינגס",
-     "out": "05:35",
-     "back": "12:45",
-     "price": 2762
-    },
-    {
-     "o": "2026-11-08",
-     "r": "2026-11-12",
-     "label": "8-12/11",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:20",
-     "back": "14:50",
-     "price": 3105
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-28-prague/"
-  },
-  {
    "id": "2026-10-28-tbilisi",
    "dest": "טביליסי",
    "hotel": "ibis Styles Tbilisi Center",
@@ -1683,55 +1673,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-10-26-budapest/"
-  },
-  {
-   "id": "2026-10-25-prague",
-   "dest": "פראג",
-   "hotel": "Grandium Hotel Prague",
-   "stars": 5,
-   "score": "9.0",
-   "rev": "10,799",
-   "trolley": true,
-   "feats": [
-    "📍 בלב פראג, במרחק הליכה מכיכר ואצלב ומכיכר העיר העתיקה",
-    "🕍 כ-20 דקות הליכה מהרובע היהודי ובתי הכנסת",
-    "🌙 חזרה בלילה = עוד יום חמישי שלם בפראג"
-   ],
-   "min": 2336,
-   "nightsLabel": "4 לילות",
-   "round": "2026-10-25",
-   "expires": "2026-11-01",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg"
-   ],
-   "country": "צ׳כיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [],
-   "dates": [
-    {
-     "o": "2026-11-15",
-     "r": "2026-11-19",
-     "label": "15-19/11",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "סמארטווינגס",
-     "out": "05:35",
-     "back": "23:45",
-     "land": "08:45",
-     "bag": "טרולי 8 ק\"ג כלול",
-     "price": 2336
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-25-prague/"
   }
  ]
 }
