@@ -68,11 +68,15 @@ main:focus { outline: none; }
 .brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1; }
 .brand b { font: 400 22px var(--display); letter-spacing: .32em; color: #fff; }
 .brand small { font-size: 11px; letter-spacing: .3em; color: var(--gold); margin-top: 6px; }
-.top nav { display: flex; gap: 34px; font-size: 14px; letter-spacing: .12em; }
-.top nav a { text-decoration: none; position: relative; padding: 6px 0; opacity: .85; }
+.top nav { display: flex; gap: clamp(14px, 2.2vw, 34px); font-size: 14px; letter-spacing: .12em; }
+@media (max-width: 1200px) { .top nav { letter-spacing: .04em; } }
+.top nav a { text-decoration: none; position: relative; padding: 6px 0; opacity: .85; white-space: nowrap; }
 .top nav a::after { content: ''; position: absolute; bottom: 0; inset-inline: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform .4s var(--ease); }
 .top nav a:hover { opacity: 1; }
 .top nav a:hover::after { transform: scaleX(1); }
+.top nav a[aria-current="page"] { opacity: 1; }
+.top nav a[aria-current="page"]::after { transform: scaleX(1); }
+.top .btn-line { white-space: nowrap; }
 .menu-btn { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 10px; background: transparent; border: 0; cursor: pointer; }
 .menu-btn span { display: block; height: 2px; background: currentColor; transition: transform .3s var(--ease), opacity .3s; }
 .top.menu-open .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -361,16 +365,18 @@ footer .en { direction: ltr; text-align: left; font-size: 12px; opacity: .85; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .step:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; }
 }
-@media (max-width: 760px) {
-  body { font-size: 16px; }
-  .wrap { width: calc(100% - 32px); }
-  /* תפריט בנייד (28.10.2026): כפתור ☰ שפותח את כל הקישורים מתחת לכותרת */
+@media (max-width: 1000px) {
+  /* תפריט בנייד ובמסך צר (28.10.2026; מ-1000px מאז 01.11, כשנוספה לשונית "לפני הטיסה"): כפתור ☰ שפותח את כל הקישורים מתחת לכותרת */
   .top nav { display: none; position: absolute; top: 100%; inset-inline: 0; flex-direction: column; gap: 0; padding: 8px 16px 18px; background: rgba(5, 15, 36, .97); border-bottom: 1px solid var(--line); font-size: 17px; letter-spacing: .04em; max-height: calc(100vh - 68px); overflow-y: auto; }
   .top nav a { padding: 14px 4px; border-bottom: 1px solid rgba(200, 169, 106, .15); opacity: 1; }
   .top nav a::after { display: none; }
   .top.menu-open nav { display: flex; }
   .top.menu-open { background: rgba(5, 15, 36, .97); }
   .menu-btn { display: flex; margin-inline-start: auto; }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .wrap { width: calc(100% - 32px); }
   .top .wrap { gap: 6px; }
   .brand b { white-space: nowrap; }
   .top .btn-line { white-space: nowrap; padding-inline: 12px; }
