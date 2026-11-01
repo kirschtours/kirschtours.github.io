@@ -83,7 +83,7 @@
   onScroll();
 
   // מצגת תמונות בהירו
-  var slides = document.querySelectorAll('.hero .slides img'), cur = 0;
+  var slides = document.querySelectorAll('.hero .slides img, .p770-hero .slides img'), cur = 0;
   if (slides.length > 1 && !still) setInterval(function () {
     slides[cur].classList.remove('on');
     cur = (cur + 1) % slides.length;
@@ -313,7 +313,7 @@
     if (img.dataset.srcset) { img.srcset = img.dataset.srcset; img.removeAttribute('data-srcset'); }
     if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
   };
-  addEventListener('load', function () { document.querySelectorAll('.hero .slides img[data-src]').forEach(wake); });
+  addEventListener('load', function () { document.querySelectorAll('.hero .slides img[data-src], .p770-hero .slides img[data-src]').forEach(wake); });
   document.querySelectorAll('.card .slides').forEach(function (track) {
     var card = track.closest('.card'), dots = card.querySelectorAll('.dots i');
     if (dots.length < 2) return;
