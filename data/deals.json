@@ -2,66 +2,6 @@
  "updated": "2026-11-01",
  "deals": [
   {
-   "id": "2026-11-01-site-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "Gallery Palace",
-   "stars": 4,
-   "score": "8.0",
-   "rev": "719",
-   "trolley": false,
-   "kosher": true,
-   "feats": [
-    "🍽️ כשר למהדרין"
-   ],
-   "min": 1509,
-   "nightsLabel": "3 לילות",
-   "round": "2026-11-01",
-   "expires": "2026-11-08",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "spa",
-    "jacuzzi",
-    "sauna",
-    "gym",
-    "restaurant",
-    "room_service",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-20",
-     "r": "2026-12-23",
-     "label": "20-23/12",
-     "days": "ראשון–רביעי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "18:15",
-     "back": "23:55",
-     "price": 1509
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-01-site-tbilisi/"
-  },
-  {
    "id": "2026-11-01-site-batumi",
    "dest": "בטומי",
    "hotel": "Radisson Blu Hotel Batumi",
