@@ -997,6 +997,12 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .esta770 { display: flex; align-items: center; justify-content: space-between; gap: 20px 40px; flex-wrap: wrap; padding: 34px 38px; margin-block: 10px; background: linear-gradient(165deg, #0d2f78, #071a45); color: #fff; }
 .esta770 b { font: 400 30px/1.2 var(--display); color: #ffd400; }
 .esta770 p { margin: 8px 0 0; max-width: 56ch; opacity: .9; }
+/* ספירה לאחור והקבוצות באזור 770 */
+.count770 { display: inline-block; font: 600 14px/1 var(--body, inherit); letter-spacing: .02em; color: var(--night); background: var(--gold-hi); padding: 7px 12px; align-self: flex-start; }
+.count770[hidden] { display: none; }
+.p770-hero h1 .count770 { display: block; width: max-content; margin: 0 0 14px; font-size: 15px; order: -1; }
+.p770-hero h1 .count770[hidden] { display: none; }
+.lead770 { max-width: 60ch; color: var(--muted); margin: 0 0 22px; }
 .ask770 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 20px; align-items: end; background: var(--paper); border: 1px solid var(--line-soft); padding: 28px; }
 .ask770 label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--muted); }
 .ask770 .wide { grid-column: 1 / -1; }

@@ -298,6 +298,14 @@
     var n = Math.round((day0(nowIl) - day0(el.dataset.round)) / 864e5);
     if (n >= 0) el.textContent = n === 0 ? 'עלה היום' : n === 1 ? 'עלה אתמול' : 'עלה לפני ' + n + ' ימים';
   });
+  // ספירה לאחור למועדים של 770, לפי התאריך בישראל. בזמן המועד עצמו - "עכשיו", ואחריו מוסתר
+  document.querySelectorAll('.count770[data-start]').forEach(function (el) {
+    var n = Math.round((day0(el.dataset.start) - day0(nowIl)) / 864e5), end = Math.round((day0(el.dataset.end) - day0(nowIl)) / 864e5);
+    if (end < 0) return;
+    el.textContent = n > 1 ? 'עוד ' + n + ' ימים ל' + el.dataset.name : n === 1 ? el.dataset.name + ' מחר' : el.dataset.name + ' עכשיו';
+    el.hidden = false;
+  });
+
   // מסננים באזור 770: חודש (בכרטיס), ישירות בלבד ומשך שהייה (בשורות). בכל קבוצה בחירה אחת, לחיצה נוספת מבטלת.
   // שורה שלא מתאימה מוסתרת, המחיר "החל מ-" מתעדכן לפי השורות שנשארו, וכרטיס בלי שורות נעלם
   var f770 = document.querySelector('.f770');
