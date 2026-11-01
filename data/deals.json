@@ -2,6 +2,121 @@
  "updated": "2026-11-01",
  "deals": [
   {
+   "id": "2026-10-31-vip-prague",
+   "dest": "פראג",
+   "hotel": "Grand Hotel Bohemia",
+   "stars": 5,
+   "score": "9.5",
+   "rev": "3,552",
+   "feats": [
+    "📍 4 דק' הליכה מכיכר העיר העתיקה",
+    "🕍 הרובע היהודי במרחק הליכה",
+    "🛎️ קונסיירז' ושירות חדרים"
+   ],
+   "min": 2521,
+   "nightsLabel": "4 לילות",
+   "round": "2026-10-31",
+   "expires": "2026-11-07",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg",
+    "15.jpg",
+    "16.jpg"
+   ],
+   "country": "צ׳כיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": true,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לג'וניור סוויטה (29 מ\"ר)",
+     "addPp": 358,
+     "vip": true
+    },
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לחדר זוגי עם נוף",
+     "addPp": 178
+    }
+   ],
+   "amenities": [
+    "restaurant",
+    "bar",
+    "room_service",
+    "wifi",
+    "parking",
+    "airport_shuttle",
+    "accessible",
+    "business",
+    "laundry",
+    "24h_reception",
+    "elevator",
+    "non_smoking"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-08",
+     "r": "2026-11-12",
+     "label": "8-12/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "טוס",
+     "out": "10:20",
+     "back": "14:50",
+     "price": 2966
+    },
+    {
+     "o": "2026-11-08",
+     "r": "2026-11-12",
+     "label": "8-12/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "סמארטווינגס",
+     "out": "05:35",
+     "back": "23:45",
+     "bag": "כולל טרולי",
+     "price": 2821
+    },
+    {
+     "o": "2026-11-15",
+     "r": "2026-11-19",
+     "label": "15-19/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "טוס",
+     "out": "10:20",
+     "back": "14:50",
+     "price": 2521
+    },
+    {
+     "o": "2026-11-15",
+     "r": "2026-11-19",
+     "label": "15-19/11",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "סמארטווינגס",
+     "out": "05:35",
+     "back": "23:45",
+     "bag": "כולל טרולי",
+     "price": 2749
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-10-31-vip-prague/"
+  },
+  {
    "id": "2026-10-31-prague",
    "dest": "פראג",
    "hotel": "Kosher Hotel King David Prague",
