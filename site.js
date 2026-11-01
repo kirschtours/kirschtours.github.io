@@ -298,6 +298,53 @@
     var n = Math.round((day0(nowIl) - day0(el.dataset.round)) / 864e5);
     if (n >= 0) el.textContent = n === 0 ? 'עלה היום' : n === 1 ? 'עלה אתמול' : 'עלה לפני ' + n + ' ימים';
   });
+  // מסננים באזור 770: חודש (בכרטיס), ישירות בלבד ומשך שהייה (בשורות). בכל קבוצה בחירה אחת, לחיצה נוספת מבטלת.
+  // שורה שלא מתאימה מוסתרת, המחיר "החל מ-" מתעדכן לפי השורות שנשארו, וכרטיס בלי שורות נעלם
+  var f770 = document.querySelector('.f770');
+  if (f770) {
+    var cards770 = [].slice.call(document.querySelectorAll('.g770 .e770'));
+    var chips = [].slice.call(f770.querySelectorAll('.chip'));
+    var none770 = document.querySelector('.fnone');
+    var usd770 = function (n) { return '$' + n.toLocaleString('en-US'); };
+    var rowOk = function (li, s) { return (!s.direct || li.dataset.direct === '1') && (!s.stay || li.dataset.stay === s.stay); };
+    var pick = function () { var s = {}; chips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true') s[c.dataset.g] = c.dataset.v; }); return s; };
+    var run770 = function () {
+      var s = pick(), shown = 0, on = Object.keys(s).length > 0;
+      cards770.forEach(function (c) {
+        var rows = [].slice.call(c.querySelectorAll('li')), left = [];
+        rows.forEach(function (li) { var ok = rowOk(li, s); li.hidden = !ok; if (ok) left.push(+li.dataset.price); });
+        c.hidden = !left.length || (s.mon && c.dataset.mon !== s.mon);
+        if (!c.hidden) {
+          shown++;
+          var min = Math.min.apply(null, left);
+          c.querySelector('.from b').textContent = usd770(min);
+          c.querySelector('.from .pre').textContent = left.every(function (p) { return p === min; }) ? '' : 'החל מ-';
+        }
+      });
+      // אפשרות שלא נשאר בה אף מועד (לפי שאר הבחירות) מוסתרת
+      chips.forEach(function (ch) {
+        var t = {}; for (var k in s) t[k] = s[k]; t[ch.dataset.g] = ch.dataset.v;
+        ch.hidden = !cards770.some(function (c) { return (!t.mon || c.dataset.mon === t.mon) && [].some.call(c.querySelectorAll('li'), function (li) { return rowOk(li, t); }); });
+      });
+      f770.querySelector('.fsum .n').textContent = on ? shown + ' מועדים מתאימים' : '';
+      f770.querySelector('.fsum .freset').hidden = !on;
+      none770.hidden = shown > 0;
+    };
+    chips.forEach(function (ch) {
+      ch.addEventListener('click', function () {
+        var was = ch.getAttribute('aria-pressed') === 'true';
+        chips.forEach(function (o) { if (o.dataset.g === ch.dataset.g) o.setAttribute('aria-pressed', 'false'); });
+        ch.setAttribute('aria-pressed', was ? 'false' : 'true');
+        track('סינון 770', ch.textContent);
+        run770();
+      });
+    });
+    document.querySelectorAll('.freset').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.preventDefault(); chips.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); }); run770(); });
+    });
+    run770();
+  }
+
   // שיתוף דיל: בטלפון - תפריט השיתוף של המכשיר, ואם אין - וואטסאפ
   document.querySelectorAll('.share[data-share]').forEach(function (a) {
     if (!navigator.share) return;

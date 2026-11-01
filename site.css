@@ -933,6 +933,21 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .p770-hero .cta { display: flex; flex-wrap: wrap; gap: 14px; }
 .p770-hero .b770 { position: absolute; z-index: 1; inset-inline-end: 4%; bottom: 0; width: clamp(220px, 30vw, 420px); height: auto; filter: drop-shadow(0 14px 30px rgba(0, 0, 0, .45)); }
 .p770-hero.small .b770 { width: clamp(180px, 22vw, 300px); }
+/* מסננים באזור 770 */
+.f770 { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; margin: 0 0 28px; padding: 18px 20px; background: var(--paper); border: 1px solid var(--line-soft); }
+.f770 .fg { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.f770 .fl { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.f770 .chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.f770 .chips::-webkit-scrollbar { display: none; }
+.f770 .chip { flex: none; font: inherit; font-size: 14px; padding: 8px 14px; border: 1px solid var(--line-soft); background: #fff; color: var(--ink); border-radius: 999px; cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
+.f770 .chip:hover { border-color: var(--gold); }
+.f770 .chip[aria-pressed="true"] { background: var(--night); border-color: var(--night); color: #fff; }
+.f770 .chip[hidden] { display: none; }
+.f770 .fsum { margin-inline-start: auto; display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+.f770 .freset { font: inherit; font-size: 14px; background: none; border: 0; color: var(--night); text-decoration: underline; cursor: pointer; padding: 0; }
+.e770[hidden], .e770 li[hidden], .fnone[hidden] { display: none; }
+.fnone { margin: 0 0 24px; }
+@media (max-width: 760px) { .f770 { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px; } .f770 .fg { flex-direction: column; align-items: flex-start; gap: 6px; } .f770 .chips { max-width: 100%; } .f770 .fsum { margin: 0; } }
 .g770 { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 26px; }
 .e770 { display: flex; flex-direction: column; gap: 10px; padding: 30px 28px 26px; background: var(--paper); border: 1px solid var(--line-soft); color: var(--ink); text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s; }
 .e770:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(5, 15, 36, .12); }
