@@ -969,3 +969,29 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
   .e770 { padding: 24px 20px 20px; }
 }
 .menorah { display: inline-block; vertical-align: -.14em; }
+/* אזור 770: לוח מועדים, ESTA, בקשת טיסה (1.11.2026) */
+.lead770 { color: var(--muted); margin: -6px 0 26px; }
+.cal770 { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--night); }
+.cal770 li { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 10px 24px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+.cal770 .cw b { display: block; font: 400 22px/1.2 var(--display); color: var(--night); }
+.cal770 .cw span { font-size: 14px; color: var(--muted); }
+.cal770 .cd { font: 400 20px var(--display); color: var(--night); white-space: nowrap; text-align: center; }
+.cal770 .cd small { display: block; font: 300 12px var(--sans); color: var(--muted); }
+.cal770 .cgo { white-space: nowrap; font-size: 14px; color: var(--gold-lo); text-decoration: none; border: 1px solid var(--line); padding: 8px 14px; }
+.cal770 .cgo.live { background: var(--night); color: #fff; border-color: var(--night); }
+.esta770 { display: flex; align-items: center; justify-content: space-between; gap: 20px 40px; flex-wrap: wrap; padding: 34px 38px; margin-block: 10px; background: linear-gradient(165deg, #0d2f78, #071a45); color: #fff; }
+.esta770 b { font: 400 30px/1.2 var(--display); color: #ffd400; }
+.esta770 p { margin: 8px 0 0; max-width: 56ch; opacity: .9; }
+.ask770 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 20px; align-items: end; background: var(--paper); border: 1px solid var(--line-soft); padding: 28px; }
+.ask770 label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--muted); }
+.ask770 .wide { grid-column: 1 / -1; }
+.ask770 input, .ask770 select { font: inherit; font-size: 16px; color: var(--ink); padding: 11px 12px; border: 1px solid var(--line); background: #fff; border-radius: 0; }
+.ask770 button { grid-column: 1 / -1; justify-self: start; }
+.p770-home #about .badge b { font-family: var(--display); }
+@media (max-width: 760px) {
+  .cal770 li { grid-template-columns: 1fr auto; }
+  .cal770 .cgo { grid-column: 1 / -1; justify-self: start; }
+  .cal770 .cd { text-align: end; }
+  .esta770 { padding: 26px 20px; }
+  .ask770 { grid-template-columns: 1fr; padding: 20px; }
+}
