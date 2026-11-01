@@ -730,6 +730,7 @@ footer .dest-links b { width: 100%; }
 
 /* דיל שאוחד עם דיל חג (29.10.2026): תווית החג על התאריכים, ומחיר החג בכרטיס כשמסננים לפי החג */
 .best-tag.hol-tag { background: #1d4ed8; color: #fff; letter-spacing: .05em; }
+.best-tag.board-tag { background: none; color: inherit; border: 1px solid currentColor; letter-spacing: .05em; } /* שורה מסבב קודם עם בסיס ארוחות אחר (01.11.2026) */
 .card .ph .over.v-hol { display: none; }
 .hol-on .card .ph .over.v-hol { display: flex; }
 .hol-on .card .ph .over.v-all { display: none; }
