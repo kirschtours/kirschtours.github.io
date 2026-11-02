@@ -116,7 +116,10 @@ function show(i, scroll = true) {
   $('pos').textContent = `שקף ${idx + 1} מתוך ${l.t.length} · ${fmt(l.t[idx])}`;
   if (idx + 1 < l.t.length) new Image().src = src(idx + 1);
   document.querySelectorAll('.thumb').forEach((t, k) => t.classList.toggle('on', k === idx));
-  if (scroll) { const t = $('strip').children[idx]; if (t) $('strip').scrollLeft = t.offsetLeft - $('strip').clientWidth / 2 + t.clientWidth / 2; }
+  if (scroll) {
+    const t = $('strip').children[idx], st = $('strip');
+    if (t) st.scrollBy({ left: t.getBoundingClientRect().left - st.getBoundingClientRect().left - st.clientWidth / 2 + t.clientWidth / 2 });
+  }
 }
 
 function setFollow(on) {
