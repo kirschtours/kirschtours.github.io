@@ -1006,6 +1006,11 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .seats770 { color: #c0392b; font-weight: 600; }
 .seats770.best-tag { color: #fff; background: #c0392b; border-color: #c0392b; }
 .seats770[hidden] { display: none; }
+/* תגיות בשורת התאריך באזור 770: הסגנון הכללי של .when span (דק, אפור, 15px) דרס אותן ולכן נראו דהויות ונשברו לשתי שורות (חיים, 2.11.2026) */
+.p770 .date .when .best-tag, .p770 .date .when .lm-tag { font: 600 12px/1.5 var(--sans); letter-spacing: .03em; padding: 3px 10px; margin: 6px 0 0 6px; white-space: nowrap; }
+.p770 .date .when .best-tag { color: var(--night); }
+.p770 .date .when .best-tag.board-tag { color: var(--muted); }
+.p770 .date .when .seats770, .p770 .date .when .lm-tag { color: #fff; background: #c0392b; border-color: #c0392b; }
 .book .fresh770 { justify-content: center; color: rgba(255, 255, 255, .7); margin: 10px 0 4px; }
 /* ספירה לאחור והקבוצות באזור 770 */
 .count770 { display: inline-block; font: 600 14px/1 var(--body, inherit); letter-spacing: .02em; color: var(--night); background: var(--gold-hi); padding: 7px 12px; align-self: flex-start; }
