@@ -321,6 +321,49 @@
   document.querySelectorAll('.seats770[data-checked]').forEach(function (el) { el.hidden = !(Date.now() - Date.parse(el.dataset.checked) < 48 * 36e5); });
   document.querySelectorAll('.rowfresh[data-checked]').forEach(function (el) { var t = ago770(el.dataset.checked, true); el.textContent = t ? ' · ' + t : ''; });
 
+  // חיפוש טיסות באזור 770 (חיים, 2.11.2026): מתוך 770/grid.json שהרובוט אוסף מ-Be Agent. שום חיפוש לא יוצא מהדפדפן
+  var sf = document.querySelector('form.s770');
+  if (sf && window.fetch) fetch('grid.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(function (G) {
+    var box = document.querySelector('.s770-res'), SHOW = 8, more = false;
+    var dname = function (d) { var t = new Date(d + 'T12:00:00Z'); return ['א׳', 'ב׳', 'ג׳', 'ד׳', 'ה׳', 'ו׳', 'ש׳'][t.getUTCDay()] + ' ' + t.getUTCDate() + '.' + (t.getUTCMonth() + 1); };
+    var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var uniq = function (v, i, arr) { return arr.indexOf(v) === i; };
+    var opts = function (sel, list, keep) {
+      sel.innerHTML = '<option value="">כל התאריכים</option>' + list.map(function (d) { return '<option value="' + d + '">' + dname(d) + '</option>'; }).join('');
+      if (list.indexOf(keep) > -1) sel.value = keep;
+    };
+    var fill = function () {
+      var all = G.flights.filter(function (x) { return x.m === sf.m.value; });
+      opts(sf.o, all.map(function (x) { return x.o; }).filter(uniq).sort(), sf.o.value);
+      opts(sf.r, all.filter(function (x) { return !sf.o.value || x.o === sf.o.value; }).map(function (x) { return x.r; }).filter(uniq).sort(), sf.r.value);
+    };
+    var row = function (x, name) {
+      var msg = 'היי חיים, ראיתי באתר טיסה ל-770 ל' + name + ': ' + x.when + ', ' + x.air + ' ' + (x.d ? 'ישירה' : 'עם עצירה') + ', הלוך ' + x.od + ' חזור ' + x.bd + ', $' + x.p.toLocaleString('en-US') + ' לאדם. אפשר לבדוק בשבילי?';
+      var seats = x.s && Date.now() - Date.parse(x.c) < 48 * 36e5 ? '<small class="seat">נשארו ' + x.s + ' מקומות</small>' : '';
+      return '<div class="sr"><div class="w"><b>' + x.when + '</b> <span>' + x.days + ' · ' + esc(x.heb) + ' · ' + x.n + ' לילות</span></div>'
+        + '<div class="f"><b>' + esc(x.air) + '</b> · ' + (x.d ? 'ישירה' : 'עצירה ב' + esc(x.via)) + ' · ' + x.ap + (x.bag ? ' · מזוודה' : '')
+        + '<br>הלוך ' + x.od + (x.night ? ' (' + x.night + ')' : '') + ' ← נחיתה ' + x.oa + ' · חזור ' + x.bd + ' ← נחיתה ' + x.ba + '</div>'
+        + '<div class="pr">$' + x.p.toLocaleString('en-US') + '<small>לאדם · הלוך-חזור</small>' + seats + '</div>'
+        + '<a class="btn btn-gold" data-ev="חיפוש" href="' + sf.dataset.wa.replace(/text=.*$/, 'text=') + encodeURIComponent(msg) + '">להזמנה בוואטסאפ</a></div>';
+    };
+    var draw = function () {
+      var m = sf.m.value, mo = G.moadim.filter(function (z) { return z.slug === m; })[0] || {};
+      var list = G.flights.filter(function (x) { return x.m === m && (!sf.o.value || x.o === sf.o.value) && (!sf.r.value || x.r === sf.r.value) && (!sf.d.checked || x.d); });
+      var up = ago770(mo.checked, false).replace('המחיר עודכן', 'המחירים עודכנו');
+      box.innerHTML = list.length
+        ? '<p class="cnt">' + list.length + ' טיסות ל' + esc(mo.name) + (up ? ' · ' + up : '') + '</p>' + list.slice(0, more ? 99 : SHOW).map(function (x) { return row(x, mo.name); }).join('')
+          + (list.length > SHOW && !more ? '<button type="button" class="btn btn-line s770-more">עוד ' + (list.length - SHOW) + ' טיסות</button>' : '')
+        : '<p class="cnt">אין טיסה שמתאימה לבחירה הזו. <a href="#ask">שלחו לי ואבדוק</a> - יש תאריכים שלא מופיעים כאן.</p>';
+      var b = box.querySelector('.s770-more'); if (b) b.addEventListener('click', function () { more = true; draw(); });
+    };
+    sf.addEventListener('change', function (e) {
+      if (e.target.name === 'm') { sf.o.value = ''; sf.r.value = ''; }
+      if (e.target.name !== 'r') fill();
+      more = false; draw(); track('חיפוש 770', sf.m.value);
+    });
+    fill(); draw();
+  }).catch(function () {});
+
   // ספירה לאחור למועדים של 770, לפי התאריך בישראל. בזמן המועד עצמו - "עכשיו", ואחריו מוסתר
   document.querySelectorAll('.count770[data-start]').forEach(function (el) {
     var n = Math.round((day0(el.dataset.start) - day0(nowIl)) / 864e5), end = Math.round((day0(el.dataset.end) - day0(nowIl)) / 864e5);

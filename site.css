@@ -1012,6 +1012,30 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .p770 .date .when .best-tag.board-tag { color: var(--muted); }
 .p770 .date .when .seats770, .p770 .date .when .lm-tag { color: #fff; background: #c0392b; border-color: #c0392b; }
 .book .fresh770 { justify-content: center; color: rgba(255, 255, 255, .7); margin: 10px 0 4px; }
+/* חיפוש טיסות באזור 770 */
+.s770 { display: grid; grid-template-columns: 1.3fr 1fr 1fr auto; gap: 14px 18px; align-items: end; background: var(--paper); border: 1px solid var(--line-soft); padding: 22px; }
+.s770 label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); }
+.s770 select { font: inherit; font-size: 16px; color: var(--ink); padding: 11px 12px; border: 1px solid var(--line); background: #fff; border-radius: 0; }
+.s770 .chk { flex-direction: row; align-items: center; gap: 8px; font-size: 15px; color: var(--ink); padding-bottom: 12px; white-space: nowrap; }
+.s770-res .cnt { margin: 22px 0 10px; color: var(--muted); font-size: 14px; }
+.s770-res .sr { display: grid; grid-template-columns: 1fr auto auto; grid-template-areas: "w pr b" "f pr b"; gap: 4px 22px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
+.s770-res .w { grid-area: w; }
+.s770-res .w b { font: 400 24px/1.1 var(--display); color: var(--night); }
+.s770-res .w span { font-size: 14px; color: var(--muted); }
+.s770-res .f { grid-area: f; font-size: 14px; color: var(--muted); line-height: 1.6; }
+.s770-res .f b { color: var(--ink); }
+.s770-res .pr { grid-area: pr; font: 400 30px/1 var(--display); color: var(--night); text-align: center; }
+.s770-res .pr small { display: block; font: 12px var(--sans); color: var(--muted); margin-top: 4px; }
+.s770-res .pr .seat { color: #fff; background: #c0392b; padding: 2px 8px; font-weight: 600; }
+.s770-res .btn { grid-area: b; }
+.s770-more { margin-top: 18px; }
+@media (max-width: 760px) {
+  .s770 { grid-template-columns: 1fr 1fr; }
+  .s770 label:first-child, .s770 .chk { grid-column: 1 / -1; }
+  .s770 .chk { padding-bottom: 0; }
+  .s770-res .sr { grid-template-columns: 1fr auto; grid-template-areas: "w pr" "f pr" "b b"; }
+  .s770-res .btn { justify-self: stretch; text-align: center; margin-top: 8px; }
+}
 /* ספירה לאחור והקבוצות באזור 770 */
 .count770 { display: inline-block; font: 600 14px/1 var(--body, inherit); letter-spacing: .02em; color: var(--night); background: var(--gold-hi); padding: 7px 12px; align-self: flex-start; }
 .count770[hidden] { display: none; }
