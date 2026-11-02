@@ -1003,6 +1003,9 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .fresh770 { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); }
 .fresh770::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--wa); flex: none; }
 .fresh770[hidden] { display: none; }
+.seats770 { color: #c0392b; font-weight: 600; }
+.seats770.best-tag { color: #fff; background: #c0392b; border-color: #c0392b; }
+.seats770[hidden] { display: none; }
 .book .fresh770 { justify-content: center; color: rgba(255, 255, 255, .7); margin: 10px 0 4px; }
 /* ספירה לאחור והקבוצות באזור 770 */
 .count770 { display: inline-block; font: 600 14px/1 var(--body, inherit); letter-spacing: .02em; color: var(--night); background: var(--gold-hi); padding: 7px 12px; align-self: flex-start; }

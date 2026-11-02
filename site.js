@@ -314,10 +314,11 @@
     var t = Date.parse(iso); if (!(t > 0)) return '';
     var m = Math.max(1, Math.round((Date.now() - t) / 6e4)), h = Math.round(m / 60), d = Math.floor(m / 1440);
     if (d > 3) { if (!row) return ''; var dt = new Date(t); return 'עודכן ב-' + dt.getDate() + '.' + (dt.getMonth() + 1); }
-    return (row ? 'עודכן ' : 'המחיר עודכן ') + (m < 60 ? 'לפני ' + m + ' דקות' : h === 1 ? 'לפני שעה' : h === 2 ? 'לפני שעתיים' : h < 24 ? 'לפני ' + h + ' שעות' : d === 1 ? 'אתמול' : 'לפני ' + d + ' ימים');
+    return (row ? 'עודכן ' : 'המחיר עודכן ') + (m === 1 ? 'לפני דקה' : m < 60 ? 'לפני ' + m + ' דקות' : h === 1 ? 'לפני שעה' : h === 2 ? 'לפני שעתיים' : h < 24 ? 'לפני ' + h + ' שעות' : d === 1 ? 'אתמול' : 'לפני ' + d + ' ימים');
   };
   var fresh770 = function (el, iso) { var t = ago770(iso || el.dataset.checked, false); el.textContent = t; el.hidden = !t; };
   document.querySelectorAll('.fresh770[data-checked]').forEach(function (el) { fresh770(el); });
+  document.querySelectorAll('.seats770[data-checked]').forEach(function (el) { el.hidden = !(Date.now() - Date.parse(el.dataset.checked) < 48 * 36e5); });
   document.querySelectorAll('.rowfresh[data-checked]').forEach(function (el) { var t = ago770(el.dataset.checked, true); el.textContent = t ? ' · ' + t : ''; });
 
   // ספירה לאחור למועדים של 770, לפי התאריך בישראל. בזמן המועד עצמו - "עכשיו", ואחריו מוסתר
