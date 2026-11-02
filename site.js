@@ -308,13 +308,13 @@
     marks.forEach(function (m) { var el = document.querySelector(m[0]); if (el) { el.dataset.mark = m[1]; seen.observe(el); } });
   }
 
-  // "המחיר נבדק לפני..." באזור 770 (חיים, 2.11.2026). ליד ה"החל מ-": מתי נבדק המחיר הזה. בכל שורה: מתי נבדקה היא.
-  // ליד המחיר המוביל מעל 3 ימים לא מוצג; בשורה מעל 3 ימים - "נבדק ב-29.10"
+  // "המחיר עודכן לפני..." באזור 770 (חיים, 2.11.2026; "עודכן" ולא "נבדק"). ליד ה"החל מ-": מתי נבדק המחיר הזה. בכל שורה: מתי נבדקה היא.
+  // ליד המחיר המוביל מעל 3 ימים לא מוצג; בשורה מעל 3 ימים - "עודכן ב-29.10"
   var ago770 = function (iso, row) {
     var t = Date.parse(iso); if (!(t > 0)) return '';
     var m = Math.max(1, Math.round((Date.now() - t) / 6e4)), h = Math.round(m / 60), d = Math.floor(m / 1440);
-    if (d > 3) { if (!row) return ''; var dt = new Date(t); return 'נבדק ב-' + dt.getDate() + '.' + (dt.getMonth() + 1); }
-    return (row ? 'נבדק ' : 'המחיר נבדק ') + (m < 60 ? 'לפני ' + m + ' דקות' : h === 1 ? 'לפני שעה' : h === 2 ? 'לפני שעתיים' : h < 24 ? 'לפני ' + h + ' שעות' : d === 1 ? 'אתמול' : 'לפני ' + d + ' ימים');
+    if (d > 3) { if (!row) return ''; var dt = new Date(t); return 'עודכן ב-' + dt.getDate() + '.' + (dt.getMonth() + 1); }
+    return (row ? 'עודכן ' : 'המחיר עודכן ') + (m < 60 ? 'לפני ' + m + ' דקות' : h === 1 ? 'לפני שעה' : h === 2 ? 'לפני שעתיים' : h < 24 ? 'לפני ' + h + ' שעות' : d === 1 ? 'אתמול' : 'לפני ' + d + ' ימים');
   };
   var fresh770 = function (el, iso) { var t = ago770(iso || el.dataset.checked, false); el.textContent = t; el.hidden = !t; };
   document.querySelectorAll('.fresh770[data-checked]').forEach(function (el) { fresh770(el); });
