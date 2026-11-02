@@ -308,13 +308,17 @@
     marks.forEach(function (m) { var el = document.querySelector(m[0]); if (el) { el.dataset.mark = m[1]; seen.observe(el); } });
   }
 
-  // "המחיר נבדק לפני..." באזור 770. מעל 3 ימים לא מוצג - המחיר עדיין בתוקף, אבל "לפני 9 ימים" לא בונה אמון
-  document.querySelectorAll('.fresh770[data-checked]').forEach(function (el) {
-    var m = Math.max(1, Math.round((Date.now() - Date.parse(el.dataset.checked)) / 6e4)), h = Math.round(m / 60), d = Math.floor(m / 1440);
-    if (!(m > 0) || d > 3) return;
-    el.textContent = 'המחיר נבדק ' + (m < 60 ? 'לפני ' + m + ' דקות' : h === 1 ? 'לפני שעה' : h === 2 ? 'לפני שעתיים' : h < 24 ? 'לפני ' + h + ' שעות' : d === 1 ? 'אתמול' : 'לפני ' + d + ' ימים');
-    el.hidden = false;
-  });
+  // "המחיר נבדק לפני..." באזור 770 (חיים, 2.11.2026). ליד ה"החל מ-": מתי נבדק המחיר הזה. בכל שורה: מתי נבדקה היא.
+  // ליד המחיר המוביל מעל 3 ימים לא מוצג; בשורה מעל 3 ימים - "נבדק ב-29.10"
+  var ago770 = function (iso, row) {
+    var t = Date.parse(iso); if (!(t > 0)) return '';
+    var m = Math.max(1, Math.round((Date.now() - t) / 6e4)), h = Math.round(m / 60), d = Math.floor(m / 1440);
+    if (d > 3) { if (!row) return ''; var dt = new Date(t); return 'נבדק ב-' + dt.getDate() + '.' + (dt.getMonth() + 1); }
+    return (row ? 'נבדק ' : 'המחיר נבדק ') + (m < 60 ? 'לפני ' + m + ' דקות' : h === 1 ? 'לפני שעה' : h === 2 ? 'לפני שעתיים' : h < 24 ? 'לפני ' + h + ' שעות' : d === 1 ? 'אתמול' : 'לפני ' + d + ' ימים');
+  };
+  var fresh770 = function (el, iso) { var t = ago770(iso || el.dataset.checked, false); el.textContent = t; el.hidden = !t; };
+  document.querySelectorAll('.fresh770[data-checked]').forEach(function (el) { fresh770(el); });
+  document.querySelectorAll('.rowfresh[data-checked]').forEach(function (el) { var t = ago770(el.dataset.checked, true); el.textContent = t ? ' · ' + t : ''; });
 
   // ספירה לאחור למועדים של 770, לפי התאריך בישראל. בזמן המועד עצמו - "עכשיו", ואחריו מוסתר
   document.querySelectorAll('.count770[data-start]').forEach(function (el) {
@@ -345,6 +349,8 @@
           var min = Math.min.apply(null, left);
           c.querySelector('.from b').textContent = usd770(min);
           c.querySelector('.from .pre').textContent = left.every(function (p) { return p === min; }) ? '' : 'החל מ-';
+          var fr = c.querySelector('.fresh770'), at = rows.filter(function (li) { return !li.hidden && +li.dataset.price === min; }).map(function (li) { return li.dataset.checked; }).sort().pop();
+          if (fr && at) fresh770(fr, at);
         }
       });
       // אפשרות שלא נשאר בה אף מועד (לפי שאר הבחירות) מוסתרת
