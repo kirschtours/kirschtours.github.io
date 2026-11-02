@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>בית ספר למכירות · נגן לימוד</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Assistant:wght@400;600&display=swap">
+<style>
+/* פריסה: במחשב סרטון ושקף זה לצד זה, מתחתם רצועת שקפים. בטלפון הכל בטור */
+:root {
+  --navy: #14213D; --orange: #E8833A; --teal: #1F7A8C; --paper: #FBF8F2; --line: #E3DCCD; --muted: #5C6478;
+  --head: 'Rubik', Arial, sans-serif; --body: 'Assistant', Arial, sans-serif;
+}
+* { box-sizing: border-box }
+html, body { margin: 0 }
+body { background: var(--paper); color: var(--navy); font-family: var(--body); font-size: 16px }
+header { background: var(--navy); color: var(--paper); padding: 14px max(16px, 3vw) 0 }
+.brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap }
+.brand h1 { font-family: var(--head); font-size: 22px; margin: 0 }
+.brand span { color: #B9C2D6; font-size: 15px }
+nav { display: flex; gap: 4px; margin-top: 12px; overflow-x: auto }
+nav button { font-family: var(--head); font-size: 15px; font-weight: 500; color: #C9D1E2; background: transparent; border: 0; border-bottom: 3px solid transparent; padding: 10px 14px; cursor: pointer; white-space: nowrap }
+nav button[aria-selected="true"] { color: #fff; border-bottom-color: var(--orange) }
+nav button:focus-visible, button:focus-visible, .thumb:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px }
+main { padding: 16px max(16px, 3vw) 32px; display: flex; flex-direction: column; gap: 14px }
+.lesson-title { font-family: var(--head); font-size: 20px; margin: 0 }
+.lesson-sub { color: var(--muted); margin: 2px 0 0 }
+.stage { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 16px; align-items: start }
+.video { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; overflow: hidden }
+.video iframe, .video #yt { position: absolute; inset: 0; width: 100%; height: 100% }
+.slide { aspect-ratio: 16 / 9; background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden }
+.slide img { width: 100%; height: 100%; display: block; object-fit: contain }
+.bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap }
+.bar button { font-family: var(--head); font-size: 15px; border: 1px solid var(--line); background: #fff; color: var(--navy); border-radius: 6px; padding: 8px 14px; cursor: pointer }
+.bar button:hover { border-color: var(--teal) }
+.pos { font-variant-numeric: tabular-nums; color: var(--muted); min-width: 9em }
+.follow { margin-inline-start: auto; display: flex; align-items: center; gap: 8px; font-size: 15px }
+.follow.off { color: var(--orange); font-weight: 600 }
+#resume[hidden] { display: none }
+#resume { background: var(--orange) !important; color: #fff !important; border-color: var(--orange) !important }
+.strip { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 10px; scroll-behavior: smooth }
+.thumb { flex: 0 0 auto; width: 150px; border: 2px solid transparent; border-radius: 6px; background: none; padding: 0; cursor: pointer; text-align: center; font-family: var(--body); color: var(--muted) }
+.thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-radius: 4px; border: 1px solid var(--line); background: #fff }
+.thumb span { display: block; font-size: 13px; padding: 3px 0; font-variant-numeric: tabular-nums }
+.thumb.on { border-color: var(--orange) }
+.thumb.on span { color: var(--navy); font-weight: 600 }
+.hint { color: var(--muted); font-size: 14px; margin: 0 }
+@media (max-width: 860px) {
+  .stage { grid-template-columns: 1fr }
+  .thumb { width: 120px }
+  .follow { margin-inline-start: 0 }
+}
+@media (prefers-reduced-motion: reduce) { .strip { scroll-behavior: auto } }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><h1>בית ספר למכירות</h1><span>אבי קובנר · הסרטון והמצגת המפורטת יחד</span></div>
+  <nav id="tabs" role="tablist"></nav>
+</header>
+<main>
+  <div><h2 class="lesson-title" id="ltitle"></h2><p class="lesson-sub" id="lsub"></p></div>
+  <div class="stage">
+    <div class="video"><div id="yt"></div></div>
+    <div class="slide"><img id="cur" alt=""></div>
+  </div>
+  <div class="bar">
+    <button id="next" type="button" aria-label="השקף הקודם">→ הקודם</button>
+    <span class="pos" id="pos"></span>
+    <button id="prev" type="button" aria-label="השקף הבא">הבא ←</button>
+    <button id="jump" type="button">▶ נגן מהשקף הזה</button>
+    <span class="follow" id="follow">השקף מתחלף לפי הסרטון</span>
+    <button id="resume" type="button" hidden>חזרה לסרטון</button>
+  </div>
+  <div class="strip" id="strip"></div>
+  <p class="hint">לחיצה על שקף ברצועה מקפיצה את הסרטון לרגע שבו אבי מדבר עליו. הקודם/הבא מאפשרים לדפדף בלי לעצור את הסרטון.</p>
+</main>
+<script>
+const L = [
+  { id: 'q741ABN4sFE', title: 'שיעור 1 · מהפנייה הראשונה ועד שיחת הטלפון', sub: 'זמינות, יחס אישי, חמש שאלות הברזל, תקציב, ומכירת הצורך במקום הרצון',
+    t: [0,8,15,45,255,405,450,521,525,555,585,630,720,840,883,926,930,945,990,1050,1136,1140,1148,1155,1226,1230,1275,1395,1440,1980,1991,1995,2055,2115,2175,2175,2175,2190,2215,2241,2266,2291,2295,2415,2490,2595,2700,2711,2715,2730,2850,2970,3195,3229,3262,3296,3300,3420,3480,3735,3840,4005,4155,4455,4560,4620,4980,5175,5295,5351,5396,5401,5406,5411,5416,5421,5426,5431,5436,5441,5446] },
+  { id: '9xRrPZaBLPQ', title: 'שיעור 2 · שיחת הטלפון עם הלקוח', sub: 'איך מתאמנים, איך מגיעים לשיחה, ואיך בונים בתוכה טיסה, מזוודות, מלון ובסיס אירוח עד הסגירה',
+    t: [0,30,60,83,105,180,360,401,405,443,480,555,690,795,1016,1020,1035,1103,1170,1200,1350,1395,1466,1470,1553,1635,1991,1995,2055,2115,2220,2295,2381,2385,2430,2565,2685,2685,2685,2760,2880,2985,3090,3266,3270,3323,3375,3420,3495,3551,3555,3578,3600,3705,3795,3821,3825,3848,3870,3900,3956,3970,3975,3980,3985,3990,3995,4000,4005,4010,4015] },
+  { id: '50ChYS_oraw', title: 'שיעור 3 · התנגדויות בדרך לסגירה', sub: '״לא״ תמיד עם ״אבל״, מיטה זוגית, ביטול, ״צריך לשאול את אשתי״, אשראי, ושאלות מהשטח',
+    t: [0,45,90,105,180,270,375,600,731,735,825,960,1050,1166,1170,1268,1365,1515,1605,1710,1781,1785,1800,1860,1950,2025,2145,2246,2250,2280,2310,2445,2595,2700,2895,2951,2955,3053,3150,3660,3975,4155,4500,4650,4800,4905,5055,5370,5520,5640,5756,5801,5806,5811,5816,5821,5826,5831,5836,5841] },
+  { id: '1ZVW3DmvBN8', title: 'שיעור 4 · כל התהליך, וסימולציה חיה', sub: 'סיכום שלושת השיעורים בשיחה אחת רציפה, ושיחת מכירה אמיתית עם ״שמעון״ שרוצה דובאי',
+    t: [0,45,90,120,150,435,480,705,746,750,840,930,945,1020,1125,1200,1275,1346,1350,1425,1500,1575,1695,1830,1890,2010,2070,2190,2291,2295,2325,2370,2520,2640,2730,2835,2880,2970,3045,3285,3480,3555,3630,3705,3840,3870,4035,4035,4035,4035,4080,4085,4090,4095,4100,4105,4110] },
+];
+// שקפים עם אותו זמן: כל אחד מקבל 20 שניות משלו
+for (const l of L) for (let i = 1; i < l.t.length; i++) if (l.t[i] <= l.t[i - 1]) l.t[i] = l.t[i - 1] + 20;
+
+const $ = (id) => document.getElementById(id);
+const fmt = (s) => { s = Math.floor(s); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = String(s % 60).padStart(2, '0'); return h ? `${h}:${String(m).padStart(2, '0')}:${x}` : `${m}:${x}`; };
+const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+
+let lesson = 0, idx = 0, follow = true, player = null, ready = false;
+const saved = store.get('avi-player') || {};
+const fromHash = /^#lesson([1-4])$/.exec(location.hash);
+lesson = fromHash ? +fromHash[1] - 1 : (saved.lesson ?? 0);
+
+L.forEach((l, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.role = 'tab'; b.textContent = `שיעור ${i + 1}`;
+  b.onclick = () => openLesson(i, true);
+  $('tabs').appendChild(b);
+});
+
+function src(i) { return `s${lesson + 1}/${i + 1}.jpg`; }
+
+function show(i, scroll = true) {
+  const l = L[lesson];
+  idx = Math.max(0, Math.min(l.t.length - 1, i));
+  $('cur').src = src(idx);
+  $('cur').alt = `שקף ${idx + 1}`;
+  $('pos').textContent = `שקף ${idx + 1} מתוך ${l.t.length} · ${fmt(l.t[idx])}`;
+  if (idx + 1 < l.t.length) new Image().src = src(idx + 1);
+  document.querySelectorAll('.thumb').forEach((t, k) => t.classList.toggle('on', k === idx));
+  if (scroll) { const t = $('strip').children[idx]; if (t) $('strip').scrollLeft = t.offsetLeft - $('strip').clientWidth / 2 + t.clientWidth / 2; }
+}
+
+function setFollow(on) {
+  follow = on;
+  $('follow').textContent = on ? 'השקף מתחלף לפי הסרטון' : 'דפדוף חופשי: השקף לא זז עם הסרטון';
+  $('follow').classList.toggle('off', !on);
+  $('resume').hidden = on;
+  if (on) sync();
+}
+
+function openLesson(i, user) {
+  lesson = i;
+  const l = L[i];
+  document.querySelectorAll('#tabs button').forEach((b, k) => b.setAttribute('aria-selected', k === i));
+  $('ltitle').textContent = l.title; $('lsub').textContent = l.sub;
+  $('strip').innerHTML = '';
+  l.t.forEach((t, k) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'thumb';
+    b.innerHTML = `<img loading="lazy" alt="שקף ${k + 1}" src="${src(k)}"><span>${k + 1} · ${fmt(t)}</span>`;
+    b.onclick = () => { setFollow(true); seek(t); show(k); };
+    $('strip').appendChild(b);
+  });
+  const start = (saved.pos && saved.pos[i]) || 0;
+  show(slideAt(start));
+  setFollow(true);
+  if (ready) user ? player.loadVideoById(l.id, start) : player.cueVideoById(l.id, start);
+  if (user) try { history.replaceState(null, '', '#lesson' + (i + 1)); } catch {}
+  saved.lesson = i; store.set('avi-player', saved);
+}
+
+function slideAt(sec) { const t = L[lesson].t; let k = 0; while (k + 1 < t.length && t[k + 1] <= sec + 0.5) k++; return k; }
+function seek(t) { if (!ready) return; player.seekTo(t, true); if (player.getPlayerState() !== 1) player.playVideo(); }
+function sync() {
+  if (!ready || !player.getCurrentTime) return;
+  const now = player.getCurrentTime();
+  if (follow) { const k = slideAt(now); if (k !== idx) show(k); }
+  if (now > 1) { saved.pos = saved.pos || {}; saved.pos[lesson] = Math.floor(now); }
+}
+setInterval(sync, 500);
+setInterval(() => store.set('avi-player', saved), 5000);
+
+$('prev').onclick = () => { setFollow(false); show(idx + 1); };
+$('next').onclick = () => { setFollow(false); show(idx - 1); };
+$('resume').onclick = () => setFollow(true);
+$('jump').onclick = () => { setFollow(true); seek(L[lesson].t[idx]); };
+document.addEventListener('keydown', (e) => {
+  if (e.target.closest('input,textarea')) return;
+  if (e.key === 'ArrowLeft') $('prev').click();
+  if (e.key === 'ArrowRight') $('next').click();
+});
+
+openLesson(lesson, false);
+
+window.onYouTubeIframeAPIReady = () => {
+  const l = L[lesson];
+  player = new YT.Player('yt', {
+    videoId: l.id,
+    playerVars: { start: (saved.pos && saved.pos[lesson]) || 0, rel: 0, playsinline: 1, hl: 'he' },
+    events: { onReady: () => { ready = true; } },
+  });
+};
+const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
+</script>
+</body>
+</html>
