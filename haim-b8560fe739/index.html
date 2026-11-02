@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>בית ספר למכירות · חיים מסביר</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Assistant:wght@400;600&display=swap">
+<style>
+/* פריסה: מסך אחד. השקף בגדול, חיים בעיגול בפינה, פס נגינה ורצועת שקפים מתחת */
+:root {
+  --navy: #14213D; --orange: #E8833A; --teal: #1F7A8C; --paper: #FBF8F2; --line: #E3DCCD; --muted: #5C6478;
+  --head: 'Rubik', Arial, sans-serif; --body: 'Assistant', Arial, sans-serif;
+  --cam: 150px;
+}
+* { box-sizing: border-box }
+html, body { margin: 0 }
+body { background: var(--paper); color: var(--navy); font-family: var(--body); font-size: 16px }
+header { background: var(--navy); color: var(--paper); padding: 10px max(16px, 3vw) }
+header h1 { font-family: var(--head); font-size: 19px; margin: 0 }
+header p { margin: 2px 0 0; color: #B9C2D6; font-size: 14px }
+main { padding: 12px max(16px, 3vw) 28px; display: flex; justify-content: center }
+.wrap { width: min(100%, calc((100vh - 230px) * 16 / 9)); min-width: min(100%, 640px); display: flex; flex-direction: column; gap: 10px }
+.lesson-title { font-family: var(--head); font-size: 17px; margin: 0 }
+.stage { position: relative; aspect-ratio: 16 / 9; background: #fff; border: 1px solid var(--line); border-radius: 8px }
+.stage > img { width: 100%; height: 100%; display: block; object-fit: contain; border-radius: 8px }
+.cam { position: absolute; left: 14px; bottom: 14px; width: var(--cam); height: var(--cam); border-radius: 50%; border: 4px solid #fff; box-shadow: 0 6px 22px rgba(20, 33, 61, .35); overflow: hidden; cursor: pointer; padding: 0; background: var(--navy) }
+.cam img { width: 100%; height: 100%; object-fit: cover; display: block }
+.cam::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: inset 0 0 0 0 var(--orange) }
+.talking .cam::after { animation: talk 1.2s ease-in-out infinite }
+@keyframes talk { 50% { box-shadow: inset 0 0 0 5px var(--orange) } }
+.cam .ic { position: absolute; inset: 0; display: grid; place-items: center; font-size: 30px; color: #fff; background: rgba(20, 33, 61, .45); opacity: 0; transition: opacity .2s }
+.cam:hover .ic, .paused .cam .ic { opacity: 1 }
+button:focus-visible, .thumb:focus-visible, .prog:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px }
+
+.player { display: flex; align-items: center; gap: 10px; background: var(--navy); color: #fff; border-radius: 8px; padding: 8px 12px }
+.player button { background: transparent; border: 0; color: #fff; font-family: var(--head); font-size: 15px; cursor: pointer; padding: 4px 6px; border-radius: 4px; min-width: 32px }
+.player button:hover { background: rgba(255, 255, 255, .1) }
+.prog { position: relative; flex: 1; height: 26px; cursor: pointer; touch-action: none; min-width: 0 }
+.prog .track { position: absolute; inset: 11px 0; background: rgba(255, 255, 255, .22); border-radius: 2px }
+.prog .fill { position: absolute; top: 11px; bottom: 11px; right: 0; background: var(--orange); border-radius: 2px }
+.prog .tick { position: absolute; top: 8px; width: 2px; height: 10px; background: #fff; opacity: .7; transform: translateX(50%) }
+.prog .knob { position: absolute; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: #fff; transform: translateX(50%) }
+.time, #speed { direction: ltr; unicode-bidi: isolate }
+.time { font-variant-numeric: tabular-nums; font-size: 14px; color: #D5DBE8; white-space: nowrap }
+.bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap }
+.bar button { font-family: var(--head); font-size: 14px; border: 1px solid var(--line); background: #fff; color: var(--navy); border-radius: 6px; padding: 7px 12px; cursor: pointer }
+.bar button:hover { border-color: var(--teal) }
+.pos { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 15px }
+.credit { margin-inline-start: auto; font-size: 13px; color: var(--muted) }
+.strip { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 8px; scroll-behavior: smooth }
+.thumb { flex: 0 0 auto; width: 128px; border: 2px solid transparent; border-radius: 6px; background: none; padding: 0; cursor: pointer; text-align: center; font-family: var(--body); color: var(--muted) }
+.thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-radius: 4px; border: 1px solid var(--line); background: #fff }
+.thumb span { display: block; font-size: 12px; padding: 2px 0; font-variant-numeric: tabular-nums }
+.thumb.on { border-color: var(--orange) }
+.thumb.on span { color: var(--navy); font-weight: 600 }
+@media (max-width: 700px) {
+  :root { --cam: 72px }
+  header p { display: none }
+  .wrap { min-width: 0 }
+  .cam { left: 8px; bottom: 8px; border-width: 3px }
+  .cam .ic { font-size: 20px }
+  .player { flex-wrap: wrap; row-gap: 2px }
+  .prog { flex-basis: 100%; order: -1 }
+  .credit { margin-inline-start: 0; flex-basis: 100% }
+  .thumb { width: 104px }
+}
+@media (prefers-reduced-motion: reduce) { .strip { scroll-behavior: auto } .talking .cam::after { animation: none; box-shadow: inset 0 0 0 4px var(--orange) } }
+</style>
+</head>
+<body>
+<header>
+  <h1>בית ספר למכירות · חיים מסביר</h1>
+  <p>לפי השיטה של אבי קובנר · הסבר והקראה: חיים קירש</p>
+</header>
+<main>
+  <div class="wrap paused" id="wrap">
+    <h2 class="lesson-title">שיעור 1 · מהפנייה הראשונה ועד שיחת הטלפון</h2>
+    <div class="stage">
+      <img id="cur" alt="">
+      <button class="cam" id="cam" type="button" aria-label="נגן"><img src="haim.jpg" alt="חיים קירש"><span class="ic" id="camIc">▶</span></button>
+    </div>
+    <div class="player">
+      <button id="play" type="button" aria-label="נגן">▶</button>
+      <div class="prog" id="prog" role="slider" tabindex="0" aria-label="מיקום בהקראה"><div class="track"></div><div class="fill" id="fill"></div><div id="ticks"></div><div class="knob" id="knob"></div></div>
+      <span class="time" id="time">0:00 / 0:00</span>
+      <button id="speed" type="button" aria-label="מהירות">1×</button>
+    </div>
+    <div class="bar">
+      <button id="back" type="button">→ הקודם</button>
+      <span class="pos" id="pos"></span>
+      <button id="fwd" type="button">הבא ←</button>
+      <span class="credit">לפי השיטה של אבי קובנר</span>
+    </div>
+    <div class="strip" id="strip"></div>
+  </div>
+</main>
+<audio id="au" src="lesson1.mp3" preload="metadata"></audio>
+<script>
+const T = [0,17.43,27.67,36.61,51.54,66.51,82.32,101.52,109.58,118.33,138.22,157,170.83,185.44,200.78,215.64,221.01,229.84,247.5,260.86,277.74,282.21,288.3,302.34,322.22,327.48,334.82,349.43,364.35,380.95,397.12,402.12,410.12,425.27,442.47,456.29,460.81,467.14,482.06,500.56,515.41,531.76,536.6,544.42,558.92,574.08,586.07,599.98,606.12,612.42,627.92,644.04,659.67,676.08,691.18,707.51,713.16,722.99,740.34,753.51,769.74,780.77,797.31,811.16,826.24,843.67,859.76,877.53,893.87,908.06,912.45,932.8,943.42,948.78,952.7,956.02,960.91,965.07,968.16,971.74,974.47];
+const CH = [2,8,16,21,25,31,36,42,48,56];
+const END = 980.1, IMG = '../learn-7fe9e40328/s1/';
+const SPEEDS = [1, 1.25, 1.5, 0.85];
+const $ = (id) => document.getElementById(id), au = $('au');
+const fmt = (s) => { s = Math.max(0, Math.floor(s)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
+const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+let idx = -1, dragging = false;
+
+T.forEach((t, k) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'thumb';
+  b.innerHTML = `<img loading="lazy" alt="שקף ${k + 1}" src="${IMG}${k + 1}.jpg"><span>${k + 1} · ${fmt(t)}</span>`;
+  b.onclick = () => { go(k); play(); };
+  $('strip').appendChild(b);
+});
+$('ticks').innerHTML = CH.map((k) => `<div class="tick" style="right:${T[k] / END * 100}%"></div>`).join('');
+
+const slideAt = (sec) => { let k = 0; while (k + 1 < T.length && T[k + 1] <= sec + 0.05) k++; return k; };
+function show(k) {
+  if (k === idx) return;
+  idx = k;
+  $('cur').src = `${IMG}${k + 1}.jpg`; $('cur').alt = `שקף ${k + 1}`;
+  $('pos').textContent = `שקף ${k + 1} מתוך ${T.length}`;
+  if (k + 1 < T.length) new Image().src = `${IMG}${k + 2}.jpg`;
+  document.querySelectorAll('.thumb').forEach((t, i) => t.classList.toggle('on', i === k));
+  const t = $('strip').children[k], st = $('strip');
+  st.scrollBy({ left: t.getBoundingClientRect().left - st.getBoundingClientRect().left - st.clientWidth / 2 + t.clientWidth / 2 });
+}
+function draw(t) {
+  const p = Math.max(0, Math.min(1, t / END)) * 100;
+  $('fill').style.width = p + '%'; $('knob').style.right = p + '%';
+  $('time').textContent = `${fmt(t)} / ${fmt(END)}`;
+}
+function go(k) { au.currentTime = T[Math.max(0, Math.min(T.length - 1, k))] + 0.01; show(slideAt(au.currentTime)); draw(au.currentTime); }
+function play() { au.play().catch(() => {}); }
+function toggle() { au.paused ? play() : au.pause(); }
+function state() {
+  const on = !au.paused;
+  $('wrap').classList.toggle('paused', !on); $('wrap').classList.toggle('talking', on);
+  $('play').textContent = on ? '❚❚' : '▶'; $('camIc').textContent = on ? '❚❚' : '▶';
+  $('play').setAttribute('aria-label', on ? 'עצור' : 'נגן'); $('cam').setAttribute('aria-label', on ? 'עצור' : 'נגן');
+}
+au.addEventListener('play', state); au.addEventListener('pause', state); au.addEventListener('ended', state);
+au.addEventListener('timeupdate', () => { if (!dragging) draw(au.currentTime); show(slideAt(au.currentTime)); store.set('haim-l1', au.currentTime); });
+
+$('play').onclick = toggle; $('cam').onclick = toggle;
+$('fwd').onclick = () => go(idx + 1);
+$('back').onclick = () => go(au.currentTime - T[idx] > 2 ? idx : idx - 1);
+$('speed').onclick = () => { const s = SPEEDS[(SPEEDS.indexOf(au.playbackRate) + 1) % SPEEDS.length]; au.playbackRate = s; $('speed').textContent = s + '×'; };
+const posFrom = (e) => { const r = $('prog').getBoundingClientRect(); return Math.max(0, Math.min(1, (r.right - e.clientX) / r.width)) * END; };
+$('prog').addEventListener('pointerdown', (e) => { dragging = true; $('prog').setPointerCapture(e.pointerId); draw(posFrom(e)); });
+$('prog').addEventListener('pointermove', (e) => { if (dragging) { const t = posFrom(e); draw(t); show(slideAt(t)); } });
+$('prog').addEventListener('pointerup', (e) => { if (!dragging) return; dragging = false; au.currentTime = posFrom(e); });
+$('prog').addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') { au.currentTime += 10; e.preventDefault(); }
+  if (e.key === 'ArrowRight') { au.currentTime -= 10; e.preventDefault(); }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.target.closest('.prog')) return;
+  if (e.key === 'ArrowLeft') $('fwd').click();
+  if (e.key === 'ArrowRight') $('back').click();
+  if (e.key === ' ') { e.preventDefault(); toggle(); }
+});
+
+const saved = +store.get('haim-l1') || 0;
+show(slideAt(saved)); draw(saved);
+au.addEventListener('loadedmetadata', () => { if (saved > 1 && saved < END - 2) au.currentTime = saved; }, { once: true });
+</script>
+</body>
+</html>
