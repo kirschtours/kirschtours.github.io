@@ -1063,3 +1063,48 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .credit770 { font-size: 12px; opacity: .6; margin-top: 10px; }
 .credit770 a { color: inherit; }
 @media (max-width: 760px) { .p770-hero::after { background: linear-gradient(180deg, rgba(5, 15, 36, .7) 0%, rgba(5, 15, 36, .55) 45%, rgba(5, 15, 36, .92) 100%); } }
+
+/* דף גיוס הצוות ל-Be Agent: /team/ (2.11.2026) */
+.team-hero { padding-top: clamp(120px, 14vw, 170px); }
+.team-hero-in { display: grid; grid-template-columns: 1.3fr .7fr; gap: clamp(32px, 6vw, 90px); align-items: center; }
+.team-hero h1 { font: 400 clamp(40px, 6vw, 80px)/1.08 var(--display); margin: 0 0 26px; color: #fff; }
+.team-hero p { font-size: clamp(17px, 1.6vw, 20px); font-weight: 300; color: rgba(255, 255, 255, .85); max-width: 600px; margin: 0 0 34px; }
+.team-hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.team-note { display: block; margin-top: 16px; font-size: 14px; color: rgba(255, 255, 255, .65); }
+.team-pic { position: relative; }
+.team-pic::before { content: ''; position: absolute; inset: -18px 18px 18px -18px; border: 1px solid var(--gold); }
+.team-pic img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.team-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.team-box { background: #fff; border: 1px solid var(--line-soft); padding: 30px 32px; }
+.team-box h3 { font: 400 30px var(--display); color: var(--night); margin: 0 0 14px; }
+.team-list { list-style: none; padding: 0; margin: 0; }
+.team-list li { position: relative; padding: 12px 30px 12px 0; border-bottom: 1px solid var(--line-soft); font-size: 17px; }
+.team-list li:last-child { border-bottom: 0; }
+.team-list li::before { content: '✓'; position: absolute; inset-inline-start: 0; top: 12px; color: var(--gold-lo); font-weight: 700; }
+.team-box.no li::before { content: '✕'; color: #a23b3b; }
+
+.team-price { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 90px); align-items: center; }
+.team-price p { color: rgba(255, 255, 255, .78); font-size: 18px; font-weight: 300; margin: 22px 0 0; }
+.team-plan { border: 1px solid var(--gold); padding: 34px 36px; }
+.team-plan s { color: rgba(255, 255, 255, .5); font-size: 18px; }
+.team-plan b { display: block; font: 400 clamp(32px, 3.6vw, 46px)/1.15 var(--display); color: var(--gold-hi); margin: 6px 0 18px; }
+.team-plan ul { list-style: none; padding: 0; margin: 0; }
+.team-plan li { padding: 10px 0; border-top: 1px solid var(--line); font-size: 17px; color: rgba(255, 255, 255, .88); }
+.team-apply { background: var(--paper); }
+.team-apply .book-wrap { padding: 0; }
+.team-apply h2 { font: 400 clamp(36px, 5vw, 58px)/1.08 var(--display); color: var(--night); margin: 0 0 12px; }
+.tq { font-weight: 600; font-size: 16px; color: var(--night); }
+.tchoices { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 22px; }
+.tchoices label { position: relative; cursor: pointer; }
+.tchoices input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.tchoices span { display: inline-flex; align-items: center; min-height: 48px; padding: 10px 18px; border: 1px solid #8b8f9a; background: #fff; font-size: 16px; color: var(--ink); transition: background .2s, border-color .2s; }
+.tchoices input:checked + span { background: var(--night); border-color: var(--night); color: var(--gold-hi); }
+.tchoices input:focus-visible + span { outline: 2px solid var(--gold-lo); outline-offset: 2px; }
+.tchoices[aria-invalid=true] span { border-color: var(--red); }
+@media (max-width: 760px) {
+  .team-hero-in, .team-cols, .team-price { grid-template-columns: 1fr; }
+  .team-pic { max-width: 300px; margin: 10px auto 0; }
+  .team-box, .team-plan { padding: 24px 20px; }
+  .tchoices label { flex: 1 1 calc(50% - 10px); }
+  .tchoices span { width: 100%; justify-content: center; }
+}

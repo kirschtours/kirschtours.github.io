@@ -739,4 +739,62 @@
         .catch(function () { fail('השליחה לא הצליחה.'); });
     });
   }
+
+  // טופס גיוס הצוות (/team/): נכנס לגיליון עם ציון ודירוג (action: 'recruit'). אם השליחה נכשלת - אותן תשובות בוואטסאפ.
+  var tform = document.getElementById('tform');
+  if (tform) {
+    var tv = function (id) { return document.getElementById(id); };
+    var terr = tv('terr');
+    var pick = function (name) { var el = tform.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; };
+    var tLabel = function (name) { var el = tform.querySelector('input[name="' + name + '"]:checked'); return el ? el.nextElementSibling.textContent : ''; };
+    var tWa = function () {
+      return 'https://wa.me/' + tform.dataset.phone + '?text=' + encodeURIComponent('היי חיים, אני רוצה לשמוע על הצטרפות לצוות. ' + tv('tname').value.trim()
+        + ' מ' + tv('tcity').value.trim() + '. מחיר: ' + tLabel('price') + ', שעות בשבוע: ' + tLabel('hours'));
+    };
+    tform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      terr.hidden = true;
+      tform.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+      var phone = tv('tphone').value.replace(/\D/g, '');
+      var bad = !pick('price') ? 'price' : !pick('hours') ? 'hours' : !pick('device') ? 'device' : !tv('tnet').value ? 'tnet' : !tv('tcom').value ? 'tcom'
+        : !tv('tname').value.trim() ? 'tname' : phone.length < 9 ? 'tphone' : !tv('tcity').value.trim() ? 'tcity' : !tv('ttime').value ? 'ttime' : !tv('tconsent').checked ? 'tconsent' : '';
+      if (bad) {
+        terr.textContent = { price: 'ענו על שאלת המחיר.', hours: 'ענו כמה שעות בשבוע תוכלו להקדיש.', device: 'ענו על שאלת המחשב והסמארטפון.', tnet: 'בחרו כמה אנשי קשר יש לכם.', tcom: 'ענו על שאלת הקהילה.',
+          tname: 'חסר שם מלא.', tphone: 'חסר מספר טלפון תקין.', tcity: 'חסרה עיר.', ttime: 'בחרו מתי נוח לכם לזום.', tconsent: 'צריך לסמן את תיבת ההסכמה.' }[bad];
+        terr.hidden = false;
+        var el = tv(bad) || tform.querySelector('input[name="' + bad + '"]');
+        (el.closest('.tchoices') || el).setAttribute('aria-invalid', 'true');
+        el.focus();
+        return;
+      }
+      if (!tform.dataset.url) { location.href = tWa(); return; }
+      var send = tform.querySelector('.tsend');
+      var fail = function (msg) {
+        send.disabled = false; send.textContent = 'שליחה';
+        terr.innerHTML = '';
+        if (msg) terr.appendChild(document.createTextNode(msg + ' '));
+        terr.insertAdjacentHTML('beforeend', 'אפשר לנסות שוב, או <a href="' + tWa() + '">לשלוח לי את הפרטים בוואטסאפ</a>.');
+        terr.hidden = false;
+      };
+      send.disabled = true; send.textContent = 'שולח…';
+      fetch(tform.dataset.url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({
+        action: 'recruit', website: tv('twebsite').value, price: pick('price'), hours: pick('hours'), device: pick('device'),
+        network: tv('tnet').value, community: tv('tcom').value, experience: tv('texp').value, why: tv('twhy').value.trim(),
+        name: tv('tname').value.trim(), phone: tv('tphone').value.trim(), city: tv('tcity').value.trim(), time: tv('ttime').value,
+        consent: tv('tconsent').checked, src: location.search.slice(1, 200),
+      }) })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (!res.ok) { fail(res.error); return; }
+          track('גיוס-נשלח' + location.search, 'טופס גיוס נשלח');
+          tform.hidden = true;
+          tv('tdone-p').textContent = res.grade === 'C'
+            ? 'נראה שכרגע זה לא הזמן המתאים, וזה בסדר גמור. שמרתי את הפרטים, ואעדכן אתכם כשייפתח מחזור נוסף.'
+            : 'הפרטים הגיעו אליי. אשלח לכם הודעה בוואטסאפ עם מועד הזום והקישור.';
+          var done = tv('tdone');
+          done.hidden = false; done.focus();
+        })
+        .catch(function () { fail('השליחה לא הצליחה.'); });
+    });
+  }
 })();
