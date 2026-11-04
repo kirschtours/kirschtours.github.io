@@ -247,8 +247,8 @@ a:hover .arrow { transform: translateX(-6px); }
 .about li b { font: 400 15px var(--display); color: var(--gold); min-width: 26px; }
 
 /* הצטרפות */
-.join { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line-soft); }
-.join a { display: block; padding: 46px 38px; text-decoration: none; border-inline-start: 1px solid var(--line-soft); position: relative; overflow: hidden; transition: color .5s var(--ease); isolation: isolate; }
+.join { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line-soft); }
+.join a { display: block; padding: 46px 30px; text-decoration: none; border-inline-start: 1px solid var(--line-soft); position: relative; overflow: hidden; transition: color .5s var(--ease); isolation: isolate; }
 .join a:first-child { border-inline-start: 0; }
 .join a::before { content: ''; position: absolute; inset: 0; background: var(--night); transform: translateY(101%); transition: transform .7s var(--ease); z-index: -1; }
 .join a:hover { color: #fff; }
@@ -361,6 +361,7 @@ footer .en { direction: ltr; text-align: left; font-size: 12px; opacity: .85; }
 }
 
 @media (max-width: 1000px) {
+  .join { grid-template-columns: repeat(2, 1fr); }
   .grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .step:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; }

@@ -10,10 +10,11 @@
   // סטטיסטיקה (GoatCounter, 28.10.2026): כניסות נספרות לבד. כאן נספרות פעולות - לחיצה על וואטסאפ לפי הדף שבו היא קרתה, וטפסים שנשלחו.
   function track(path, title) { try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: path, title: title, event: true }); } catch (e) {} }
   document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="chat.whatsapp.com"]');
+    var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="chat.whatsapp.com"], a[href*="t.me/"]');
     if (!a) return;
     var group = a.href.indexOf('chat.whatsapp.com') > -1;
     var page = decodeURIComponent(location.pathname).replace(/\/index\.html$/, '/');
+    if (a.href.indexOf('t.me/') > -1) return track('טלגרם' + page, 'לחיצה על טלגרם מ-' + (document.querySelector('h1') || document).textContent.trim().slice(0, 60));
     track((a.dataset.ev || (group ? 'קבוצה' : 'וואטסאפ')) + page, (group ? 'הצטרפות לקבוצה מ-' : 'לחיצה על וואטסאפ מ-') + (document.querySelector('h1') || document).textContent.trim().slice(0, 60));
   });
   document.querySelectorAll('[data-exp]').forEach(function (el) { if (el.dataset.exp < today) el.remove(); });
