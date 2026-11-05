@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "seed:sql": "vite-node scripts/generate-seed-sql.ts > supabase/seed.sql"
+    "seed:sql": "vite-node scripts/generate-seed-sql.ts > supabase/seed.sql",
+    "deploy:site": "npm run build && rm -rf ../sales && cp -r dist ../sales"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.119.0",

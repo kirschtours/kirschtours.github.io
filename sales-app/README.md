@@ -101,6 +101,10 @@ npm run dev        # http://localhost:5173
 
 ## פריסה
 
+**באתר הקיים (GitHub Pages):** `npm run deploy:site` בונה את האפליקציה לתיקייה `/sales/` בשורש המאגר. אחרי commit ומיזוג ל-`main` היא זמינה ב-https://kirshtours.co.il/sales/ (במצב דמו, עד שמגדירים Supabase; אז מריצים את הפקודה שוב עם `.env.local`).
+
+**או בנפרד:**
+
 ```bash
 npm run build      # התוצר בתיקייה sales-app/dist
 ```
