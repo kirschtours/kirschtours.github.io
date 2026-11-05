@@ -432,6 +432,24 @@
     });
   });
 
+  // שורת המבזקים בדף החדשות: עצירה בכפתור (נגישות). ה-hover וה-focus ב-site.css
+  document.querySelectorAll('.ticker-stop').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var on = b.closest('.ticker').classList.toggle('stopped');
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.setAttribute('aria-label', on ? 'הפעלת המבזקים' : 'עצירת המבזקים');
+    });
+  });
+  // שיתוף כתבה: כמו שיתוף דיל, אבל נספר גם בלי תפריט השיתוף של המכשיר
+  document.querySelectorAll('.news-share[data-share]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      track('שיתוף-חדשות' + location.pathname, document.title);
+      if (!navigator.share) return;
+      e.preventDefault();
+      navigator.share({ text: a.dataset.share }).catch(function () {});
+    });
+  });
+
   // תמונה עם data-src נטענת רק כשצריך אותה (חוסך הורדה של כל הגלריות מראש)
   var wake = function (img) {
     if (img.dataset.srcset) { img.srcset = img.dataset.srcset; img.removeAttribute('data-srcset'); }

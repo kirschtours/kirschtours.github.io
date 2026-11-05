@@ -1109,3 +1109,109 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
   .tchoices label { flex: 1 1 calc(50% - 10px); }
   .tchoices span { width: 100%; justify-content: center; }
 }
+
+/* דף חדשות התעופה (חיים, 5.11.2026): /news/ */
+.news-mast { background: var(--night); color: #fff; padding: 150px 0 46px; }
+.news-mast .crumbs { color: rgba(255, 255, 255, .65); font-size: 14px; margin-bottom: 18px; }
+.news-mast .crumbs a { color: var(--gold-hi); }
+.news-mast h1 { font: 400 clamp(40px, 6vw, 72px)/1.08 var(--display); margin: 0; color: #fff; }
+.news-mast h1 small { display: block; font: 400 clamp(17px, 2vw, 21px)/1.5 var(--sans); color: rgba(255, 255, 255, .78); margin-top: 14px; max-width: 680px; }
+.news-article .news-mast h1 { font-size: clamp(32px, 4.6vw, 54px); max-width: 880px; }
+.news-today { margin-top: 20px; font-size: 14px; color: var(--gold-hi); }
+.news-mast .news-meta { color: var(--gold-hi); margin-bottom: 12px; }
+
+.ticker { display: flex; align-items: stretch; background: var(--gold-hi); color: var(--night); border-bottom: 1px solid var(--gold); overflow: hidden; }
+.ticker-tag { flex: none; display: flex; align-items: center; padding: 0 20px; background: var(--red); color: #fff; font-size: 15px; font-weight: 700; }
+.ticker-view { flex: 1; min-width: 0; overflow: hidden; }
+.ticker-track { display: inline-flex; width: max-content; animation: ticker calc(var(--n) * 9s) linear infinite; }
+.ticker-row { display: flex; }
+.ticker-row a { display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; color: var(--night); font-size: 16px; font-weight: 600; white-space: nowrap; text-decoration: none; }
+.ticker-row a:hover { text-decoration: underline; }
+.ticker-row time { font-size: 13px; font-weight: 400; color: var(--gold-lo); }
+.ticker-stop { flex: none; width: 48px; border: 0; border-inline-start: 1px solid var(--gold); background: transparent; cursor: pointer; display: grid; place-items: center; }
+.ticker-stop i { display: block; width: 12px; height: 14px; border-inline: 4px solid var(--night); box-sizing: border-box; }
+.ticker.stopped .ticker-stop i { width: 0; height: 0; border-block: 7px solid transparent; border-inline: 0; border-inline-start: 12px solid var(--night); transform: scaleX(-1); }
+.ticker:hover .ticker-track, .ticker:focus-within .ticker-track, .ticker.stopped .ticker-track { animation-play-state: paused; }
+@keyframes ticker { to { transform: translateX(50%); } }
+.a11y-still .ticker-view, .ticker.stopped .ticker-view { overflow-x: auto; }
+.a11y-still .ticker-row[aria-hidden], .a11y-still .ticker-stop { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+  .ticker-view { overflow-x: auto; }
+  .ticker-row[aria-hidden], .ticker-stop { display: none; }
+}
+
+.news-wrap { padding-top: 56px; padding-bottom: 90px; }
+.news-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; color: var(--gold-lo); margin-bottom: 10px; }
+.news-meta span { font-weight: 700; }
+.news-ph { display: block; overflow: hidden; background: var(--night); }
+.news-ph img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.news-lead:hover .news-ph img, .news-card:hover .news-ph img { transform: scale(1.03); }
+.news-lead { display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: center; margin-bottom: 56px; }
+.news-lead .news-ph { aspect-ratio: 16 / 10; }
+.news-lead h2 { font: 400 clamp(32px, 3.6vw, 46px)/1.15 var(--display); margin: 0 0 14px; }
+.news-lead h2 a, .news-card h3 a { color: var(--night); text-decoration: none; }
+.news-lead h2 a:hover, .news-card h3 a:hover { color: var(--gold-lo); }
+.news-lead p { font-size: 19px; line-height: 1.6; margin: 0 0 20px; color: var(--ink); }
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-bottom: 64px; }
+.news-card { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line-soft); }
+.news-card .news-ph { aspect-ratio: 16 / 10; }
+.news-card:only-child { grid-column: 1 / -1; flex-direction: row; align-items: stretch; }
+.news-card:only-child .news-ph { flex: 0 0 42%; aspect-ratio: auto; min-height: 240px; }
+.news-card .news-tx { display: flex; flex-direction: column; flex: 1; padding: 20px; }
+.news-card h3 { font: 600 21px/1.3 var(--sans); margin: 0 0 10px; }
+.news-card p { font-size: 16px; line-height: 1.55; margin: 0 0 16px; color: var(--muted); flex: 1; }
+.news-share { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 9px 16px; background: #0d7a3a; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; align-self: flex-start; }
+.news-share:hover { background: #0a6330; color: #fff; }
+.news-share svg { width: 18px; height: 18px; fill: currentColor; }
+.news-mast .news-share { margin-top: 22px; }
+.news-ads { margin-bottom: 64px; }
+.news-ads h2 { font: 400 clamp(30px, 3.4vw, 42px)/1.15 var(--display); margin: 0 0 30px; color: var(--night); }
+.news-ads .grid.two { grid-template-columns: repeat(2, 1fr); }
+.news-all { margin-top: 30px; }
+.news-join { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 30px 34px; margin-bottom: 64px; background: var(--night); color: #fff; }
+.news-join b { font: 400 28px/1.2 var(--display); color: var(--gold-hi); }
+.news-join p { margin: 8px 0 0; color: rgba(255, 255, 255, .8); font-size: 16px; line-height: 1.5; max-width: 620px; }
+.news-join .btn { flex: none; }
+.news-day { margin-bottom: 28px; }
+.news-day-h { font: 600 16px var(--sans); color: var(--gold-lo); margin: 0 0 8px; }
+.news-day ul { list-style: none; margin: 0; padding: 0; }
+.news-day li { border-bottom: 1px solid var(--line-soft); }
+.news-day li a { display: block; padding: 12px 0; color: var(--night); font-size: 18px; text-decoration: none; }
+.news-day li a:hover { color: var(--gold-lo); }
+.news-day li span { display: block; font-size: 13px; color: var(--muted); }
+.news-more { color: var(--gold-lo); font-weight: 600; }
+.news-body { max-width: 760px; margin: 0 auto 72px; }
+.news-body figure { margin: 0 0 28px; }
+.news-body figure img { display: block; width: 100%; height: auto; }
+.news-body figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.news-body p { font-size: 19px; line-height: 1.75; margin: 0 0 20px; color: var(--ink); }
+.news-body .news-intro { font-size: 22px; line-height: 1.55; color: var(--night); font-weight: 600; }
+.news-body h2 { font: 400 28px/1.2 var(--display); color: var(--night); margin: 32px 0 12px; }
+.news-box { padding: 20px 24px; margin: 26px 0; background: var(--ivory); border-inline-start: 4px solid var(--gold); }
+.news-box.alt { background: #eef3f0; border-color: #0d7a3a; }
+.news-box b { display: block; font-size: 17px; color: var(--night); margin-bottom: 6px; }
+.news-box p { margin: 0; font-size: 18px; }
+.news-reel { margin: 8px 0 22px; }
+.news-src { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; font-size: 15px; padding: 18px 0; margin-bottom: 18px; border-block: 1px solid var(--line-soft); }
+.news-src b { color: var(--night); }
+.news-src a { color: var(--gold-lo); }
+@media (max-width: 900px) {
+  .news-lead { grid-template-columns: 1fr; gap: 22px; }
+  .news-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .news-ads .grid.two { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .news-mast { padding: 118px 0 34px; }
+  .news-grid { grid-template-columns: 1fr; }
+  .news-card:only-child { flex-direction: column; }
+  .news-card:only-child .news-ph { flex: none; aspect-ratio: 16 / 10; min-height: 0; }
+  .news-join { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
+  .news-wrap { padding-top: 36px; padding-bottom: 60px; }
+  .ticker-tag { padding: 0 12px; font-size: 14px; }
+  .ticker-stop { width: 44px; }
+  .ticker-row a { padding: 12px 18px; font-size: 15px; }
+  .news-share { align-self: stretch; }
+}
+.a11y-contrast .ticker, .a11y-contrast .ticker-row a { background: #fff; color: #000; }
+.a11y-contrast .ticker-row time { color: #000; }

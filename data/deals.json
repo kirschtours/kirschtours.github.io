@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "deals": [
   {
    "id": "2026-11-05-site-paphos",
@@ -3941,7 +3941,7 @@
     "📍 ליד כיכר ואצלב, הליכה לעיר העתיקה"
    ],
    "min": 1909,
-   "nightsLabel": "3-5 לילות",
+   "nightsLabel": "3 לילות",
    "round": "2026-11-02",
    "expires": "2026-11-09",
    "images": [
@@ -3971,17 +3971,6 @@
     "wifi"
    ],
    "dates": [
-    {
-     "o": "2026-11-06",
-     "r": "2026-11-11",
-     "label": "6-11/11",
-     "days": "שישי–רביעי",
-     "nights": 5,
-     "fl": "סמארטווינגס",
-     "out": "05:35",
-     "back": "23:45",
-     "price": 2695
-    },
     {
      "o": "2026-11-09",
      "r": "2026-11-12",
@@ -5313,168 +5302,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-10-31-vip-prague/"
-  },
-  {
-   "id": "2026-10-30-budapest",
-   "dest": "בודפשט",
-   "hotel": "Mercure Budapest Castle Hill",
-   "stars": 4,
-   "score": "8.8",
-   "rev": "2,713",
-   "feats": [
-    "📍 צד בודה, כ-800 מ' מכנסיית מתיאש ורובע הטירה",
-    "🛏️ חדר סופריור עם מיטה זוגית"
-   ],
-   "min": 1665,
-   "nightsLabel": "4 לילות",
-   "round": "2026-10-30",
-   "expires": "2026-11-06",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "הונגריה",
-   "board": "RO",
-   "kosher": false,
-   "vip": false,
-   "options": [
-    {
-     "kind": "board",
-     "label": "עם ארוחת בוקר",
-     "board": "BB",
-     "addPp": 196
-    },
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לסוויטה עם סלון נפרד (15-19/11)",
-     "addPp": 248,
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi",
-    "parking",
-    "airport_shuttle",
-    "business"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-08",
-     "r": "2026-11-12",
-     "label": "8-12/11",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "בלו בירד",
-     "out": "10:30",
-     "back": "14:35",
-     "price": 1665
-    },
-    {
-     "o": "2026-11-15",
-     "r": "2026-11-19",
-     "label": "15-19/11",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "בלו בירד",
-     "out": "10:30",
-     "back": "14:35",
-     "price": 2064
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-30-budapest/"
-  },
-  {
-   "id": "2026-10-30-prague",
-   "dest": "פראג",
-   "hotel": "Grandior Hotel Prague",
-   "stars": 5,
-   "score": "9.2",
-   "rev": "8,812",
-   "feats": [
-    "📍 פראג 1 (נובה מסטו), במרחק הליכה מהעיר העתיקה"
-   ],
-   "min": 1993,
-   "nightsLabel": "4 לילות",
-   "round": "2026-10-30",
-   "expires": "2026-11-06",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg",
-    "15.jpg"
-   ],
-   "country": "צ׳כיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לדלוקס סוויטה",
-     "addPp": 256,
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi",
-    "airport_shuttle",
-    "business"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-08",
-     "r": "2026-11-12",
-     "label": "8-12/11",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:20",
-     "back": "14:50",
-     "price": 2405
-    },
-    {
-     "o": "2026-11-15",
-     "r": "2026-11-19",
-     "label": "15-19/11",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:20",
-     "back": "14:50",
-     "price": 1993
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-10-30-prague/"
   }
  ]
 }
