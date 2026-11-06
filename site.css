@@ -1218,3 +1218,6 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .news-disclose { margin: 26px 0 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
 .news-disclose a { color: var(--gold-lo); }
 .news-fixed { margin: 24px 0 0; padding: 14px 16px; border-inline-start: 3px solid var(--gold-lo); background: var(--paper); font-size: 16px; line-height: 1.6; }
+.tip-steps { margin: 0 0 24px; padding-inline-start: 22px; font-size: 18px; line-height: 1.7; }
+.tip-steps li { margin-bottom: 8px; }
+.tip-card .news-tx { padding: 22px; }
