@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "deals": [
   {
    "id": "2026-11-09-site-paphos",
@@ -743,8 +743,8 @@
     "📍 ליד שדרות רוסתאוולי",
     "💆 ספא, בריכה מקורה וסאונה"
    ],
-   "min": 1770,
-   "nightsLabel": "3-4-5 לילות",
+   "min": 1788,
+   "nightsLabel": "3 לילות",
    "round": "2026-11-09",
    "expires": "2026-11-16",
    "images": [
@@ -799,39 +799,6 @@
      "out": "06:25",
      "back": "10:55",
      "price": 1788
-    },
-    {
-     "o": "2026-12-22",
-     "r": "2026-12-27",
-     "label": "22-27/12",
-     "days": "שלישי–ראשון",
-     "nights": 5,
-     "fl": "אל על",
-     "out": "07:20",
-     "back": "10:55",
-     "price": 2380
-    },
-    {
-     "o": "2027-01-04",
-     "r": "2027-01-07",
-     "label": "4-7/1",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "11:00",
-     "price": 1770
-    },
-    {
-     "o": "2027-01-08",
-     "r": "2027-01-12",
-     "label": "8-12/1",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "10:55",
-     "price": 2134
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-11-09-site-tbilisi-2/"
@@ -848,7 +815,7 @@
     "📍 בלב העיר, על קאלאה ויקטוריי",
     "🏊 בריכה מקורה וספא"
    ],
-   "min": 1511,
+   "min": 1596,
    "nightsLabel": "4 לילות",
    "round": "2026-11-09",
    "expires": "2026-11-16",
@@ -881,18 +848,6 @@
    ],
    "dates": [
     {
-     "o": "2027-01-07",
-     "r": "2027-01-11",
-     "label": "7-11/1",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "טרום",
-     "out": "00:20",
-     "back": "20:45",
-     "bag": "תיק יד בלבד",
-     "price": 1511
-    },
-    {
      "o": "2027-01-10",
      "r": "2027-01-14",
      "label": "10-14/1",
@@ -915,18 +870,6 @@
      "back": "20:45",
      "bag": "תיק יד בלבד",
      "price": 1596
-    },
-    {
-     "o": "2027-01-17",
-     "r": "2027-01-21",
-     "label": "17-21/1",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "טרום",
-     "out": "00:20",
-     "back": "20:45",
-     "bag": "תיק יד בלבד",
-     "price": 1737
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-11-09-site-bucharest/"
@@ -943,8 +886,8 @@
     "📍 במרכז העיר, 2 דקות מהמטרו",
     "🕍 דקות הליכה מבית הכנסת הגדול ברחוב דוהאני"
    ],
-   "min": 2004,
-   "nightsLabel": "3-4 לילות",
+   "min": 2050,
+   "nightsLabel": "3 לילות",
    "round": "2026-11-09",
    "expires": "2026-11-16",
    "images": [
@@ -978,17 +921,6 @@
     "parking"
    ],
    "dates": [
-    {
-     "o": "2026-11-12",
-     "r": "2026-11-16",
-     "label": "12-16/11",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "בלו בירד",
-     "out": "10:30",
-     "back": "14:35",
-     "price": 2004
-    },
     {
      "o": "2027-01-07",
      "r": "2027-01-10",
@@ -1056,31 +988,6 @@
    ],
    "dates": [
     {
-     "o": "2026-11-12",
-     "r": "2026-11-16",
-     "label": "12-16/11",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "ישראייר",
-     "out": "07:00",
-     "back": "15:10",
-     "bag": "תיק יד בלבד",
-     "price": 2156
-    },
-    {
-     "o": "2026-11-16",
-     "r": "2026-11-20",
-     "label": "16-20/11",
-     "days": "שני–שישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "10:40",
-     "land": "11:05",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 2006
-    },
-    {
      "o": "2026-11-19",
      "r": "2026-11-23",
      "label": "19-23/11",
@@ -1102,20 +1009,7 @@
      "out": "09:00",
      "back": "14:15",
      "bag": "תיק יד בלבד",
-     "price": 1803,
-     "was": 1871
-    },
-    {
-     "o": "2026-12-11",
-     "r": "2026-12-16",
-     "label": "11-16/12",
-     "days": "שישי–רביעי",
-     "nights": 5,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "21:55",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 2641
+     "price": 1803
     },
     {
      "o": "2026-12-13",
@@ -1161,30 +1055,6 @@
      "out": "12:45",
      "back": "18:10",
      "price": 2203
-    },
-    {
-     "o": "2027-01-04",
-     "r": "2027-01-07",
-     "label": "4-7/1",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "18:10",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 1854
-    },
-    {
-     "o": "2027-01-06",
-     "r": "2027-01-10",
-     "label": "6-10/1",
-     "days": "רביעי–ראשון",
-     "nights": 4,
-     "fl": "ישראייר",
-     "out": "11:15",
-     "back": "13:30",
-     "bag": "תיק יד בלבד",
-     "price": 2092
     },
     {
      "o": "2027-01-24",
@@ -3200,7 +3070,7 @@
     "📍 סקאלה, 2.3 ק\"מ ממרכז לרנקה",
     "🛏️ חדר עם מיטת קווין"
    ],
-   "min": 1308,
+   "min": 1309,
    "nightsLabel": "4 לילות",
    "round": "2026-11-04",
    "expires": "2026-11-11",
@@ -3238,17 +3108,6 @@
    ],
    "dates": [
     {
-     "o": "2026-11-19",
-     "r": "2026-11-23",
-     "label": "19-23/11",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "11:30",
-     "back": "19:00",
-     "price": 1760
-    },
-    {
      "o": "2026-11-22",
      "r": "2026-11-26",
      "label": "22-26/11",
@@ -3269,17 +3128,6 @@
      "out": "10:30",
      "back": "21:55",
      "price": 1556
-    },
-    {
-     "o": "2026-11-26",
-     "r": "2026-11-30",
-     "label": "26-30/11",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:30",
-     "back": "19:00",
-     "price": 1308
     },
     {
      "o": "2026-12-02",
@@ -3505,762 +3353,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-11-04-bucharest/"
-  },
-  {
-   "id": "2026-11-03-site-limassol",
-   "dest": "לימסול",
-   "hotel": "City of Dreams Mediterranean",
-   "stars": 5,
-   "score": "9.6",
-   "rev": "5,129",
-   "trolley": false,
-   "feats": [
-    "🏊 בריכות לגונה ענקיות",
-    "💆 ספא גדול",
-    "📍 ריזורט הקזינו הגדול באירופה"
-   ],
-   "min": 3903,
-   "nightsLabel": "4-5 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "קפריסין",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [],
-   "amenities": [
-    "pool",
-    "spa",
-    "gym",
-    "restaurant",
-    "bar",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-09",
-     "r": "2026-12-13",
-     "label": "9-13/12",
-     "days": "רביעי–ראשון",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:30",
-     "back": "19:00",
-     "bag": "תיק יד בלבד",
-     "price": 3903
-    },
-    {
-     "o": "2026-12-23",
-     "r": "2026-12-28",
-     "label": "23-28/12",
-     "days": "רביעי–שני",
-     "nights": 5,
-     "fl": "אל על",
-     "out": "05:55",
-     "back": "15:40",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 4615
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-site-limassol/"
-  },
-  {
-   "id": "2026-11-03-site-batumi",
-   "dest": "בטומי",
-   "hotel": "Sheraton Batumi Hotel",
-   "stars": 5,
-   "score": "9.1",
-   "rev": "1,533",
-   "trolley": true,
-   "feats": [
-    "📍 על הבולוואר והטיילת, מול הים",
-    "🏊 בריכה חיצונית ומקורה"
-   ],
-   "min": 2704,
-   "nightsLabel": "3 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [],
-   "amenities": [
-    "pool",
-    "indoor_pool",
-    "beach",
-    "restaurant",
-    "bar",
-    "room_service",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2027-01-04",
-     "r": "2027-01-07",
-     "label": "4-7/1",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "18:10",
-     "price": 2704
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-site-batumi/"
-  },
-  {
-   "id": "2026-11-03-site-limassol-2",
-   "dest": "לימסול",
-   "hotel": "NYX Hotel Limassol",
-   "stars": 4,
-   "score": "9.0",
-   "rev": "4,146",
-   "trolley": false,
-   "feats": [
-    "🏊 בריכת אינפיניטי על הגג מול הים",
-    "📍 במרכז לימסול, ליד הטיילת"
-   ],
-   "min": 1797,
-   "nightsLabel": "4 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg"
-   ],
-   "country": "קפריסין",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "חדר עם נוף חלקי לים",
-     "addPp": 90,
-     "date": "2026-12-09"
-    }
-   ],
-   "amenities": [
-    "pool",
-    "spa",
-    "sauna",
-    "beach",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi",
-    "rooftop"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-09",
-     "r": "2026-12-13",
-     "label": "9-13/12",
-     "days": "רביעי–ראשון",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:30",
-     "back": "19:00",
-     "bag": "תיק יד בלבד",
-     "price": 1799
-    },
-    {
-     "o": "2027-01-22",
-     "r": "2027-01-26",
-     "label": "22-26/1",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "13:45",
-     "back": "15:40",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 1797
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-site-limassol-2/"
-  },
-  {
-   "id": "2026-11-03-site-sofia",
-   "dest": "סופיה",
-   "hotel": "Maison Sofia - MGallery",
-   "stars": 5,
-   "score": "8.9",
-   "rev": "3,253",
-   "trolley": true,
-   "feats": [
-    "💆 ספא, בריכה מקורה וסאונה",
-    "🌳 גן פנימי שקט"
-   ],
-   "min": 1661,
-   "nightsLabel": "4-5 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg"
-   ],
-   "country": "בולגריה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "pool",
-    "indoor_pool",
-    "spa",
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-23",
-     "r": "2026-12-28",
-     "label": "23-28/12",
-     "days": "רביעי–שני",
-     "nights": 5,
-     "fl": "אל על",
-     "out": "07:25",
-     "back": "11:20",
-     "price": 1933
-    },
-    {
-     "o": "2027-01-03",
-     "r": "2027-01-07",
-     "label": "3-7/1",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "15:05",
-     "back": "19:00",
-     "price": 1661
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-site-sofia/"
-  },
-  {
-   "id": "2026-11-03-site-prague",
-   "dest": "פראג",
-   "hotel": "Michelangelo Grand Hotel Prague",
-   "stars": 5,
-   "score": "9.3",
-   "rev": "5,102",
-   "trolley": true,
-   "feats": [
-    "📍 ליד כיכר ואצלב והעיר העתיקה",
-    "💆 ספא במרתף ההיסטורי"
-   ],
-   "min": 1799,
-   "nightsLabel": "4 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "צ׳כיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לסוויטת Deluxe",
-     "addPp": 188,
-     "date": "2027-01-08",
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "spa",
-    "bar",
-    "room_service",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2027-01-08",
-     "r": "2027-01-12",
-     "label": "8-12/1",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:20",
-     "back": "11:40",
-     "price": 1984
-    },
-    {
-     "o": "2027-01-17",
-     "r": "2027-01-21",
-     "label": "17-21/1",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "07:15",
-     "back": "11:25",
-     "price": 1799
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-site-prague/"
-  },
-  {
-   "id": "2026-11-03-site-paphos",
-   "dest": "פאפוס",
-   "hotel": "Theo Sunset Bay Hotel",
-   "stars": 4,
-   "score": "8.8",
-   "rev": "2,105",
-   "trolley": true,
-   "feats": [
-    "📍 קורל ביי, על המפרץ",
-    "💆 ספא ובריכה מקורה"
-   ],
-   "min": 1225,
-   "nightsLabel": "4 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg",
-    "15.jpg",
-    "16.jpg"
-   ],
-   "country": "קפריסין",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "indoor_pool",
-    "spa",
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-21",
-     "r": "2026-12-25",
-     "label": "21-25/12",
-     "days": "שני–שישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:55",
-     "back": "07:50",
-     "land": "09:00",
-     "price": 1351
-    },
-    {
-     "o": "2026-12-25",
-     "r": "2026-12-29",
-     "label": "25-29/12",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:30",
-     "back": "09:20",
-     "price": 1225
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-site-paphos/"
-  },
-  {
-   "id": "2026-11-03-site-budapest",
-   "dest": "בודפשט",
-   "hotel": "Eurostars Danube Budapest",
-   "stars": 4,
-   "score": "8.9",
-   "rev": "3,529",
-   "trolley": false,
-   "feats": [
-    "📍 במרכז פשט, ליד הדנובה"
-   ],
-   "min": 1714,
-   "nightsLabel": "4 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "הונגריה",
-   "board": "RO",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "gym",
-    "restaurant",
-    "bar",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2027-01-06",
-     "r": "2027-01-10",
-     "label": "6-10/1",
-     "days": "רביעי–ראשון",
-     "nights": 4,
-     "fl": "ישראייר",
-     "out": "07:20",
-     "back": "10:50",
-     "bag": "תיק יד בלבד",
-     "price": 1874
-    },
-    {
-     "o": "2027-01-20",
-     "r": "2027-01-24",
-     "label": "20-24/1",
-     "days": "רביעי–ראשון",
-     "nights": 4,
-     "fl": "ישראייר",
-     "out": "07:20",
-     "back": "10:50",
-     "bag": "תיק יד בלבד",
-     "price": 1714
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-site-budapest/"
-  },
-  {
-   "id": "2026-11-03-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "Sheraton Grand Tbilisi Metechi Palace",
-   "stars": 5,
-   "score": "9.3",
-   "rev": "1,996",
-   "trolley": true,
-   "feats": [
-    "📍 ליד כנסיית מטחי, נוף לעיר העתיקה ולמבצר נריקלה",
-    "💆 ספא עם בריכה מקורה, סאונה וחמאם",
-    "🛏️ חדר דלוקס עם מיטת קינג"
-   ],
-   "min": 2258,
-   "nightsLabel": "3-4 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לחדר Executive עם מיטת קינג",
-     "addPp": 84,
-     "date": "2026-11-22",
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "pool",
-    "indoor_pool",
-    "spa",
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-17",
-     "r": "2026-11-20",
-     "label": "17-20/11",
-     "days": "שלישי–שישי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "07:20",
-     "back": "10:55",
-     "land": "11:35",
-     "price": 2258
-    },
-    {
-     "o": "2026-11-22",
-     "r": "2026-11-26",
-     "label": "22-26/11",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "12:05",
-     "price": 2408
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-tbilisi/"
-  },
-  {
-   "id": "2026-11-03-prague",
-   "dest": "פראג",
-   "hotel": "Alchymist Grand Hotel & Spa",
-   "stars": 5,
-   "score": "9.6",
-   "rev": "1,329",
-   "feats": [
-    "📍 מאלה סטרנה, 600 מ' מטירת פראג ו-500 מ' מקיר לנון",
-    "🏰 ארמון בארוק עם חצר פנימית ומזרקה",
-    "💆 ספא עם בריכה מקורה, עיסויים וטיפולי פנים"
-   ],
-   "min": 2995,
-   "nightsLabel": "4 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "צ׳כיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לג'וניור סוויטה",
-     "addPp": 512,
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "indoor_pool",
-    "spa",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-12",
-     "r": "2026-11-16",
-     "label": "12-16/11",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:20",
-     "back": "14:50",
-     "price": 2995
-    },
-    {
-     "o": "2026-11-19",
-     "r": "2026-11-23",
-     "label": "19-23/11",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:20",
-     "back": "14:50",
-     "price": 3008
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-prague/"
-  },
-  {
-   "id": "2026-11-03-paphos",
-   "dest": "פאפוס",
-   "hotel": "Coral Beach Hotel & Resort",
-   "stars": 5,
-   "score": "9.2",
-   "rev": "2,506",
-   "trolley": true,
-   "feats": [
-    "📍 על חוף לאורו במפרץ קורל ביי",
-    "🏊 3 בריכות חיצוניות ובריכה מקורה",
-    "🛏️ חדר זוגי עם מיטה זוגית"
-   ],
-   "min": 1432,
-   "nightsLabel": "4 לילות",
-   "round": "2026-11-03",
-   "expires": "2026-11-10",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "קפריסין",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [
-    {
-     "kind": "board",
-     "label": "עם All Inclusive",
-     "board": "AI",
-     "addPp": 226,
-     "best": true
-    }
-   ],
-   "amenities": [
-    "pool",
-    "indoor_pool",
-    "spa",
-    "jacuzzi",
-    "sauna",
-    "private_beach",
-    "gym",
-    "restaurant",
-    "bar",
-    "wifi",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-20",
-     "r": "2026-11-24",
-     "label": "20-24/11",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:30",
-     "back": "09:20",
-     "price": 1496
-    },
-    {
-     "o": "2026-11-23",
-     "r": "2026-11-27",
-     "label": "23-27/11",
-     "days": "שני–שישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:55",
-     "back": "07:50",
-     "land": "09:00",
-     "price": 1432
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-03-paphos/"
   }
  ]
 }
