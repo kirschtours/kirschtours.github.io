@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFF6EA">
+<title>Español · אוצר מילים בספרדית</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23F26B3A'/%3E%3Ctext x='50' y='70' font-size='58' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%C3%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap">
+<style>
+:root {
+  --bg: #FFF6EA; --card: #FFFFFF; --ink: #2B2733; --muted: #857F8F; --line: #F1E5D3;
+  --brand: #F26B3A; --brand-d: #D4521F; --brand-soft: #FFE6DA;
+  --sun: #FFC247; --sun-soft: #FFF1CF;
+  --ok: #24A866; --ok-soft: #DDF6E8; --bad: #E5484D; --bad-soft: #FDE3E4;
+  --teal: #1F9E9A; --teal-soft: #D9F3F1;
+  --shadow: 0 6px 20px rgba(120, 72, 20, .09);
+  --font: 'Rubik', 'Heebo', Arial, sans-serif;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent }
+html, body { margin: 0 }
+body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.45; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; padding: 0 }
+input { font: inherit }
+#app { max-width: 520px; margin: 0 auto; padding: 18px 16px 104px; min-height: 100vh }
+#app.session { padding-bottom: 28px }
+.es { direction: ltr; unicode-bidi: isolate; font-weight: 700 }
+h1, h2, h3 { margin: 0; font-weight: 800 }
+.muted { color: var(--muted) }
+.row { display: flex; align-items: center; gap: 10px }
+.grow { flex: 1; min-width: 0 }
+
+/* כותרת בית */
+.hello { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px }
+.hello h1 { font-size: 26px }
+.hello small { display: block; color: var(--muted); font-weight: 400; font-size: 14px }
+.chip { display: inline-flex; align-items: center; gap: 6px; background: var(--card); border-radius: 999px; padding: 7px 13px; font-weight: 700; box-shadow: var(--shadow); font-size: 15px }
+
+.card { background: var(--card); border-radius: 22px; padding: 18px; box-shadow: var(--shadow) }
+.hero { display: flex; align-items: center; gap: 16px; background: linear-gradient(135deg, #F26B3A, #F9A03F); color: #fff }
+.ring { position: relative; width: 112px; height: 112px; flex: none }
+.ring svg { transform: rotate(-90deg) }
+.ring b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 30px; font-weight: 800 }
+.hero h2 { font-size: 19px }
+.hero p { margin: 2px 0 10px; opacity: .92; font-size: 14px }
+.bar { height: 10px; border-radius: 99px; background: var(--line); overflow: hidden }
+.bar > i { display: block; height: 100%; border-radius: 99px; background: var(--brand); transition: width .5s ease }
+.hero .bar { background: rgba(255,255,255,.3) } .hero .bar > i { background: #fff }
+.hero .goal { font-size: 13px; margin-bottom: 5px; display: flex; justify-content: space-between }
+
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 58px; padding: 12px 18px; border-radius: 18px; font-weight: 700; font-size: 18px; background: var(--brand); color: #fff; box-shadow: 0 5px 0 var(--brand-d); transition: transform .08s, box-shadow .08s }
+.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--brand-d) }
+.btn small { font-weight: 400; font-size: 13px; opacity: .9 }
+.btn.col { flex-direction: column; gap: 0 }
+.btn.ok { background: var(--ok); box-shadow: 0 5px 0 #17824D } .btn.ok:active { box-shadow: 0 1px 0 #17824D }
+.btn.soft { background: var(--card); color: var(--ink); box-shadow: 0 5px 0 var(--line) } .btn.soft:active { box-shadow: 0 1px 0 var(--line) }
+.btn.sun { background: var(--sun); color: #4A3200; box-shadow: 0 5px 0 #DB9B16 } .btn.sun:active { box-shadow: 0 1px 0 #DB9B16 }
+.btn[disabled] { opacity: .45; pointer-events: none }
+.stack { display: grid; gap: 14px; margin-top: 16px }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+
+.sec { margin: 26px 2px 10px; font-size: 18px }
+.lvl { display: flex; align-items: center; gap: 14px; width: 100%; text-align: right; margin-bottom: 12px }
+.lvl .num { width: 54px; height: 54px; border-radius: 17px; display: grid; place-items: center; font-size: 24px; font-weight: 800; color: #fff; flex: none }
+.lvl h3 { font-size: 17px } .lvl .muted { font-size: 13px }
+.lvl .bar { margin-top: 7px; height: 8px }
+.lvl.locked { opacity: .62 }
+.c1 { background: #F26B3A } .c2 { background: #F2A01E } .c3 { background: #1F9E9A }
+.soon { display: flex; flex-wrap: wrap; gap: 8px }
+.soon span { background: #F4E9D8; color: #A79A86; border-radius: 12px; padding: 7px 11px; font-size: 13px; font-weight: 500 }
+
+/* מסך שלב */
+.top { display: flex; align-items: center; gap: 10px; margin-bottom: 14px }
+.back { width: 44px; height: 44px; border-radius: 14px; background: var(--card); box-shadow: var(--shadow); font-size: 20px; flex: none }
+.top h1 { font-size: 22px } .top small { display: block; font-weight: 400; color: var(--muted); font-size: 13px }
+.chips { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px; margin: 0 -16px; padding-inline: 16px; scrollbar-width: none }
+.chips::-webkit-scrollbar { display: none }
+.chips button { flex: none; background: var(--card); border-radius: 999px; padding: 9px 14px; font-weight: 500; font-size: 14px; box-shadow: var(--shadow); white-space: nowrap }
+.chips button.on { background: var(--ink); color: #fff }
+.chips button em { font-style: normal; opacity: .6; font-size: 12px; margin-inline-start: 4px }
+.wl { margin-top: 10px; padding: 4px 16px }
+.wr { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 0; border-bottom: 1px solid var(--line); text-align: right }
+.wr:last-child { border-bottom: 0 }
+.wr .es { font-size: 17px } .wr .he { color: var(--muted); font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; background: #E6DCCB }
+.dot.s1 { background: var(--sun) } .dot.s2 { background: var(--ok) }
+.legend { display: flex; gap: 14px; font-size: 12px; color: var(--muted); margin: 22px 4px 0 } .legend span { display: flex; align-items: center; gap: 5px }
+
+/* מפגש לימוד / תרגול */
+.shead { display: flex; align-items: center; gap: 12px; margin-bottom: 18px }
+.shead .x { width: 40px; height: 40px; border-radius: 12px; font-size: 18px; color: var(--muted); flex: none }
+.shead .bar { flex: 1; height: 12px }
+.shead b { font-size: 14px; color: var(--muted); min-width: 44px; text-align: left }
+.flash { text-align: center; padding: 30px 20px 24px; min-height: 300px; display: flex; flex-direction: column; justify-content: center; cursor: pointer }
+.tag { display: inline-block; align-self: center; background: var(--sun-soft); color: #8A5B00; border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 500; margin-bottom: 16px }
+.big { font-size: 40px; line-height: 1.15; word-break: break-word }
+.say { width: 52px; height: 52px; border-radius: 50%; background: var(--brand-soft); font-size: 22px; margin: 14px auto 0; display: grid; place-items: center }
+.say.sm { width: 38px; height: 38px; font-size: 16px; margin: 0; flex: none }
+.hint { color: var(--muted); margin-top: 22px; font-size: 15px }
+.reveal { animation: up .3s ease }
+@keyframes up { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
+.he-big { font-size: 26px; font-weight: 700; margin-top: 16px }
+.ex { background: var(--bg); border-radius: 16px; padding: 12px 14px; margin-top: 16px; text-align: right; display: flex; gap: 10px; align-items: center }
+.ex .es { display: block; font-weight: 500; text-align: left } .ex .he { color: var(--muted); font-size: 14px }
+.conj { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 16px }
+.conj caption { font-size: 13px; color: var(--muted); padding-bottom: 6px; text-align: right }
+.conj td { padding: 7px 4px; border-bottom: 1px solid var(--line) } .conj tr:last-child td { border: 0 }
+.conj td:first-child { color: var(--muted); font-size: 13px; text-align: right; width: 34% }
+.conj td:nth-child(2) { direction: ltr; text-align: left; color: var(--muted) }
+.conj td:last-child { direction: ltr; text-align: left; font-weight: 700; color: var(--brand-d) }
+
+.qlabel { text-align: center; color: var(--muted); font-size: 15px; margin-bottom: 6px }
+.qbox { text-align: center; padding: 26px 18px; margin-bottom: 16px }
+.qbox .big.he { font-size: 30px }
+.opts { display: grid; gap: 11px }
+.opt { background: var(--card); border-radius: 16px; padding: 16px; font-size: 18px; font-weight: 500; box-shadow: 0 4px 0 var(--line); border: 2px solid var(--line); min-height: 58px }
+.opt.es { font-weight: 700 }
+.opt.right { background: var(--ok-soft); border-color: var(--ok); box-shadow: 0 4px 0 var(--ok) }
+.opt.wrong { background: var(--bad-soft); border-color: var(--bad); box-shadow: 0 4px 0 var(--bad) }
+.opts.done .opt { pointer-events: none }
+.tin { width: 100%; border: 2px solid var(--line); border-radius: 16px; padding: 16px; font-size: 22px; direction: ltr; text-align: center; background: var(--card); outline: none; font-weight: 700 }
+.tin:focus { border-color: var(--brand) }
+.fb { margin-top: 16px; border-radius: 18px; padding: 14px 16px; animation: up .25s ease }
+.fb.good { background: var(--ok-soft); color: #136B3F } .fb.no { background: var(--bad-soft); color: #9C2327 }
+.fb b { font-size: 18px } .fb .es { font-size: 20px }
+.fb p { margin: 6px 0 0; font-size: 14px; color: var(--ink); opacity: .8 }
+.link { color: var(--muted); text-decoration: underline; font-size: 15px; padding: 12px; display: block; margin: 4px auto 0 }
+
+.result { text-align: center; padding: 30px 20px }
+.result .emo { font-size: 64px; line-height: 1 }
+.result h1 { font-size: 26px; margin-top: 10px }
+.result .score { font-size: 46px; font-weight: 800; color: var(--brand); margin: 6px 0 }
+.miss { text-align: right; margin-top: 16px }
+
+/* המילים שלי / עוד */
+.search { width: 100%; border: 0; border-radius: 16px; padding: 14px 16px; background: var(--card); box-shadow: var(--shadow); outline: none; margin-bottom: 4px }
+.empty { text-align: center; padding: 40px 20px; color: var(--muted) } .empty div { font-size: 52px }
+.set { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line) }
+.set:last-child { border: 0 } .set small { display: block; color: var(--muted); font-size: 13px }
+.seg { display: flex; background: var(--bg); border-radius: 12px; padding: 3px; flex: none }
+.seg button { padding: 7px 12px; border-radius: 10px; font-weight: 500 } .seg button.on { background: var(--card); box-shadow: var(--shadow); font-weight: 700 }
+.mini { background: var(--bg); border-radius: 12px; padding: 9px 14px; font-weight: 700; flex: none }
+.mini.danger { color: var(--bad) }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px }
+.stat { background: var(--card); border-radius: 18px; padding: 12px 8px; text-align: center; box-shadow: var(--shadow) }
+.stat b { display: block; font-size: 24px; font-weight: 800 } .stat span { font-size: 12px; color: var(--muted) }
+.catrow { margin-bottom: 12px } .catrow:last-child { margin: 0 } .catrow .row { justify-content: space-between; font-size: 14px; margin-bottom: 5px }
+
+/* ניווט תחתון */
+nav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-top: 1px solid var(--line); z-index: 5; padding-bottom: env(safe-area-inset-bottom) }
+nav div { max-width: 520px; margin: 0 auto; display: flex }
+nav button { flex: 1; padding: 10px 0 9px; font-size: 12px; color: var(--muted); font-weight: 500 }
+nav button span { display: block; font-size: 22px; line-height: 1.2; filter: grayscale(1); opacity: .6 }
+nav button.on { color: var(--brand-d); font-weight: 700 } nav button.on span { filter: none; opacity: 1 }
+
+/* חלון מילה */
+.ov { position: fixed; inset: 0; background: rgba(43,39,51,.45); z-index: 20; display: flex; align-items: flex-end; justify-content: center; animation: fade .2s }
+@keyframes fade { from { opacity: 0 } }
+.sheet { background: var(--card); width: 100%; max-width: 520px; border-radius: 26px 26px 0 0; padding: 22px 20px calc(22px + env(safe-area-inset-bottom)); max-height: 90vh; overflow: auto; text-align: center; animation: up .25s ease }
+.sheet .big { font-size: 34px }
+.toast { position: fixed; bottom: 96px; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 14px; z-index: 30; font-size: 15px; animation: up .25s ease; max-width: 88vw; text-align: center }
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 40; overflow: hidden }
+.confetti i { position: absolute; top: -20px; width: 10px; height: 16px; border-radius: 3px; animation: fall linear forwards }
+@keyframes fall { to { transform: translateY(110vh) rotate(720deg) } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important } }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<nav id="nav"><div>
+  <button data-tab="home" onclick="A.nav('home')"><span>🏠</span>בית</button>
+  <button data-tab="words" onclick="A.nav('words')"><span>📚</span>המילים שלי</button>
+  <button data-tab="more" onclick="A.nav('more')"><span>📈</span>התקדמות</button>
+</div></nav>
+<div id="layer"></div>
+
+<script src="words-1.js"></script>
+<script src="words-2.js"></script>
+<script src="words-3.js"></script>
+<script>
+(function () {
+'use strict';
+
+/* ---------- נתונים ---------- */
+const KEY = 'espanol_he_v1';
+const LV = [100, 250, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000]; // מילים מצטברות בכל שלב
+const CATS = {
+  v: ['פעלים', '🏃'], n: ['שמות עצם', '🧩'], a: ['שמות תואר', '🎨'], c: ['קישור ויחס', '🔗'],
+  d: ['תוארי פועל', '⏱️'], p: ['כינויים ומספרים', '🔢'], x: ['ביטויים ושאלות', '💬']
+};
+const PR = [['yo', 'אני'], ['tú', 'אתה / את'], ['él / ella', 'הוא / היא'], ['nosotros', 'אנחנו'], ['ellos / ustedes', 'הם / אתם']];
+const DAY = 864e5, BOX = [3, 7, 30, 90]; // מרווחי חזרה בימים
+const ENDS = { ar: ['o', 'as', 'a', 'amos', 'an'], er: ['o', 'es', 'e', 'emos', 'en'], ir: ['o', 'es', 'e', 'imos', 'en'] };
+
+const W = [];
+(window.SP_WORDS || []).sort((a, b) => a.level - b.level).forEach(pack => {
+  let cat = 'n';
+  pack.text.split('\n').forEach(line => {
+    line = line.trim();
+    if (!line) return;
+    if (line[0] === '#') { cat = line.slice(1); return; }
+    const f = line.split('|');
+    const w = { i: W.length, id: f[0] + '|' + cat, es: f[0], he: f[1], ex: f[2] || '', exhe: f[3] || '', cat, lv: pack.level };
+    if (cat === 'v') w.forms = f[4] ? f[4].split(',') : ENDS[w.es.slice(-2)].map(e => w.es.slice(0, -2) + e);
+    w.mean = w.he.replace(/\([^)]*\)/g, '').split('/').map(s => s.trim()).filter(Boolean);
+    W.push(w);
+  });
+});
+const READY = Math.max(1, ...W.map(w => w.lv)); // כמה שלבים כבר כוללים תוכן
+const lvWords = n => W.filter(w => w.lv === n);
+const range = n => (n === 1 ? 1 : LV[n - 2] + 1) + '–' + LV[n - 1];
+
+/* ---------- מצב שמור ---------- */
+let S = { w: {}, un: 1, goal: 10, auto: true, days: {}, td: { d: '', ids: [] } };
+try { Object.assign(S, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const stat = w => (S.w[w.id] ? S.w[w.id].s : 0); // 0 חדשה, 1 בלמידה, 2 במאגר
+const today = (t) => { const d = t ? new Date(t) : new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+function touch(w) {
+  const d = today();
+  if (S.td.d !== d) S.td = { d, ids: [] };
+  if (!S.td.ids.includes(w.id)) S.td.ids.push(w.id);
+  S.days[d] = S.td.ids.length;
+}
+const doneToday = () => (S.td.d === today() ? S.td.ids.length : 0);
+function streak() {
+  let n = 0, t = Date.now();
+  if (!S.days[today(t)]) t -= DAY;
+  while (S.days[today(t)]) { n++; t -= DAY; }
+  return n;
+}
+const setKnown = w => { S.w[w.id] = { s: 2, b: 0, d: Date.now() + BOX[0] * DAY }; };
+const setLearning = w => { S.w[w.id] = { s: 1, c: 0 }; };
+const dueWords = () => W.filter(w => stat(w) === 2 && S.w[w.id].d <= Date.now());
+const knownCount = list => list.filter(w => stat(w) === 2).length;
+
+/* ציון תשובה. מחזיר true אם המילה נכנסה עכשיו למאגר */
+function grade(w, ok, mode) {
+  touch(w);
+  if (mode === 'test') { save(); return false; }
+  const r = S.w[w.id];
+  let gained = false;
+  if (!ok) setLearning(w);
+  else if (r && r.s === 2) {
+    if (r.d <= Date.now()) { r.b = Math.min((r.b || 0) + 1, BOX.length - 1); r.d = Date.now() + BOX[r.b] * DAY; }
+  } else {
+    const c = ((r && r.c) || 0) + 1;
+    if (c >= 2) { setKnown(w); gained = true; } else S.w[w.id] = { s: 1, c };
+  }
+  save();
+  return gained;
+}
+
+/* ---------- עזרים ---------- */
+const $app = document.getElementById('app'), $layer = document.getElementById('layer'), $nav = document.getElementById('nav');
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const pct = (a, b) => (b ? Math.round(a / b * 100) : 0);
+const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z ]/g, ' ').replace(/\s+/g, ' ').trim().replace(/^(el|la|los|las|un|una) (?=.)/, '');
+const shares = (a, b) => a.mean.some(m => b.mean.includes(m));
+const bar = (p, cls) => `<div class="bar"><i class="${cls || ''}" style="width:${p}%"></i></div>`;
+
+let voice = null;
+function pickVoice() {
+  if (!('speechSynthesis' in window)) return;
+  const vs = speechSynthesis.getVoices();
+  for (const p of ['es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es-ES']) {
+    const v = vs.find(v => v.lang.replace('_', '-') === p);
+    if (v) { voice = v; return; }
+  }
+  voice = vs.find(v => /^es/i.test(v.lang)) || null;
+}
+if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function speak(t) {
+  if (!('speechSynthesis' in window)) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(t.replace(/[¿¡—]/g, ''));
+    u.lang = voice ? voice.lang : 'es-MX'; if (voice) u.voice = voice; u.rate = .88;
+    speechSynthesis.speak(u);
+  } catch (e) {}
+}
+function toast(msg) {
+  const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), 2600);
+}
+function confetti() {
+  const c = document.createElement('div'); c.className = 'confetti';
+  const cols = ['#F26B3A', '#FFC247', '#24A866', '#1F9E9A', '#E5484D', '#7C5CFC'];
+  for (let i = 0; i < 46; i++) c.innerHTML += `<i style="left:${Math.random() * 100}%;background:${cols[i % 6]};animation-duration:${1.6 + Math.random() * 1.6}s;animation-delay:${Math.random() * .5}s"></i>`;
+  document.body.appendChild(c); setTimeout(() => c.remove(), 3800);
+}
+
+/* כרטיס המידע המלא של מילה (תרגום, דוגמה, הטיות) */
+function details(w) {
+  let h = `<div class="he-big">${w.he}</div>`;
+  if (w.ex) h += `<div class="ex"><div class="grow"><span class="es">${w.ex}</span><span class="he">${w.exhe}</span></div><button class="say sm" onclick="event.stopPropagation();A.sayEx(${w.i})" aria-label="השמע משפט">🔊</button></div>`;
+  if (w.forms) h += `<table class="conj"><caption>הטיות בזמן הווה</caption>${PR.map((p, k) => `<tr><td>${p[1]}</td><td>${p[0]}</td><td>${w.forms[k]}</td></tr>`).join('')}</table>`;
+  return h;
+}
+
+/* ---------- ניתוב ---------- */
+let L = null, Q = null, R = null;       // מפגש לימוד, מפגש שאלות, מסך תוצאה
+let curLv = 1, curCat = 'all', wordsTab = 2, wordsQ = '';
+function nav(h, replace) {
+  if (replace) history.replaceState(null, '', '#' + h);
+  else if (location.hash !== '#' + h) history.pushState(null, '', '#' + h);
+  route();
+}
+function route() {
+  const h = location.hash.slice(1) || 'home';
+  $layer.innerHTML = '';
+  let tab = '', session = false;
+  if (/^l\d+$/.test(h) && +h.slice(1) <= READY) { curLv = +h.slice(1); vLevel(); tab = 'home'; }
+  else if (h === 'words') { vWords(); tab = 'words'; }
+  else if (h === 'more') { vMore(); tab = 'more'; }
+  else if (h === 'learn' && L) { vLearn(); session = true; }
+  else if (h === 'quiz' && Q) { vQuiz(); session = true; }
+  else if (h === 'result' && R) { $app.innerHTML = R; session = true; }
+  else { if (h !== 'home') history.replaceState(null, '', '#home'); vHome(); tab = 'home'; }
+  $nav.style.display = session ? 'none' : '';
+  $app.classList.toggle('session', session);
+  $nav.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+  window.scrollTo(0, 0);
+}
+window.addEventListener('popstate', route);
+
+/* ---------- בית ---------- */
+function nextLevel() {
+  for (let n = 1; n <= Math.min(S.un, READY); n++) if (knownCount(lvWords(n)) < lvWords(n).length) return n;
+  return Math.min(S.un, READY);
+}
+function vHome() {
+  const k = knownCount(W), done = doneToday(), st = streak(), due = dueWords().length, nl = nextLevel();
+  const C = 2 * Math.PI * 48;
+  let h = `<div class="hello"><h1><span class="es">¡Hola!</span> 👋<small>ספרדית, מילה אחרי מילה</small></h1><span class="chip">🔥 ${st} ${st === 1 ? 'יום' : 'ימים'}</span></div>
+  <div class="card hero">
+    <div class="ring"><svg width="112" height="112"><circle cx="56" cy="56" r="48" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="11"/><circle cx="56" cy="56" r="48" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - k / W.length)}"/></svg><b>${k}</b></div>
+    <div class="grow"><h2>מילים שאני כבר יודע</h2><p>מתוך ${W.length} הראשונות</p>
+      <div class="goal"><span>היעד להיום</span><span>${Math.min(done, S.goal)}/${S.goal} ${done >= S.goal ? '✓' : ''}</span></div>${bar(Math.min(100, pct(done, S.goal)))}</div>
+  </div>
+  <div class="stack">
+    <button class="btn col" onclick="A.learn(${nl},'all')">▶ המשך ללמוד<small>שלב ${nl} · 10 מילים</small></button>
+    ${due ? `<button class="btn sun" onclick="A.review()">🔁 חזרה על ${due} מילים מהמאגר</button>` : ''}
+  </div>
+  <h2 class="sec">השלבים</h2>`;
+  for (let n = 1; n <= READY; n++) {
+    const ws = lvWords(n), kk = knownCount(ws), locked = n > S.un;
+    h += `<button class="card lvl ${locked ? 'locked' : ''}" onclick="A.openLevel(${n})">
+      <span class="num c${n}">${locked ? '🔒' : n}</span>
+      <span class="grow"><h3>שלב ${n}</h3><span class="muted">מילים ${range(n)} · ${locked ? `נפתח אחרי מבחן שלב ${n - 1}` : `${kk} מתוך ${ws.length} במאגר`}</span>${bar(pct(kk, ws.length), 'c' + n)}</span>
+    </button>`;
+  }
+  if (READY < LV.length) {
+    h += `<h2 class="sec">בקרוב</h2><div class="soon">`;
+    for (let n = READY + 1; n <= LV.length; n++) h += `<span>שלב ${n} · עד ${LV[n - 1].toLocaleString()}</span>`;
+    h += `</div>`;
+  }
+  $app.innerHTML = h;
+}
+
+/* ---------- מסך שלב ---------- */
+function pool(n, cat) { return lvWords(n).filter(w => cat === 'all' || w.cat === cat); }
+function vLevel() {
+  const all = lvWords(curLv), ws = pool(curLv, curCat), left = ws.filter(w => stat(w) !== 2).length;
+  let h = `<div class="top"><button class="back" onclick="A.nav('home')" aria-label="חזרה">→</button><h1>שלב ${curLv}<small>מילים ${range(curLv)} · ${knownCount(all)} מתוך ${all.length} במאגר</small></h1></div>
+  <div class="chips"><button class="${curCat === 'all' ? 'on' : ''}" onclick="A.cat('all')">הכול <em>${all.length}</em></button>`;
+  Object.keys(CATS).forEach(c => {
+    const n = all.filter(w => w.cat === c).length;
+    if (n) h += `<button class="${curCat === c ? 'on' : ''}" onclick="A.cat('${c}')">${CATS[c][1]} ${CATS[c][0]} <em>${n}</em></button>`;
+  });
+  h += `</div>
+  <div class="stack" style="margin-top:4px">
+    <button class="btn col" ${left ? '' : 'disabled'} onclick="A.learn(${curLv},'${curCat}')">📖 ללמוד מילים<small>${left ? `נשארו ${left} מילים ללמוד` : 'כל המילים כאן כבר במאגר 🎉'}</small></button>
+    <div class="two">
+      <button class="btn soft" onclick="A.practice(${curLv},'${curCat}')">🎯 תרגול</button>
+      <button class="btn soft" onclick="A.test(${curLv})">🏆 מבחן שלב</button>
+    </div>
+  </div>
+  <div class="legend"><span><i class="dot"></i>חדשה</span><span><i class="dot s1"></i>בלמידה</span><span><i class="dot s2"></i>במאגר שלי</span></div>
+  <div class="card wl">${ws.map(row).join('')}</div>`;
+  $app.innerHTML = h;
+}
+const row = w => `<button class="wr" onclick="A.word(${w.i})"><i class="dot s${stat(w)}"></i><span class="grow"><span class="es">${w.es}</span><div class="he">${w.he}</div></span><span class="muted">‹</span></button>`;
+
+/* ---------- למידה בכרטיסים ---------- */
+function startLearn(n, cat) {
+  const ws = pool(n, cat).filter(w => stat(w) !== 2);
+  const items = ws.filter(w => stat(w) === 0).concat(ws.filter(w => stat(w) === 1)).slice(0, 10);
+  if (!items.length) { toast('כל המילים כאן כבר במאגר שלך 🎉'); return; }
+  L = { n, cat, items, i: 0, open: false, known: [], later: [] };
+  nav('learn');
+}
+function vLearn() {
+  const w = L.items[L.i];
+  $app.innerHTML = `<div class="shead"><button class="x" onclick="A.quit()" aria-label="סגור">✕</button>${bar(pct(L.i, L.items.length))}<b>${L.i + 1}/${L.items.length}</b></div>
+  <div class="card flash" onclick="A.flip()">
+    <span class="tag">${CATS[w.cat][1]} ${CATS[w.cat][0]}</span>
+    <div class="big es">${w.es}</div>
+    <button class="say" onclick="event.stopPropagation();A.say(${w.i})" aria-label="השמע">🔊</button>
+    ${L.open ? `<div class="reveal">${details(w)}</div>` : `<div class="hint">👆 הקש כדי לראות את התרגום</div>`}
+  </div>
+  ${L.wait ? `<div class="stack" style="margin-top:18px"><button class="btn col" onclick="A.rate(0)">הבנתי, הלאה ←<small>המילה תחכה לך בתרגול</small></button></div>` : `<div class="two" style="margin-top:18px">
+    <button class="btn soft" onclick="A.rate(0)">עוד לא 🤔</button>
+    <button class="btn ok" onclick="A.rate(1)">מכיר ✓</button>
+  </div>`}`;
+  if (S.auto && !L.open) speak(w.es);
+}
+function rate(ok) {
+  const w = L.items[L.i];
+  if (!ok && !L.open) { L.open = L.wait = true; return vLearn(); } // קודם מראים את התרגום
+  touch(w);
+  if (ok) { setKnown(w); L.known.push(w); }
+  else { if (stat(w) !== 1) setLearning(w); L.later.push(w); }
+  save();
+  L.i++; L.open = L.wait = false;
+  if (L.i < L.items.length) return vLearn();
+  const k = L.known.length, l = L.later.length;
+  R = `<div class="card result"><div class="emo">${k >= l ? '🎉' : '💪'}</div><h1>כל הכבוד!</h1>
+    <p class="muted">${k} מילים נכנסו למאגר שלך${l ? ` · ${l} מחכות לתרגול` : ''}</p>
+    <div class="stack">
+      ${l ? `<button class="btn" onclick="A.practiceList()">🎯 לתרגל את ${l} המילים</button>` : ''}
+      <button class="btn ${l ? 'soft' : ''}" onclick="A.learn(${L.n},'${L.cat}')">📖 עוד 10 מילים</button>
+      <button class="btn soft" onclick="A.nav('home',1)">🏠 לדף הבית</button>
+    </div></div>`;
+  if (k) confetti();
+  nav('result', true);
+}
+
+/* ---------- שאלות: תרגול, חזרה, מבחן ---------- */
+function distract(w, n) {
+  const ok = x => x !== w && x.es !== w.es && !shares(x, w);
+  let c = shuffle(W.filter(x => ok(x) && x.cat === w.cat && x.lv === w.lv));
+  if (c.length < n) c = c.concat(shuffle(W.filter(x => ok(x) && x.cat === w.cat && x.lv !== w.lv)));
+  if (c.length < n) c = c.concat(shuffle(W.filter(x => ok(x) && x.cat !== w.cat)));
+  const out = [];
+  for (const x of c) { if (out.length === n) break; if (!out.some(o => shares(o, x) || o.es === x.es)) out.push(x); }
+  return out;
+}
+function makeQ(w, mode) {
+  let types = ['e2h', 'e2h', 'h2e', 'h2e'];
+  if (mode !== 'test') {
+    if (w.cat === 'v') types.push('conj', 'conj');
+    if (!norm(w.es).includes(' ')) types.push('type');
+  }
+  const type = types[Math.random() * types.length | 0], q = { w, type };
+  if (type === 'conj') {
+    q.p = Math.random() * 5 | 0;
+    q.opts = shuffle([w.forms[q.p]].concat(shuffle(w.forms.filter((f, k) => k !== q.p && f !== w.forms[q.p])).slice(0, 3)));
+    q.ans = w.forms[q.p];
+  } else if (type !== 'type') {
+    const key = type === 'e2h' ? 'he' : 'es';
+    q.opts = shuffle([w].concat(distract(w, 3))).map(x => x[key]);
+    q.ans = w[key];
+  }
+  return q;
+}
+function startQuiz(mode, words, opt) {
+  if (words.length < 1) { toast('אין כאן מילים לתרגל'); return; }
+  Q = Object.assign({ mode, items: words.map(w => makeQ(w, mode)), i: 0, right: 0, miss: [], gained: 0, done: false }, opt);
+  nav('quiz');
+}
+function startPractice(n, cat) {
+  const ws = pool(n, cat);
+  const pick = shuffle(ws.filter(w => stat(w) === 1)).concat(shuffle(ws.filter(w => stat(w) === 0)), shuffle(ws.filter(w => stat(w) === 2))).slice(0, 10);
+  startQuiz('practice', shuffle(pick), { n, cat });
+}
+function vQuiz() {
+  const q = Q.items[Q.i], w = q.w;
+  let h = `<div class="shead"><button class="x" onclick="A.quit()" aria-label="סגור">✕</button>${bar(pct(Q.i, Q.items.length))}<b>${Q.i + 1}/${Q.items.length}</b></div>`;
+  if (q.type === 'e2h') h += `<div class="qlabel">מה הפירוש בעברית?</div><div class="card qbox"><div class="big es">${w.es}</div><button class="say" onclick="A.say(${w.i})" aria-label="השמע">🔊</button></div>`;
+  else if (q.type === 'h2e') h += `<div class="qlabel">איך אומרים בספרדית?</div><div class="card qbox"><div class="big he">${w.he}</div></div>`;
+  else if (q.type === 'type') h += `<div class="qlabel">כתוב בספרדית</div><div class="card qbox"><div class="big he">${w.he}</div></div>`;
+  else h += `<div class="qlabel">בחר את ההטיה הנכונה (הווה)</div><div class="card qbox"><span class="tag"><span class="es">${w.es}</span> · ${w.he}</span><div class="big es">${PR[q.p][0]} ___</div><div class="muted" style="margin-top:8px">${PR[q.p][1]}</div></div>`;
+  if (q.type === 'type') h += `<form onsubmit="A.typed();return false"><input class="tin" id="tin" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="español…"><div class="stack"><button class="btn" id="chk">בדיקה</button></div></form><button class="link" id="skip" onclick="A.answer(null)">לא יודע, הראה לי</button>`;
+  else h += `<div class="opts" id="opts">${q.opts.map((o, k) => `<button class="opt ${q.type === 'e2h' ? '' : 'es'}" onclick="A.answer(${k})">${o}</button>`).join('')}</div>`;
+  h += `<div id="fb"></div>`;
+  $app.innerHTML = h;
+  Q.done = false;
+  if (q.type === 'e2h' && S.auto) speak(w.es);
+  if (q.type === 'type') { const t = document.getElementById('tin'); if (t) t.focus(); }
+}
+function answer(k, typedOk) {
+  if (Q.done) return;
+  Q.done = true;
+  const q = Q.items[Q.i], w = q.w;
+  let ok;
+  if (q.type === 'type') {
+    ok = !!typedOk;
+    const t = document.getElementById('tin'); t.disabled = true; t.style.borderColor = ok ? 'var(--ok)' : 'var(--bad)';
+    document.getElementById('chk').style.display = 'none'; document.getElementById('skip').style.display = 'none';
+  } else {
+    ok = q.opts[k] === q.ans;
+    const bs = document.getElementById('opts'); bs.classList.add('done');
+    [...bs.children].forEach((b, j) => { if (q.opts[j] === q.ans) b.classList.add('right'); else if (j === k) b.classList.add('wrong'); });
+  }
+  if (ok) Q.right++; else Q.miss.push(w);
+  if (grade(w, ok, Q.mode)) Q.gained++;
+  if (q.type !== 'e2h' && S.auto) speak(q.type === 'conj' ? q.ans : w.es);
+  const full = q.type === 'conj' ? `${PR[q.p][0].split(' /')[0]} ${q.ans}` : w.es;
+  document.getElementById('fb').innerHTML = `<div class="fb ${ok ? 'good' : 'no'}"><b>${ok ? 'נכון! 👏' : 'לא נורא, התשובה היא:'}</b>
+    <div><span class="es">${full}</span> · ${w.he}</div>${w.ex && q.type !== 'conj' ? `<p><span class="es" style="font-weight:500">${w.ex}</span><br>${w.exhe}</p>` : ''}</div>
+    <div class="stack"><button class="btn ${ok ? 'ok' : ''}" id="nx" onclick="A.next()">המשך</button></div>`;
+  document.getElementById('nx').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+function typed() {
+  const v = norm(document.getElementById('tin').value), w = Q.items[Q.i].w;
+  if (!v) return;
+  answer(null, W.some(x => norm(x.es) === v && (x === w || shares(x, w))));
+}
+function next() {
+  Q.i++;
+  if (Q.i < Q.items.length) return vQuiz();
+  const n = Q.items.length, p = pct(Q.right, n);
+  const miss = Q.miss.length ? `<div class="miss"><b>כדאי לחזור על:</b><div>${[...new Set(Q.miss)].map(row).join('')}</div></div>` : '';
+  let h;
+  if (Q.mode === 'test') {
+    const pass = p >= 80, last = Q.n >= READY;
+    if (pass && S.un <= Q.n) { S.un = Q.n + 1; save(); }
+    h = `<div class="card result"><div class="emo">${pass ? '🏆' : '💪'}</div><h1>${pass ? `עברת את מבחן שלב ${Q.n}!` : 'עוד קצת תרגול ואתה שם'}</h1>
+      <div class="score">${Q.right}/${n}</div><p class="muted">${pass ? (last ? 'סיימת את כל השלבים הקיימים. השלבים הבאים בדרך!' : `שלב ${Q.n + 1} נפתח 🎉`) : 'צריך 80% כדי לפתוח את השלב הבא'}</p>
+      <div class="stack">
+        ${pass && !last ? `<button class="btn" onclick="A.nav('l${Q.n + 1}',1)">▶ לשלב ${Q.n + 1}</button>` : ''}
+        ${pass && knownCount(lvWords(Q.n)) < lvWords(Q.n).length ? `<button class="btn soft col" onclick="A.markAll(${Q.n})">✓ אני מכיר את כל מילות שלב ${Q.n}<small>להעביר את כולן למאגר שלי</small></button>` : ''}
+        ${pass ? '' : `<button class="btn" onclick="A.practice(${Q.n},'all')">🎯 לתרגל את שלב ${Q.n}</button><button class="btn soft" onclick="A.test(${Q.n})">🔄 לנסות שוב</button>`}
+        <button class="btn soft" onclick="A.nav('home',1)">🏠 לדף הבית</button>
+      </div>${miss}</div>`;
+    if (pass) confetti();
+  } else {
+    h = `<div class="card result"><div class="emo">${p >= 80 ? '🎉' : p >= 50 ? '👍' : '💪'}</div><h1>${p >= 80 ? 'מצוין!' : p >= 50 ? 'יפה מאוד!' : 'ממשיכים לתרגל'}</h1>
+      <div class="score">${Q.right}/${n}</div>${Q.gained ? `<p class="muted">${Q.gained} מילים חדשות נכנסו למאגר שלך ✓</p>` : ''}
+      <div class="stack">
+        ${Q.mode === 'practice' && Q.n ? `<button class="btn" onclick="A.practice(${Q.n},'${Q.cat}')">🎯 סבב נוסף</button>` : ''}
+        <button class="btn soft" onclick="A.nav('home',1)">🏠 לדף הבית</button>
+      </div>${miss}</div>`;
+    if (p >= 80) confetti();
+  }
+  R = h;
+  nav('result', true);
+}
+
+/* ---------- המילים שלי ---------- */
+function vWords() {
+  const cnt = [0, 0, 0]; W.forEach(w => cnt[stat(w)]++);
+  const q = wordsQ.trim().toLowerCase();
+  const list = W.filter(w => stat(w) === wordsTab && (!q || norm(w.es).includes(norm(q)) || w.es.toLowerCase().includes(q) || w.he.includes(q)));
+  $app.innerHTML = `<div class="hello"><h1>המילים שלי<small>כל מה שכבר צברת</small></h1></div>
+  <div class="chips"><button class="${wordsTab === 2 ? 'on' : ''}" onclick="A.tab(2)">✓ במאגר שלי <em>${cnt[2]}</em></button><button class="${wordsTab === 1 ? 'on' : ''}" onclick="A.tab(1)">⏳ בלמידה <em>${cnt[1]}</em></button></div>
+  <input class="search" id="q" placeholder="🔍 חיפוש מילה…" value="${wordsQ.replace(/"/g, '&quot;')}" oninput="A.search(this.value)">
+  <div id="wlist">${wordList(list)}</div>`;
+}
+function wordList(list) {
+  if (!list.length) return `<div class="empty"><div>${wordsTab === 2 ? '🌱' : '✨'}</div><p>${wordsQ ? 'לא נמצאו מילים' : wordsTab === 2 ? 'המאגר עדיין ריק. כל מילה שתסמן "מכיר" תופיע כאן.' : 'אין כרגע מילים בלמידה.'}</p></div>`;
+  return `<div class="card wl">${list.map(row).join('')}</div>`;
+}
+
+/* ---------- התקדמות והגדרות ---------- */
+function vMore() {
+  const k = knownCount(W), lrn = W.filter(w => stat(w) === 1).length;
+  let h = `<div class="hello"><h1>ההתקדמות שלי</h1></div>
+  <div class="stats"><div class="stat"><b>${k}</b><span>במאגר שלי</span></div><div class="stat"><b>${lrn}</b><span>בלמידה</span></div><div class="stat"><b>🔥 ${streak()}</b><span>ימים ברצף</span></div></div>
+  <h2 class="sec">לפי קטגוריה</h2><div class="card">`;
+  Object.keys(CATS).forEach(c => {
+    const ws = W.filter(w => w.cat === c), kk = knownCount(ws);
+    h += `<div class="catrow"><div class="row"><span>${CATS[c][1]} ${CATS[c][0]}</span><b>${kk}/${ws.length}</b></div>${bar(pct(kk, ws.length), 'c3')}</div>`;
+  });
+  h += `</div><h2 class="sec">הגדרות</h2><div class="card" style="padding:4px 18px">
+    <div class="set"><div>יעד יומי<small>מילים ביום</small></div><div class="seg">${[5, 10, 20].map(g => `<button class="${S.goal === g ? 'on' : ''}" onclick="A.goal(${g})">${g}</button>`).join('')}</div></div>
+    <div class="set"><div>השמעה אוטומטית<small>הקראת המילה בספרדית</small></div><div class="seg"><button class="${S.auto ? 'on' : ''}" onclick="A.auto(1)">פועל</button><button class="${S.auto ? '' : 'on'}" onclick="A.auto(0)">כבוי</button></div></div>
+    <div class="set"><div>גיבוי ההתקדמות<small>ההתקדמות נשמרת רק במכשיר הזה</small></div><button class="mini" onclick="A.exp()">ייצוא</button></div>
+    <div class="set"><div>שחזור מגיבוי<small>טעינת קובץ שייצאת</small></div><button class="mini" onclick="document.getElementById('imp').click()">ייבוא</button><input type="file" id="imp" accept="application/json,.json" hidden onchange="A.imp(this)"></div>
+    <div class="set"><div>התחלה מחדש<small>מחיקת כל ההתקדמות</small></div><button class="mini danger" onclick="A.reset()">איפוס</button></div>
+  </div>`;
+  $app.innerHTML = h;
+}
+
+/* ---------- חלון מילה ---------- */
+function wordSheet(i) {
+  const w = W[i], s = stat(w);
+  $layer.innerHTML = `<div class="ov" onclick="if(event.target===this)A.close()"><div class="sheet">
+    <span class="tag">${CATS[w.cat][1]} ${CATS[w.cat][0]} · שלב ${w.lv}</span>
+    <div class="big es">${w.es}</div><button class="say" onclick="A.say(${i})" aria-label="השמע">🔊</button>
+    ${details(w)}
+    <div class="stack">
+      ${s === 2 ? `<button class="btn soft" onclick="A.mark(${i},1)">↩ להחזיר ללמידה</button>` : `<button class="btn ok" onclick="A.mark(${i},2)">מכיר ✓ להוסיף למאגר</button>`}
+      <button class="btn soft" onclick="A.close()">סגור</button>
+    </div></div></div>`;
+  if (S.auto) speak(w.es);
+}
+
+/* ---------- פעולות ---------- */
+window.A = {
+  nav,
+  say: i => speak(W[i].es), sayEx: i => speak(W[i].ex),
+  openLevel(n) { if (n > S.un) return toast(`כדי לפתוח את שלב ${n} צריך לעבור את מבחן שלב ${n - 1}`); curCat = 'all'; nav('l' + n); },
+  cat(c) { curCat = c; const x = document.querySelector('.chips').scrollLeft; vLevel(); document.querySelector('.chips').scrollLeft = x; },
+  learn: startLearn, flip() { if (!L.open) { L.open = true; vLearn(); } }, rate,
+  practice: startPractice,
+  practiceList() { startQuiz('practice', shuffle(L.later), { n: L.n, cat: L.cat }); },
+  review() { startQuiz('review', shuffle(dueWords()).slice(0, 15), {}); },
+  test(n) { startQuiz('test', shuffle(lvWords(n)).slice(0, 20), { n }); },
+  answer, typed, next,
+  quit() { if (confirm('לצאת מהמפגש? ההתקדמות עד כאן נשמרה.')) { L = Q = null; history.back(); } },
+  word: wordSheet, close() { $layer.innerHTML = ''; },
+  mark(i, s) { const w = W[i]; if (s === 2) { setKnown(w); touch(w); } else setLearning(w); save(); route(); toast(s === 2 ? 'נוסף למאגר שלך ✓' : 'חזר ללמידה'); },
+  markAll(n) { lvWords(n).forEach(w => { if (stat(w) !== 2) setKnown(w); }); save(); toast(`כל מילות שלב ${n} במאגר שלך ✓`); nav('home', true); },
+  tab(t) { wordsTab = t; vWords(); },
+  search(v) { wordsQ = v; const q = v.trim().toLowerCase(); document.getElementById('wlist').innerHTML = wordList(W.filter(w => stat(w) === wordsTab && (!q || norm(w.es).includes(norm(q)) || w.es.toLowerCase().includes(q) || w.he.includes(q)))); },
+  goal(g) { S.goal = g; save(); vMore(); },
+  auto(v) { S.auto = !!v; save(); vMore(); },
+  exp() {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(S)], { type: 'application/json' }));
+    a.download = 'espanol-progress-' + today() + '.json'; a.click();
+    toast('קובץ הגיבוי ירד למכשיר');
+  },
+  imp(inp) {
+    const f = inp.files[0]; if (!f) return;
+    const r = new FileReader();
+    r.onload = () => {
+      try { const d = JSON.parse(r.result); if (!d || typeof d.w !== 'object') throw 0; S = Object.assign({ w: {}, un: 1, goal: 10, auto: true, days: {}, td: { d: '', ids: [] } }, d); save(); toast('ההתקדמות שוחזרה ✓'); vMore(); }
+      catch (e) { toast('הקובץ לא תקין'); }
+    };
+    r.readAsText(f);
+  },
+  reset() { if (confirm('למחוק את כל ההתקדמות ולהתחיל מחדש?')) { S = { w: {}, un: 1, goal: 10, auto: true, days: {}, td: { d: '', ids: [] } }; save(); toast('ההתקדמות אופסה'); vMore(); } }
+};
+
+route();
+})();
+</script>
+</body>
+</html>
