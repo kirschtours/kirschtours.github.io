@@ -2,6 +2,129 @@
  "updated": "2026-11-17",
  "deals": [
   {
+   "id": "2026-11-17-grandium-prague",
+   "dest": "פראג",
+   "hotel": "Grandium Hotel Prague",
+   "stars": 5,
+   "score": "9.0",
+   "rev": "10,760",
+   "trolley": false,
+   "feats": [
+    "📍 5 דק' הליכה מכיכר ואצלב, במרכז פראג",
+    "🕍 בית הכנסת ירושלים (היובל) במרחק 400 מ'"
+   ],
+   "min": 1730,
+   "nightsLabel": "3-4-5 לילות",
+   "round": "2026-11-17",
+   "expires": "2026-11-24",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg",
+    "15.jpg",
+    "16.jpg"
+   ],
+   "country": "צ׳כיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": false,
+   "options": [],
+   "amenities": [
+    "spa",
+    "jacuzzi",
+    "sauna",
+    "restaurant",
+    "bar",
+    "room_service"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-19",
+     "r": "2026-11-24",
+     "label": "19-24/11",
+     "days": "חמישי–שלישי",
+     "nights": 5,
+     "fl": "אל על",
+     "out": "17:35",
+     "back": "11:40",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 3500
+    },
+    {
+     "o": "2026-11-20",
+     "r": "2026-11-24",
+     "label": "20-24/11",
+     "days": "שישי–שלישי",
+     "nights": 4,
+     "fl": "סמארטווינגס",
+     "out": "05:35",
+     "back": "23:45",
+     "bag": "תיק יד בלבד",
+     "price": 3080
+    },
+    {
+     "o": "2026-11-22",
+     "r": "2026-11-25",
+     "label": "22-25/11",
+     "days": "ראשון–רביעי",
+     "nights": 3,
+     "fl": "סמארטווינגס",
+     "out": "18:25",
+     "back": "23:45",
+     "bag": "תיק יד בלבד",
+     "price": 2450
+    },
+    {
+     "o": "2026-11-30",
+     "r": "2026-12-03",
+     "label": "30/11-3/12",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "טוס",
+     "out": "09:25",
+     "back": "18:35",
+     "bag": "תיק יד בלבד",
+     "price": 3220
+    },
+    {
+     "o": "2027-01-18",
+     "r": "2027-01-21",
+     "label": "18-21/1",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "07:05",
+     "back": "11:25",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 1730
+    },
+    {
+     "o": "2027-01-31",
+     "r": "2027-02-04",
+     "label": "31/1-4/2",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "טוס",
+     "out": "10:20",
+     "back": "14:50",
+     "bag": "תיק יד בלבד",
+     "price": 1860
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-17-grandium-prague/"
+  },
+  {
    "id": "2026-11-17-site-tbilisi",
    "dest": "טביליסי",
    "hotel": "Cron Palace Tbilisi Hotel",
@@ -4473,81 +4596,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-11-12-site-sofia/"
-  },
-  {
-   "id": "2026-11-12-site-prague-2",
-   "dest": "פראג",
-   "hotel": "Grandium Hotel Prague",
-   "stars": 5,
-   "score": "9.0",
-   "rev": "10,759",
-   "trolley": false,
-   "feats": [
-    "📍 5 דק' הליכה מכיכר ואצלב, במרכז פראג",
-    "🕍 בית הכנסת ירושלים (היובל) במרחק 400 מ'"
-   ],
-   "min": 1730,
-   "nightsLabel": "3-4 לילות",
-   "round": "2026-11-12",
-   "expires": "2026-11-19",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg",
-    "15.jpg",
-    "16.jpg"
-   ],
-   "country": "צ׳כיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "spa",
-    "jacuzzi",
-    "sauna",
-    "restaurant",
-    "bar",
-    "room_service"
-   ],
-   "dates": [
-    {
-     "o": "2027-01-18",
-     "r": "2027-01-21",
-     "label": "18-21/1",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "07:05",
-     "back": "11:25",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 1730
-    },
-    {
-     "o": "2027-01-31",
-     "r": "2027-02-04",
-     "label": "31/1-4/2",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "טוס",
-     "out": "10:20",
-     "back": "14:50",
-     "bag": "תיק יד בלבד",
-     "price": 1860
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-12-site-prague-2/"
   },
   {
    "id": "2026-11-12-site-larnaca",
