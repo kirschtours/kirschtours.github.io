@@ -1226,3 +1226,8 @@ details.air-detail[open] > summary { margin-bottom: 12px; }
 .shop-top { padding: 14px 20px; background: linear-gradient(135deg, var(--night), var(--night-3)); }
 .shop-top span { font-size: 12px; letter-spacing: .15em; color: var(--gold); }
 .att-tags .t-shop { background: var(--gold-lo); }
+
+/* דף-גג של מדינה (גאורגיה, 19.11.2026): כרטיס עיר + קישורים לתתי-הדפים שלה */
+.city-card{margin:0 0 22px}
+.city-card .guide-more{margin-bottom:10px}
+.city-card .guide-chips{margin-top:0}
