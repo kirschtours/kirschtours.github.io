@@ -339,12 +339,12 @@
       opts(sf.r, all.filter(function (x) { return !sf.o.value || x.o === sf.o.value; }).map(function (x) { return x.r; }).filter(uniq).sort(), sf.r.value);
     };
     var row = function (x, name) {
-      var msg = 'היי חיים, ראיתי באתר טיסה ל-770 ל' + name + ': ' + x.when + ', ' + x.air + ' ' + (x.d ? 'ישירה' : 'עם עצירה') + ', הלוך ' + x.od + ' חזור ' + x.bd + ', $' + x.p.toLocaleString('en-US') + ' לאדם. אפשר לבדוק בשבילי?';
+      var msg = 'היי חיים, ראיתי באתר טיסה ל-770 ל' + name + ': ' + x.when + ', ' + x.air + ' ' + (x.d ? 'ישירה' : 'עם עצירה') + ', הלוך ' + x.od + ' חזור ' + x.bd + ', ' + x.p.toLocaleString('en-US') + ' ₪ לאדם. אפשר לבדוק בשבילי?';
       var seats = x.s && Date.now() - Date.parse(x.c) < 48 * 36e5 ? '<small class="seat">נשארו ' + x.s + ' מקומות</small>' : '';
       return '<div class="sr"><div class="w"><b>' + x.when + '</b> <span>' + x.days + ' · ' + esc(x.heb) + ' · ' + x.n + ' לילות</span></div>'
         + '<div class="f"><b>' + esc(x.air) + '</b> · ' + (x.d ? 'ישירה' : 'עצירה ב' + esc(x.via)) + ' · ' + x.ap + (x.bag ? ' · מזוודה' : '')
         + '<br>הלוך ' + x.od + (x.night ? ' (' + x.night + ')' : '') + ' ← נחיתה ' + x.oa + ' · חזור ' + x.bd + ' ← נחיתה ' + x.ba + '</div>'
-        + '<div class="pr">$' + x.p.toLocaleString('en-US') + '<small>לאדם · הלוך-חזור</small>' + seats + '</div>'
+        + '<div class="pr">' + x.p.toLocaleString('en-US') + ' ₪<small>לאדם · הלוך-חזור</small>' + seats + '</div>'
         + '<a class="btn btn-gold" data-ev="חיפוש" href="' + sf.dataset.wa.replace(/text=.*$/, 'text=') + encodeURIComponent(msg) + '">להזמנה בוואטסאפ</a></div>';
     };
     var draw = function () {
@@ -380,7 +380,8 @@
     var cards770 = [].slice.call(document.querySelectorAll('.g770 .e770'));
     var chips = [].slice.call(f770.querySelectorAll('.chip'));
     var none770 = document.querySelector('.fnone');
-    var usd770 = function (n) { return '$' + n.toLocaleString('en-US'); };
+    // מ-19.11.2026 בשקלים. כרטיס שעוד לא עבר (data-cur="USD") נשאר בדולרים
+    var usd770 = function (n, cur) { return cur === 'USD' ? '$' + n.toLocaleString('en-US') : n.toLocaleString('en-US') + ' ₪'; };
     var rowOk = function (li, s) { return (!s.direct || li.dataset.direct === '1') && (!s.stay || li.dataset.stay === s.stay); };
     var pick = function () { var s = {}; chips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true') s[c.dataset.g] = c.dataset.v; }); return s; };
     var run770 = function () {
@@ -392,7 +393,7 @@
         if (!c.hidden) {
           shown++;
           var min = Math.min.apply(null, left);
-          c.querySelector('.from b').textContent = usd770(min);
+          c.querySelector('.from b').textContent = usd770(min, c.dataset.cur);
           c.querySelector('.from .pre').textContent = left.every(function (p) { return p === min; }) ? '' : 'החל מ-';
           var fr = c.querySelector('.fresh770'), at = rows.filter(function (li) { return !li.hidden && +li.dataset.price === min; }).map(function (li) { return li.dataset.checked; }).sort().pop();
           if (fr && at) fresh770(fr, at);
