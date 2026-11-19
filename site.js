@@ -20,6 +20,32 @@
   document.querySelectorAll('[data-exp]').forEach(function (el) { if (el.dataset.exp < today) el.remove(); });
   document.querySelectorAll('[data-o]').forEach(function (el) { if (el.dataset.o <= today) el.remove(); });
 
+  // "הצג עוד" כל 6 כרטיסים בדילים ובמדריכים (חיים, 19.11.2026): מי שמחפש את מה שבא אחרי הרשימה לא צריך לגלול הרבה.
+  // ההסתרה במחלקה clip, נפרדת מ-hidden של הסינון. reset = אחרי סינון חוזרים ל-6 הראשונים מהתוצאות. בלי JS הכל מוצג.
+  var PAGE = 6;
+  function pageGrid(grid, reset) {
+    var items = [].slice.call(grid.children).filter(function (c) { return !c.hidden; });
+    var lim = reset || !grid.dataset.lim ? PAGE : +grid.dataset.lim;
+    if (items.length - lim <= 2) lim = items.length; // לא משאירים כפתור בשביל כרטיס או שניים
+    grid.dataset.lim = lim;
+    [].forEach.call(grid.children, function (c) { c.classList.remove('clip'); });
+    items.forEach(function (c, i) { if (i >= lim) c.classList.add('clip'); });
+    var btn = grid.nextElementSibling && grid.nextElementSibling.classList.contains('gmore') ? grid.nextElementSibling : null;
+    var left = items.length - lim;
+    if (left > 0 && !btn) {
+      btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'gmore';
+      btn.addEventListener('click', function () {
+        grid.dataset.lim = +grid.dataset.lim + PAGE;
+        pageGrid(grid);
+        grid.querySelectorAll('[data-reveal]:not(.in), .card:not(.in)').forEach(function (c) { if (!c.classList.contains('clip')) c.classList.add('in'); });
+        if (lenis) lenis.resize();
+      });
+      grid.parentNode.insertBefore(btn, grid.nextSibling);
+    }
+    if (btn) { btn.hidden = left <= 0; btn.textContent = 'הצג עוד (' + left + ')'; }
+  }
+
   // מסך הפתיחה מוצג פעם אחת לביקור
   var seen = false;
   try { seen = sessionStorage.getItem('kt-intro') === '1'; sessionStorage.setItem('kt-intro', '1'); } catch (e) {}
@@ -178,6 +204,7 @@
         c.hidden = !ok;
         if (ok) { shown++; c.classList.add('in'); }
       });
+      pageGrid(grid, true);
       grid.classList.toggle('hol-on', !!s.holiday); // דיל שאוחד עם דיל חג מציג את מחיר החג כשמסננים לפי החג
       empty.hidden = shown > 0;
       var words = shown === 1 ? (grid.dataset.one || 'דיל אחד') : shown + ' ' + (grid.dataset.many || 'דילים');
@@ -264,6 +291,7 @@
   initShop('');
   initShop('-k');
   initShop('-t');
+  document.querySelectorAll('.grid, .att-grid').forEach(function (g) { if (!g.dataset.lim) pageGrid(g, true); });
 
   // לשוניות חבילות נופש / חבילות כשרות / טיולים מאורגנים. #kosher או #tours בכתובת פותחים ישר את הלשונית.
   var tabs = [].slice.call(document.querySelectorAll('.tabs [role=tab]'));
@@ -533,6 +561,7 @@
       var t = b.getAttribute('data-t');
       f.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
       grid.querySelectorAll('.att').forEach(function (a) { a.hidden = !!t && (' ' + a.getAttribute('data-tags') + ' ').indexOf(' ' + t + ' ') < 0; });
+      pageGrid(grid, true);
       if (lenis) lenis.resize();
     });
   });
