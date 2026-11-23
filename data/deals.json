@@ -2,7 +2,7 @@
  "updated": "2026-11-23",
  "deals": [
   {
-   "id": "2026-11-23-batumi",
+   "id": "2026-11-23-site-batumi",
    "dest": "בטומי",
    "hotel": "King Solomon Hotel Batumi",
    "stars": 4,
@@ -12,11 +12,11 @@
    "holiday": "חנוכה",
    "feats": [
     "🍽️ כשר למהדרין",
-    "📍 בטומי הישנה, כ-1 ק\"מ מחוף בטומי ומהפארק המרכזי",
+    "📍 בטומי הישנה, כ-1 ק\"מ מהחוף ומהפארק המרכזי",
     "🛏️ חדר סטנדרט זוגי"
    ],
    "min": 1860,
-   "nightsLabel": "3-4-5 לילות",
+   "nightsLabel": "3-4-5-7 לילות",
    "round": "2026-11-23",
    "expires": "2026-11-30",
    "images": [
@@ -36,9 +36,16 @@
    "country": "גאורגיה",
    "board": "BB",
    "vip": false,
-   "options": [],
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לסוויטה",
+     "addPp": 703,
+     "date": "2027-01-14",
+     "vip": true
+    }
+   ],
    "amenities": [
-    "beach",
     "restaurant",
     "bar",
     "parking"
@@ -124,6 +131,17 @@
      "price": 2010
     },
     {
+     "o": "2026-12-22",
+     "r": "2026-12-29",
+     "label": "22-29/12",
+     "days": "שלישי–שלישי",
+     "nights": 7,
+     "fl": "ארקיע",
+     "out": "10:45",
+     "back": "16:00",
+     "price": 2200
+    },
+    {
      "o": "2026-12-25",
      "r": "2026-12-30",
      "label": "25-30/12",
@@ -160,6 +178,17 @@
      "price": 2350
     },
     {
+     "o": "2027-01-14",
+     "r": "2027-01-19",
+     "label": "14-19/1",
+     "days": "חמישי–שלישי",
+     "nights": 5,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "16:00",
+     "price": 2150
+    },
+    {
      "o": "2027-01-18",
      "r": "2027-01-21",
      "label": "18-21/1",
@@ -172,7 +201,1086 @@
      "price": 1860
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-11-23-batumi/"
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-batumi/"
+  },
+  {
+   "id": "2026-11-23-site-tbilisi",
+   "dest": "טביליסי",
+   "hotel": "Cron Palace Tbilisi Hotel",
+   "stars": 4,
+   "score": "8.8",
+   "rev": "424",
+   "kosher": true,
+   "holiday": "חנוכה",
+   "feats": [
+    "🍽️ כשר למהדרין",
+    "📍 כ-4 ק\"מ מהעיר העתיקה"
+   ],
+   "min": 2140,
+   "nightsLabel": "3-4-5 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "vip": false,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לסוויטה",
+     "addPp": 306,
+     "vip": true
+    }
+   ],
+   "amenities": [
+    "spa",
+    "gym",
+    "restaurant",
+    "room_service",
+    "parking"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-29",
+     "r": "2026-12-03",
+     "label": "29/11-3/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "07:00",
+     "back": "15:20",
+     "price": 2140
+    },
+    {
+     "o": "2026-12-02",
+     "r": "2026-12-07",
+     "label": "2-7/12",
+     "days": "רביעי–שני",
+     "nights": 5,
+     "fl": "ארקיע",
+     "out": "15:20",
+     "back": "14:00",
+     "price": 3060
+    },
+    {
+     "o": "2026-12-03",
+     "r": "2026-12-06",
+     "label": "3-6/12",
+     "days": "חמישי–ראשון",
+     "nights": 3,
+     "fl": "ארקיע",
+     "out": "09:30",
+     "back": "12:50",
+     "price": 2760
+    },
+    {
+     "o": "2026-12-10",
+     "r": "2026-12-14",
+     "label": "10-14/12",
+     "days": "חמישי–שני",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "08:30",
+     "back": "18:50",
+     "price": 2490
+    },
+    {
+     "o": "2026-12-13",
+     "r": "2026-12-17",
+     "label": "13-17/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "07:00",
+     "back": "15:20",
+     "bag": "תיק יד בלבד",
+     "price": 2300
+    },
+    {
+     "o": "2026-12-22",
+     "r": "2026-12-27",
+     "label": "22-27/12",
+     "days": "שלישי–ראשון",
+     "nights": 5,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "13:55",
+     "price": 2720
+    },
+    {
+     "o": "2027-01-07",
+     "r": "2027-01-11",
+     "label": "7-11/1",
+     "days": "חמישי–שני",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "23:55",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2880
+    },
+    {
+     "o": "2027-01-14",
+     "r": "2027-01-17",
+     "label": "14-17/1",
+     "days": "חמישי–ראשון",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "12:05",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2490
+    },
+    {
+     "o": "2027-01-17",
+     "r": "2027-01-20",
+     "label": "17-20/1",
+     "days": "ראשון–רביעי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "10:55",
+     "bag": "כולל טרולי",
+     "price": 2180
+    },
+    {
+     "o": "2027-01-31",
+     "r": "2027-02-04",
+     "label": "31/1-4/2",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "17:20",
+     "back": "23:00",
+     "bag": "תיק יד בלבד",
+     "price": 2230
+    },
+    {
+     "o": "2027-02-02",
+     "r": "2027-02-07",
+     "label": "2-7/2",
+     "days": "שלישי–ראשון",
+     "nights": 5,
+     "fl": "אל על",
+     "out": "18:15",
+     "back": "12:05",
+     "bag": "כולל טרולי",
+     "price": 2660
+    },
+    {
+     "o": "2027-02-09",
+     "r": "2027-02-12",
+     "label": "9-12/2",
+     "days": "שלישי–שישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "10:55",
+     "land": "11:35",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2270
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-tbilisi/"
+  },
+  {
+   "id": "2026-11-23-site-batumi-2",
+   "dest": "בטומי",
+   "hotel": "Paragraph Resort & Spa Shekvetili",
+   "stars": 5,
+   "score": "9.7",
+   "rev": "3,016",
+   "feats": [
+    "📍 ריזורט על הים בשקווטילי, כ-40 דק' צפונית לבטומי",
+    "🛏️ חדר סטנדרט עם מיטת קינג ומרפסת"
+   ],
+   "min": 2140,
+   "nightsLabel": "3-4-5-7 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": true,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לג'וניור סוויטה עם נוף לים",
+     "addPp": 774,
+     "vip": true
+    },
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לחדר דלוקס עם נוף חלקי לים",
+     "addPp": 126
+    }
+   ],
+   "amenities": [
+    "pool",
+    "indoor_pool",
+    "spa",
+    "restaurant",
+    "bar",
+    "room_service",
+    "wifi"
+   ],
+   "dates": [
+    {
+     "o": "2026-12-10",
+     "r": "2026-12-15",
+     "label": "10-15/12",
+     "days": "חמישי–שלישי",
+     "nights": 5,
+     "fl": "אל על",
+     "out": "12:45",
+     "back": "18:10",
+     "bag": "כולל טרולי",
+     "price": 2880
+    },
+    {
+     "o": "2026-12-11",
+     "r": "2026-12-15",
+     "label": "11-15/12",
+     "days": "שישי–שלישי",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "18:10",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2610
+    },
+    {
+     "o": "2026-12-14",
+     "r": "2026-12-17",
+     "label": "14-17/12",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "21:20",
+     "bag": "תיק יד בלבד",
+     "price": 2180
+    },
+    {
+     "o": "2026-12-22",
+     "r": "2026-12-29",
+     "label": "22-29/12",
+     "days": "שלישי–שלישי",
+     "nights": 7,
+     "fl": "ארקיע",
+     "out": "10:45",
+     "back": "16:00",
+     "bag": "תיק יד בלבד",
+     "price": 2950
+    },
+    {
+     "o": "2027-01-03",
+     "r": "2027-01-07",
+     "label": "3-7/1",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "12:45",
+     "back": "18:10",
+     "bag": "כולל טרולי",
+     "price": 2820
+    },
+    {
+     "o": "2027-01-19",
+     "r": "2027-01-26",
+     "label": "19-26/1",
+     "days": "שלישי–שלישי",
+     "nights": 7,
+     "fl": "אל על",
+     "out": "12:45",
+     "back": "18:10",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2860
+    },
+    {
+     "o": "2027-01-25",
+     "r": "2027-01-28",
+     "label": "25-28/1",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "18:10",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2140
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-batumi-2/"
+  },
+  {
+   "id": "2026-11-23-site-batumi-3",
+   "dest": "בטומי",
+   "hotel": "Radisson Blu Hotel Batumi",
+   "stars": 5,
+   "score": "9.5",
+   "rev": "2,282",
+   "trolley": true,
+   "feats": [
+    "📍 מגדל על הטיילת והחוף, נוף פתוח לים",
+    "🏊 בריכה מקורה וספא",
+    "🛏️ חדר עם מיטת קווין"
+   ],
+   "min": 2140,
+   "nightsLabel": "3-5 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": true,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "חדר עם מיטת קינג ונוף לעיר",
+     "addPp": 153
+    }
+   ],
+   "amenities": [
+    "indoor_pool",
+    "spa",
+    "restaurant",
+    "bar",
+    "room_service",
+    "wifi",
+    "parking"
+   ],
+   "dates": [
+    {
+     "o": "2026-12-14",
+     "r": "2026-12-17",
+     "label": "14-17/12",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "18:10",
+     "price": 2520
+    },
+    {
+     "o": "2026-12-18",
+     "r": "2026-12-23",
+     "label": "18-23/12",
+     "days": "שישי–רביעי",
+     "nights": 5,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "21:55",
+     "price": 2830
+    },
+    {
+     "o": "2027-01-11",
+     "r": "2027-01-14",
+     "label": "11-14/1",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "18:10",
+     "price": 2140
+    },
+    {
+     "o": "2027-01-25",
+     "r": "2027-01-28",
+     "label": "25-28/1",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "18:10",
+     "price": 2210
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-batumi-3/"
+  },
+  {
+   "id": "2026-11-23-site-tbilisi-2",
+   "dest": "טביליסי",
+   "hotel": "Sheraton Grand Tbilisi Metechi Palace",
+   "stars": 5,
+   "score": "9.3",
+   "rev": "2,006",
+   "feats": [
+    "📍 ליד כנסיית מטחי, נוף לעיר העתיקה ולמבצר נריקלה",
+    "💆 ספא עם בריכה מקורה וסאונה",
+    "🛏️ חדר דלוקס"
+   ],
+   "min": 2230,
+   "nightsLabel": "4 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": true,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לחדר Executive",
+     "addPp": 42,
+     "date": "2026-12-13",
+     "vip": true
+    }
+   ],
+   "amenities": [
+    "pool",
+    "indoor_pool",
+    "spa",
+    "sauna",
+    "gym",
+    "restaurant",
+    "bar",
+    "room_service",
+    "parking"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-29",
+     "r": "2026-12-03",
+     "label": "29/11-3/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "07:00",
+     "back": "15:20",
+     "price": 2230
+    },
+    {
+     "o": "2026-12-13",
+     "r": "2026-12-17",
+     "label": "13-17/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "07:00",
+     "back": "15:20",
+     "price": 2450
+    },
+    {
+     "o": "2026-12-20",
+     "r": "2026-12-24",
+     "label": "20-24/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "08:20",
+     "back": "15:20",
+     "price": 2560
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-tbilisi-2/"
+  },
+  {
+   "id": "2026-11-23-site-batumi-4",
+   "dest": "בטומי",
+   "hotel": "Wyndham Batumi",
+   "stars": 4,
+   "score": "8.6",
+   "rev": "2,145",
+   "feats": [
+    "💆 ספא וג'קוזי במלון",
+    "🛏️ חדר סטנדרט עם מיטת קינג"
+   ],
+   "min": 1390,
+   "nightsLabel": "3-4-5-7 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": false,
+   "options": [],
+   "amenities": [
+    "spa",
+    "jacuzzi",
+    "restaurant",
+    "room_service",
+    "parking"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-29",
+     "r": "2026-12-03",
+     "label": "29/11-3/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ישראייר",
+     "out": "08:15",
+     "back": "12:15",
+     "price": 1760
+    },
+    {
+     "o": "2026-12-11",
+     "r": "2026-12-16",
+     "label": "11-16/12",
+     "days": "שישי–רביעי",
+     "nights": 5,
+     "fl": "ישראייר",
+     "out": "06:10",
+     "back": "16:30",
+     "price": 1830
+    },
+    {
+     "o": "2027-01-11",
+     "r": "2027-01-14",
+     "label": "11-14/1",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "14:15",
+     "bag": "תיק יד בלבד",
+     "price": 1390
+    },
+    {
+     "o": "2027-01-14",
+     "r": "2027-01-19",
+     "label": "14-19/1",
+     "days": "חמישי–שלישי",
+     "nights": 5,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "16:00",
+     "bag": "תיק יד בלבד",
+     "price": 1660
+    },
+    {
+     "o": "2027-01-19",
+     "r": "2027-01-26",
+     "label": "19-26/1",
+     "days": "שלישי–שלישי",
+     "nights": 7,
+     "fl": "אל על",
+     "out": "12:45",
+     "back": "18:10",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 1980
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-batumi-4/"
+  },
+  {
+   "id": "2026-11-23-site-batumi-5",
+   "dest": "בטומי",
+   "hotel": "JRW Welmond Hotel & Casino",
+   "stars": 5,
+   "score": "8.6",
+   "rev": "2,053",
+   "feats": [
+    "📍 כ-10 דק' הליכה ממרכז בטומי",
+    "💆 ספא, חמאם ובריכה מקורה",
+    "🍽️ המלון בקרבת מסעדות כשרות",
+    "🛏️ חדר סופריור עם מיטת קינג"
+   ],
+   "min": 1370,
+   "nightsLabel": "3-4-5-7 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": false,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "חדר עם נוף לים, מיטת קינג",
+     "addPp": 88
+    }
+   ],
+   "amenities": [
+    "indoor_pool",
+    "spa",
+    "sauna",
+    "restaurant",
+    "bar",
+    "room_service",
+    "parking"
+   ],
+   "dates": [
+    {
+     "o": "2027-01-03",
+     "r": "2027-01-06",
+     "label": "3-6/1",
+     "days": "ראשון–רביעי",
+     "nights": 3,
+     "fl": "ישראייר",
+     "out": "07:00",
+     "back": "16:30",
+     "price": 1370
+    },
+    {
+     "o": "2027-01-03",
+     "r": "2027-01-07",
+     "label": "3-7/1",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ישראייר",
+     "out": "07:00",
+     "back": "14:15",
+     "price": 1690
+    },
+    {
+     "o": "2027-01-14",
+     "r": "2027-01-19",
+     "label": "14-19/1",
+     "days": "חמישי–שלישי",
+     "nights": 5,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "16:00",
+     "bag": "תיק יד בלבד",
+     "price": 1680
+    },
+    {
+     "o": "2027-01-19",
+     "r": "2027-01-26",
+     "label": "19-26/1",
+     "days": "שלישי–שלישי",
+     "nights": 7,
+     "fl": "אל על",
+     "out": "12:45",
+     "back": "18:10",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2090
+    },
+    {
+     "o": "2027-01-25",
+     "r": "2027-01-28",
+     "label": "25-28/1",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "14:15",
+     "bag": "תיק יד בלבד",
+     "price": 1450
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-batumi-5/"
+  },
+  {
+   "id": "2026-11-23-site-tbilisi-4",
+   "dest": "טביליסי",
+   "hotel": "Wyndham Grand Tbilisi",
+   "stars": 5,
+   "score": "9.0",
+   "rev": "1,621",
+   "feats": [
+    "🕍 כ-7 דק' הליכה מבית חב\"ד",
+    "📍 ליד שדרות רוסתאוולי",
+    "💆 ספא, בריכה מקורה וסאונה",
+    "🛏️ חדר עם מיטת קינג, נוף פנימי"
+   ],
+   "min": 1930,
+   "nightsLabel": "3-4-7 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": false,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "שדרוג ל-Wyndham Club Suite",
+     "addPp": 632,
+     "date": "2027-01-31",
+     "vip": true
+    }
+   ],
+   "amenities": [
+    "indoor_pool",
+    "spa",
+    "sauna",
+    "gym",
+    "bar",
+    "room_service",
+    "wifi",
+    "parking"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-29",
+     "r": "2026-12-02",
+     "label": "29/11-2/12",
+     "days": "ראשון–רביעי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "23:55",
+     "bag": "כולל טרולי",
+     "price": 2190
+    },
+    {
+     "o": "2026-12-27",
+     "r": "2026-12-30",
+     "label": "27-30/12",
+     "days": "ראשון–רביעי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "23:55",
+     "bag": "כולל טרולי",
+     "price": 2570
+    },
+    {
+     "o": "2027-01-17",
+     "r": "2027-01-21",
+     "label": "17-21/1",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "12:05",
+     "bag": "כולל טרולי",
+     "price": 2210
+    },
+    {
+     "o": "2027-01-26",
+     "r": "2027-02-02",
+     "label": "26/1-2/2",
+     "days": "שלישי–שלישי",
+     "nights": 7,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "10:55",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2630
+    },
+    {
+     "o": "2027-01-31",
+     "r": "2027-02-04",
+     "label": "31/1-4/2",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "17:20",
+     "back": "23:00",
+     "bag": "תיק יד בלבד",
+     "price": 1930
+    },
+    {
+     "o": "2027-02-09",
+     "r": "2027-02-12",
+     "label": "9-12/2",
+     "days": "שלישי–שישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "10:55",
+     "land": "11:35",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2050
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-tbilisi-4/"
+  },
+  {
+   "id": "2026-11-23-site-tbilisi-5",
+   "dest": "טביליסי",
+   "hotel": "Radisson Blu Iveria Hotel",
+   "stars": 5,
+   "score": "9.5",
+   "rev": "3,606",
+   "feats": [
+    "📍 כיכר רוסתאוולי, במרכז העיר",
+    "🏊 בריכה מקורה עם נוף לעיר",
+    "💆 ספא"
+   ],
+   "min": 2220,
+   "nightsLabel": "3-4 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": false,
+   "options": [],
+   "amenities": [
+    "pool",
+    "indoor_pool",
+    "spa",
+    "restaurant",
+    "bar",
+    "room_service"
+   ],
+   "dates": [
+    {
+     "o": "2027-01-14",
+     "r": "2027-01-17",
+     "label": "14-17/1",
+     "days": "חמישי–ראשון",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "12:05",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2440
+    },
+    {
+     "o": "2027-01-17",
+     "r": "2027-01-20",
+     "label": "17-20/1",
+     "days": "ראשון–רביעי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "10:55",
+     "bag": "כולל טרולי",
+     "price": 2220
+    },
+    {
+     "o": "2027-01-31",
+     "r": "2027-02-04",
+     "label": "31/1-4/2",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "17:20",
+     "back": "23:00",
+     "bag": "תיק יד בלבד",
+     "price": 2340
+    },
+    {
+     "o": "2027-02-09",
+     "r": "2027-02-12",
+     "label": "9-12/2",
+     "days": "שלישי–שישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "10:55",
+     "land": "11:35",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2390
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-tbilisi-5/"
+  },
+  {
+   "id": "2026-11-23-site-tbilisi-6",
+   "dest": "טביליסי",
+   "hotel": "The Biltmore Hotel Tbilisi",
+   "stars": 5,
+   "score": "9.0",
+   "rev": "1,900",
+   "feats": [
+    "📍 שדרות רוסתאוולי, כ-1 ק\"מ מהמרכז",
+    "🌆 חדרים עם נוף פנורמי על העיר"
+   ],
+   "min": 2230,
+   "nightsLabel": "3-4 לילות",
+   "round": "2026-11-23",
+   "expires": "2026-11-30",
+   "images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg"
+   ],
+   "country": "גאורגיה",
+   "board": "BB",
+   "kosher": false,
+   "vip": false,
+   "options": [
+    {
+     "kind": "upgrade",
+     "label": "שדרוג לחדר Club Deluxe",
+     "addPp": 288,
+     "vip": true
+    }
+   ],
+   "amenities": [
+    "indoor_pool",
+    "spa",
+    "sauna",
+    "gym",
+    "restaurant",
+    "bar",
+    "room_service",
+    "parking"
+   ],
+   "dates": [
+    {
+     "o": "2026-11-29",
+     "r": "2026-12-03",
+     "label": "29/11-3/12",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "07:00",
+     "back": "15:20",
+     "bag": "תיק יד בלבד",
+     "price": 2400
+    },
+    {
+     "o": "2027-01-07",
+     "r": "2027-01-11",
+     "label": "7-11/1",
+     "days": "חמישי–שני",
+     "nights": 4,
+     "fl": "אל על",
+     "out": "06:25",
+     "back": "23:55",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2730
+    },
+    {
+     "o": "2027-01-31",
+     "r": "2027-02-04",
+     "label": "31/1-4/2",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "17:20",
+     "back": "23:00",
+     "bag": "תיק יד בלבד",
+     "price": 2230
+    },
+    {
+     "o": "2027-02-09",
+     "r": "2027-02-12",
+     "label": "9-12/2",
+     "days": "שלישי–שישי",
+     "nights": 3,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "10:55",
+     "land": "11:35",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2320
+    }
+   ],
+   "url": "https://kirshtours.co.il/deal/2026-11-23-site-tbilisi-6/"
   },
   {
    "id": "2026-11-23-tbilisi",
@@ -412,8 +1520,8 @@
     "📍 שדרות רוסתאוולי, ליד אגם נוריגיולי והטיילת",
     "🌊 חדר זוגי עם מרפסת ונוף לים"
    ],
-   "min": 1840,
-   "nightsLabel": "4 לילות",
+   "min": 1660,
+   "nightsLabel": "3-4-7 לילות",
    "round": "2026-11-23",
    "expires": "2026-11-30",
    "images": [
@@ -494,6 +1602,18 @@
      "price": 1840
     },
     {
+     "o": "2027-01-19",
+     "r": "2027-01-26",
+     "label": "19-26/1",
+     "days": "שלישי–שלישי",
+     "nights": 7,
+     "fl": "אל על",
+     "out": "12:45",
+     "back": "18:10",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2440
+    },
+    {
      "o": "2027-01-24",
      "r": "2027-01-28",
      "label": "24-28/1",
@@ -503,6 +1623,18 @@
      "out": "07:00",
      "back": "14:15",
      "price": 1840
+    },
+    {
+     "o": "2027-01-25",
+     "r": "2027-01-28",
+     "label": "25-28/1",
+     "days": "שני–חמישי",
+     "nights": 3,
+     "fl": "ארקיע",
+     "out": "09:00",
+     "back": "14:15",
+     "bag": "תיק יד בלבד",
+     "price": 1660
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-11-23-batumi-3/"
@@ -521,7 +1653,7 @@
     "🛏️ חדר סטנדרט, מיטה זוגית בכפוף לזמינות"
    ],
    "min": 1550,
-   "nightsLabel": "3-4 לילות",
+   "nightsLabel": "3-4-5-7 לילות",
    "round": "2026-11-23",
    "expires": "2026-11-30",
    "images": [
@@ -610,172 +1742,48 @@
      "out": "06:25",
      "back": "22:05",
      "price": 1850
+    },
+    {
+     "o": "2027-01-14",
+     "r": "2027-01-19",
+     "label": "14-19/1",
+     "days": "חמישי–שלישי",
+     "nights": 5,
+     "fl": "ארקיע",
+     "out": "16:15",
+     "back": "15:05",
+     "bag": "תיק יד בלבד",
+     "price": 1820
+    },
+    {
+     "o": "2027-01-26",
+     "r": "2027-02-02",
+     "label": "26/1-2/2",
+     "days": "שלישי–שלישי",
+     "nights": 7,
+     "fl": "אל על",
+     "out": "05:15",
+     "back": "10:55",
+     "bag": "כולל טרולי 8 ק\"ג",
+     "price": 2170
+    },
+    {
+     "o": "2027-01-31",
+     "r": "2027-02-04",
+     "label": "31/1-4/2",
+     "days": "ראשון–חמישי",
+     "nights": 4,
+     "fl": "ארקיע",
+     "out": "17:20",
+     "back": "23:00",
+     "bag": "תיק יד בלבד",
+     "price": 1690
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-11-23-tbilisi-2/"
   },
   {
    "id": "2026-11-22-site-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "Cron Palace Tbilisi Hotel",
-   "stars": 4,
-   "score": "8.8",
-   "rev": "424",
-   "kosher": true,
-   "holiday": "חנוכה",
-   "feats": [
-    "🍽️ כשר למהדרין",
-    "📍 כ-4 ק\"מ מהעיר העתיקה"
-   ],
-   "min": 2140,
-   "nightsLabel": "3-4-5 לילות",
-   "round": "2026-11-22",
-   "expires": "2026-11-29",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "vip": false,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לסוויטה עם מיטת קינג",
-     "addPp": 390,
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "spa",
-    "gym",
-    "restaurant",
-    "room_service",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-29",
-     "r": "2026-12-03",
-     "label": "29/11-3/12",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "ארקיע",
-     "out": "07:00",
-     "back": "15:20",
-     "price": 2140
-    },
-    {
-     "o": "2026-12-02",
-     "r": "2026-12-07",
-     "label": "2-7/12",
-     "days": "רביעי–שני",
-     "nights": 5,
-     "fl": "ארקיע",
-     "out": "15:20",
-     "back": "14:00",
-     "price": 3060
-    },
-    {
-     "o": "2026-12-03",
-     "r": "2026-12-06",
-     "label": "3-6/12",
-     "days": "חמישי–ראשון",
-     "nights": 3,
-     "fl": "ארקיע",
-     "out": "09:30",
-     "back": "12:50",
-     "price": 2760
-    },
-    {
-     "o": "2026-12-10",
-     "r": "2026-12-14",
-     "label": "10-14/12",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "ארקיע",
-     "out": "08:30",
-     "back": "18:50",
-     "price": 2490,
-     "was": 2620
-    },
-    {
-     "o": "2026-12-13",
-     "r": "2026-12-17",
-     "label": "13-17/12",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "ארקיע",
-     "out": "07:00",
-     "back": "15:20",
-     "bag": "תיק יד בלבד",
-     "price": 2300
-    },
-    {
-     "o": "2026-12-22",
-     "r": "2026-12-27",
-     "label": "22-27/12",
-     "days": "שלישי–ראשון",
-     "nights": 5,
-     "fl": "ארקיע",
-     "out": "09:00",
-     "back": "13:55",
-     "price": 2720,
-     "was": 2980
-    },
-    {
-     "o": "2027-01-07",
-     "r": "2027-01-11",
-     "label": "7-11/1",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "23:55",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 2880
-    },
-    {
-     "o": "2027-01-17",
-     "r": "2027-01-20",
-     "label": "17-20/1",
-     "days": "ראשון–רביעי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "10:55",
-     "bag": "כולל טרולי",
-     "price": 2180
-    },
-    {
-     "o": "2027-02-02",
-     "r": "2027-02-07",
-     "label": "2-7/2",
-     "days": "שלישי–ראשון",
-     "nights": 5,
-     "fl": "אל על",
-     "out": "18:15",
-     "back": "12:05",
-     "bag": "כולל טרולי",
-     "price": 2660
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-22-site-tbilisi/"
-  },
-  {
-   "id": "2026-11-22-site-tbilisi-2",
    "dest": "טביליסי",
    "hotel": "Shota@Rustaveli Boutique Hotel",
    "stars": 4,
@@ -826,7 +1834,7 @@
      "price": 1520
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-11-22-site-tbilisi-2/"
+   "url": "https://kirshtours.co.il/deal/2026-11-22-site-tbilisi/"
   },
   {
    "id": "2026-11-22-site-batumi",
@@ -882,85 +1890,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-11-22-site-batumi/"
-  },
-  {
-   "id": "2026-11-22-site-tbilisi-3",
-   "dest": "טביליסי",
-   "hotel": "The Biltmore Hotel Tbilisi",
-   "stars": 5,
-   "score": "9.0",
-   "rev": "1,900",
-   "feats": [
-    "📍 שדרות רוסתאוולי, כ-1 ק\"מ מהמרכז",
-    "🌆 חדרים עם נוף פנורמי על העיר"
-   ],
-   "min": 2400,
-   "nightsLabel": "4 לילות",
-   "round": "2026-11-22",
-   "expires": "2026-11-29",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לחדר Club Deluxe",
-     "addPp": 322,
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "indoor_pool",
-    "spa",
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-29",
-     "r": "2026-12-03",
-     "label": "29/11-3/12",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "ארקיע",
-     "out": "07:00",
-     "back": "15:20",
-     "bag": "תיק יד בלבד",
-     "price": 2400
-    },
-    {
-     "o": "2027-01-07",
-     "r": "2027-01-11",
-     "label": "7-11/1",
-     "days": "חמישי–שני",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "23:55",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 2730
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-22-site-tbilisi-3/"
   },
   {
    "id": "2026-11-22-site-batumi-2",
@@ -1020,7 +1949,7 @@
    "url": "https://kirshtours.co.il/deal/2026-11-22-site-batumi-2/"
   },
   {
-   "id": "2026-11-22-site-tbilisi-4",
+   "id": "2026-11-22-site-tbilisi-2",
    "dest": "טביליסי",
    "hotel": "River Side Hotel",
    "stars": 5,
@@ -1090,287 +2019,10 @@
      "price": 2330
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-11-22-site-tbilisi-4/"
+   "url": "https://kirshtours.co.il/deal/2026-11-22-site-tbilisi-2/"
   },
   {
-   "id": "2026-11-22-tbilisi-2",
-   "dest": "טביליסי",
-   "hotel": "Wyndham Grand Tbilisi",
-   "stars": 5,
-   "score": "9.0",
-   "rev": "1,621",
-   "trolley": true,
-   "feats": [
-    "🕍 כ-7 דק' הליכה מבית חב\"ד",
-    "📍 ליד שדרות רוסתאוולי",
-    "💆 ספא, בריכה מקורה וסאונה",
-    "🛏️ חדר עם מיטת קינג"
-   ],
-   "min": 2190,
-   "nightsLabel": "3-4 לילות",
-   "round": "2026-11-22",
-   "expires": "2026-11-29",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג ל-Wyndham Club Suite",
-     "addPp": 489,
-     "vip": true
-    },
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לחדר דלוקס עם מיטת קינג",
-     "addPp": 77
-    }
-   ],
-   "amenities": [
-    "indoor_pool",
-    "spa",
-    "sauna",
-    "gym",
-    "bar",
-    "room_service",
-    "wifi",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-29",
-     "r": "2026-12-02",
-     "label": "29/11-2/12",
-     "days": "ראשון–רביעי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "23:55",
-     "price": 2190
-    },
-    {
-     "o": "2026-12-27",
-     "r": "2026-12-30",
-     "label": "27-30/12",
-     "days": "ראשון–רביעי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "23:55",
-     "price": 2570
-    },
-    {
-     "o": "2027-01-17",
-     "r": "2027-01-21",
-     "label": "17-21/1",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "12:05",
-     "price": 2210
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-22-tbilisi-2/"
-  },
-  {
-   "id": "2026-11-22-batumi",
-   "dest": "בטומי",
-   "hotel": "Paragraph Resort & Spa Shekvetili",
-   "stars": 5,
-   "score": "9.7",
-   "rev": "3,016",
-   "trolley": true,
-   "feats": [
-    "📍 ריזורט על הים בשקווטילי, כ-40 דק' צפונית לבטומי",
-    "🛏️ חדר סטנדרט עם מיטת קינג ומרפסת"
-   ],
-   "min": 2180,
-   "nightsLabel": "3-4-5 לילות",
-   "round": "2026-11-22",
-   "expires": "2026-11-29",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לג'וניור סוויטה עם נוף לים",
-     "addPp": 706,
-     "vip": true
-    },
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לחדר דלוקס עם נוף חלקי לים",
-     "addPp": 102
-    }
-   ],
-   "amenities": [
-    "pool",
-    "indoor_pool",
-    "spa",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-10",
-     "r": "2026-12-15",
-     "label": "10-15/12",
-     "days": "חמישי–שלישי",
-     "nights": 5,
-     "fl": "אל על",
-     "out": "12:45",
-     "back": "18:10",
-     "price": 2880
-    },
-    {
-     "o": "2026-12-11",
-     "r": "2026-12-15",
-     "label": "11-15/12",
-     "days": "שישי–שלישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "18:10",
-     "bag": "כולל טרולי 8 ק\"ג",
-     "price": 2610
-    },
-    {
-     "o": "2026-12-14",
-     "r": "2026-12-17",
-     "label": "14-17/12",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "ארקיע",
-     "out": "09:00",
-     "back": "21:20",
-     "bag": "תיק יד בלבד",
-     "price": 2180
-    },
-    {
-     "o": "2027-01-03",
-     "r": "2027-01-07",
-     "label": "3-7/1",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "אל על",
-     "out": "12:45",
-     "back": "18:10",
-     "price": 2820
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-22-batumi/"
-  },
-  {
-   "id": "2026-11-22-batumi-2",
-   "dest": "בטומי",
-   "hotel": "JRW Welmond Hotel & Casino",
-   "stars": 5,
-   "score": "8.6",
-   "rev": "2,053",
-   "feats": [
-    "📍 כ-10 דק' הליכה ממרכז בטומי",
-    "💆 ספא, חמאם ובריכה מקורה",
-    "🍽️ המלון בקרבת מסעדות כשרות",
-    "🛏️ חדר סופריור עם מיטת קינג"
-   ],
-   "min": 1370,
-   "nightsLabel": "3-4 לילות",
-   "round": "2026-11-22",
-   "expires": "2026-11-29",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "indoor_pool",
-    "spa",
-    "sauna",
-    "restaurant",
-    "bar",
-    "room_service",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2027-01-03",
-     "r": "2027-01-06",
-     "label": "3-6/1",
-     "days": "ראשון–רביעי",
-     "nights": 3,
-     "fl": "ישראייר",
-     "out": "07:00",
-     "back": "16:30",
-     "price": 1370
-    },
-    {
-     "o": "2027-01-03",
-     "r": "2027-01-07",
-     "label": "3-7/1",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "ישראייר",
-     "out": "07:00",
-     "back": "14:15",
-     "price": 1690
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-22-batumi-2/"
-  },
-  {
-   "id": "2026-11-22-tbilisi-3",
+   "id": "2026-11-22-tbilisi",
    "dest": "טביליסי",
    "hotel": "Holiday Inn Express Tbilisi Avlabari by IHG",
    "stars": 4,
@@ -1443,7 +2095,7 @@
      "price": 1870
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-11-22-tbilisi-3/"
+   "url": "https://kirshtours.co.il/deal/2026-11-22-tbilisi/"
   },
   {
    "id": "2026-11-19-site-paphos-2",
@@ -2012,65 +2664,6 @@
    "url": "https://kirshtours.co.il/deal/2026-11-19-site-larnaca-2/"
   },
   {
-   "id": "2026-11-19-site-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "Radisson Blu Iveria Hotel",
-   "stars": 5,
-   "score": "9.5",
-   "rev": "3,606",
-   "trolley": true,
-   "feats": [
-    "📍 כיכר רוסתאוולי, במרכז העיר",
-    "🏊 בריכה מקורה עם נוף לעיר",
-    "💆 ספא"
-   ],
-   "min": 2220,
-   "nightsLabel": "3 לילות",
-   "round": "2026-11-19",
-   "expires": "2026-11-26",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "pool",
-    "indoor_pool",
-    "spa",
-    "restaurant",
-    "bar",
-    "room_service"
-   ],
-   "dates": [
-    {
-     "o": "2027-01-17",
-     "r": "2027-01-20",
-     "label": "17-20/1",
-     "days": "ראשון–רביעי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "06:25",
-     "back": "10:55",
-     "price": 2220
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-19-site-tbilisi/"
-  },
-  {
    "id": "2026-11-19-site-budapest-3",
    "dest": "בודפשט",
    "hotel": "Exe Budapest Center",
@@ -2441,85 +3034,6 @@
   {
    "id": "2026-11-19-batumi",
    "dest": "בטומי",
-   "hotel": "Radisson Blu Hotel Batumi",
-   "stars": 5,
-   "score": "9.5",
-   "rev": "2,282",
-   "trolley": true,
-   "feats": [
-    "📍 מגדל על הטיילת והחוף, נוף פתוח לים",
-    "🏊 בריכה מקורה וספא",
-    "🛏️ חדר סטנדרט זוגי"
-   ],
-   "min": 2520,
-   "nightsLabel": "3-5 לילות",
-   "round": "2026-11-19",
-   "expires": "2026-11-26",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לג'וניור סוויטה",
-     "addPp": 563,
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "indoor_pool",
-    "spa",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-12-14",
-     "r": "2026-12-17",
-     "label": "14-17/12",
-     "days": "שני–חמישי",
-     "nights": 3,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "18:10",
-     "price": 2520
-    },
-    {
-     "o": "2026-12-18",
-     "r": "2026-12-23",
-     "label": "18-23/12",
-     "days": "שישי–רביעי",
-     "nights": 5,
-     "fl": "אל על",
-     "out": "05:15",
-     "back": "21:55",
-     "price": 2830
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-19-batumi/"
-  },
-  {
-   "id": "2026-11-19-batumi-2",
-   "dest": "בטומי",
    "hotel": "Hotel Monarch",
    "stars": 4,
    "score": "9.5",
@@ -2653,7 +3167,7 @@
      "price": 1760
     }
    ],
-   "url": "https://kirshtours.co.il/deal/2026-11-19-batumi-2/"
+   "url": "https://kirshtours.co.il/deal/2026-11-19-batumi/"
   },
   {
    "id": "2026-11-19-larnaca",
@@ -5298,86 +5812,6 @@
    "url": "https://kirshtours.co.il/deal/2026-11-17-site-budapest/"
   },
   {
-   "id": "2026-11-17-tbilisi",
-   "dest": "טביליסי",
-   "hotel": "Sheraton Grand Tbilisi Metechi Palace",
-   "stars": 5,
-   "score": "9.3",
-   "rev": "2,006",
-   "feats": [
-    "📍 ליד כנסיית מטחי, נוף לעיר העתיקה ולמבצר נריקלה",
-    "💆 ספא עם בריכה מקורה וסאונה",
-    "🛏️ חדר דלוקס עם מיטת קינג"
-   ],
-   "min": 2230,
-   "nightsLabel": "4 לילות",
-   "round": "2026-11-17",
-   "expires": "2026-11-24",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": true,
-   "options": [
-    {
-     "kind": "upgrade",
-     "label": "שדרוג לחדר Executive",
-     "addPp": 70,
-     "vip": true
-    }
-   ],
-   "amenities": [
-    "pool",
-    "indoor_pool",
-    "spa",
-    "sauna",
-    "gym",
-    "restaurant",
-    "bar",
-    "room_service",
-    "wifi"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-29",
-     "r": "2026-12-03",
-     "label": "29/11-3/12",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "ארקיע",
-     "out": "07:00",
-     "back": "15:20",
-     "price": 2230
-    },
-    {
-     "o": "2026-12-13",
-     "r": "2026-12-17",
-     "label": "13-17/12",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "ארקיע",
-     "out": "07:00",
-     "back": "15:20",
-     "price": 2390
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-17-tbilisi/"
-  },
-  {
    "id": "2026-11-17-athens",
    "dest": "אתונה",
    "hotel": "The Stanley",
@@ -5451,74 +5885,6 @@
     }
    ],
    "url": "https://kirshtours.co.il/deal/2026-11-17-athens/"
-  },
-  {
-   "id": "2026-11-17-batumi",
-   "dest": "בטומי",
-   "hotel": "Wyndham Batumi",
-   "stars": 4,
-   "score": "8.6",
-   "rev": "2,145",
-   "feats": [
-    "💆 ספא וג'קוזי במלון",
-    "🛏️ חדר סטנדרט עם מיטת קינג"
-   ],
-   "min": 1760,
-   "nightsLabel": "4-5 לילות",
-   "round": "2026-11-17",
-   "expires": "2026-11-24",
-   "images": [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg"
-   ],
-   "country": "גאורגיה",
-   "board": "BB",
-   "kosher": false,
-   "vip": false,
-   "options": [],
-   "amenities": [
-    "spa",
-    "jacuzzi",
-    "restaurant",
-    "room_service",
-    "parking"
-   ],
-   "dates": [
-    {
-     "o": "2026-11-29",
-     "r": "2026-12-03",
-     "label": "29/11-3/12",
-     "days": "ראשון–חמישי",
-     "nights": 4,
-     "fl": "ישראייר",
-     "out": "08:15",
-     "back": "12:15",
-     "price": 1760
-    },
-    {
-     "o": "2026-12-11",
-     "r": "2026-12-16",
-     "label": "11-16/12",
-     "days": "שישי–רביעי",
-     "nights": 5,
-     "fl": "ישראייר",
-     "out": "06:10",
-     "back": "16:30",
-     "price": 1830
-    }
-   ],
-   "url": "https://kirshtours.co.il/deal/2026-11-17-batumi/"
   },
   {
    "id": "2026-11-17-bucharest",
